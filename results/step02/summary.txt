@@ -1,0 +1,209 @@
+STEP 2 - Tissue-composition scoring (GSE41258)
+==================================================
+Inputs: data/processed/GSE41258_{main,withlung}_expr_genes.csv (+ samples.csv, step 1);
+  reference organ samples from data/raw/GSE41258_series_matrix.txt.gz
+  (13 normal liver, 7 normal lung; same probe per gene as step 1)
+Seed: 42
+Versions: decoupler 2.2.0, pandas 2.3.3, numpy 2.4.6, scipy 1.17.1
+
+TISSUE-IDENTITY SCREEN (all 358 samples: 338 main + 20 lung metastases)
+  Panels: colon: CDX1, CDX2, CDH17, VIL1, KRT20, CEACAM5, LGALS4; hepatocyte: ALB, APOA1, APOA2, APOH, FGA, FGB, FGG, AHSG, TF, HP, SERPINA1, TTR; lung: SFTPC, SFTPB, SFTPD, SCGB1A1, AGER
+  Normal colon median: colon 9.91, hepatocyte 5.01, lung 6.10
+  Normal liver median: colon 5.06, hepatocyte 12.08; normal lung median: colon 4.61, lung 12.55
+  Rule: low colon = below midpoint between normal colon and normal liver/lung (log2);
+        high liver/lung = above midpoint between normal colon and that organ.
+        MISMATCH = low colon AND high other-organ (sample closer to liver/lung than colon).
+  Calls:
+    ok                                         328
+    host organ present (expected for site)     20
+    check: low colon identity only             8
+    check: other-organ signal                  1
+    MISMATCH: liver-like                       1
+  Samples not called 'ok' or 'host organ present':
+    GSM1012326 [Carcinoma] check: low colon identity only: colon 5.13, hepatocyte 4.20, lung 5.92
+    GSM1012347 [Normal] check: low colon identity only: colon 7.10, hepatocyte 5.44, lung 5.69
+    GSM1012396 [Carcinoma] check: low colon identity only: colon 7.26, hepatocyte 4.24, lung 5.89
+    GSM1012429 [Carcinoma] check: low colon identity only: colon 4.41, hepatocyte 4.22, lung 6.02
+    GSM1012470 [Metastasis] check: low colon identity only: colon 4.85, hepatocyte 5.02, lung 5.71
+    GSM1012488 [Carcinoma] check: low colon identity only: colon 6.97, hepatocyte 5.18, lung 5.88
+    GSM1012525 [Carcinoma] check: low colon identity only: colon 6.62, hepatocyte 4.57, lung 6.23
+    GSM1012526 [Carcinoma] check: low colon identity only: colon 3.21, hepatocyte 5.00, lung 5.97  -> EXCLUDED
+    GSM1012640 [Normal] check: other-organ signal: colon 9.93, hepatocyte 9.11, lung 6.10
+    GSM1012647 [Carcinoma] MISMATCH: liver-like: colon 4.91, hepatocyte 12.47, lung 5.82  -> EXCLUDED
+
+EXCLUSIONS (data/processed/GSE41258_exclusions.csv):
+  All exclusions were based on tissue identity only (expression of fixed colon, hepatocyte, lung and lineage marker panels) and were decided with the PI on 2026-10-03, before any topology analysis (steps 3-6) was run.
+  GSM1012647: Labelled 'Primary Tumor' but expression is normal liver: no colon identity (CDX2 0.0, KRT20 4.7, EPCAM 5.6 log2) and full hepatocyte program (ALB 13.7, APOA1 15.3, FGB 15.3 log2; liver fraction 100%); no patient id. Excluded after PI review, 2026-10-03; re-included in set main_inclqc.
+  GSM1012526: Labelled 'Primary Tumor' but no colorectal identity (CDX2 2.2, KRT20 4.1, SATB2 4.5 log2, lowest in cohort) and a Mullerian/gynaecological program (PAX8 9.2, SOX17 9.7, MUC16 10.4 vs carcinoma medians 7.7, 4.0, 2.8); more consistent with an ovarian/Mullerian carcinoma than CRC. Excluded after PI review, 2026-10-03; re-included in set main_inclqc.
+FLAGGED BY THE SCREEN, REVIEWED AND KEPT:
+  GSM1012429: Carcinoma; low CDX2/KRT20/SATB2, low MLH1 (5.8 vs 7.2), immune-rich: consistent with MSI-high / medullary CRC. Kept.
+  GSM1012488: Carcinoma; low KRT20, highest immune score: consistent with MSI / medullary CRC. Kept.
+  GSM1012326: Carcinoma; low CDX2 but colonic KRT20/SATB2, squamous genes (KRT5, KRT14) on: consistent with squamous differentiation within CRC. Kept.
+  GSM1012396: Carcinoma; moderately low colon markers, consistent with CDX2-low CRC. Kept.
+  GSM1012525: Carcinoma; moderately low colon markers, consistent with CDX2-low CRC. Kept.
+  GSM1012470: Liver metastasis; CDX2 near absent (0.4), KRT20 reduced: possible CDX2-negative CRC metastasis. Kept, noted.
+  GSM1012347: Normal; little epithelium (EPCAM 7.8), muscle-rich (DES 12.7): deep sampling of colon wall. Kept; handled by composition adjustment.
+  GSM1012640: Normal; colon identity normal, ~2% liver signal; same patient (C0415) as a liver metastasis, likely handling contamination. Kept.
+
+ONE ARRAY PER PATIENT PER STAGE (de-duplication):
+  Where one patient had several arrays of the same stage (official GEO 'patient id' field), one was kept: the array flagged 'included in analysis: Yes' by the original authors, otherwise the first original array (not an '_ez' or other re-hybridisation). Applies to re-hybridisations, other pieces of the same tissue and, in one case, a possible second lesion. Decided with the PI on 2026-10-03, before any topology analysis. Set main_allarrays keeps all arrays (sensitivity).
+  Patient ids from the official GEO 'patient id' field: 336/336 samples, 253 patients (main_allarrays); the pilot's title regex found 313.
+  removed GSM1012279 [Metastasis]: Additional array of patient 450, Metastasis: another piece of the same tissue (different R number) (code 00450UR1, authors' flag No); kept GSM1012281 (code 00450UR2, flag Yes)
+  removed GSM1012280 [Metastasis]: Additional array of patient 450, Metastasis: another piece of the same tissue (different R number) (code 00450UR1_ez, authors' flag No); kept GSM1012281 (code 00450UR2, flag Yes)
+  removed GSM1012283 [Metastasis]: Additional array of patient 485, Metastasis: another piece of the same tissue (different R number) (code 00485UR1, authors' flag No); kept GSM1012285 (code 00485UR2, flag Yes)
+  removed GSM1012284 [Metastasis]: Additional array of patient 485, Metastasis: another piece of the same tissue (different R number) (code 00485UR1_ez, authors' flag No); kept GSM1012285 (code 00485UR2, flag Yes)
+  removed GSM1012289 [Metastasis]: Additional array of patient 823, Metastasis: another piece of the same tissue (different R number) (code 00823UR2, authors' flag No); kept GSM1012287 (code 00823UR1, flag No)
+  removed GSM1012288 [Metastasis]: Additional array of patient 823, Metastasis: re-hybridisation of the same RNA (code 00823UR1_ez, authors' flag No); kept GSM1012287 (code 00823UR1, flag No)
+  removed GSM1012290 [Metastasis]: Additional array of patient 838, Metastasis: another piece of the same tissue (different R number) (code 00838UR1, authors' flag No); kept GSM1012292 (code 00838UR2, flag Yes)
+  removed GSM1012291 [Metastasis]: Additional array of patient 838, Metastasis: another piece of the same tissue (different R number) (code 00838UR1_ez, authors' flag No); kept GSM1012292 (code 00838UR2, flag Yes)
+  removed GSM1012481 [Adenoma]: Additional array of patient A4410, Adenoma: re-hybridisation of the same RNA (code A4410BR3, authors' flag No); kept GSM1012482 (code A4410BR3_ren, flag Yes)
+  removed GSM1012489 [Carcinoma]: Additional array of patient A4902, Carcinoma: another piece of the same tissue (different R number) (code A4902AR2, authors' flag No); kept GSM1012490 (code A4902AR3, flag Yes)
+  removed GSM1012494 [Carcinoma]: Additional array of patient A5135, Carcinoma: re-hybridisation of the same RNA (code A5135AR2, authors' flag No); kept GSM1012495 (code A5135AR2_ez, flag Yes)
+  removed GSM1012505 [Adenoma]: Additional array of patient A5790, Adenoma: re-hybridisation of the same RNA (code A5790BR3_2, authors' flag No); kept GSM1012504 (code A5790BR3, flag Yes)
+  removed GSM1012561 [Carcinoma]: Additional array of patient C0147, Carcinoma: another piece of the same tissue (different R number) (code C0147AR1, authors' flag No); kept GSM1012562 (code C0147AR3, flag Yes)
+  removed GSM1012599 [Adenoma]: Additional array of patient C0210, Adenoma: possibly a separate lesion (different tissue letter) (code C0210CR1, authors' flag Yes); kept GSM1012598 (code C0210BR1, flag Yes)
+  removed GSM1012652 [Normal]: Additional array of patient C0667, Normal: re-hybridisation of the same RNA (code C0667HR1, authors' flag No); kept GSM1012653 (code C0667HR1_ez, flag Yes)
+  removed GSM1012449 [Metastasis (lung)]: Additional array of patient 14756, Metastasis (lung): re-hybridisation of the same RNA (code 14756VR1_ez, authors' flag No); kept GSM1012448 (code 14756VR1, flag No)
+  Removed repeat arrays per stage: Normal 1, Adenoma 3, Carcinoma 3, Metastasis 8, Metastasis (lung) 1
+  Authors' 'included in analysis' flag in the primary set (Yes/No/NA): Normal 53/0/0, Adenoma 47/1/0, Carcinoma 181/0/0, Metastasis 21/18/0
+
+SETTINGS
+  Epithelial: pan-epithelial structural candidates, used if max-min of stage medians <= 1 log2
+    candidates missing from platform: none
+  Stromal / immune: PanglaoDB human canonical markers (decoupler dc.op.resource);
+    Stromal: Fibroblasts, Myofibroblasts, Smooth muscle cells, Endothelial cells, Pericytes
+    Immune: T cells, B cells, Plasma cells, NK cells, Macrophages, Monocytes, Dendritic cells, Mast cells, Neutrophils
+    genes in >1 compartment removed
+  Genes per compartment: Epithelial 18, Stromal 292, Immune 447
+  Epithelial genes used: EPCAM, CDH1, KRT8, KRT18, KRT19, CLDN3, CLDN4, ELF3, ESRP1, SPINT1, SPINT2, RAB25, GRHL2, OVOL1, PRSS8, ST14, CDS1, TJP3
+  Strict epithelial set (sensitivity, range <= 0.75): 15 genes, drops GRHL2, CDS1, TJP3
+  Scoring: decoupler ULM (tmin=5) on gene-centred log2 expression
+  Organ signature: organ mean - max(normal colon, carcinoma mean) >= 3 log2, organ mean >= 8; metastases not used
+  Organ fraction: carcinoma median + organ median mixture (linear scale), per-gene fraction,
+    median across signature genes, clipped 0-1
+  Adjustment: per gene OLS on all composition covariates; adjusted = residual + gene mean
+
+PAN-EPITHELIAL MARKER MEDIANS PER STAGE (main set, log2):
+stage    Normal  Adenoma  Carcinoma  Metastasis  range   used                   role
+gene                                                                                
+EPCAM     10.32    10.47      10.25       10.47   0.22   True              candidate
+CDH1       9.74     9.99       9.85        9.98   0.25   True              candidate
+KRT8      10.99    10.50      10.48       10.47   0.52   True              candidate
+KRT18     10.97    11.30      11.35       11.39   0.42   True              candidate
+KRT19     10.26     9.59       9.68        9.65   0.67   True              candidate
+CLDN3      9.35     9.35       9.07        9.38   0.31   True              candidate
+CLDN4      8.20     8.63       8.54        8.73   0.53   True              candidate
+CLDN7      9.96     9.68       9.25        8.86   1.10  False              candidate
+ELF3       9.25     9.72       9.50        9.81   0.57   True              candidate
+ESRP1      7.67     7.84       7.58        7.31   0.53   True              candidate
+SPINT1     8.14     8.20       7.81        7.78   0.42   True              candidate
+SPINT2     9.34     9.65       9.48        9.54   0.31   True              candidate
+RAB25      8.53     9.12       8.60        8.71   0.59   True              candidate
+GRHL2      6.01     6.73       6.66        6.81   0.80   True              candidate
+OVOL1      5.75     5.77       5.63        5.77   0.14   True              candidate
+PRSS8      8.55     8.03       8.03        8.33   0.52   True              candidate
+ST14       8.86     8.83       8.68        8.82   0.18   True              candidate
+CDS1       6.47     6.34       5.71        5.76   0.76   True              candidate
+TJP3       7.18     6.75       6.31        6.46   0.87   True              candidate
+KRT20     11.33     9.91       9.43        9.51   1.90  False  comparison (not used)
+TACSTD2    3.93     6.31       6.07        6.78   2.86  False  comparison (not used)
+
+--- set main ---
+Samples per stage: Normal 53, Adenoma 48, Carcinoma 181, Metastasis 39 (total 321)
+Liver signature genes: 176 (top: PLG, HPD, CFHR5, SLC2A2, BAAT, KNG1, C8G, CFHR4, LIPC, SERPINA10)
+Median score per stage:
+            Epithelial  Stromal  Immune  Liver_fraction
+stage                                                  
+Normal           0.900    7.583   4.131           0.001
+Adenoma          1.794  -11.716  -4.305           0.000
+Carcinoma        0.095    1.507   0.040           0.000
+Metastasis       1.032   -3.162  -2.493           0.005
+  Kruskal-Wallis across stages, Epithelial: p = 7.7e-05
+  Kruskal-Wallis across stages, Stromal: p = 1.6e-22
+  Kruskal-Wallis across stages, Immune: p = 5.9e-08
+  Kruskal-Wallis across stages, Liver_fraction: p = 2.1e-25
+Sanity check (score vs classic markers):
+  Stromal    vs mean of COL1A2,COL3A1,DCN,VWF: Spearman r = 0.85
+  Immune     vs mean of PTPRC,CD3E,CD74,LCP1: Spearman r = 0.93
+Liver fraction, metastases: median 0.5%, IQR 0.2%-4.4%, max 47.3%, n > 20%: 3; other stages max 1.8%
+Epithelial score, 18-gene (used) vs 15-gene strict (range <= 0.75): Pearson r = 0.987, Spearman r = 0.979
+Variance explained by composition (R2 per gene): median 0.10, genes with R2 > 0.5: 459/12548
+
+--- set withlung ---
+Samples per stage: Normal 53, Adenoma 48, Carcinoma 181, Metastasis 58 (total 340)
+Liver signature genes: 176 (top: PLG, HPD, CFHR5, SLC2A2, BAAT, KNG1, C8G, CFHR4, LIPC, SERPINA10)
+Lung signature genes: 31 (top: SFTPD, SCGB1A1, WIF1, FCN3, CYP4B1, SLC34A2, SFTPC, ABCA3, MARCO, RGCC)
+Median score per stage:
+            Epithelial  Stromal  Immune  Liver_fraction  Lung_fraction
+stage                                                                 
+Normal           0.911    7.311   3.791           0.001          0.001
+Adenoma          1.801  -11.859  -4.577           0.000          0.000
+Carcinoma        0.114    1.255  -0.296           0.000          0.000
+Metastasis       0.934   -2.115  -0.656           0.002          0.007
+  Kruskal-Wallis across stages, Epithelial: p = 8.7e-05
+  Kruskal-Wallis across stages, Stromal: p = 3.1e-21
+  Kruskal-Wallis across stages, Immune: p = 4.7e-07
+  Kruskal-Wallis across stages, Liver_fraction: p = 1.9e-21
+  Kruskal-Wallis across stages, Lung_fraction: p = 4.2e-16
+Sanity check (score vs classic markers):
+  Stromal    vs mean of COL1A2,COL3A1,DCN,VWF: Spearman r = 0.85
+  Immune     vs mean of PTPRC,CD3E,CD74,LCP1: Spearman r = 0.93
+Liver fraction, metastases: median 0.2%, IQR 0.1%-1.8%, max 46.4%, n > 20%: 3; other stages max 1.7%
+Lung fraction: lung metastases median 4.0% (max 18.3%); liver metastases median 0.2%
+Epithelial score, 18-gene (used) vs 15-gene strict (range <= 0.75): Pearson r = 0.986, Spearman r = 0.980
+Variance explained by composition (R2 per gene): median 0.11, genes with R2 > 0.5: 469/12548
+
+--- set main_allarrays ---
+Samples per stage: Normal 54, Adenoma 51, Carcinoma 184, Metastasis 47 (total 336)
+Liver signature genes: 176 (top: PLG, HPD, CFHR5, SLC2A2, BAAT, KNG1, C8G, CFHR4, LIPC, SERPINA10)
+Median score per stage:
+            Epithelial  Stromal  Immune  Liver_fraction
+stage                                                  
+Normal           0.960    7.499   4.436           0.001
+Adenoma          1.686  -11.485  -3.626           0.000
+Carcinoma       -0.054    1.659   0.663           0.000
+Metastasis       1.093   -3.146  -4.329           0.004
+  Kruskal-Wallis across stages, Epithelial: p = 1.7e-05
+  Kruskal-Wallis across stages, Stromal: p = 2.4e-24
+  Kruskal-Wallis across stages, Immune: p = 1.6e-09
+  Kruskal-Wallis across stages, Liver_fraction: p = 6.4e-27
+Sanity check (score vs classic markers):
+  Stromal    vs mean of COL1A2,COL3A1,DCN,VWF: Spearman r = 0.85
+  Immune     vs mean of PTPRC,CD3E,CD74,LCP1: Spearman r = 0.93
+Liver fraction, metastases: median 0.4%, IQR 0.1%-2.7%, max 47.3%, n > 20%: 3; other stages max 1.8%
+Epithelial score, 18-gene (used) vs 15-gene strict (range <= 0.75): Pearson r = 0.987, Spearman r = 0.978
+Variance explained by composition (R2 per gene): median 0.10, genes with R2 > 0.5: 464/12548
+
+--- set main_inclqc ---
+Samples per stage: Normal 53, Adenoma 48, Carcinoma 183, Metastasis 39 (total 323)
+Liver signature genes: 176 (top: PLG, HPD, CFHR5, SLC2A2, BAAT, KNG1, C8G, CFHR4, LIPC, SERPINA10)
+Median score per stage:
+            Epithelial  Stromal  Immune  Liver_fraction
+stage                                                  
+Normal           1.014    7.579   4.112           0.001
+Adenoma          1.895  -11.706  -4.315           0.000
+Carcinoma        0.044    1.501   0.020           0.000
+Metastasis       1.112   -3.173  -2.513           0.005
+  Kruskal-Wallis across stages, Epithelial: p = 5.5e-05
+  Kruskal-Wallis across stages, Stromal: p = 1.3e-22
+  Kruskal-Wallis across stages, Immune: p = 5.0e-08
+  Kruskal-Wallis across stages, Liver_fraction: p = 8.0e-25
+Sanity check (score vs classic markers):
+  Stromal    vs mean of COL1A2,COL3A1,DCN,VWF: Spearman r = 0.85
+  Immune     vs mean of PTPRC,CD3E,CD74,LCP1: Spearman r = 0.93
+Liver fraction, metastases: median 0.5%, IQR 0.2%-4.4%, max 47.3%, n > 20%: 3; other stages max 100.0%
+Epithelial score, 18-gene (used) vs 15-gene strict (range <= 0.75): Pearson r = 0.988, Spearman r = 0.980
+Variance explained by composition (R2 per gene): median 0.11, genes with R2 > 0.5: 481/12548
+
+Outputs:
+  results/step02/tissue_identity_qc.csv, tissue_identity_screen.png
+  results/step02/pan_epithelial_marker_flatness.csv, pan_epithelial_flatness.png
+  results/step02/composition_scores_<set>.csv        per-sample scores
+  results/step02/marker_sets_used.csv                 marker genes per compartment
+  results/step02/liver_signature_<set>.csv, lung_signature_withlung.csv
+  results/step02/variance_explained_by_composition_<set>.csv
+  results/step02/composition_by_stage_main.png, liver_fraction_metastases.png
+  data/processed/GSE41258_exclusions.csv
+  data/processed/GSE41258_<set>_samples_qc.csv       samples per analysis set
+  data/processed/GSE41258_<set>_expr_genes_adjusted.csv  composition-adjusted expression
+  (unadjusted expression for each set = step-1 file restricted to that set's samples)

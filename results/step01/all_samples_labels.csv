@@ -1,0 +1,391 @@
+sample,raw_label,stage_main,stage_withlung,patient
+GSM1012278,tissue: Polyp,Adenoma,Adenoma,00300
+GSM1012279,tissue: Liver Metastasis,Metastasis,Metastasis,00450
+GSM1012280,tissue: Liver Metastasis,Metastasis,Metastasis,
+GSM1012281,tissue: Liver Metastasis,Metastasis,Metastasis,00450
+GSM1012282,tissue: Liver Metastasis,Metastasis,Metastasis,00464
+GSM1012283,tissue: Liver Metastasis,Metastasis,Metastasis,00485
+GSM1012284,tissue: Liver Metastasis,Metastasis,Metastasis,
+GSM1012285,tissue: Liver Metastasis,Metastasis,Metastasis,00485
+GSM1012286,tissue: Primary Tumor,Carcinoma,Carcinoma,00620
+GSM1012287,tissue: Liver Metastasis,Metastasis,Metastasis,00823
+GSM1012288,tissue: Liver Metastasis,Metastasis,Metastasis,
+GSM1012289,tissue: Liver Metastasis,Metastasis,Metastasis,00823
+GSM1012290,tissue: Liver Metastasis,Metastasis,Metastasis,00838
+GSM1012291,tissue: Liver Metastasis,Metastasis,Metastasis,
+GSM1012292,tissue: Liver Metastasis,Metastasis,Metastasis,00838
+GSM1012293,tissue: Liver Metastasis,Metastasis,Metastasis,00852
+GSM1012294,tissue: Normal Liver,,,00871
+GSM1012295,tissue: Polyp,Adenoma,Adenoma,00888
+GSM1012296,tissue: Liver Metastasis,Metastasis,Metastasis,00947
+GSM1012297,tissue: Primary Tumor,Carcinoma,Carcinoma,00990
+GSM1012298,tissue: Normal Lung,,,01720
+GSM1012299,tissue: Lung Metastasis,,Metastasis,01720
+GSM1012300,tissue: Polyp,Adenoma,Adenoma,01984
+GSM1012301,tissue: Normal Lung,,,02050
+GSM1012302,tissue: Lung Metastasis,,Metastasis,02050
+GSM1012303,tissue: Primary Tumor,Carcinoma,Carcinoma,02184
+GSM1012304,tissue: Normal Colon,Normal,Normal,02184
+GSM1012305,tissue: Primary Tumor,Carcinoma,Carcinoma,02189
+GSM1012306,tissue: Normal Colon,Normal,Normal,02189
+GSM1012307,tissue: Primary Tumor,Carcinoma,Carcinoma,02308
+GSM1012308,tissue: Primary Tumor,Carcinoma,Carcinoma,02500
+GSM1012309,tissue: Polyp,Adenoma,Adenoma,02663
+GSM1012310,tissue: Primary Tumor,Carcinoma,Carcinoma,02679
+GSM1012311,tissue: Polyp,Adenoma,Adenoma,02679
+GSM1012312,tissue: Primary Tumor,Carcinoma,Carcinoma,02779
+GSM1012313,tissue: Polyp,Adenoma,Adenoma,02779
+GSM1012314,tissue: Primary Tumor,Carcinoma,Carcinoma,02815
+GSM1012315,tissue: Normal Colon,Normal,Normal,02815
+GSM1012316,tissue: Primary Tumor,Carcinoma,Carcinoma,02832
+GSM1012317,tissue: Primary Tumor,Carcinoma,Carcinoma,03023
+GSM1012318,tissue: Normal Colon,Normal,Normal,03023
+GSM1012319,tissue: Primary Tumor,Carcinoma,Carcinoma,03156
+GSM1012320,tissue: Primary Tumor,Carcinoma,Carcinoma,03283
+GSM1012321,tissue: Lung Metastasis,,Metastasis,03358
+GSM1012322,tissue: Primary Tumor,Carcinoma,Carcinoma,03393
+GSM1012323,tissue: Polyp,Adenoma,Adenoma,03393
+GSM1012324,tissue: Primary Tumor,Carcinoma,Carcinoma,03401
+GSM1012325,tissue: Primary Tumor,Carcinoma,Carcinoma,03465
+GSM1012326,tissue: Primary Tumor,Carcinoma,Carcinoma,03519
+GSM1012327,tissue: Normal Colon,Normal,Normal,03519
+GSM1012328,tissue: Primary Tumor,Carcinoma,Carcinoma,03531
+GSM1012329,tissue: Polyp,Adenoma,Adenoma,03598
+GSM1012330,tissue: Normal Colon,Normal,Normal,03598
+GSM1012331,tissue: Primary Tumor,Carcinoma,Carcinoma,03637
+GSM1012332,tissue: Polyp,Adenoma,Adenoma,03637
+GSM1012333,tissue: Normal Colon,Normal,Normal,03637
+GSM1012334,tissue: Primary Tumor,Carcinoma,Carcinoma,03657
+GSM1012335,tissue: Normal Colon,Normal,Normal,03657
+GSM1012336,tissue: Primary Tumor,Carcinoma,Carcinoma,03706
+GSM1012337,tissue: Normal Colon,Normal,Normal,03706
+GSM1012338,tissue: Primary Tumor,Carcinoma,Carcinoma,03752
+GSM1012339,tissue: Primary Tumor,Carcinoma,Carcinoma,03753
+GSM1012340,tissue: Normal Colon,Normal,Normal,03753
+GSM1012341,tissue: Primary Tumor,Carcinoma,Carcinoma,03777
+GSM1012342,tissue: Normal Colon,Normal,Normal,
+GSM1012343,tissue: Lung Metastasis,,Metastasis,03820
+GSM1012344,tissue: Primary Tumor,Carcinoma,Carcinoma,03862
+GSM1012345,tissue: Normal Colon,Normal,Normal,03862
+GSM1012346,tissue: Primary Tumor,Carcinoma,Carcinoma,04176
+GSM1012347,tissue: Normal Colon,Normal,Normal,04176
+GSM1012348,tissue: Normal Lung,,,04222
+GSM1012349,tissue: Lung Metastasis,,Metastasis,04222
+GSM1012350,tissue: Primary Tumor,Carcinoma,Carcinoma,04276
+GSM1012351,tissue: Normal Colon,Normal,Normal,04276
+GSM1012352,tissue: Primary Tumor,Carcinoma,Carcinoma,04388
+GSM1012353,tissue: Polyp,Adenoma,Adenoma,04449
+GSM1012354,tissue: Primary Tumor,Carcinoma,Carcinoma,04494
+GSM1012355,tissue: Normal Colon,Normal,Normal,04494
+GSM1012356,tissue: Primary Tumor,Carcinoma,Carcinoma,04549
+GSM1012357,tissue: Normal Colon,Normal,Normal,04549
+GSM1012358,tissue: Primary Tumor,Carcinoma,Carcinoma,04800
+GSM1012359,tissue: Normal Colon,Normal,Normal,
+GSM1012360,tissue: Polyp,Adenoma,Adenoma,04809
+GSM1012361,tissue: Primary Tumor,Carcinoma,Carcinoma,05025
+GSM1012362,tissue: Polyp,Adenoma,Adenoma,05192
+GSM1012363,tissue: Primary Tumor,Carcinoma,Carcinoma,05334
+GSM1012364,tissue: Primary Tumor,Carcinoma,Carcinoma,05424
+GSM1012365,tissue: Polyp,Adenoma,Adenoma,05479
+GSM1012366,tissue: Primary Tumor,Carcinoma,Carcinoma,05629
+GSM1012367,tissue: Primary Tumor,Carcinoma,Carcinoma,05708
+GSM1012368,tissue: Primary Tumor,Carcinoma,Carcinoma,05786
+GSM1012369,tissue: Normal Colon,Normal,Normal,
+GSM1012370,tissue: Primary Tumor,Carcinoma,Carcinoma,05839
+GSM1012371,tissue: Primary Tumor,Carcinoma,Carcinoma,05885
+GSM1012372,tissue: Lung Metastasis,,Metastasis,05969
+GSM1012373,tissue: Primary Tumor,Carcinoma,Carcinoma,06051
+GSM1012374,tissue: Primary Tumor,Carcinoma,Carcinoma,06220
+GSM1012375,tissue: Primary Tumor,Carcinoma,Carcinoma,06265
+GSM1012376,tissue: Primary Tumor,Carcinoma,Carcinoma,06314
+GSM1012377,tissue: Lung Metastasis,,Metastasis,06432
+GSM1012378,tissue: Polyp,Adenoma,Adenoma,06572
+GSM1012379,tissue: Primary Tumor,Carcinoma,Carcinoma,06657
+GSM1012380,tissue: Normal Colon,Normal,Normal,06657
+GSM1012381,tissue: Primary Tumor,Carcinoma,Carcinoma,06706
+GSM1012382,tissue: Normal Lung,,,06764
+GSM1012383,tissue: Lung Metastasis,,Metastasis,06764
+GSM1012384,tissue: Primary Tumor,Carcinoma,Carcinoma,06840
+GSM1012385,tissue: Primary Tumor,Carcinoma,Carcinoma,06997
+GSM1012386,tissue: Primary Tumor,Carcinoma,Carcinoma,07061
+GSM1012387,tissue: Primary Tumor,Carcinoma,Carcinoma,07145
+GSM1012388,tissue: Polyp,Adenoma,Adenoma,07392
+GSM1012389,tissue: Primary Tumor,Carcinoma,Carcinoma,07427
+GSM1012390,tissue: Lung Metastasis,,Metastasis,07445
+GSM1012391,tissue: Primary Tumor,Carcinoma,Carcinoma,07576
+GSM1012392,tissue: Primary Tumor,Carcinoma,Carcinoma,07632
+GSM1012393,tissue: Primary Tumor,Carcinoma,Carcinoma,07662
+GSM1012394,tissue: Polyp,Adenoma,Adenoma,07677
+GSM1012395,tissue: Primary Tumor,Carcinoma,Carcinoma,07721
+GSM1012396,tissue: Primary Tumor,Carcinoma,Carcinoma,07925
+GSM1012397,tissue: Primary Tumor,Carcinoma,Carcinoma,07930
+GSM1012398,tissue: Primary Tumor,Carcinoma,Carcinoma,07973
+GSM1012399,tissue: Primary Tumor,Carcinoma,Carcinoma,08018
+GSM1012400,tissue: Primary Tumor,Carcinoma,Carcinoma,08029
+GSM1012401,tissue: Primary Tumor,Carcinoma,Carcinoma,08061
+GSM1012402,tissue: Polyp,Adenoma,Adenoma,08070
+GSM1012403,tissue: Normal Lung,,,08088
+GSM1012404,tissue: Lung Metastasis,,Metastasis,08088
+GSM1012405,tissue: Primary Tumor,Carcinoma,Carcinoma,08168
+GSM1012406,tissue: Polyp,Adenoma,Adenoma,08568
+GSM1012407,tissue: Primary Tumor,Carcinoma,Carcinoma,08792
+GSM1012408,tissue: Primary Tumor,Carcinoma,Carcinoma,09054
+GSM1012409,tissue: Primary Tumor,Carcinoma,Carcinoma,09077
+GSM1012410,tissue: Primary Tumor,Carcinoma,Carcinoma,09185
+GSM1012411,tissue: Primary Tumor,Carcinoma,Carcinoma,09297
+GSM1012412,tissue: Primary Tumor,Carcinoma,Carcinoma,09343
+GSM1012413,tissue: Primary Tumor,Carcinoma,Carcinoma,09394
+GSM1012414,tissue: Primary Tumor,Carcinoma,Carcinoma,09420
+GSM1012415,tissue: Polyp,Adenoma,Adenoma,09446
+GSM1012416,tissue: Primary Tumor,Carcinoma,Carcinoma,09468
+GSM1012417,tissue: Polyp,Adenoma,Adenoma,09518
+GSM1012418,tissue: Liver Metastasis,Metastasis,Metastasis,09518
+GSM1012419,tissue: Primary Tumor,Carcinoma,Carcinoma,09728
+GSM1012420,tissue: Polyp,Adenoma,Adenoma,09728
+GSM1012421,tissue: Primary Tumor,Carcinoma,Carcinoma,09811
+GSM1012422,tissue: Polyp,Adenoma,Adenoma,10078
+GSM1012423,tissue: Primary Tumor,Carcinoma,Carcinoma,10194
+GSM1012424,tissue: Primary Tumor,Carcinoma,Carcinoma,10216
+GSM1012425,tissue: Lung Metastasis,,Metastasis,10258
+GSM1012426,tissue: Primary Tumor,Carcinoma,Carcinoma,10264
+GSM1012427,tissue: Primary Tumor,Carcinoma,Carcinoma,10368
+GSM1012428,tissue: Primary Tumor,Carcinoma,Carcinoma,10512
+GSM1012429,tissue: Primary Tumor,Carcinoma,Carcinoma,10630
+GSM1012430,tissue: Lung Metastasis,,Metastasis,11185
+GSM1012431,tissue: Lung Metastasis,,Metastasis,11190
+GSM1012432,tissue: Primary Tumor,Carcinoma,Carcinoma,11325
+GSM1012433,tissue: Lung Metastasis,,Metastasis,11670
+GSM1012434,tissue: Primary Tumor,Carcinoma,Carcinoma,11718
+GSM1012435,tissue: Normal Lung,,,12051
+GSM1012436,tissue: Lung Metastasis,,Metastasis,12051
+GSM1012437,tissue: Primary Tumor,Carcinoma,Carcinoma,12237
+GSM1012438,tissue: Lung Metastasis,,Metastasis,12285
+GSM1012439,tissue: Primary Tumor,Carcinoma,Carcinoma,12292
+GSM1012440,tissue: Primary Tumor,Carcinoma,Carcinoma,12297
+GSM1012441,tissue: Primary Tumor,Carcinoma,Carcinoma,12355
+GSM1012442,tissue: Primary Tumor,Carcinoma,Carcinoma,12847
+GSM1012443,tissue: Normal Lung,,,13279
+GSM1012444,tissue: Lung Metastasis,,Metastasis,13279
+GSM1012445,tissue: Primary Tumor,Carcinoma,Carcinoma,13321
+GSM1012446,tissue: Primary Tumor,Carcinoma,Carcinoma,13357
+GSM1012447,tissue: Primary Tumor,Carcinoma,Carcinoma,14475
+GSM1012448,tissue: Lung Metastasis,,Metastasis,14756
+GSM1012449,tissue: Lung Metastasis,,Metastasis,
+GSM1012450,tissue: Lung Metastasis,,Metastasis,14938
+GSM1012451,tissue: Primary Tumor,Carcinoma,Carcinoma,15329
+GSM1012452,tissue: Liver Metastasis,Metastasis,Metastasis,79744
+GSM1012453,tissue: Liver Metastasis,Metastasis,Metastasis,80649
+GSM1012454,tissue: Polyp,Adenoma,Adenoma,A0022
+GSM1012455,tissue: Primary Tumor,Carcinoma,Carcinoma,A0319
+GSM1012456,tissue: Primary Tumor,Carcinoma,Carcinoma,A0702
+GSM1012457,tissue: Liver Metastasis,Metastasis,Metastasis,A1288
+GSM1012458,tissue: Polyp,Adenoma,Adenoma,A1327
+GSM1012459,tissue: Normal Colon,Normal,Normal,A1327
+GSM1012460,tissue: Liver Metastasis,Metastasis,Metastasis,A1423
+GSM1012461,tissue: Primary Tumor,Carcinoma,Carcinoma,A1516
+GSM1012462,tissue: Primary Tumor,Carcinoma,Carcinoma,A1644
+GSM1012463,tissue: Primary Tumor,Carcinoma,Carcinoma,A1716
+GSM1012464,tissue: Polyp,Adenoma,Adenoma,A1853
+GSM1012465,tissue: Normal Colon,Normal,Normal,A1853
+GSM1012466,tissue: Normal Colon,Normal,Normal,
+GSM1012467,tissue: Primary Tumor,Carcinoma,Carcinoma,A2226
+GSM1012468,tissue: Primary Tumor,Carcinoma,Carcinoma,A2367
+GSM1012469,tissue: Primary Tumor,Carcinoma,Carcinoma,A2434
+GSM1012470,tissue: Liver Metastasis,Metastasis,Metastasis,A2561
+GSM1012471,tissue: Primary Tumor,Carcinoma,Carcinoma,A2715
+GSM1012472,tissue: Liver Metastasis,Metastasis,Metastasis,A3203
+GSM1012473,tissue: Polyp,Adenoma,Adenoma,A3443
+GSM1012474,tissue: Primary Tumor,Carcinoma,Carcinoma,A3536
+GSM1012475,tissue: Liver Metastasis,Metastasis,Metastasis,A3622
+GSM1012476,tissue: Liver Metastasis,Metastasis,Metastasis,A3684
+GSM1012477,tissue: Polyp,Adenoma,Adenoma,A4177
+GSM1012478,tissue: Primary Tumor,Carcinoma,Carcinoma,A4248
+GSM1012479,tissue: Primary Tumor,Carcinoma,Carcinoma,A4342
+GSM1012480,tissue: Liver Metastasis,Metastasis,Metastasis,A4396
+GSM1012481,tissue: Polyp,Adenoma,Adenoma,A4410
+GSM1012482,tissue: Polyp,Adenoma,Adenoma,
+GSM1012483,tissue: Normal Colon,Normal,Normal,A4410
+GSM1012484,tissue: Liver Metastasis,Metastasis,Metastasis,A4674
+GSM1012485,tissue: Liver Metastasis,Metastasis,Metastasis,A4756
+GSM1012486,tissue: Primary Tumor,Carcinoma,Carcinoma,A4779
+GSM1012487,tissue: Normal Colon,Normal,Normal,A4779
+GSM1012488,tissue: Primary Tumor,Carcinoma,Carcinoma,A4792
+GSM1012489,tissue: Primary Tumor,Carcinoma,Carcinoma,A4902
+GSM1012490,tissue: Primary Tumor,Carcinoma,Carcinoma,A4902
+GSM1012491,tissue: Microadenoma,Adenoma,Adenoma,A4902
+GSM1012492,tissue: Primary Tumor,Carcinoma,Carcinoma,A4947
+GSM1012493,tissue: Polyp,Adenoma,Adenoma,A5086
+GSM1012494,tissue: Primary Tumor,Carcinoma,Carcinoma,A5135
+GSM1012495,tissue: Primary Tumor,Carcinoma,Carcinoma,
+GSM1012496,tissue: Microadenoma,Adenoma,Adenoma,A5135
+GSM1012497,tissue: Polyp,Adenoma,Adenoma,A5153
+GSM1012498,tissue: Normal Colon,Normal,Normal,
+GSM1012499,tissue: Primary Tumor,Carcinoma,Carcinoma,A5320
+GSM1012500,tissue: Primary Tumor,Carcinoma,Carcinoma,A5465
+GSM1012501,tissue: Liver Metastasis,Metastasis,Metastasis,A5607
+GSM1012502,tissue: Primary Tumor,Carcinoma,Carcinoma,A5627
+GSM1012503,tissue: Polyp,Adenoma,Adenoma,A5627
+GSM1012504,tissue: Polyp,Adenoma,Adenoma,A5790
+GSM1012505,tissue: Polyp,Adenoma,Adenoma,
+GSM1012506,tissue: Liver Metastasis,Metastasis,Metastasis,A5960
+GSM1012507,tissue: Primary Tumor,Carcinoma,Carcinoma,
+GSM1012508,tissue: Polyp,Adenoma,Adenoma,A6143
+GSM1012509,tissue: Primary Tumor,Carcinoma,Carcinoma,A6275
+GSM1012510,tissue: Primary Tumor,Carcinoma,Carcinoma,A7366
+GSM1012511,tissue: Primary Tumor,Carcinoma,Carcinoma,A8307
+GSM1012512,tissue: Polyp,Adenoma,Adenoma,A8457
+GSM1012513,tissue: Primary Tumor,Carcinoma,Carcinoma,A8528
+GSM1012514,tissue: Polyp,Adenoma,Adenoma,A8528
+GSM1012515,tissue: Polyp,Adenoma,Adenoma,A9369
+GSM1012516,tissue: Polyp,Adenoma,Adenoma,C0020
+GSM1012517,tissue: Polyp,Adenoma,Adenoma,C0035
+GSM1012518,tissue: Liver Metastasis,Metastasis,Metastasis,C0045
+GSM1012519,tissue: Polyp,Adenoma,Adenoma,C0047
+GSM1012520,tissue: Liver Metastasis,Metastasis,Metastasis,C0056
+GSM1012521,tissue: Liver Metastasis,Metastasis,Metastasis,C0059
+GSM1012522,tissue: Liver Metastasis,Metastasis,Metastasis,C0068
+GSM1012523,tissue: Liver Metastasis,Metastasis,Metastasis,C0072
+GSM1012524,tissue: Liver Metastasis,Metastasis,Metastasis,C0075
+GSM1012525,tissue: Primary Tumor,Carcinoma,Carcinoma,C0081
+GSM1012526,tissue: Primary Tumor,Carcinoma,Carcinoma,C0101
+GSM1012527,tissue: Primary Tumor,Carcinoma,Carcinoma,C0104
+GSM1012528,tissue: Primary Tumor,Carcinoma,Carcinoma,
+GSM1012529,tissue: Primary Tumor,Carcinoma,Carcinoma,C0111
+GSM1012530,tissue: Normal Colon,Normal,Normal,C0111
+GSM1012531,tissue: Primary Tumor,Carcinoma,Carcinoma,C0112
+GSM1012532,tissue: Primary Tumor,Carcinoma,Carcinoma,C0113
+GSM1012533,tissue: Primary Tumor,Carcinoma,Carcinoma,C0114
+GSM1012534,tissue: Normal Colon,Normal,Normal,C0114
+GSM1012535,tissue: Primary Tumor,Carcinoma,Carcinoma,C0115
+GSM1012536,tissue: Primary Tumor,Carcinoma,Carcinoma,C0117
+GSM1012537,tissue: Normal Colon,Normal,Normal,C0117
+GSM1012538,tissue: Primary Tumor,Carcinoma,Carcinoma,C0122
+GSM1012539,tissue: Primary Tumor,Carcinoma,Carcinoma,C0123
+GSM1012540,tissue: Normal Colon,Normal,Normal,C0123
+GSM1012541,tissue: Primary Tumor,Carcinoma,Carcinoma,C0124
+GSM1012542,tissue: Primary Tumor,Carcinoma,Carcinoma,C0125
+GSM1012543,tissue: Primary Tumor,Carcinoma,Carcinoma,C0127
+GSM1012544,tissue: Primary Tumor,Carcinoma,Carcinoma,C0128
+GSM1012545,tissue: Polyp,Adenoma,Adenoma,C0128
+GSM1012546,tissue: Primary Tumor,Carcinoma,Carcinoma,C0130
+GSM1012547,tissue: Primary Tumor,Carcinoma,Carcinoma,C0134
+GSM1012548,tissue: Normal Colon,Normal,Normal,C0134
+GSM1012549,tissue: Primary Tumor,Carcinoma,Carcinoma,C0136
+GSM1012550,tissue: Normal Colon,Normal,Normal,C0136
+GSM1012551,tissue: Normal Liver,,,C0136
+GSM1012552,tissue: Liver Metastasis,Metastasis,Metastasis,C0136
+GSM1012553,tissue: Primary Tumor,Carcinoma,Carcinoma,C0137
+GSM1012554,tissue: Normal Colon,Normal,Normal,C0137
+GSM1012555,tissue: Normal Liver,,,C0139
+GSM1012556,tissue: Normal Liver,,,C0139
+GSM1012557,tissue: Liver Metastasis,Metastasis,Metastasis,C0139
+GSM1012558,tissue: Primary Tumor,Carcinoma,Carcinoma,C0140
+GSM1012559,tissue: Liver Metastasis,Metastasis,Metastasis,C0141
+GSM1012560,tissue: Liver Metastasis,Metastasis,Metastasis,C0145
+GSM1012561,tissue: Primary Tumor,Carcinoma,Carcinoma,C0147
+GSM1012562,tissue: Primary Tumor,Carcinoma,Carcinoma,C0147
+GSM1012563,tissue: Normal Colon,Normal,Normal,C0147
+GSM1012564,tissue: Primary Tumor,Carcinoma,Carcinoma,C0149
+GSM1012565,tissue: Primary Tumor,Carcinoma,Carcinoma,C0151
+GSM1012566,tissue: Liver Metastasis,Metastasis,Metastasis,C0152
+GSM1012567,tissue: Primary Tumor,Carcinoma,Carcinoma,C0153
+GSM1012568,tissue: Normal Colon,Normal,Normal,C0153
+GSM1012569,tissue: Primary Tumor,Carcinoma,Carcinoma,C0154
+GSM1012570,tissue: Primary Tumor,Carcinoma,Carcinoma,C0155
+GSM1012571,tissue: Primary Tumor,Carcinoma,Carcinoma,C0156
+GSM1012572,tissue: Primary Tumor,Carcinoma,Carcinoma,C0157
+GSM1012573,tissue: Normal Colon,Normal,Normal,
+GSM1012574,tissue: Primary Tumor,Carcinoma,Carcinoma,C0158
+GSM1012575,tissue: Normal Colon,Normal,Normal,
+GSM1012576,tissue: Primary Tumor,Carcinoma,Carcinoma,C0159
+GSM1012577,tissue: Primary Tumor,Carcinoma,Carcinoma,C0168
+GSM1012578,tissue: Primary Tumor,Carcinoma,Carcinoma,C0170
+GSM1012579,tissue: Primary Tumor,Carcinoma,Carcinoma,C0171
+GSM1012580,tissue: Primary Tumor,Carcinoma,Carcinoma,C0172
+GSM1012581,tissue: Normal Colon,Normal,Normal,C0172
+GSM1012582,tissue: Polyp,Adenoma,Adenoma,C0177
+GSM1012583,tissue: Primary Tumor,Carcinoma,Carcinoma,C0178
+GSM1012584,tissue: Primary Tumor,Carcinoma,Carcinoma,C0180
+GSM1012585,tissue: Normal Colon,Normal,Normal,C0180
+GSM1012586,tissue: Primary Tumor,Carcinoma,Carcinoma,C0181
+GSM1012587,tissue: Primary Tumor,Carcinoma,Carcinoma,C0186
+GSM1012588,tissue: Primary Tumor,Carcinoma,Carcinoma,
+GSM1012589,tissue: Primary Tumor,Carcinoma,Carcinoma,C0193
+GSM1012590,tissue: Normal Colon,Normal,Normal,C0193
+GSM1012591,tissue: Primary Tumor,Carcinoma,Carcinoma,C0194
+GSM1012592,tissue: Normal Colon,Normal,Normal,C0194
+GSM1012593,tissue: Primary Tumor,Carcinoma,Carcinoma,C0198
+GSM1012594,tissue: Normal Colon,Normal,Normal,C0198
+GSM1012595,tissue: Primary Tumor,Carcinoma,Carcinoma,C0200
+GSM1012596,tissue: Primary Tumor,Carcinoma,Carcinoma,C0203
+GSM1012597,tissue: Primary Tumor,Carcinoma,Carcinoma,C0210
+GSM1012598,tissue: Polyp,Adenoma,Adenoma,C0210
+GSM1012599,"tissue: Polyp, high grade",Adenoma,Adenoma,C0210
+GSM1012600,tissue: Primary Tumor,Carcinoma,Carcinoma,C0221
+GSM1012601,tissue: Polyp,Adenoma,Adenoma,C0224
+GSM1012602,tissue: Primary Tumor,Carcinoma,Carcinoma,C0225
+GSM1012603,tissue: Normal Colon,Normal,Normal,
+GSM1012604,tissue: Primary Tumor,Carcinoma,Carcinoma,C0234
+GSM1012605,tissue: Primary Tumor,Carcinoma,Carcinoma,C0238
+GSM1012606,tissue: Normal Colon,Normal,Normal,C0251
+GSM1012607,tissue: Normal Liver,,,C0251
+GSM1012608,tissue: Polyp,Adenoma,Adenoma,C0252
+GSM1012609,tissue: Normal Liver,,,C0253
+GSM1012610,tissue: Liver Metastasis,Metastasis,Metastasis,C0253
+GSM1012611,tissue: Primary Tumor,Carcinoma,Carcinoma,C0257
+GSM1012612,tissue: Normal Colon,Normal,Normal,C0265
+GSM1012613,tissue: Normal Liver,,,C0265
+GSM1012614,tissue: Liver Metastasis,Metastasis,Metastasis,C0265
+GSM1012615,tissue: Primary Tumor,Carcinoma,Carcinoma,
+GSM1012616,tissue: Primary Tumor,Carcinoma,Carcinoma,C0275
+GSM1012617,tissue: Primary Tumor,Carcinoma,Carcinoma,C0283
+GSM1012618,tissue: Primary Tumor,Carcinoma,Carcinoma,C0285
+GSM1012619,tissue: Primary Tumor,Carcinoma,Carcinoma,C0295
+GSM1012620,tissue: Primary Tumor,Carcinoma,Carcinoma,C0297
+GSM1012621,tissue: Normal Colon,Normal,Normal,C0297
+GSM1012622,tissue: Primary Tumor,Carcinoma,Carcinoma,C0298
+GSM1012623,tissue: Polyp,Adenoma,Adenoma,C0298
+GSM1012624,tissue: Primary Tumor,Carcinoma,Carcinoma,C0312
+GSM1012625,tissue: Normal Colon,Normal,Normal,
+GSM1012626,tissue: Polyp,Adenoma,Adenoma,C0319
+GSM1012627,tissue: Primary Tumor,Carcinoma,Carcinoma,C0323
+GSM1012628,tissue: Normal Colon,Normal,Normal,
+GSM1012629,tissue: Primary Tumor,Carcinoma,Carcinoma,C0329
+GSM1012630,tissue: Normal Colon,Normal,Normal,C0329
+GSM1012631,tissue: Primary Tumor,Carcinoma,Carcinoma,C0330
+GSM1012632,tissue: Normal Liver,,,C0331
+GSM1012633,tissue: Liver Metastasis,Metastasis,Metastasis,C0331
+GSM1012634,tissue: Primary Tumor,Carcinoma,Carcinoma,C0334
+GSM1012635,tissue: Primary Tumor,Carcinoma,Carcinoma,C0353
+GSM1012636,tissue: Normal Colon,Normal,Normal,C0353
+GSM1012637,tissue: Normal Liver,,,C0353
+GSM1012638,tissue: Liver Metastasis,Metastasis,Metastasis,C0353
+GSM1012639,tissue: Primary Tumor,Carcinoma,Carcinoma,C0415
+GSM1012640,tissue: Normal Colon,Normal,Normal,C0415
+GSM1012641,tissue: Normal Liver,,,C0415
+GSM1012642,tissue: Liver Metastasis,Metastasis,Metastasis,C0415
+GSM1012643,tissue: Primary Tumor,Carcinoma,Carcinoma,C0472
+GSM1012644,tissue: Normal Liver,,,C0472
+GSM1012645,tissue: Primary Tumor,Carcinoma,Carcinoma,C0487
+GSM1012646,tissue: Normal Colon,Normal,Normal,
+GSM1012647,tissue: Primary Tumor,Carcinoma,Carcinoma,
+GSM1012648,tissue: Normal Colon,Normal,Normal,C0575
+GSM1012649,tissue: Normal Liver,,,C0575
+GSM1012650,tissue: Liver Metastasis,Metastasis,Metastasis,C0575
+GSM1012651,tissue: Primary Tumor,Carcinoma,Carcinoma,C0667
+GSM1012652,tissue: Normal Colon,Normal,Normal,C0667
+GSM1012653,tissue: Normal Colon,Normal,Normal,
+GSM1012654,tissue: Normal Liver,,,C0667
+GSM1012655,tissue: Liver Metastasis,Metastasis,Metastasis,C0667
+GSM1012656,cell line: DLD1,,,
+GSM1012657,cell line: HCT15,,,
+GSM1012658,cell line: HCT15rehyb,,,
+GSM1012659,cell line: HT29,,,
+GSM1012660,cell line: HTB39,,,
+GSM1012661,cell line: LNCap,,,
+GSM1012662,cell line: LOVO,,,
+GSM1012663,cell line: MCF7,,,
+GSM1012664,cell line: NCM460,,,
+GSM1012665,cell line: SW1116,,,
+GSM1012666,cell line: SW620,,,
+GSM1012667,cell line: WiDr,,,

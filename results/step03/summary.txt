@@ -1,0 +1,130 @@
+STEP 3 - Feature selection and PCA embedding (GSE41258)
+==================================================
+Inputs: data/processed/GSE41258_<set>_samples_qc.csv; unadjusted = step-1 expression,
+  adjusted = data/processed/GSE41258_<set>_expr_genes_adjusted.csv (step 2)
+Seed: 42 (numpy). PCA inside the validated reference function uses random_state=0;
+  checked against an exact full-SVD PCA (see 'exact SVD check' below).
+Versions: scikit-learn 1.9.1, pandas 2.3.3, numpy 2.4.6, scipy 1.17.1, gudhi 3.13.0
+
+METHOD
+  Reference function tda_crc_pilot.preprocess, unchanged: drop lowest-expressed 25% of genes
+  (by mean), keep top-N most variable, z-score per gene, PCA.
+  Gene selection and PCA were fitted on ALL samples of each set pooled, WITHOUT stage labels.
+  Stage labels were used only afterwards, to describe the embedding (tables and figures below).
+  Data were already log2 (no further transform applied).
+  Adjusted data only: host-organ signature genes removed BEFORE gene selection (PI decision
+  2026-10-03). Liver signature (step 2) = genes >= 8-fold higher in the 13 reference normal-liver
+  samples than in BOTH normal colon and primary carcinoma, organ mean >= 8 log2; metastases
+  were not used to define it. withlung also removes the lung signature (7 normal lung samples).
+  Genes removed: main 176; withlung 205; main_allarrays 176; main_inclqc 176
+  Unadjusted data: no genes removed.
+  Primary: 2000 genes, 10 PCs. Sensitivity (main set): 2000 genes/5 PCs; 2000 genes/20 PCs; 1000 genes/10 PCs; 5000 genes/10 PCs
+  Sets: main (primary; one array per patient per stage), withlung, main_allarrays, main_inclqc;
+  each unadjusted and composition-adjusted.
+
+SAMPLES PER STAGE
+  main         Normal 53, Adenoma 48, Carcinoma 181, Metastasis 39 (total 321) - verified
+  withlung     Normal 53, Adenoma 48, Carcinoma 181, Metastasis 58 (total 340) - verified
+  main_allarrays Normal 54, Adenoma 51, Carcinoma 184, Metastasis 47 (total 336) - verified
+  main_inclqc  Normal 53, Adenoma 48, Carcinoma 183, Metastasis 39 (total 323) - verified
+
+EMBEDDINGS (variance explained by all PCs; exact SVD check)
+  main         unadjusted 2000 genes 10 PCs:  57.9%  | max diff in var. ratio 6.7e-08, min |r| per PC 0.999998
+  main         unadjusted 2000 genes  5 PCs:  46.3%  | max diff in var. ratio 4.6e-12, min |r| per PC 1.000000
+  main         unadjusted 2000 genes 20 PCs:  67.5%  | max diff in var. ratio 4.0e-06, min |r| per PC 0.999395
+  main         unadjusted 1000 genes 10 PCs:  61.1%  | max diff in var. ratio 2.4e-07, min |r| per PC 0.999992
+  main         unadjusted 5000 genes 10 PCs:  53.2%  | max diff in var. ratio 1.3e-06, min |r| per PC 0.999955
+  main         adjusted   2000 genes 10 PCs:  48.0%  | max diff in var. ratio 3.8e-07, min |r| per PC 0.999984
+  main         adjusted   2000 genes  5 PCs:  38.0%  | max diff in var. ratio 3.0e-10, min |r| per PC 1.000000
+  main         adjusted   2000 genes 20 PCs:  58.7%  | max diff in var. ratio 2.7e-05, min |r| per PC 0.992270
+  main         adjusted   1000 genes 10 PCs:  49.1%  | max diff in var. ratio 2.2e-07, min |r| per PC 0.999993
+  main         adjusted   5000 genes 10 PCs:  46.4%  | max diff in var. ratio 1.5e-06, min |r| per PC 0.999909
+  withlung     unadjusted 2000 genes 10 PCs:  57.1%  | max diff in var. ratio 1.6e-08, min |r| per PC 1.000000
+  withlung     adjusted   2000 genes 10 PCs:  47.2%  | max diff in var. ratio 3.6e-07, min |r| per PC 0.999986
+  main_allarrays unadjusted 2000 genes 10 PCs:  58.3%  | max diff in var. ratio 3.5e-08, min |r| per PC 0.999999
+  main_allarrays adjusted   2000 genes 10 PCs:  48.6%  | max diff in var. ratio 1.7e-06, min |r| per PC 0.999910
+  main_inclqc  unadjusted 2000 genes 10 PCs:  58.0%  | max diff in var. ratio 3.3e-07, min |r| per PC 0.999988
+  main_inclqc  adjusted   2000 genes 10 PCs:  47.8%  | max diff in var. ratio 3.9e-08, min |r| per PC 0.999999
+  Genes passing the low-expression filter: main unadjusted 9411; main adjusted 9279; withlung unadjusted 9411; withlung adjusted 9257; main_allarrays unadjusted 9411; main_allarrays adjusted 9279; main_inclqc unadjusted 9411; main_inclqc adjusted 9279
+  Top-2,000 genes shared by unadjusted and adjusted (main): 1731/2000
+
+MAIN SET, UNADJUSTED (2,000 genes, 10 PCs)
+  Variance explained per PC (%), cumulative:
+    PC1   18.4  cum  18.4
+    PC2   13.5  cum  31.9
+    PC3    7.0  cum  38.9
+    PC4    3.8  cum  42.7
+    PC5    3.6  cum  46.3
+    PC6    3.2  cum  49.5
+    PC7    3.1  cum  52.6
+    PC8    2.0  cum  54.6
+    PC9    1.8  cum  56.5
+    PC10   1.5  cum  57.9
+  Spearman correlation of each PC with composition scores (step 2):
+           Epithelial     Stromal      Immune       Liver
+    PC1      -0.48***     0.86***     0.75***     0.08   
+    PC2      -0.53***     0.39***     0.20***    -0.23***
+    PC3      -0.13*      -0.19***     0.38***    -0.06   
+    PC4       0.40***     0.26***     0.21***    -0.48***
+    PC5      -0.12*      -0.10        0.08        0.17** 
+    PC6      -0.05       -0.02        0.51***     0.24***
+    PC7       0.13*      -0.15**      0.03        0.29***
+    PC8      -0.15**     -0.14*      -0.00       -0.30***
+    PC9      -0.14*       0.19***     0.07       -0.29***
+    PC10     -0.07        0.11*      -0.01        0.27***
+    (* p<0.05, ** p<0.01, *** p<0.001; strongest |r| per PC listed in the CSV)
+  Stage separation per PC (descriptive; Kruskal-Wallis p, stage medians):
+    PC1   p = 4.5e-27   Norm  24.93  Aden -14.74  Carc  -3.62  Meta  -6.60
+    PC2   p = 1.2e-40   Norm -24.46  Aden -20.11  Carc   9.63  Meta   6.40
+    PC3   p = 4.3e-08   Norm  -0.24  Aden   3.41  Carc   0.87  Meta -11.09
+    PC4   p = 1.6e-03   Norm   2.45  Aden  -2.39  Carc   1.63  Meta  -2.35
+    PC5   p = 4.6e-15   Norm  -6.17  Aden   5.76  Carc  -2.27  Meta   4.19
+    PC6   p = 3.9e-04   Norm  -0.73  Aden   0.68  Carc  -0.62  Meta   4.14
+    PC7   p = 1.6e-14   Norm   3.40  Aden  -7.56  Carc  -2.33  Meta   4.73
+    PC8   p = 6.0e-04   Norm  -1.32  Aden   3.12  Carc   0.02  Meta  -4.19
+    PC9   p = 1.6e-15   Norm  -1.50  Aden   1.71  Carc   1.42  Meta  -8.09
+    PC10  p = 1.4e-03   Norm  -0.12  Aden  -2.13  Carc  -0.21  Meta   2.82
+
+MAIN SET, ADJUSTED (2,000 genes, 10 PCs)
+  Variance explained per PC (%), cumulative:
+    PC1   17.8  cum  17.8
+    PC2    7.3  cum  25.1
+    PC3    5.0  cum  30.2
+    PC4    4.5  cum  34.7
+    PC5    3.3  cum  38.0
+    PC6    3.1  cum  41.0
+    PC7    2.0  cum  43.0
+    PC8    1.9  cum  44.9
+    PC9    1.6  cum  46.5
+    PC10   1.5  cum  48.0
+  Spearman correlation of each PC with composition scores (step 2):
+           Epithelial     Stromal      Immune       Liver
+    PC1      -0.14**      0.11*       0.12*      -0.32***
+    PC2      -0.01       -0.02       -0.03       -0.19***
+    PC3      -0.09       -0.02       -0.01        0.04   
+    PC4      -0.12*       0.05        0.02       -0.06   
+    PC5       0.00        0.05        0.01        0.22***
+    PC6      -0.02       -0.02        0.01       -0.38***
+    PC7      -0.06        0.02        0.01        0.39***
+    PC8       0.04       -0.03       -0.01       -0.17** 
+    PC9       0.07       -0.01       -0.02        0.11   
+    PC10     -0.02       -0.02        0.01        0.18** 
+    (* p<0.05, ** p<0.01, *** p<0.001; strongest |r| per PC listed in the CSV)
+  Stage separation per PC (descriptive; Kruskal-Wallis p, stage medians):
+    PC1   p = 3.1e-41   Norm -31.23  Aden -13.86  Carc  12.53  Meta   8.07
+    PC2   p = 2.6e-09   Norm   1.26  Aden   2.56  Carc   2.71  Meta -12.90
+    PC3   p = 3.3e-02   Norm  -0.33  Aden   1.03  Carc   3.00  Meta  -1.90
+    PC4   p = 5.6e-20   Norm  -7.67  Aden  11.38  Carc   0.28  Meta  -3.04
+    PC5   p = 1.5e-02   Norm  -0.02  Aden  -0.38  Carc  -0.06  Meta  -3.26
+    PC6   p = 4.7e-06   Norm  -0.23  Aden   3.20  Carc   1.85  Meta  -6.57
+    PC7   p = 1.1e-04   Norm   0.12  Aden  -2.31  Carc  -0.74  Meta   4.46
+    PC8   p = 1.8e-04   Norm  -1.78  Aden   3.81  Carc   0.43  Meta  -0.64
+    PC9   p = 1.5e-03   Norm   0.50  Aden  -0.63  Carc  -1.17  Meta   2.22
+    PC10  p = 1.2e-01   Norm  -0.02  Aden   1.57  Carc  -0.76  Meta   0.20
+
+Outputs:
+  results/step03/embeddings/GSE41258_<set>_<version>_g<genes>_pc<PCs>.csv   sample coordinates
+  results/step03/embeddings/..._genes.csv                                     genes used
+  results/step03/embedding_index.csv, variance_explained.csv
+  results/step03/pc_vs_composition_<set>_<version>.csv
+  results/step03/pca_main_overview.png, scree_main.png

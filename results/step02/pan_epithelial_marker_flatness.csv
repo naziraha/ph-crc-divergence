@@ -1,0 +1,22 @@
+gene,Normal,Adenoma,Carcinoma,Metastasis,range,role,used
+EPCAM,10.32,10.47,10.25,10.47,0.22,candidate,True
+CDH1,9.74,9.99,9.85,9.98,0.25,candidate,True
+KRT8,10.99,10.5,10.48,10.47,0.52,candidate,True
+KRT18,10.97,11.3,11.35,11.39,0.42,candidate,True
+KRT19,10.26,9.59,9.68,9.65,0.67,candidate,True
+CLDN3,9.35,9.35,9.07,9.38,0.31,candidate,True
+CLDN4,8.2,8.63,8.54,8.73,0.53,candidate,True
+CLDN7,9.96,9.68,9.25,8.86,1.1,candidate,False
+ELF3,9.25,9.72,9.5,9.81,0.57,candidate,True
+ESRP1,7.67,7.84,7.58,7.31,0.53,candidate,True
+SPINT1,8.14,8.2,7.81,7.78,0.42,candidate,True
+SPINT2,9.34,9.65,9.48,9.54,0.31,candidate,True
+RAB25,8.53,9.12,8.6,8.71,0.59,candidate,True
+GRHL2,6.01,6.73,6.66,6.81,0.8,candidate,True
+OVOL1,5.75,5.77,5.63,5.77,0.14,candidate,True
+PRSS8,8.55,8.03,8.03,8.33,0.52,candidate,True
+ST14,8.86,8.83,8.68,8.82,0.18,candidate,True
+CDS1,6.47,6.34,5.71,5.76,0.76,candidate,True
+TJP3,7.18,6.75,6.31,6.46,0.87,candidate,True
+KRT20,11.33,9.91,9.43,9.51,1.9,comparison (not used),False
+TACSTD2,3.93,6.31,6.07,6.78,2.86,comparison (not used),False

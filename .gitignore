@@ -1,0 +1,12 @@
+# Raw and processed expression data (large; GEO is the public source)
+data/
+
+# Python caches
+__pycache__/
+*.pyc
+
+# Office lock files and OS clutter
+~$*
+desktop.ini
+Thumbs.db
+.DS_Store

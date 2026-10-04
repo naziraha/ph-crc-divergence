@@ -1,0 +1,54 @@
+STEP 1 - Data preparation (GSE41258, GPL96)
+==================================================
+Input: data\raw\GSE41258_series_matrix.txt.gz; platform annotation GPL96 (GEOparse, data/raw/GPL96.txt)
+Labels: reference/tda_crc_pilot.py labels_from_meta (keep_micro=True)
+  metadata field used: !Sample_characteristics_ch1
+Seed: 42
+Versions: GEOparse 2.0.4, pandas 2.3.3, numpy 2.4.6, matplotlib 3.11.2, python 3.11.16
+
+Total samples in series matrix: 390
+Samples per stage, MAIN (metastasis = liver):
+  Normal        54   (expected 54)
+  Adenoma       51   (expected 51)
+  Carcinoma    186   (expected 186)
+  Metastasis    47   (expected 47)
+  total        338
+  of which adenomas labelled microadenoma: 2
+  matches expected counts: True
+Excluded samples (main version):
+  lung metastasis        20
+  normal liver           13
+  cell line              12
+  normal lung             7
+  total excluded 52
+Samples per stage, WITH-LUNG sensitivity version:
+  Normal        54
+  Adenoma       51
+  Carcinoma    186
+  Metastasis    67
+Patient ids parsed: 314/338 samples, 249 patients (main version)
+
+Probe -> gene mapping:
+  probes on platform: 22283; in matrix: 22283
+  probes with missing values dropped: 0
+  probes without gene symbol (incl. AFFX controls): 1058
+  probes mapping to >1 gene ('///'), dropped: 1405
+  single-gene probes used: 19820
+  genes after keeping highest-mean probe: main 12548, with-lung 12548
+  genes with the same chosen probe in both versions: 12530/12548
+Scale: 99th percentile before transform = 1890.0; log2 applied: True
+After processing: median log2 expression 6.09, range 0.00 to 19.01
+Per-sample medians: IQR 6.07-6.10; largest deviation from cohort median 0.08 log2 units
+  samples >3 robust SD from cohort median: 2 (GSM1012286, GSM1012494; deviations of <0.1 log2 units, kept)
+Note: gene symbols are those in the GPL96 annotation; harmonise with GPL570 /
+  RNA-seq symbols before cross-cohort comparison (step 11).
+
+Outputs:
+  data/processed/GSE41258_main_expr_genes.csv      genes x samples, log2 (main analysis)
+  data/processed/GSE41258_main_samples.csv         sample, stage, raw label, patient
+  data/processed/GSE41258_withlung_expr_genes.csv  same, lung metastases added (sensitivity)
+  data/processed/GSE41258_withlung_samples.csv
+  results/step01/all_samples_labels.csv           every sample incl. excluded
+  results/step01/excluded_samples.csv
+  results/step01/probe_to_gene_*.csv              probe chosen per gene
+  results/step01/qc_sample_distributions.png
