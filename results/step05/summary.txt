@@ -1,0 +1,56 @@
+STEP 5 - Pre-specified Wasserstein permutation test (GSE41258)
+============================================================
+Pre-specification: docs/analysis_prespecification.md, git commit 4f1f32f (2026-10-04T11:35:19+08:00)
+Inputs: results/step03/embeddings/*.csv; data/processed/GSE41258_<set>_samples_qc.csv
+Seed: 42; each unit seeded by SeedSequence(42, crc32(unit name)) -> resumable, order-free
+Versions: gudhi 3.13.0, numpy 2.4.6, scipy 1.17.1, pandas 2.3.3
+Settings: VR H0+H1, exact 1-Wasserstein, k = 20 subsamples per group, m = 80% of smallest stage, groups aligned before permuting, 999 permutations, Holm across the 3 transitions per analysis x version x mode (S9: single comparison, no Holm).
+Reference functions used unchanged: permutation_test, holm, drop_shared_patients.
+Units finished: 12/112
+
+SAMPLES PER STAGE (primary set main): Normal 53, Adenoma 48, Carcinoma 181, Metastasis 39
+
+PRIMARY ANALYSIS
+--- primary (set main, embedding g2000_pc10) ---
+  unadjusted shape-only Normal->Adenoma        n=53/48 m=31  T=  2.7775  z=  6.90  p=0.0010  p_Holm 0.0030  shared patients 6
+  unadjusted shape-only Adenoma->Carcinoma     n=48/181 m=31  T=  0.2710  z=  0.11  p=0.3580  p_Holm 0.7160  shared patients 12
+  unadjusted shape-only Carcinoma->Metastasis  n=181/39 m=31  T=  0.1818  z= -0.89  p=0.8420  p_Holm 0.8420  shared patients 4
+  unadjusted raw        Normal->Adenoma        n=53/48 m=31  T=118.8822  z=  7.24  p=0.0010  p_Holm 0.0030  shared patients 6
+  unadjusted raw        Adenoma->Carcinoma     n=48/181 m=31  T= 55.1097  z=  4.44  p=0.0040  p_Holm 0.0080  shared patients 12
+  unadjusted raw        Carcinoma->Metastasis  n=181/39 m=31  T=  5.0726  z= -1.30  p=0.9890  p_Holm 0.9890  shared patients 4
+  adjusted   shape-only Normal->Adenoma        n=53/48 m=31  T=  0.6792  z=  0.92  p=0.1600  p_Holm 0.2820  shared patients 6
+  adjusted   shape-only Adenoma->Carcinoma     n=48/181 m=31  T=  0.5756  z=  1.40  p=0.0940  p_Holm 0.2820  shared patients 12
+  adjusted   shape-only Carcinoma->Metastasis  n=181/39 m=31  T=  0.7893  z=  1.36  p=0.0990  p_Holm 0.2820  shared patients 4
+  adjusted   raw        Normal->Adenoma        n=53/48 m=31  T=142.4375  z= 10.03  p=0.0010  p_Holm 0.0030  shared patients 6
+  adjusted   raw        Adenoma->Carcinoma     n=48/181 m=31  T= 17.0271  z=  0.17  p=0.3210  p_Holm 0.6420  shared patients 12
+  adjusted   raw        Carcinoma->Metastasis  n=181/39 m=31  T= 18.4029  z= -0.27  p=0.5210  p_Holm 0.6420  shared patients 4
+
+TIPPING-POINT DECISION (pre-specified: shape-only Holm p < 0.05 in BOTH versions):
+  Normal->Adenoma          Holm p unadjusted 0.0030, adjusted 0.2820 -> significant in unadjusted only
+  Adenoma->Carcinoma       Holm p unadjusted 0.7160, adjusted 0.2820 -> not significant
+  Carcinoma->Metastasis    Holm p unadjusted 0.8420, adjusted 0.2820 -> not significant
+
+SENSITIVITY ANALYSES (descriptive support; do not replace the primary result)
+S1_withlung: not run yet
+
+S2_main_allarrays: not run yet
+
+S3_main_inclqc: not run yet
+
+S4_one_per_patient: not run yet
+
+S5_pc5: not run yet
+
+S6_pc20: not run yet
+
+S7_genes1000: not run yet
+
+S8_genes5000: not run yet
+
+S9_no_high_liver_mets: not run yet
+
+Outputs:
+  results/step05/permutation_results_all.csv   one row per unit (T, z, p, Holm p, n, m)
+  results/step05/checkpoints/<unit>.json        per-unit result incl. full null distribution
+  results/step05/step05_primary.png             primary result figure
+Resume after interruption: re-run the same command; finished units are skipped.
