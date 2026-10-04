@@ -1,0 +1,86 @@
+STEP 4 - Persistent homology profiles per stage (GSE41258, set main)
+============================================================
+Pre-specification: docs/analysis_prespecification.md, locked in git commit 4f1f32f (2026-10-04T11:35:19+08:00) before this step.
+Inputs: results/step03/embeddings/GSE41258_main_{unadjusted,adjusted}_g2000_pc10.csv
+  (adjusted embedding: liver-signature genes removed before gene selection)
+Seed: 42 (numpy default_rng, same seed for both versions -> identical subsample draws)
+Versions: gudhi 3.13.0, numpy 2.4.6, pandas 2.3.3, scipy 1.17.1, matplotlib 3.11.2
+
+SETTINGS
+  Vietoris-Rips (GUDHI RipsComplex), Euclidean distance in 10-PC space, max dimension 2, H0 and H1
+  100 subsamples per stage of m = 80% of the smallest stage, without replacement
+  raw distances and shape-only (distances / subsample median pairwise distance)
+  TSI = mean between-stage minus mean within-stage 1-Wasserstein distance, H0+H1;
+  400 random pairs (adjacent stages; 200 for all pairs), 95% CI from 500 bootstrap resamples of the pairs
+  Descriptive only - no p-values. Inference is step 5 (pre-specified permutation test).
+
+SAMPLES PER STAGE: Normal 53, Adenoma 48, Carcinoma 181, Metastasis 39 (verified)
+
+=== UNADJUSTED (subsample size m = 31) ===
+Stage spread (median pairwise distance in PC space, all samples of the stage):
+  Normal 27.8, Adenoma 31.3, Carcinoma 36.2, Metastasis 37.8
+Per-stage topology, median [IQR] over 100 subsamples:
+  shape-only:
+    stage                      H0 total                H1 total                  H1 max      H1 n loops              H1 entropy
+    Normal       14.442 [13.723-14.996]     0.106 [0.067-0.152]     0.056 [0.042-0.073]               4     1.006 [0.674-1.228]
+    Adenoma      16.591 [16.360-16.861]     0.591 [0.503-0.693]     0.131 [0.116-0.164]              10     2.063 [1.913-2.177]
+    Carcinoma    16.619 [16.024-16.941]     0.411 [0.330-0.485]     0.118 [0.094-0.137]               9     1.871 [1.637-2.031]
+    Metastasis   16.014 [15.754-16.299]     0.332 [0.262-0.414]     0.144 [0.094-0.151]               8     1.595 [1.434-1.758]
+  raw:
+    stage                      H0 total                H1 total                  H1 max      H1 n loops              H1 entropy
+    Normal     404.881 [391.081-426.784]     2.978 [1.943-4.755]     1.633 [1.204-2.346]               4     0.982 [0.661-1.298]
+    Adenoma    520.175 [506.102-531.191]  18.073 [15.581-20.634]     4.045 [3.519-5.099]              11     2.044 [1.922-2.187]
+    Carcinoma  599.346 [576.207-622.394]   12.757 [9.549-18.004]     3.757 [2.804-4.635]               8     1.816 [1.601-2.000]
+    Metastasis 600.816 [588.389-615.618]   12.536 [9.114-15.081]     4.853 [3.421-5.717]               7     1.615 [1.482-1.780]
+  Betti-1 curve (shape-only), peak mean number of loops @ scale:
+    Normal 0.6 @ 0.48, Adenoma 2.4 @ 0.69, Carcinoma 1.5 @ 0.68, Metastasis 1.6 @ 0.64
+Adjacent transitions (descriptive):
+      Normal -> Adenoma    TSI shape-only 2.502 [2.407, 2.600] (between/within 2.55) | TSI raw 106.887 [104.178, 109.507] | centroid shift 1.83 SD
+     Adenoma -> Carcinoma  TSI shape-only 0.256 [0.198, 0.323] (between/within 1.16) | TSI raw 37.979 [34.339, 41.612] | centroid shift 1.24 SD
+   Carcinoma -> Metastasis TSI shape-only 0.156 [0.105, 0.210] (between/within 1.10) | TSI raw 4.478 [2.211, 6.779] | centroid shift 0.72 SD
+All stage pairs, TSI shape-only:
+              Normal  Adenoma  Carcinoma  Metastasis
+  Normal         NaN    2.520      1.473       1.479
+  Adenoma      2.520      NaN      0.181       0.604
+  Carcinoma    1.473    0.181        NaN       0.145
+  Metastasis   1.479    0.604      0.145         NaN
+
+=== ADJUSTED (subsample size m = 31) ===
+Stage spread (median pairwise distance in PC space, all samples of the stage):
+  Normal 23.0, Adenoma 31.9, Carcinoma 33.2, Metastasis 37.4
+Per-stage topology, median [IQR] over 100 subsamples:
+  shape-only:
+    stage                      H0 total                H1 total                  H1 max      H1 n loops              H1 entropy
+    Normal       16.491 [16.249-16.885]     0.260 [0.187-0.330]     0.084 [0.069-0.099]               7     1.628 [1.377-1.772]
+    Adenoma      16.933 [16.543-17.291]     0.440 [0.354-0.514]     0.109 [0.097-0.132]              10     1.922 [1.757-2.078]
+    Carcinoma    18.257 [17.935-18.680]     0.467 [0.348-0.616]     0.111 [0.088-0.137]              10     2.018 [1.840-2.185]
+    Metastasis   16.659 [16.317-16.872]     0.430 [0.346-0.483]     0.121 [0.109-0.130]               8     1.843 [1.692-1.959]
+  raw:
+    stage                      H0 total                H1 total                  H1 max      H1 n loops              H1 entropy
+    Normal     379.942 [369.436-394.973]     6.718 [5.334-8.686]     2.069 [1.592-2.592]               7     1.644 [1.477-1.780]
+    Adenoma    540.977 [526.878-554.088]  13.841 [11.468-16.725]     3.780 [3.187-4.427]              10     1.892 [1.749-2.040]
+    Carcinoma  605.645 [584.718-637.693]  13.821 [10.466-19.703]     3.537 [2.948-4.597]              10     1.958 [1.717-2.200]
+    Metastasis 621.967 [611.407-633.021]  15.449 [13.506-17.408]     4.498 [4.059-4.823]               8     1.789 [1.638-1.947]
+  Betti-1 curve (shape-only), peak mean number of loops @ scale:
+    Normal 1.5 @ 0.64, Adenoma 2.0 @ 0.65, Carcinoma 2.0 @ 0.73, Metastasis 2.8 @ 0.66
+Adjacent transitions (descriptive):
+      Normal -> Adenoma    TSI shape-only 0.969 [0.908, 1.034] (between/within 1.67) | TSI raw 135.195 [132.698, 137.680] | centroid shift 1.30 SD
+     Adenoma -> Carcinoma  TSI shape-only 0.428 [0.356, 0.500] (between/within 1.25) | TSI raw 24.862 [21.336, 28.458] | centroid shift 1.04 SD
+   Carcinoma -> Metastasis TSI shape-only 0.772 [0.696, 0.844] (between/within 1.48) | TSI raw 12.841 [9.901, 15.689] | centroid shift 0.72 SD
+All stage pairs, TSI shape-only:
+              Normal  Adenoma  Carcinoma  Metastasis
+  Normal         NaN    0.964      0.861       0.669
+  Adenoma      0.964      NaN      0.423       0.333
+  Carcinoma    0.861    0.423        NaN       0.717
+  Metastasis   0.669    0.333      0.717         NaN
+
+Outputs:
+  results/step04/stage_topology_bootstrap_<version>.csv   per-subsample topology summaries
+  results/step04/adjacent_transitions_descriptive_<version>.json
+  results/step04/all_pairs_tsi_shape_only_<version>.csv
+  results/step04/step04_topology_<version>.png/.pdf       6-panel figure (pilot layout;
+    panel D puts raw and shape-only TSI on one axis, so shape-only bars are not visible)
+  results/step04/step04_tsi_shape_only.png                 shape-only TSI, both versions
+Note: the TSI confidence intervals resample pairs of the same 100 subsamples; they show
+  the precision of the estimate, not sampling uncertainty, and are not a significance test.
+Runtime: 15 s
