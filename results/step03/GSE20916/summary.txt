@@ -1,0 +1,96 @@
+STEP 3 - Feature selection and PCA embedding (GSE20916)
+=======================================================
+Pre-specification: addendum 1 (6ea31ea), addendum 2 (d73e5d1)
+Inputs: data/processed/GSE20916_<set>_samples_qc.csv; unadjusted = step-1 expression; adjusted / stageaware = step-2 outputs
+Seed: 42; reference preprocess (PCA random_state=0)
+Versions: scikit-learn 1.9.1, pandas 2.3.3, numpy 2.4.6, scipy 1.17.1
+
+METHOD: tda_crc_pilot.preprocess unchanged (drop lowest 25% by mean, top-N variable, z-score, PCA),
+  fitted on all analysis samples of each set pooled, WITHOUT stage labels; labels used only to describe.
+  Primary 2000 genes / 10 PCs; sensitivity 2000/5; 2000/20; 1000/10; 5000/10 (PCs capped at n-1 for 15-sample sets).
+  Versions: unadjusted; adjusted (primary, stage not in model); stageaware (secondary).
+
+SAMPLES PER STAGE (verified): bulk 24/45/36; micro_pooled 10/10/10; micro_crypt 5/5/5; micro_mucosa 5/5/5
+
+MICRO POOLING DECISION (pre-specified, unadjusted micro_pooled, 2,000 genes / 10 PCs):
+  pseudo-R2 stage       = 0.731
+  pseudo-R2 preparation = 0.129
+  -> POOL the two preparations (stage explains more).
+  (descriptive) stage pseudo-R2 within crypt epithelium 0.844, within mucosa 0.914
+
+VARIANCE EXPLAINED (10 PCs, 2,000 genes) and stage pseudo-R2 in PC space:
+  bulk          unadjusted   70.8%  PC1 25.4%  PC2 18.9%   stage R2 0.452
+  bulk          adjusted     57.5%  PC1 20.7%  PC2 11.5%   stage R2 0.187
+  bulk          stageaware   63.1%  PC1 24.1%  PC2 15.2%   stage R2 0.469
+  micro_pooled  unadjusted   96.9%  PC1 54.8%  PC2 21.0%   stage R2 0.731
+  micro_pooled  adjusted     94.3%  PC1 65.8%  PC2 10.7%   stage R2 0.508
+  micro_pooled  stageaware   97.1%  PC1 54.9%  PC2 32.6%   stage R2 0.886
+  micro_crypt   unadjusted   98.5%  PC1 59.7%  PC2 24.0%   stage R2 0.844
+  micro_crypt   adjusted     99.3%  PC1 69.6%  PC2 12.6%   stage R2 0.360
+  micro_crypt   stageaware   99.8%  PC1 63.5%  PC2 30.1%   stage R2 0.931
+  micro_mucosa  unadjusted   99.2%  PC1 69.9%  PC2 21.6%   stage R2 0.914
+  micro_mucosa  adjusted     98.5%  PC1 53.4%  PC2 13.5%   stage R2 0.033
+  micro_mucosa  stageaware   99.9%  PC1 67.6%  PC2 29.1%   stage R2 0.958
+
+BULK, unadjusted: PC vs composition (Spearman r), stage KW p, stage medians
+        Epithelial  Stromal  Immune    stage_KW_p  Normal  Adenoma  Carcinoma  var_pct
+  PC1        -0.63    -0.02   -0.09  2.724860e-16  -30.94    -0.02      22.68     25.4
+  PC2        -0.36     0.94    0.82  5.916421e-16    8.02   -18.12      13.42     18.9
+  PC3         0.03     0.16   -0.26  3.823127e-02   -0.68     7.56       3.22      9.7
+  PC4        -0.35    -0.07   -0.02  1.035359e-05   -5.23     4.24      -0.45      4.3
+  PC5        -0.14    -0.15    0.07  1.074377e-01    0.28     3.06      -1.65      3.1
+  PC6         0.06     0.15    0.14  6.948144e-01    2.47     0.04      -0.71      2.6
+  PC7         0.10    -0.02   -0.39  9.242865e-01    0.17     0.74       0.10      2.3
+  PC8         0.16     0.06   -0.17  3.118784e-02   -1.91     2.09      -0.02      1.8
+  PC9        -0.04     0.03    0.01  6.979020e-01   -0.21     0.04       1.27      1.5
+  PC10       -0.07     0.00   -0.15  8.181278e-01   -0.44     0.92       0.36      1.3
+
+BULK, adjusted: PC vs composition (Spearman r), stage KW p, stage medians
+        Epithelial  Stromal  Immune    stage_KW_p  Normal  Adenoma  Carcinoma  var_pct
+  PC1        -0.18     0.12    0.12  2.749605e-10  -13.46    -6.29      19.99     20.7
+  PC2        -0.00     0.02    0.01  2.801262e-02   -6.21     4.11       1.96     11.5
+  PC3        -0.02     0.03   -0.01  1.620235e-03   -5.04     3.08       1.97      5.7
+  PC4        -0.01     0.02    0.02  3.711163e-01   -3.13    -2.78       1.47      4.6
+  PC5         0.00    -0.05   -0.08  1.012339e-02   -1.89     0.55       0.01      3.6
+  PC6         0.05     0.02    0.05  7.610545e-01    1.04     0.80      -0.74      2.9
+  PC7        -0.08     0.03    0.04  3.846629e-01    0.52    -1.82       2.06      2.6
+  PC8        -0.07     0.07    0.03  1.529999e-01   -0.88    -0.49       1.94      2.1
+  PC9        -0.04    -0.01   -0.02  2.111932e-01   -2.24     1.63       2.39      2.0
+  PC10       -0.06    -0.02   -0.03  3.846606e-01   -1.69    -0.30       2.82      1.8
+
+BULK, stageaware: PC vs composition (Spearman r), stage KW p, stage medians
+        Epithelial  Stromal  Immune    stage_KW_p  Normal  Adenoma  Carcinoma  var_pct
+  PC1        -0.53     0.29    0.19  8.565078e-17  -21.43    -9.71      28.42     24.1
+  PC2        -0.07    -0.53   -0.54  4.200848e-16  -20.95    14.84      -5.32     15.2
+  PC3        -0.05    -0.25   -0.28  8.439861e-05   -9.40     5.33      -3.17      6.5
+  PC4         0.07    -0.13   -0.10  3.177506e-01    1.58     2.52      -1.96      4.0
+  PC5         0.01     0.17    0.18  1.052297e-01    3.95    -1.52      -0.30      3.4
+  PC6         0.10    -0.00    0.04  6.743401e-01    1.29     0.29      -1.21      2.5
+  PC7        -0.11     0.07    0.07  4.278292e-01    0.31    -1.56       1.90      2.2
+  PC8         0.08    -0.08   -0.04  3.828877e-01    0.36     0.80      -1.11      1.8
+  PC9        -0.11     0.01   -0.03  6.129754e-02   -2.60     0.56       2.02      1.7
+  PC10       -0.11    -0.02   -0.05  3.344089e-01   -1.38    -0.43       2.99      1.6
+
+MICRO_CRYPT, unadjusted: PC vs composition (Spearman r), stage KW p, stage medians
+        Epithelial  Stromal  Immune  stage_KW_p  Normal  Adenoma  Carcinoma  var_pct
+  PC1        -0.35     0.42    0.03    0.001930  -42.89    16.02      30.92     59.7
+  PC2        -0.26     0.93    0.54    0.001930    5.01   -28.09      22.74     24.0
+  PC3         0.05     0.13    0.34    0.733447   12.22    -1.18       0.75      5.4
+  PC4         0.51    -0.36   -0.72    0.852144    0.98     2.45       4.07      3.0
+  PC5         0.42    -0.03   -0.15    0.886920   -1.57    -0.71       3.23      2.2
+  PC6        -0.22    -0.09   -0.12    0.886920   -0.12     3.46       0.16      1.5
+  PC7         0.18     0.13    0.12    1.000000   -0.31    -0.51      -0.24      0.8
+  PC8        -0.30     0.04    0.21    0.970446   -0.48     0.53      -0.14      0.6
+  PC9        -0.10     0.11    0.37    0.970446   -0.81    -0.39      -0.02      0.6
+  PC10        0.19     0.00   -0.04    0.990050    1.05    -1.04      -0.86      0.6
+
+NOTE (PI): for the microdissected set, the unadjusted crypt-epithelium data are emphasised,
+  because laser capture is itself the physical purification. Adjusted micro versions are fitted
+  on 15 (per preparation) or 30 (pooled) samples with 3-5 regression terms and overfit
+  (step 2: median 48-79% of each gene's variance removed); read them with caution.
+  The microdissected set is descriptive only (addendum 1: < 13 samples per stage).
+
+Outputs:
+  results/step03/embeddings/GSE20916_<set>_<version>_g<genes>_pc<PCs>.csv (+ _genes.csv)
+  results/step03/GSE20916/embedding_index.csv, pc_vs_composition_<set>_<version>.csv,
+  results/step03/GSE20916/micro_pooling_decision.csv, pca_overview.png
