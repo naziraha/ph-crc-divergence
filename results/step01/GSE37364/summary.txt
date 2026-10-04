@@ -1,0 +1,35 @@
+STEP 1 - Data preparation (GSE37364, GPL570)
+==================================================
+Input: data/raw/GSE37364_series_matrix.txt.gz; GPL570 annotation (data/raw/GPL570.txt)
+Pre-specification: docs/analysis_prespecification_addendum_validation.md (commit 6ea31ea)
+Seed: 42
+Versions: GEOparse 2.0.4, pandas 2.3.3, numpy 2.4.6, python 3.11.16
+
+Samples in series matrix: 94
+Label -> stage mapping (all samples):
+  stage                                                            Adenoma  Carcinoma  Normal
+  set  raw_label                                                                             
+  bulk Stage: Dukes C/D                                                  0         13       0
+       disease state: Adenoma; Stage: high-grade dysplasia              13          0       0
+       disease state: Adenoma; Stage: low-grade dysplasia               16          0       0
+       disease state: Colorectal adenocarcinoma; Stage: Dukes A/B        0         14       0
+       disease state: Normal colonic mucosa                              0          0      38
+
+GPL570 probes: 54675; without symbol 8893; multi-symbol dropped 2796; single-gene probes 42986
+Probes in series matrix: 54675
+
+--- set bulk ---
+Samples per stage: Normal 38, Adenoma 29, Carcinoma 27 (total 94)
+  stages with < 13 samples (descriptive only per addendum): none
+  probes with missing values in this set (dropped): 0
+  99th percentile = 12397.20; log2 applied: True
+  genes after highest-mean probe per gene: 21655
+  per-sample median log2: IQR 7.78-7.93, range 7.47-8.22
+  patient ids: not available in GEO metadata (de-duplication / one-per-patient not possible)
+
+Samples not mapped to a stage: 0
+
+Outputs:
+  data/processed/GSE37364_<set>_expr_genes.csv   genes x samples, log2
+  data/processed/GSE37364_<set>_samples.csv      stage, original label, normal type, morphology
+  results/step01/GSE37364/all_samples_labels.csv, probe_to_gene_<set>.csv, qc_sample_distributions.png

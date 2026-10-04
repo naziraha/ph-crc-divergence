@@ -1,0 +1,44 @@
+STEP 2 - Identity screen and composition scoring (GSE37364)
+=======================================================
+Pre-specification: addendum 1 (6ea31ea) + addendum 2 (d73e5d1)
+Inputs: data/processed/GSE37364_<set>_expr_genes.csv, _samples.csv (step 1)
+Marker genes: frozen from GSE41258 (results/step02/marker_sets_used.csv)
+Seed: 42
+Versions: decoupler 2.2.0, pandas 2.3.3, numpy 2.4.6
+
+=== raw set bulk (94 samples) ===
+Identity screen (within set; flag at 3 robust SD):
+  panel medians: colon 13.36, hepatocyte 5.71, lung 5.52, mullerian 6.11
+  flagged samples: 4
+    GSM916720 [Carcinoma; disease state: Colorectal adenocarcinoma; Stage: Dukes A/B] low colon identity: colon 11.37 (z -4.5), hepatocyte z -1.9, lung z -0.3, mullerian z 0.1
+    GSM916726 [Carcinoma; disease state: Colorectal adenocarcinoma; Stage: Dukes A/B] low colon identity: colon 11.12 (z -5.1), hepatocyte z -0.7, lung z -1.8, mullerian z -0.4
+    GSM916728 [Carcinoma; disease state: Colorectal adenocarcinoma; Stage: Dukes A/B] low colon identity; high mullerian: colon 11.74 (z -3.7), hepatocyte z 1.8, lung z 1.1, mullerian z 3.7
+    GSM916733 [Carcinoma; Stage: Dukes C/D] low colon identity: colon 11.78 (z -3.6), hepatocyte z 0.0, lung z 0.6, mullerian z 1.4
+Repeat-array check (no patient ids; nearest-neighbour Pearson r, expressed genes):
+  nearest-neighbour r: median 0.9450, IQR 0.9304-0.9576, max 0.9627; flag threshold r > 0.99 and > 1.0228
+  flagged: 0
+    GSM916773 [Normal] <-> GSM916771 [Normal] r = 0.9627
+    GSM916771 [Normal] <-> GSM916773 [Normal] r = 0.9627
+    GSM916770 [Normal] <-> GSM916773 [Normal] r = 0.9621
+    GSM916761 [Normal] <-> GSM916766 [Normal] r = 0.9609
+    GSM916766 [Normal] <-> GSM916761 [Normal] r = 0.9609
+Marker genes present: Epithelial 18, Stromal 292, Immune 447  (GSE41258: Epithelial 18, Stromal 292, Immune 447)
+  sanity Epithelial vs mean(EPCAM,CDH1,KRT8): Spearman r = 0.82
+  sanity Stromal    vs mean(COL1A2,COL3A1,DCN,VWF): Spearman r = 0.92
+  sanity Immune     vs mean(PTPRC,CD3E,CD74,LCP1): Spearman r = 0.86
+  frozen pan-epithelial genes, stage-median range in this set: median 0.58, max 1.05 log2 (1 of 18 genes > 1 log2; descriptive, not re-selected)
+Median composition scores (analysis samples):
+             Epithelial  Stromal  Immune
+  stage                                 
+  Adenoma          0.02    -6.18   -7.23
+  Carcinoma       -0.94     4.75    0.83
+  Normal           1.22     0.89    3.44
+Analysis set bulk: Normal 38, Adenoma 29, Carcinoma 27 | variance removed per gene, median: primary 0.132, stage-aware 0.106; genes > 0.5: 1359 / 721
+
+Outputs:
+  results/step02/GSE37364/tissue_identity_qc_<raw>.csv, composition_scores_<raw>.csv
+  results/step02/GSE37364/pan_epithelial_medians_<raw>.csv, variance_removed_by_composition_<set>.csv
+  results/step02/GSE37364/composition_by_stage.png
+  data/processed/GSE37364_<set>_samples_qc.csv
+  data/processed/GSE37364_<set>_expr_genes_adjusted.csv (primary) and _adjusted_stageaware.csv (secondary)
+  (unadjusted expression = step-1 file restricted to the set's samples)

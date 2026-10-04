@@ -59,9 +59,32 @@ def raw_sets(gse):
                 muc = [s for s in keep if lab.loc[s, "morphology"] == "mucosa"]
                 out[raw] = (g, lab, {"micro_pooled": list(keep), "micro_crypt": crypt,
                                      "micro_mucosa": muc}, adj_n)
+    elif gse == "GSE37364":
+        g = pd.read_csv(os.path.join(PROC, f"{gse}_bulk_expr_genes.csv"), index_col=0)
+        lab = pd.read_csv(os.path.join(PROC, f"{gse}_bulk_samples.csv"), index_col=0)
+        assert list(g.columns) == list(lab.index)
+        out["bulk"] = (g, lab, {"bulk": list(lab.index)}, [])
     else:
         raise SystemExit(f"cohort {gse} not configured")
     return out
+
+
+def repeat_array_check(g, lab):
+    """No patient ids: look for near-identical arrays. Pearson r on log2 genes above the
+    25th percentile of mean expression; each sample's nearest neighbour; flag if r > 0.99
+    and > median + 4 robust SD of the nearest-neighbour distribution. Shown to the PI."""
+    m = g.mean(axis=1)
+    x = g[m > m.quantile(0.25)]
+    r = np.corrcoef(x.T.values)
+    np.fill_diagonal(r, np.nan)
+    r = pd.DataFrame(r, index=g.columns, columns=g.columns)
+    nn = r.max(axis=1)
+    nn_id = r.idxmax(axis=1)
+    thr = nn.median() + 4 * 1.4826 * (nn - nn.median()).abs().median()
+    tab = pd.DataFrame({"nearest": nn_id, "r": nn.round(4), "stage": lab["stage"],
+                        "nearest_stage": lab.loc[nn_id, "stage"].values})
+    tab["flag"] = (tab.r > 0.99) & (tab.r > thr)
+    return tab, float(thr)
 
 
 def identity_screen(g):
@@ -133,6 +156,18 @@ def main():
             lines.append(f"    {s} [{r.stage}; {r.raw_label}] {r.flag}: colon {r.colon:.2f} "
                          f"(z {r.colon_robust_z:.1f}), hepatocyte z {r.hepatocyte_robust_z:.1f}, "
                          f"lung z {r.lung_robust_z:.1f}, mullerian z {r.mullerian_robust_z:.1f}")
+        if lab.get("patient_id", pd.Series("", index=lab.index)).replace("", np.nan).isna().all():
+            rep, thr = repeat_array_check(g, lab)
+            rep.to_csv(os.path.join(out, f"repeat_array_check_{raw}.csv"), index_label="sample")
+            nn = rep.r
+            lines += ["Repeat-array check (no patient ids; nearest-neighbour Pearson r, expressed genes):",
+                      f"  nearest-neighbour r: median {nn.median():.4f}, IQR {nn.quantile(.25):.4f}-{nn.quantile(.75):.4f}, "
+                      f"max {nn.max():.4f}; flag threshold r > 0.99 and > {thr:.4f}",
+                      f"  flagged: {int(rep.flag.sum())}"]
+            top = rep.sort_values("r", ascending=False).head(5)
+            for s, rr in top.iterrows():
+                lines.append(f"    {s} [{rr.stage}] <-> {rr.nearest} [{rr.nearest_stage}] r = {rr.r:.4f}"
+                             f"{'  FLAG' if rr.flag else ''}")
         centre = asets["micro_pooled"] if raw == "micro" else asets[raw]
         sc, sizes = scores(g, centre)
         sc.insert(0, "stage", lab["stage"])
@@ -182,7 +217,7 @@ def main():
                            f"stage-aware {v2.median():.3f}; genes > 0.5: {int((v1 > .5).sum())} / {int((v2 > .5).sum())}")
         lines.append("")
 
-    fig, axes = plt.subplots(len(all_scores), 3, figsize=(13, 3.6 * len(all_scores)))
+    fig, axes = plt.subplots(len(all_scores), 3, figsize=(13, 3.6 * len(all_scores)), squeeze=False)
     rng = np.random.default_rng(SEED)
     for row, (raw, sc) in enumerate(all_scores):
         d = sc.copy()

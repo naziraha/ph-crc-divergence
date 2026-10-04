@@ -1,0 +1,95 @@
+sample,raw_label,stage,normal_type,morphology,protocol,title,grade_or_dukes,set
+GSM916687,disease state: Adenoma; Stage: high-grade dysplasia,Adenoma,,,biopsy,AH1,high-grade dysplasia,bulk
+GSM916688,disease state: Adenoma; Stage: high-grade dysplasia,Adenoma,,,biopsy,AH10,high-grade dysplasia,bulk
+GSM916689,disease state: Adenoma; Stage: high-grade dysplasia,Adenoma,,,biopsy,AH11,high-grade dysplasia,bulk
+GSM916690,disease state: Adenoma; Stage: high-grade dysplasia,Adenoma,,,biopsy,AH12,high-grade dysplasia,bulk
+GSM916691,disease state: Adenoma; Stage: high-grade dysplasia,Adenoma,,,biopsy,AH13,high-grade dysplasia,bulk
+GSM916692,disease state: Adenoma; Stage: high-grade dysplasia,Adenoma,,,biopsy,AH2,high-grade dysplasia,bulk
+GSM916693,disease state: Adenoma; Stage: high-grade dysplasia,Adenoma,,,biopsy,AH3,high-grade dysplasia,bulk
+GSM916694,disease state: Adenoma; Stage: high-grade dysplasia,Adenoma,,,biopsy,AH4,high-grade dysplasia,bulk
+GSM916695,disease state: Adenoma; Stage: high-grade dysplasia,Adenoma,,,biopsy,AH5,high-grade dysplasia,bulk
+GSM916696,disease state: Adenoma; Stage: high-grade dysplasia,Adenoma,,,biopsy,AH6,high-grade dysplasia,bulk
+GSM916697,disease state: Adenoma; Stage: high-grade dysplasia,Adenoma,,,biopsy,AH7,high-grade dysplasia,bulk
+GSM916698,disease state: Adenoma; Stage: high-grade dysplasia,Adenoma,,,biopsy,AH8,high-grade dysplasia,bulk
+GSM916699,disease state: Adenoma; Stage: high-grade dysplasia,Adenoma,,,biopsy,AH9,high-grade dysplasia,bulk
+GSM916700,disease state: Adenoma; Stage: low-grade dysplasia,Adenoma,,,biopsy,AL1,low-grade dysplasia,bulk
+GSM916701,disease state: Adenoma; Stage: low-grade dysplasia,Adenoma,,,biopsy,AL10,low-grade dysplasia,bulk
+GSM916702,disease state: Adenoma; Stage: low-grade dysplasia,Adenoma,,,biopsy,AL11,low-grade dysplasia,bulk
+GSM916703,disease state: Adenoma; Stage: low-grade dysplasia,Adenoma,,,biopsy,AL12,low-grade dysplasia,bulk
+GSM916704,disease state: Adenoma; Stage: low-grade dysplasia,Adenoma,,,biopsy,AL13,low-grade dysplasia,bulk
+GSM916705,disease state: Adenoma; Stage: low-grade dysplasia,Adenoma,,,biopsy,AL14,low-grade dysplasia,bulk
+GSM916706,disease state: Adenoma; Stage: low-grade dysplasia,Adenoma,,,biopsy,AL15,low-grade dysplasia,bulk
+GSM916707,disease state: Adenoma; Stage: low-grade dysplasia,Adenoma,,,biopsy,AL16,low-grade dysplasia,bulk
+GSM916708,disease state: Adenoma; Stage: low-grade dysplasia,Adenoma,,,biopsy,AL2,low-grade dysplasia,bulk
+GSM916709,disease state: Adenoma; Stage: low-grade dysplasia,Adenoma,,,biopsy,AL3,low-grade dysplasia,bulk
+GSM916710,disease state: Adenoma; Stage: low-grade dysplasia,Adenoma,,,biopsy,AL4,low-grade dysplasia,bulk
+GSM916711,disease state: Adenoma; Stage: low-grade dysplasia,Adenoma,,,biopsy,AL5,low-grade dysplasia,bulk
+GSM916712,disease state: Adenoma; Stage: low-grade dysplasia,Adenoma,,,biopsy,AL6,low-grade dysplasia,bulk
+GSM916713,disease state: Adenoma; Stage: low-grade dysplasia,Adenoma,,,biopsy,AL7,low-grade dysplasia,bulk
+GSM916714,disease state: Adenoma; Stage: low-grade dysplasia,Adenoma,,,biopsy,AL8,low-grade dysplasia,bulk
+GSM916715,disease state: Adenoma; Stage: low-grade dysplasia,Adenoma,,,biopsy,AL9,low-grade dysplasia,bulk
+GSM916716,disease state: Colorectal adenocarcinoma; Stage: Dukes A/B,Carcinoma,,,biopsy,CRC_AB1,Dukes A/B,bulk
+GSM916717,disease state: Colorectal adenocarcinoma; Stage: Dukes A/B,Carcinoma,,,biopsy,CRC_AB10,Dukes A/B,bulk
+GSM916718,disease state: Colorectal adenocarcinoma; Stage: Dukes A/B,Carcinoma,,,biopsy,CRC_AB11,Dukes A/B,bulk
+GSM916719,disease state: Colorectal adenocarcinoma; Stage: Dukes A/B,Carcinoma,,,biopsy,CRC_AB12,Dukes A/B,bulk
+GSM916720,disease state: Colorectal adenocarcinoma; Stage: Dukes A/B,Carcinoma,,,biopsy,CRC_AB13,Dukes A/B,bulk
+GSM916721,disease state: Colorectal adenocarcinoma; Stage: Dukes A/B,Carcinoma,,,biopsy,CRC_AB14,Dukes A/B,bulk
+GSM916722,disease state: Colorectal adenocarcinoma; Stage: Dukes A/B,Carcinoma,,,biopsy,CRC_AB2,Dukes A/B,bulk
+GSM916723,disease state: Colorectal adenocarcinoma; Stage: Dukes A/B,Carcinoma,,,biopsy,CRC_AB3,Dukes A/B,bulk
+GSM916724,disease state: Colorectal adenocarcinoma; Stage: Dukes A/B,Carcinoma,,,biopsy,CRC_AB4,Dukes A/B,bulk
+GSM916725,disease state: Colorectal adenocarcinoma; Stage: Dukes A/B,Carcinoma,,,biopsy,CRC_AB5,Dukes A/B,bulk
+GSM916726,disease state: Colorectal adenocarcinoma; Stage: Dukes A/B,Carcinoma,,,biopsy,CRC_AB6,Dukes A/B,bulk
+GSM916727,disease state: Colorectal adenocarcinoma; Stage: Dukes A/B,Carcinoma,,,biopsy,CRC_AB7,Dukes A/B,bulk
+GSM916728,disease state: Colorectal adenocarcinoma; Stage: Dukes A/B,Carcinoma,,,biopsy,CRC_AB8,Dukes A/B,bulk
+GSM916729,disease state: Colorectal adenocarcinoma; Stage: Dukes A/B,Carcinoma,,,biopsy,CRC_AB9,Dukes A/B,bulk
+GSM916730,Stage: Dukes C/D,Carcinoma,,,biopsy,CRC_CD1,Dukes C/D,bulk
+GSM916731,Stage: Dukes C/D,Carcinoma,,,biopsy,CRC_CD10,Dukes C/D,bulk
+GSM916732,Stage: Dukes C/D,Carcinoma,,,biopsy,CRC_CD11,Dukes C/D,bulk
+GSM916733,Stage: Dukes C/D,Carcinoma,,,biopsy,CRC_CD12,Dukes C/D,bulk
+GSM916734,Stage: Dukes C/D,Carcinoma,,,biopsy,CRC_CD13,Dukes C/D,bulk
+GSM916735,Stage: Dukes C/D,Carcinoma,,,biopsy,CRC_CD2,Dukes C/D,bulk
+GSM916736,Stage: Dukes C/D,Carcinoma,,,biopsy,CRC_CD3,Dukes C/D,bulk
+GSM916737,Stage: Dukes C/D,Carcinoma,,,biopsy,CRC_CD4,Dukes C/D,bulk
+GSM916738,Stage: Dukes C/D,Carcinoma,,,biopsy,CRC_CD5,Dukes C/D,bulk
+GSM916739,Stage: Dukes C/D,Carcinoma,,,biopsy,CRC_CD6,Dukes C/D,bulk
+GSM916740,Stage: Dukes C/D,Carcinoma,,,biopsy,CRC_CD7,Dukes C/D,bulk
+GSM916741,Stage: Dukes C/D,Carcinoma,,,biopsy,CRC_CD8,Dukes C/D,bulk
+GSM916742,Stage: Dukes C/D,Carcinoma,,,biopsy,CRC_CD9,Dukes C/D,bulk
+GSM916743,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N1,,bulk
+GSM916744,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N10,,bulk
+GSM916745,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N11,,bulk
+GSM916746,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N12,,bulk
+GSM916747,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N13,,bulk
+GSM916748,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N14,,bulk
+GSM916749,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N15,,bulk
+GSM916750,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N16,,bulk
+GSM916751,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N17,,bulk
+GSM916752,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N18,,bulk
+GSM916753,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N19,,bulk
+GSM916754,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N2,,bulk
+GSM916755,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N20,,bulk
+GSM916756,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N21,,bulk
+GSM916757,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N22,,bulk
+GSM916758,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N23,,bulk
+GSM916759,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N24,,bulk
+GSM916760,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N25,,bulk
+GSM916761,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N26,,bulk
+GSM916762,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N27,,bulk
+GSM916763,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N28,,bulk
+GSM916764,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N29,,bulk
+GSM916765,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N3,,bulk
+GSM916766,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N30,,bulk
+GSM916767,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N31,,bulk
+GSM916768,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N32,,bulk
+GSM916769,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N33,,bulk
+GSM916770,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N34,,bulk
+GSM916771,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N35,,bulk
+GSM916772,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N36,,bulk
+GSM916773,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N37,,bulk
+GSM916774,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N38,,bulk
+GSM916775,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N4,,bulk
+GSM916776,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N5,,bulk
+GSM916777,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N6,,bulk
+GSM916778,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N7,,bulk
+GSM916779,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N8,,bulk
+GSM916780,disease state: Normal colonic mucosa,Normal,patient without neoplasia,,biopsy,N9,,bulk

@@ -75,7 +75,24 @@ def samples_where(series, value):
     return list(series.index[series == value])
 
 
-COHORTS = {"GSE20916": labels_gse20916}
+def labels_gse37364(meta, samples):
+    """One bulk set. Stage from 'disease state'; the 13 Dukes C/D carcinomas carry only
+    'Stage: Dukes C/D' in that field and are mapped to Carcinoma. Grade/Dukes recorded."""
+    title = pd.Series(meta["!Sample_title"][0], index=samples)
+    c0 = pd.Series(meta["!Sample_characteristics_ch1"][0], index=samples)
+    c1 = pd.Series(meta["!Sample_characteristics_ch1"][1], index=samples)
+    mapping = {"disease state: Normal colonic mucosa": "Normal", "disease state: Adenoma": "Adenoma",
+               "disease state: Colorectal adenocarcinoma": "Carcinoma", "Stage: Dukes C/D": "Carcinoma"}
+    stage = c0.map(mapping)
+    grade = np.where(c0 == "Stage: Dukes C/D", "Dukes C/D", c1.str.replace("Stage: ", "", regex=False))
+    label = c0 + np.where(c1 != "", "; " + c1, "")
+    extra = pd.DataFrame({"normal_type": np.where(stage == "Normal", "patient without neoplasia", ""),
+                          "morphology": np.nan, "protocol": "biopsy", "title": title,
+                          "grade_or_dukes": grade}, index=samples)
+    return stage, label, {"bulk": samples}, extra
+
+
+COHORTS = {"GSE20916": labels_gse20916, "GSE37364": labels_gse37364}
 
 
 def collapse_to_genes(expr, probe2gene):
@@ -139,7 +156,9 @@ def main():
             e = np.log2(e.clip(lower=1))
         genes, pick = collapse_to_genes(e, probe2gene)
         genes.index.name = "gene"
-        tab = all_tab.loc[ids, ["stage", "raw_label", "normal_type", "morphology", "protocol", "title"]]
+        keep_cols = ["stage", "raw_label", "normal_type", "morphology", "protocol", "title"] + \
+            [c for c in ("grade_or_dukes",) if c in all_tab.columns]
+        tab = all_tab.loc[ids, keep_cols]
         tab["patient_id"] = ""            # no patient identifier in GEO metadata
         genes.to_csv(os.path.join(PROC, f"{gse}_{name}_expr_genes.csv"), float_format="%.5f")
         tab.to_csv(os.path.join(PROC, f"{gse}_{name}_samples.csv"), index_label="sample")
