@@ -1,0 +1,76 @@
+STEP 2 - Identity screen and composition scoring (GSE20916)
+=======================================================
+Pre-specification: addendum 1 (6ea31ea) + addendum 2 (d73e5d1)
+Inputs: data/processed/GSE20916_<set>_expr_genes.csv, _samples.csv (step 1)
+Marker genes: frozen from GSE41258 (results/step02/marker_sets_used.csv)
+Seed: 42
+Versions: decoupler 2.2.0, pandas 2.3.3, numpy 2.4.6
+
+=== raw set bulk (105 samples) ===
+Identity screen (within set; flag at 3 robust SD):
+  panel medians: colon 11.22, hepatocyte 5.98, lung 3.55, mullerian 3.59
+  flagged samples: 15
+    GSM523284 [Carcinoma; tissue: adenocarcinoma] high mullerian: colon 10.19 (z -2.5), hepatocyte z -1.7, lung z -2.1, mullerian z 4.0
+    GSM523285 [Carcinoma; tissue: adenocarcinoma] high lung: colon 10.79 (z -1.1), hepatocyte z -1.3, lung z 4.9, mullerian z 1.9
+    GSM523289 [Normal; tissue: normal colon] high mullerian: colon 10.26 (z -2.4), hepatocyte z -1.2, lung z -2.9, mullerian z 3.2
+    GSM523310 [Normal; tissue: normal colon] low colon identity; high mullerian: colon 9.63 (z -3.9), hepatocyte z -1.1, lung z -2.3, mullerian z 4.6
+    GSM523317 [Carcinoma; tissue: adenocarcinoma] high mullerian: colon 10.65 (z -1.4), hepatocyte z 0.9, lung z -0.2, mullerian z 3.1
+    GSM523323 [Carcinoma; tissue: adenocarcinoma] low colon identity: colon 9.79 (z -3.5), hepatocyte z -0.3, lung z -1.3, mullerian z 1.4
+    GSM523332 [Carcinoma; tissue: adenocarcinoma] high mullerian: colon 10.58 (z -1.6), hepatocyte z -1.1, lung z 1.2, mullerian z 3.0
+    GSM523355 [Adenoma; tissue: adenoma] high lung: colon 11.42 (z 0.5), hepatocyte z -0.2, lung z 4.1, mullerian z -0.5
+    GSM523359 [Carcinoma; tissue: adenocarcinoma] high mullerian: colon 10.61 (z -1.5), hepatocyte z -0.2, lung z -1.5, mullerian z 3.5
+    GSM523360 [Normal; tissue: normal colon] high lung: colon 12.06 (z 2.1), hepatocyte z -1.3, lung z 3.5, mullerian z -0.6
+    GSM523363 [Adenoma; tissue: adenoma] high lung: colon 11.24 (z 0.0), hepatocyte z 0.3, lung z 5.4, mullerian z -0.9
+    GSM523366 [Carcinoma; tissue: adenocarcinoma] high hepatocyte; high mullerian: colon 10.84 (z -1.0), hepatocyte z 3.5, lung z -0.6, mullerian z 6.8
+    GSM523374 [Adenoma; tissue: adenoma] high lung: colon 11.14 (z -0.2), hepatocyte z -2.6, lung z 6.1, mullerian z -0.5
+    GSM523379 [Carcinoma; tissue: adenocarcinoma] high lung: colon 11.27 (z 0.1), hepatocyte z -0.3, lung z 4.1, mullerian z -0.3
+    GSM523386 [Adenoma; tissue: adenoma] high lung: colon 11.19 (z -0.1), hepatocyte z 0.2, lung z 9.0, mullerian z -0.2
+Marker genes present: Epithelial 17, Stromal 256, Immune 360  (GSE41258: Epithelial 18, Stromal 292, Immune 447)
+  sanity Epithelial vs mean(CDH1,KRT8): Spearman r = 0.72
+  sanity Stromal    vs mean(COL1A2,COL3A1,DCN,VWF): Spearman r = 0.88
+  sanity Immune     vs mean(PTPRC,CD3E,CD74,LCP1): Spearman r = 0.86
+  frozen pan-epithelial genes, stage-median range in this set: median 0.77, max 1.56 log2 (3 of 17 genes > 1 log2; descriptive, not re-selected)
+Median composition scores (analysis samples):
+             Epithelial  Stromal  Immune
+  stage                                 
+  Adenoma          0.56    -8.94   -8.07
+  Carcinoma       -1.19     6.06    3.79
+  Normal           2.57     2.80    6.85
+Analysis set bulk: Normal 24, Adenoma 45, Carcinoma 36 | variance removed per gene, median: primary 0.230, stage-aware 0.186; genes > 0.5: 1056 / 920
+
+=== raw set micro (40 samples) ===
+Identity screen (within set; flag at 3 robust SD):
+  panel medians: colon 12.72, hepatocyte 7.31, lung 4.39, mullerian 5.89
+  flagged samples: 2
+    GSM523245 [Normal; malignacy: normal colon; morphology: colonic crypt epithelial cells] high hepatocyte: colon 12.89 (z 0.5), hepatocyte z 4.3, lung z -1.9, mullerian z -0.6
+    GSM523274 [Normal; malignacy: normal colon; morphology: mucosa] high lung; high mullerian: colon 13.36 (z 1.8), hepatocyte z -0.1, lung z 4.7, mullerian z 3.3
+Marker genes present: Epithelial 18, Stromal 234, Immune 324  (GSE41258: Epithelial 18, Stromal 292, Immune 447)
+  sanity Epithelial vs mean(EPCAM,CDH1,KRT8): Spearman r = 0.31
+  sanity Stromal    vs mean(COL1A2,COL3A1,DCN,VWF): Spearman r = 0.92
+  sanity Immune     vs mean(PTPRC,CD74,LCP1): Spearman r = 0.82
+  frozen pan-epithelial genes, stage-median range in this set: median 0.70, max 3.13 log2 (4 of 18 genes > 1 log2; descriptive, not re-selected)
+Median composition scores (analysis samples):
+                                            Epithelial  Stromal  Immune
+  stage     morphology                                                 
+  Adenoma   colonic crypt epithelial cells        0.64   -17.54  -11.36
+            mucosa                               -0.74     2.21    6.25
+  Carcinoma colonic crypt epithelial cells       -0.15    -1.84   -8.80
+            mucosa                                0.33    16.00    3.29
+  Normal    colonic crypt epithelial cells        0.74   -11.88   -8.08
+            mucosa                               -0.04     9.24   13.67
+Adjacent normals (descriptive only, not used for fitting):
+                                  Epithelial  Stromal  Immune
+  morphology                                                 
+  colonic crypt epithelial cells        2.71   -10.23   -3.29
+  mucosa                                2.12    10.02   15.23
+Analysis set micro_pooled: Normal 10, Adenoma 10, Carcinoma 10 | variance removed per gene, median: primary 0.471, stage-aware 0.353; genes > 0.5: 5728 / 4723
+Analysis set micro_crypt: Normal 5, Adenoma 5, Carcinoma 5 | variance removed per gene, median: primary 0.476, stage-aware 0.629; genes > 0.5: 5769 / 7049
+Analysis set micro_mucosa: Normal 5, Adenoma 5, Carcinoma 5 | variance removed per gene, median: primary 0.789, stage-aware 0.649; genes > 0.5: 10722 / 7260
+
+Outputs:
+  results/step02/GSE20916/tissue_identity_qc_<raw>.csv, composition_scores_<raw>.csv
+  results/step02/GSE20916/pan_epithelial_medians_<raw>.csv, variance_removed_by_composition_<set>.csv
+  results/step02/GSE20916/composition_by_stage.png
+  data/processed/GSE20916_<set>_samples_qc.csv
+  data/processed/GSE20916_<set>_expr_genes_adjusted.csv (primary) and _adjusted_stageaware.csv (secondary)
+  (unadjusted expression = step-1 file restricted to the set's samples)
