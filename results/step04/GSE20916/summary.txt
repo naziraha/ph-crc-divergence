@@ -1,0 +1,65 @@
+STEP 4 - Persistent homology profiles per stage (GSE20916; descriptive)
+============================================================
+Pre-specification: addendum 1 (6ea31ea), addendum 2 (d73e5d1); deviation D4 (ac2a591)
+Inputs: results/step03/embeddings/<GSE>_<set>_<version>_g2000_pc10.csv
+Seed: 42
+Versions: gudhi 3.13.0, numpy 2.4.6, pandas 2.3.3, scipy 1.17.1
+Settings: Vietoris-Rips (GUDHI), Euclidean in 10-PC space, max dimension 2, H0 and H1; raw and shape-only.
+  Bulk: 100 subsamples per stage of m = 80% of the smallest stage (frozen rule). TSI = mean between - mean
+  within W1 (H0+H1), 400 pairs, 95% CI from 500 pair resamples (precision, not a test).
+  Micro (D4): one diagram per stage on all samples; W1 between stage diagrams. No test.
+
+=== bulk (bulk; Normal 24, Adenoma 45, Carcinoma 36) ===
+--- unadjusted (m = 19) ---
+  stage spread (median pairwise distance): Normal 30.7, Adenoma 31.6, Carcinoma 44.6
+  shape-only per stage, median [IQR]:  H1 total | H1 n loops
+    Normal     0.028 [0.000-0.032] | 1
+    Adenoma    0.128 [0.056-0.191] | 3
+    Carcinoma  0.222 [0.147-0.316] | 4
+     Normal -> Adenoma   TSI shape-only 1.567 [1.505, 1.623] | TSI raw 48.84 [46.53, 51.25] | centroid shift 1.83 SD
+    Adenoma -> Carcinoma TSI shape-only 0.520 [0.458, 0.584] | TSI raw 102.37 [99.72, 105.29] | centroid shift 1.31 SD
+--- adjusted (m = 19) ---
+  stage spread (median pairwise distance): Normal 34.9, Adenoma 37.8, Carcinoma 47.9
+  shape-only per stage, median [IQR]:  H1 total | H1 n loops
+    Normal     0.069 [0.050-0.118] | 2
+    Adenoma    0.199 [0.131-0.268] | 4
+    Carcinoma  0.150 [0.087-0.248] | 4
+     Normal -> Adenoma   TSI shape-only 0.764 [0.716, 0.820] | TSI raw 42.49 [39.61, 45.43] | centroid shift 0.62 SD
+    Adenoma -> Carcinoma TSI shape-only 0.057 [0.022, 0.100] | TSI raw 69.05 [65.56, 72.41] | centroid shift 0.81 SD
+--- stageaware (m = 19) ---
+  stage spread (median pairwise distance): Normal 27.4, Adenoma 32.4, Carcinoma 42.1
+  shape-only per stage, median [IQR]:  H1 total | H1 n loops
+    Normal     0.042 [0.011-0.076] | 1
+    Adenoma    0.164 [0.117-0.252] | 4
+    Carcinoma  0.172 [0.101-0.286] | 4
+     Normal -> Adenoma   TSI shape-only 0.608 [0.559, 0.658] | TSI raw 55.40 [52.87, 57.85] | centroid shift 1.77 SD
+    Adenoma -> Carcinoma TSI shape-only 0.028 [-0.014, 0.071] | TSI raw 64.52 [61.61, 67.46] | centroid shift 1.47 SD
+
+=== Microdissected sets (D4: one diagram per stage, all samples; descriptive) ===
+--- micro_pooled ---
+  unadjusted  shape-only W1 between stage diagrams: N-A 1.764, A-C 1.432, N-C 0.943 | H1 loops N/A/C 1/1/2 | spread N/A/C 48.4/34.5/25.1
+  adjusted    shape-only W1 between stage diagrams: N-A 1.932, A-C 1.561, N-C 1.307 | H1 loops N/A/C 0/2/1 | spread N/A/C 44.2/45.5/40.2
+  stageaware  shape-only W1 between stage diagrams: N-A 0.821, A-C 0.792, N-C 1.504 | H1 loops N/A/C 1/1/2 | spread N/A/C 21.3/25.1/14.4
+--- micro_crypt ---
+  unadjusted  shape-only W1 between stage diagrams: N-A 1.150, A-C 0.712, N-C 0.553 | H1 loops N/A/C 0/1/0 | spread N/A/C 36.5/22.6/19.0
+  adjusted    shape-only W1 between stage diagrams: N-A 0.526, A-C 0.556, N-C 0.357 | H1 loops N/A/C 0/0/0 | spread N/A/C 63.1/43.2/46.8
+  stageaware  shape-only W1 between stage diagrams: N-A 0.863, A-C 0.570, N-C 0.544 | H1 loops N/A/C 0/0/0 | spread N/A/C 24.6/16.2/13.5
+--- micro_mucosa ---
+  unadjusted  shape-only W1 between stage diagrams: N-A 0.523, A-C 0.681, N-C 0.380 | H1 loops N/A/C 0/0/0 | spread N/A/C 14.6/27.1/14.2
+  adjusted    shape-only W1 between stage diagrams: N-A 0.541, A-C 0.605, N-C 0.207 | H1 loops N/A/C 0/0/0 | spread N/A/C 56.0/78.5/51.9
+  stageaware  shape-only W1 between stage diagrams: N-A 1.737, A-C 1.866, N-C 0.266 | H1 loops N/A/C 1/0/0 | spread N/A/C 11.1/12.5/11.1
+  Caution: 5-10 points per diagram; H1 loops need >= 4 points, so loop counts are near-uninformative.
+  Adjusted micro versions overfit (step 2); unadjusted crypt epithelium is the emphasised view.
+
+=== Within-stage spread, crypt epithelium, unadjusted (D4b; 2,000 genes, 10 PCs; descriptive) ===
+  Normal     median pairwise distance  36.49 (range 13.8-44.4); distance to centroid median 20.45 (range 14.3-26.6)
+  Adenoma    median pairwise distance  22.56 (range 12.4-36.2); distance to centroid median 13.93 (range 12.8-25.7)
+  Carcinoma  median pairwise distance  18.97 (range 8.8-24.9); distance to centroid median 12.03 (range 8.8-15.4)
+  Ratio adenoma/normal (median pairwise): 0.62; carcinoma/normal: 0.52
+
+Outputs:
+  results/step04/GSE20916/step04_topology_bulk_<version>.png, step04_tsi_shape_only_bulk.png
+  results/step04/GSE20916/stage_topology_bootstrap_bulk_<version>.csv, adjacent_transitions_descriptive_*.json
+  results/step04/GSE20916/micro_stage_diagrams_summary.csv
+  results/step04/GSE20916/crypt_unadjusted_within_stage_spread.csv, crypt_within_stage_spread.png
+Runtime: 14 s

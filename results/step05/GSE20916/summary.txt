@@ -1,0 +1,84 @@
+STEP 5 - Pre-specified permutation test (GSE20916, set bulk)
+============================================================
+Pre-specification: addendum 1 (6ea31ea), addendum 2 (d73e5d1)
+Seed 42 (per-unit SeedSequence, resumable); gudhi 3.13.0, numpy 2.4.6, scipy 1.17.1
+Settings: VR H0+H1, exact W1, k=20, m = 80% of smallest stage, aligned, 999 permutations, Holm across 2 transitions per analysis x version x mode.
+Samples per stage: Normal 24, Adenoma 45, Carcinoma 36
+Units finished: 60/60
+
+--- primary (g2000_pc10) ---
+  unadjusted  shape-only Normal->Adenoma      n=24/45 m=19  T=   1.5343  z=  4.27  p=0.0030  p_Holm 0.0060
+  unadjusted  shape-only Adenoma->Carcinoma   n=45/36 m=19  T=   0.6857  z=  4.32  p=0.0030  p_Holm 0.0060
+  unadjusted  raw        Normal->Adenoma      n=24/45 m=19  T=  58.1609  z=  3.14  p=0.0120  p_Holm 0.0120
+  unadjusted  raw        Adenoma->Carcinoma   n=45/36 m=19  T= 108.1713  z=  9.57  p=0.0010  p_Holm 0.0020
+  adjusted    shape-only Normal->Adenoma      n=24/45 m=19  T=   0.8319  z=  2.42  p=0.0270  p_Holm 0.0540
+  adjusted    shape-only Adenoma->Carcinoma   n=45/36 m=19  T=   0.1320  z= -0.11  p=0.4360  p_Holm 0.4360
+  adjusted    raw        Normal->Adenoma      n=24/45 m=19  T=  37.6409  z=  1.43  p=0.0930  p_Holm 0.0930
+  adjusted    raw        Adenoma->Carcinoma   n=45/36 m=19  T=  78.9537  z=  6.29  p=0.0030  p_Holm 0.0060
+  stageaware  shape-only Normal->Adenoma      n=24/45 m=19  T=   0.5060  z=  1.45  p=0.0990  p_Holm 0.1980
+  stageaware  shape-only Adenoma->Carcinoma   n=45/36 m=19  T=   0.0679  z= -0.70  p=0.7310  p_Holm 0.7310
+  stageaware  raw        Normal->Adenoma      n=24/45 m=19  T=  51.7765  z=  3.22  p=0.0120  p_Holm 0.0120
+  stageaware  raw        Adenoma->Carcinoma   n=45/36 m=19  T=  74.2881  z=  6.30  p=0.0010  p_Holm 0.0020
+  TIPPING-POINT DECISION (shape-only Holm p < 0.05 in BOTH unadjusted and adjusted):
+    Normal->Adenoma      unadjusted 0.0060, adjusted 0.0540 -> significant in unadjusted only   [secondary stage-aware: 0.1980]
+    Adenoma->Carcinoma   unadjusted 0.0060, adjusted 0.4360 -> significant in unadjusted only   [secondary stage-aware: 0.7310]
+  SECONDARY REPLICATION (Normal->Adenoma raw Holm p < 0.05 in both): unadjusted 0.0120, adjusted 0.0930 -> not replicated
+
+--- S5_pc5 (g2000_pc5) ---
+  unadjusted  shape-only Normal->Adenoma      n=24/45 m=19  T=   2.1452  z=  5.73  p=0.0010  p_Holm 0.0020
+  unadjusted  shape-only Adenoma->Carcinoma   n=45/36 m=19  T=   0.4173  z=  2.03  p=0.0490  p_Holm 0.0490
+  unadjusted  raw        Normal->Adenoma      n=24/45 m=19  T=  56.7756  z=  3.65  p=0.0060  p_Holm 0.0060
+  unadjusted  raw        Adenoma->Carcinoma   n=45/36 m=19  T=  80.7264  z=  9.57  p=0.0010  p_Holm 0.0020
+  adjusted    shape-only Normal->Adenoma      n=24/45 m=19  T=   0.3575  z= -0.10  p=0.4640  p_Holm 0.9280
+  adjusted    shape-only Adenoma->Carcinoma   n=45/36 m=19  T=   0.0891  z= -0.38  p=0.5660  p_Holm 0.9280
+  adjusted    raw        Normal->Adenoma      n=24/45 m=19  T=  21.4581  z=  0.23  p=0.3250  p_Holm 0.3250
+  adjusted    raw        Adenoma->Carcinoma   n=45/36 m=19  T=  25.4882  z=  1.97  p=0.0520  p_Holm 0.1040
+  stageaware  shape-only Normal->Adenoma      n=24/45 m=19  T=   0.8114  z=  2.94  p=0.0160  p_Holm 0.0320
+  stageaware  shape-only Adenoma->Carcinoma   n=45/36 m=19  T=   0.2007  z=  0.76  p=0.1890  p_Holm 0.1890
+  stageaware  raw        Normal->Adenoma      n=24/45 m=19  T=  34.3953  z=  2.50  p=0.0250  p_Holm 0.0250
+  stageaware  raw        Adenoma->Carcinoma   n=45/36 m=19  T=  42.2677  z=  5.28  p=0.0030  p_Holm 0.0060
+
+--- S6_pc20 (g2000_pc20) ---
+  unadjusted  shape-only Normal->Adenoma      n=24/45 m=19  T=   1.5218  z=  5.00  p=0.0010  p_Holm 0.0020
+  unadjusted  shape-only Adenoma->Carcinoma   n=45/36 m=19  T=   0.5154  z=  3.06  p=0.0140  p_Holm 0.0140
+  unadjusted  raw        Normal->Adenoma      n=24/45 m=19  T=  60.4916  z=  2.58  p=0.0270  p_Holm 0.0270
+  unadjusted  raw        Adenoma->Carcinoma   n=45/36 m=19  T= 164.1729  z= 12.16  p=0.0010  p_Holm 0.0020
+  adjusted    shape-only Normal->Adenoma      n=24/45 m=19  T=   0.6791  z=  1.61  p=0.0660  p_Holm 0.1320
+  adjusted    shape-only Adenoma->Carcinoma   n=45/36 m=19  T=   0.1411  z= -0.12  p=0.4430  p_Holm 0.4430
+  adjusted    raw        Normal->Adenoma      n=24/45 m=19  T=  65.9222  z=  2.81  p=0.0200  p_Holm 0.0200
+  adjusted    raw        Adenoma->Carcinoma   n=45/36 m=19  T= 116.1656  z=  7.01  p=0.0010  p_Holm 0.0020
+  stageaware  shape-only Normal->Adenoma      n=24/45 m=19  T=   0.3869  z=  0.67  p=0.1990  p_Holm 0.3980
+  stageaware  shape-only Adenoma->Carcinoma   n=45/36 m=19  T=   0.1298  z= -0.28  p=0.5040  p_Holm 0.5040
+  stageaware  raw        Normal->Adenoma      n=24/45 m=19  T=  79.5659  z=  4.47  p=0.0040  p_Holm 0.0040
+  stageaware  raw        Adenoma->Carcinoma   n=45/36 m=19  T= 108.6541  z=  7.18  p=0.0010  p_Holm 0.0020
+
+--- S7_genes1000 (g1000_pc10) ---
+  unadjusted  shape-only Normal->Adenoma      n=24/45 m=19  T=   1.6704  z=  4.50  p=0.0010  p_Holm 0.0020
+  unadjusted  shape-only Adenoma->Carcinoma   n=45/36 m=19  T=   0.3689  z=  1.89  p=0.0610  p_Holm 0.0610
+  unadjusted  raw        Normal->Adenoma      n=24/45 m=19  T=  48.1597  z=  4.00  p=0.0040  p_Holm 0.0040
+  unadjusted  raw        Adenoma->Carcinoma   n=45/36 m=19  T=  75.5096  z= 10.12  p=0.0010  p_Holm 0.0020
+  adjusted    shape-only Normal->Adenoma      n=24/45 m=19  T=   1.0763  z=  3.85  p=0.0030  p_Holm 0.0060
+  adjusted    shape-only Adenoma->Carcinoma   n=45/36 m=19  T=   0.1180  z= -0.28  p=0.5230  p_Holm 0.5230
+  adjusted    raw        Normal->Adenoma      n=24/45 m=19  T=  36.9788  z=  2.48  p=0.0270  p_Holm 0.0270
+  adjusted    raw        Adenoma->Carcinoma   n=45/36 m=19  T=  44.8528  z=  4.27  p=0.0060  p_Holm 0.0120
+  stageaware  shape-only Normal->Adenoma      n=24/45 m=19  T=   0.5609  z=  2.00  p=0.0450  p_Holm 0.0900
+  stageaware  shape-only Adenoma->Carcinoma   n=45/36 m=19  T=   0.0818  z= -0.50  p=0.6400  p_Holm 0.6400
+  stageaware  raw        Normal->Adenoma      n=24/45 m=19  T=  46.8832  z=  4.85  p=0.0040  p_Holm 0.0080
+  stageaware  raw        Adenoma->Carcinoma   n=45/36 m=19  T=  41.3878  z=  4.88  p=0.0050  p_Holm 0.0080
+
+--- S8_genes5000 (g5000_pc10) ---
+  unadjusted  shape-only Normal->Adenoma      n=24/45 m=19  T=   1.5534  z=  4.17  p=0.0030  p_Holm 0.0060
+  unadjusted  shape-only Adenoma->Carcinoma   n=45/36 m=19  T=   0.4483  z=  2.06  p=0.0460  p_Holm 0.0460
+  unadjusted  raw        Normal->Adenoma      n=24/45 m=19  T=  67.6702  z=  1.76  p=0.0570  p_Holm 0.0570
+  unadjusted  raw        Adenoma->Carcinoma   n=45/36 m=19  T= 199.3232  z= 12.30  p=0.0010  p_Holm 0.0020
+  adjusted    shape-only Normal->Adenoma      n=24/45 m=19  T=   0.8814  z=  2.64  p=0.0250  p_Holm 0.0500
+  adjusted    shape-only Adenoma->Carcinoma   n=45/36 m=19  T=   0.0927  z= -0.42  p=0.5680  p_Holm 0.5680
+  adjusted    raw        Normal->Adenoma      n=24/45 m=19  T=  68.4473  z=  1.86  p=0.0590  p_Holm 0.0590
+  adjusted    raw        Adenoma->Carcinoma   n=45/36 m=19  T= 146.1814  z=  6.84  p=0.0020  p_Holm 0.0040
+  stageaware  shape-only Normal->Adenoma      n=24/45 m=19  T=   0.9640  z=  4.49  p=0.0030  p_Holm 0.0060
+  stageaware  shape-only Adenoma->Carcinoma   n=45/36 m=19  T=   0.0532  z= -0.75  p=0.7610  p_Holm 0.7610
+  stageaware  raw        Normal->Adenoma      n=24/45 m=19  T=  77.0995  z=  3.52  p=0.0120  p_Holm 0.0120
+  stageaware  raw        Adenoma->Carcinoma   n=45/36 m=19  T= 146.9589  z=  7.45  p=0.0010  p_Holm 0.0020
+
+Outputs: results/step05/<GSE>/permutation_results_all.csv, checkpoints/<unit>.json, step05_primary.png
+Resume after interruption: re-run the same command.
