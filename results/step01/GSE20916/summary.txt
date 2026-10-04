@@ -1,0 +1,56 @@
+STEP 1 - Data preparation (GSE20916, GPL570)
+==================================================
+Input: data/raw/GSE20916_series_matrix.txt.gz; GPL570 annotation (data/raw/GPL570.txt)
+Pre-specification: docs/analysis_prespecification_addendum_validation.md (commit 6ea31ea)
+Seed: 42
+Versions: GEOparse 2.0.4, pandas 2.3.3, numpy 2.4.6, python 3.11.16
+
+Samples in series matrix: 145
+Label -> stage mapping (all samples):
+  stage                                                                              Adenoma  Carcinoma  Normal
+  set   raw_label                                                                                              
+  bulk  tissue: adenocarcinoma                                                             0         36       0
+        tissue: adenoma                                                                   45          0       0
+        tissue: normal colon                                                               0          0      24
+  micro malignacy: adenoma; morphology: colonic crypt epithelial cells                     5          0       0
+        malignacy: adenoma; morphology: mucosa                                             5          0       0
+        malignacy: carcinoma; morphology: colonic crypt epithelial cells                   0          5       0
+        malignacy: carcinoma; morphology: mucosa                                           0          5       0
+        malignacy: distant normal colon; morphology: colonic crypt epithelial cells        0          0       5
+        malignacy: distant normal colon; morphology: mucosa                                0          0       5
+        malignacy: normal colon; morphology: colonic crypt epithelial cells                0          0       5
+        malignacy: normal colon; morphology: mucosa                                        0          0       5
+
+GPL570 probes: 54675; without symbol 8893; multi-symbol dropped 2796; single-gene probes 42986
+Probes in series matrix: 27697
+
+--- set micro ---
+Samples per stage: Normal 20, Adenoma 10, Carcinoma 10 (total 40)
+  by morphology x stage:
+    stage                           Normal  Adenoma  Carcinoma
+    morphology                                                
+    colonic crypt epithelial cells      10        5          5
+    mucosa                              10        5          5
+  normal type: adjacent to tumour 10, distant 10
+  stages with < 13 samples (descriptive only per addendum): Adenoma, Carcinoma
+  probes with missing values in this set (dropped): 3695
+  99th percentile = 14.73; log2 applied: False
+  genes after highest-mean probe per gene: 12701
+  per-sample median log2: IQR 8.61-8.82, range 8.29-9.05
+  patient ids: not available in GEO metadata (de-duplication / one-per-patient not possible)
+
+--- set bulk ---
+Samples per stage: Normal 24, Adenoma 45, Carcinoma 36 (total 105)
+  stages with < 13 samples (descriptive only per addendum): none
+  probes with missing values in this set (dropped): 2287
+  99th percentile = 12.39; log2 applied: False
+  genes after highest-mean probe per gene: 12921
+  per-sample median log2: IQR 6.68-6.90, range 6.51-7.08
+  patient ids: not available in GEO metadata (de-duplication / one-per-patient not possible)
+
+Samples not mapped to a stage: 0
+
+Outputs:
+  data/processed/GSE20916_<set>_expr_genes.csv   genes x samples, log2
+  data/processed/GSE20916_<set>_samples.csv      stage, original label, normal type, morphology
+  results/step01/GSE20916/all_samples_labels.csv, probe_to_gene_<set>.csv, qc_sample_distributions.png

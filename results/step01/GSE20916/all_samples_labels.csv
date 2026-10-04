@@ -1,0 +1,146 @@
+sample,raw_label,stage,normal_type,morphology,protocol,title,set
+GSM523242,malignacy: normal colon; morphology: mucosa,Normal,adjacent to tumour,mucosa,,mucosa_normal_colon_1 (micro),micro
+GSM523243,malignacy: normal colon; morphology: mucosa,Normal,adjacent to tumour,mucosa,,mucosa_normal_colon_2 (micro),micro
+GSM523244,malignacy: adenoma; morphology: mucosa,Adenoma,,mucosa,,mucosa_adenoma_3 (micro),micro
+GSM523245,malignacy: normal colon; morphology: colonic crypt epithelial cells,Normal,adjacent to tumour,colonic crypt epithelial cells,,colonic_crypt_epithelial_cells_normal_colon_4 (micro),micro
+GSM523246,malignacy: normal colon; morphology: mucosa,Normal,adjacent to tumour,mucosa,,mucosa_normal_colon_5 (micro),micro
+GSM523247,malignacy: adenoma; morphology: mucosa,Adenoma,,mucosa,,mucosa_adenoma_6 (micro),micro
+GSM523248,malignacy: carcinoma; morphology: mucosa,Carcinoma,,mucosa,,mucosa_carcinoma_7 (micro),micro
+GSM523249,malignacy: carcinoma; morphology: mucosa,Carcinoma,,mucosa,,mucosa_carcinoma_8 (micro),micro
+GSM523250,malignacy: carcinoma; morphology: mucosa,Carcinoma,,mucosa,,mucosa_carcinoma_9 (micro),micro
+GSM523251,malignacy: adenoma; morphology: mucosa,Adenoma,,mucosa,,mucosa_adenoma_10 (micro),micro
+GSM523252,malignacy: adenoma; morphology: mucosa,Adenoma,,mucosa,,mucosa_adenoma_11 (micro),micro
+GSM523253,malignacy: carcinoma; morphology: mucosa,Carcinoma,,mucosa,,mucosa_carcinoma_12 (micro),micro
+GSM523254,malignacy: adenoma; morphology: colonic crypt epithelial cells,Adenoma,,colonic crypt epithelial cells,,colonic_crypt_epithelial_cells_adenoma_13 (micro),micro
+GSM523255,malignacy: normal colon; morphology: colonic crypt epithelial cells,Normal,adjacent to tumour,colonic crypt epithelial cells,,colonic_crypt_epithelial_cells_normal_colon_14 (micro),micro
+GSM523256,malignacy: adenoma; morphology: colonic crypt epithelial cells,Adenoma,,colonic crypt epithelial cells,,colonic_crypt_epithelial_cells_adenoma_15 (micro),micro
+GSM523257,malignacy: carcinoma; morphology: colonic crypt epithelial cells,Carcinoma,,colonic crypt epithelial cells,,colonic_crypt_epithelial_cells_carcinoma_16 (micro),micro
+GSM523258,malignacy: carcinoma; morphology: colonic crypt epithelial cells,Carcinoma,,colonic crypt epithelial cells,,colonic_crypt_epithelial_cells_carcinoma_17 (micro),micro
+GSM523259,malignacy: adenoma; morphology: colonic crypt epithelial cells,Adenoma,,colonic crypt epithelial cells,,colonic_crypt_epithelial_cells_adenoma_18 (micro),micro
+GSM523260,malignacy: normal colon; morphology: colonic crypt epithelial cells,Normal,adjacent to tumour,colonic crypt epithelial cells,,colonic_crypt_epithelial_cells_normal_colon_19 (micro),micro
+GSM523261,malignacy: adenoma; morphology: colonic crypt epithelial cells,Adenoma,,colonic crypt epithelial cells,,colonic_crypt_epithelial_cells_adenoma_20 (micro),micro
+GSM523262,malignacy: carcinoma; morphology: colonic crypt epithelial cells,Carcinoma,,colonic crypt epithelial cells,,colonic_crypt_epithelial_cells_carcinoma_21 (micro),micro
+GSM523263,malignacy: carcinoma; morphology: colonic crypt epithelial cells,Carcinoma,,colonic crypt epithelial cells,,colonic_crypt_epithelial_cells_carcinoma_22 (micro),micro
+GSM523264,malignacy: distant normal colon; morphology: colonic crypt epithelial cells,Normal,distant,colonic crypt epithelial cells,,colonic_crypt_epithelial_cells_distant_normal_colon_23 (micro),micro
+GSM523265,malignacy: distant normal colon; morphology: colonic crypt epithelial cells,Normal,distant,colonic crypt epithelial cells,,colonic_crypt_epithelial_cells_distant_normal_colon_24 (micro),micro
+GSM523266,malignacy: distant normal colon; morphology: colonic crypt epithelial cells,Normal,distant,colonic crypt epithelial cells,,colonic_crypt_epithelial_cells_distant_normal_colon_25 (micro),micro
+GSM523267,malignacy: distant normal colon; morphology: colonic crypt epithelial cells,Normal,distant,colonic crypt epithelial cells,,colonic_crypt_epithelial_cells_distant_normal_colon_26 (micro),micro
+GSM523268,malignacy: distant normal colon; morphology: mucosa,Normal,distant,mucosa,,mucosa_distant_normal_colon_27 (micro),micro
+GSM523269,malignacy: distant normal colon; morphology: mucosa,Normal,distant,mucosa,,mucosa_distant_normal_colon_28 (micro),micro
+GSM523270,malignacy: distant normal colon; morphology: mucosa,Normal,distant,mucosa,,mucosa_distant_normal_colon_29 (micro),micro
+GSM523271,malignacy: distant normal colon; morphology: mucosa,Normal,distant,mucosa,,mucosa_distant_normal_colon_30 (micro),micro
+GSM523272,malignacy: normal colon; morphology: colonic crypt epithelial cells,Normal,adjacent to tumour,colonic crypt epithelial cells,,colonic_crypt_epithelial_cells_normal_colon_31 (micro),micro
+GSM523273,malignacy: normal colon; morphology: mucosa,Normal,adjacent to tumour,mucosa,,mucosa_normal_colon_32 (micro),micro
+GSM523274,malignacy: normal colon; morphology: mucosa,Normal,adjacent to tumour,mucosa,,mucosa_normal_colon_33 (micro),micro
+GSM523275,malignacy: carcinoma; morphology: mucosa,Carcinoma,,mucosa,,mucosa_carcinoma_34 (micro),micro
+GSM523276,malignacy: normal colon; morphology: colonic crypt epithelial cells,Normal,adjacent to tumour,colonic crypt epithelial cells,,colonic_crypt_epithelial_cells_normal_colon_35 (micro),micro
+GSM523277,malignacy: adenoma; morphology: colonic crypt epithelial cells,Adenoma,,colonic crypt epithelial cells,,colonic_crypt_epithelial_cells_adenoma_36 (micro),micro
+GSM523278,malignacy: carcinoma; morphology: colonic crypt epithelial cells,Carcinoma,,colonic crypt epithelial cells,,colonic_crypt_epithelial_cells_carcinoma_37 (micro),micro
+GSM523279,malignacy: distant normal colon; morphology: colonic crypt epithelial cells,Normal,distant,colonic crypt epithelial cells,,colonic_crypt_epithelial_cells_distant_normal_colon_38 (micro),micro
+GSM523280,malignacy: distant normal colon; morphology: mucosa,Normal,distant,mucosa,,mucosa_distant_normal_colon_39 (micro),micro
+GSM523281,malignacy: adenoma; morphology: mucosa,Adenoma,,mucosa,,mucosa_adenoma_40 (micro),micro
+GSM523282,tissue: normal colon,Normal,not stated,,surgery,normal_colon_1 (macro),bulk
+GSM523283,tissue: adenocarcinoma,Carcinoma,,,surgery,adenocarcinoma_2,bulk
+GSM523284,tissue: adenocarcinoma,Carcinoma,,,surgery,adenocarcinoma_3,bulk
+GSM523285,tissue: adenocarcinoma,Carcinoma,,,surgery,adenocarcinoma_4,bulk
+GSM523286,tissue: normal colon,Normal,not stated,,colonoscopy,normal_colon_5 (macro),bulk
+GSM523287,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_6,bulk
+GSM523288,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_7,bulk
+GSM523289,tissue: normal colon,Normal,not stated,,surgery,normal_colon_8 (macro),bulk
+GSM523290,tissue: normal colon,Normal,not stated,,colonoscopy,normal_colon_9 (macro),bulk
+GSM523291,tissue: normal colon,Normal,not stated,,surgery,normal_colon_10 (macro),bulk
+GSM523292,tissue: adenocarcinoma,Carcinoma,,,surgery,adenocarcinoma_11,bulk
+GSM523293,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_12,bulk
+GSM523294,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_13,bulk
+GSM523295,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_14,bulk
+GSM523296,tissue: adenocarcinoma,Carcinoma,,,surgery,adenocarcinoma_15,bulk
+GSM523297,tissue: normal colon,Normal,not stated,,surgery,normal_colon_16 (macro),bulk
+GSM523298,tissue: adenocarcinoma,Carcinoma,,,surgery,adenocarcinoma_17,bulk
+GSM523299,tissue: normal colon,Normal,not stated,,colonoscopy,normal_colon_18 (macro),bulk
+GSM523300,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_19,bulk
+GSM523301,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_20,bulk
+GSM523302,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_21,bulk
+GSM523303,tissue: adenocarcinoma,Carcinoma,,,surgery,adenocarcinoma_22,bulk
+GSM523304,tissue: normal colon,Normal,not stated,,surgery,normal_colon_23 (macro),bulk
+GSM523305,tissue: adenocarcinoma,Carcinoma,,,surgery,adenocarcinoma_24,bulk
+GSM523306,tissue: adenocarcinoma,Carcinoma,,,surgery,adenocarcinoma_25,bulk
+GSM523307,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_26,bulk
+GSM523308,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_27,bulk
+GSM523309,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_28,bulk
+GSM523310,tissue: normal colon,Normal,not stated,,surgery,normal_colon_29 (macro),bulk
+GSM523311,tissue: normal colon,Normal,not stated,,surgery,normal_colon_30 (macro),bulk
+GSM523312,tissue: adenocarcinoma,Carcinoma,,,surgery,adenocarcinoma_31,bulk
+GSM523313,tissue: adenocarcinoma,Carcinoma,,,surgery,adenocarcinoma_32,bulk
+GSM523314,tissue: normal colon,Normal,not stated,,colonoscopy,normal_colon_33 (macro),bulk
+GSM523315,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_34,bulk
+GSM523316,tissue: adenocarcinoma,Carcinoma,,,surgery,adenocarcinoma_35,bulk
+GSM523317,tissue: adenocarcinoma,Carcinoma,,,surgery,adenocarcinoma_36,bulk
+GSM523318,tissue: adenocarcinoma,Carcinoma,,,surgery,adenocarcinoma_37,bulk
+GSM523319,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_38,bulk
+GSM523320,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_39,bulk
+GSM523321,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_40,bulk
+GSM523322,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_41,bulk
+GSM523323,tissue: adenocarcinoma,Carcinoma,,,surgery,adenocarcinoma_42,bulk
+GSM523324,tissue: normal colon,Normal,not stated,,surgery,normal_colon_43 (macro),bulk
+GSM523325,tissue: adenocarcinoma,Carcinoma,,,surgery,adenocarcinoma_44,bulk
+GSM523326,tissue: adenocarcinoma,Carcinoma,,,surgery,adenocarcinoma_45,bulk
+GSM523327,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_46,bulk
+GSM523328,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_47,bulk
+GSM523329,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_48,bulk
+GSM523330,tissue: normal colon,Normal,not stated,,surgery,normal_colon_49 (macro),bulk
+GSM523331,tissue: adenocarcinoma,Carcinoma,,,surgery,adenocarcinoma_50,bulk
+GSM523332,tissue: adenocarcinoma,Carcinoma,,,surgery,adenocarcinoma_51,bulk
+GSM523333,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_52,bulk
+GSM523334,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_53,bulk
+GSM523335,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_54,bulk
+GSM523336,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_55,bulk
+GSM523337,tissue: adenocarcinoma,Carcinoma,,,surgery,adenocarcinoma_56,bulk
+GSM523338,tissue: normal colon,Normal,not stated,,surgery,normal_colon_57 (macro),bulk
+GSM523339,tissue: adenocarcinoma,Carcinoma,,,surgery,adenocarcinoma_58,bulk
+GSM523340,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_59,bulk
+GSM523341,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_60,bulk
+GSM523342,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_61,bulk
+GSM523343,tissue: normal colon,Normal,not stated,,surgery,normal_colon_62 (macro),bulk
+GSM523344,tissue: adenocarcinoma,Carcinoma,,,surgery,adenocarcinoma_63,bulk
+GSM523345,tissue: adenocarcinoma,Carcinoma,,,surgery,adenocarcinoma_64,bulk
+GSM523346,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_65,bulk
+GSM523347,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_66,bulk
+GSM523348,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_67,bulk
+GSM523349,tissue: normal colon,Normal,not stated,,surgery,normal_colon_68 (macro),bulk
+GSM523350,tissue: adenocarcinoma,Carcinoma,,,surgery,adenocarcinoma_69,bulk
+GSM523351,tissue: adenocarcinoma,Carcinoma,,,surgery,adenocarcinoma_70,bulk
+GSM523352,tissue: adenocarcinoma,Carcinoma,,,surgery,adenocarcinoma_71,bulk
+GSM523353,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_72,bulk
+GSM523354,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_73,bulk
+GSM523355,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_74,bulk
+GSM523356,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_75,bulk
+GSM523357,tissue: adenocarcinoma,Carcinoma,,,surgery,adenocarcinoma_76,bulk
+GSM523358,tissue: normal colon,Normal,not stated,,surgery,normal_colon_77 (macro),bulk
+GSM523359,tissue: adenocarcinoma,Carcinoma,,,surgery,adenocarcinoma_78,bulk
+GSM523360,tissue: normal colon,Normal,not stated,,colonoscopy,normal_colon_79 (macro),bulk
+GSM523361,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_80,bulk
+GSM523362,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_81,bulk
+GSM523363,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_82,bulk
+GSM523364,tissue: normal colon,Normal,not stated,,surgery,normal_colon_83 (macro),bulk
+GSM523365,tissue: normal colon,Normal,not stated,,surgery,normal_colon_84 (macro),bulk
+GSM523366,tissue: adenocarcinoma,Carcinoma,,,surgery,adenocarcinoma_85,bulk
+GSM523367,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_86,bulk
+GSM523368,tissue: adenocarcinoma,Carcinoma,,,surgery,adenocarcinoma_87,bulk
+GSM523369,tissue: normal colon,Normal,not stated,,colonoscopy,normal_colon_88 (macro),bulk
+GSM523370,tissue: adenocarcinoma,Carcinoma,,,surgery,adenocarcinoma_89,bulk
+GSM523371,tissue: adenocarcinoma,Carcinoma,,,surgery,adenocarcinoma_90,bulk
+GSM523372,tissue: adenocarcinoma,Carcinoma,,,surgery,adenocarcinoma_91,bulk
+GSM523373,tissue: normal colon,Normal,not stated,,colonoscopy,normal_colon_92 (macro),bulk
+GSM523374,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_93,bulk
+GSM523375,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_94,bulk
+GSM523376,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_95,bulk
+GSM523377,tissue: normal colon,Normal,not stated,,surgery,normal_colon_96 (macro),bulk
+GSM523378,tissue: adenocarcinoma,Carcinoma,,,surgery,adenocarcinoma_97,bulk
+GSM523379,tissue: adenocarcinoma,Carcinoma,,,surgery,adenocarcinoma_98,bulk
+GSM523380,tissue: adenocarcinoma,Carcinoma,,,surgery,adenocarcinoma_99,bulk
+GSM523381,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_100,bulk
+GSM523382,tissue: normal colon,Normal,not stated,,surgery,normal_colon_101 (macro),bulk
+GSM523383,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_102,bulk
+GSM523384,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_103,bulk
+GSM523385,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_104,bulk
+GSM523386,tissue: adenoma,Adenoma,,,colonoscopy,adenoma_105,bulk
