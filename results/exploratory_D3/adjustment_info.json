@@ -1,0 +1,6 @@
+{
+  "var_removed_median": 0.09562928262098837,
+  "genes_var_removed_gt_half": 389,
+  "pca_var": 0.49219962677996465,
+  "liver_genes_removed": 176
+}

@@ -33,7 +33,8 @@ STAGES3 = ["Normal", "Adenoma", "Carcinoma"]
 TRANS = [("Normal", "Adenoma"), ("Adenoma", "Carcinoma")]
 VERSIONS = ("unadjusted", "adjusted", "stageaware")
 EMB = os.path.join(ROOT, "results", "step03", "embeddings")
-COHORT = {"GSE20916": {"set": "bulk", "expected": {"Normal": 24, "Adenoma": 45, "Carcinoma": 36}}}
+COHORT = {"GSE20916": {"set": "bulk", "expected": {"Normal": 24, "Adenoma": 45, "Carcinoma": 36}},
+          "GSE37364": {"set": "bulk", "expected": {"Normal": 38, "Adenoma": 29, "Carcinoma": 27}}}
 ANALYSES = {"primary": "g2000_pc10", "S5_pc5": "g2000_pc5", "S6_pc20": "g2000_pc20",
             "S7_genes1000": "g1000_pc10", "S8_genes5000": "g5000_pc10"}
 

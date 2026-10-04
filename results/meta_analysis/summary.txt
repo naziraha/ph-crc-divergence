@@ -1,0 +1,28 @@
+SECONDARY META-ANALYSIS (addendum 3, commit d38db92)
+============================================================
+Shape-only Normal -> Adenoma permutation z-scores; DerSimonian-Laird random effects;
+within-cohort variance 1. Written after GSE41258 and GSE20916 had been analysed:
+an informed summary, not an independent confirmation. Does not define a tipping point.
+GSE41258 stage-aware input = exploratory analysis D3.
+statsmodels 0.15.0
+
+--- unadjusted ---
+  GSE41258  z =  6.90  (per-cohort Holm p 0.0030)  RE weight 33.3%
+  GSE20916  z =  4.27  (per-cohort Holm p 0.0060)  RE weight 33.3%
+  GSE37364  z =  1.75  (per-cohort Holm p 0.1020)  RE weight 33.3%
+  pooled z (RE) = 4.31 [95% CI 1.39, 7.22], p = 0.0038; tau2 = 5.62; Q = 13.25 (p 0.001); I2 = 85%
+
+--- adjusted ---
+  GSE41258  z =  0.92  (per-cohort Holm p 0.2820)  RE weight 33.3%
+  GSE20916  z =  2.42  (per-cohort Holm p 0.0540)  RE weight 33.3%
+  GSE37364  z =  3.43  (per-cohort Holm p 0.0100)  RE weight 33.3%
+  pooled z (RE) = 2.26 [95% CI 0.83, 3.68], p = 0.0019; tau2 = 0.59; Q = 3.17 (p 0.205); I2 = 37%
+
+--- stageaware ---
+  GSE41258  z = -0.11  (per-cohort Holm p 0.5010)  RE weight 33.3%
+  GSE20916  z =  1.45  (per-cohort Holm p 0.1980)  RE weight 33.3%
+  GSE37364  z =  2.83  (per-cohort Holm p 0.0180)  RE weight 33.3%
+  pooled z (RE) = 1.39 [95% CI -0.28, 3.06], p = 0.1; tau2 = 1.17; Q = 4.34 (p 0.114); I2 = 54%
+
+Caution: 3 cohorts only; tau2 and I2 are imprecise.
+Outputs: results/meta_analysis/meta_inputs.csv, meta_results.csv, forest_NA_shape.png

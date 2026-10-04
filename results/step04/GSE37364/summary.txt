@@ -1,0 +1,41 @@
+STEP 4 - Persistent homology profiles per stage (GSE37364; descriptive)
+============================================================
+Pre-specification: addendum 1 (6ea31ea), addendum 2 (d73e5d1); deviation D4 (ac2a591)
+Inputs: results/step03/embeddings/<GSE>_<set>_<version>_g2000_pc10.csv
+Seed: 42
+Versions: gudhi 3.13.0, numpy 2.4.6, pandas 2.3.3, scipy 1.17.1
+Settings: Vietoris-Rips (GUDHI), Euclidean in 10-PC space, max dimension 2, H0 and H1; raw and shape-only.
+  Bulk: 100 subsamples per stage of m = 80% of the smallest stage (frozen rule). TSI = mean between - mean
+  within W1 (H0+H1), 400 pairs, 95% CI from 500 pair resamples (precision, not a test).
+  Micro (D4): one diagram per stage on all samples; W1 between stage diagrams. No test.
+
+=== bulk (bulk; Normal 38, Adenoma 29, Carcinoma 27) ===
+--- unadjusted (m = 21) ---
+  stage spread (median pairwise distance): Normal 18.1, Adenoma 32.9, Carcinoma 43.0
+  shape-only per stage, median [IQR]:  H1 total | H1 n loops
+    Normal     0.147 [0.091-0.216] | 3
+    Adenoma    0.089 [0.046-0.121] | 2
+    Carcinoma  0.258 [0.171-0.314] | 5
+     Normal -> Adenoma   TSI shape-only 1.308 [1.215, 1.410] | TSI raw 125.30 [123.32, 127.25] | centroid shift 1.79 SD
+    Adenoma -> Carcinoma TSI shape-only 1.188 [1.134, 1.239] | TSI raw 110.74 [108.17, 113.30] | centroid shift 1.01 SD
+--- adjusted (m = 21) ---
+  stage spread (median pairwise distance): Normal 22.8, Adenoma 33.1, Carcinoma 42.7
+  shape-only per stage, median [IQR]:  H1 total | H1 n loops
+    Normal     0.178 [0.117-0.242] | 4
+    Adenoma    0.195 [0.137-0.252] | 4
+    Carcinoma  0.220 [0.156-0.276] | 5
+     Normal -> Adenoma   TSI shape-only 1.516 [1.426, 1.618] | TSI raw 124.34 [122.32, 126.57] | centroid shift 0.79 SD
+    Adenoma -> Carcinoma TSI shape-only 0.374 [0.333, 0.409] | TSI raw 100.07 [97.79, 102.53] | centroid shift 0.63 SD
+--- stageaware (m = 21) ---
+  stage spread (median pairwise distance): Normal 18.8, Adenoma 30.3, Carcinoma 40.5
+  shape-only per stage, median [IQR]:  H1 total | H1 n loops
+    Normal     0.196 [0.129-0.290] | 4
+    Adenoma    0.139 [0.081-0.209] | 4
+    Carcinoma  0.250 [0.154-0.352] | 5
+     Normal -> Adenoma   TSI shape-only 1.598 [1.484, 1.725] | TSI raw 139.16 [137.30, 140.98] | centroid shift 1.63 SD
+    Adenoma -> Carcinoma TSI shape-only 0.187 [0.155, 0.221] | TSI raw 80.30 [78.16, 82.34] | centroid shift 1.01 SD
+
+Outputs:
+  results/step04/GSE37364/step04_topology_bulk_<version>.png, step04_tsi_shape_only_bulk.png
+  results/step04/GSE37364/stage_topology_bootstrap_bulk_<version>.csv, adjacent_transitions_descriptive_*.json
+Runtime: 8 s

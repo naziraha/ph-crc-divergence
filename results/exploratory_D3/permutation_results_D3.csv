@@ -1,0 +1,7 @@
+unit,version,transition,mode,n_from,n_to,subsample_size,T_obs,p,z,seconds,p_holm
+D3_stageaware__N-A__shape,stageaware (exploratory D3),Normal->Adenoma,shape-only,53,48,31,0.5138214532689043,0.501,-0.11104812476465833,151.8,0.501
+D3_stageaware__A-C__shape,stageaware (exploratory D3),Adenoma->Carcinoma,shape-only,48,181,31,0.48510831494019047,0.161,0.8804225052773569,153.3,0.483
+D3_stageaware__C-M__shape,stageaware (exploratory D3),Carcinoma->Metastasis,shape-only,181,39,31,0.6556136242105213,0.176,0.9410215004361493,152.8,0.483
+D3_stageaware__N-A__raw,stageaware (exploratory D3),Normal->Adenoma,raw,53,48,31,131.0303620614203,0.001,8.26899097487206,145.9,0.003
+D3_stageaware__A-C__raw,stageaware (exploratory D3),Adenoma->Carcinoma,raw,48,181,31,16.03975020110721,0.353,0.09586309888615473,151.6,0.706
+D3_stageaware__C-M__raw,stageaware (exploratory D3),Carcinoma->Metastasis,raw,181,39,31,10.930701931677952,0.828,-0.8533930088138861,150.6,0.828

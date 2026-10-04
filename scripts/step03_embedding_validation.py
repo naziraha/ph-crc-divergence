@@ -36,7 +36,8 @@ PRIMARY, SENS = (2000, 10), [(2000, 5), (2000, 20), (1000, 10), (5000, 10)]
 COHORT = {"GSE20916": {"sets": {"bulk": ("bulk", {"Normal": 24, "Adenoma": 45, "Carcinoma": 36}),
                                 "micro_pooled": ("micro", {"Normal": 10, "Adenoma": 10, "Carcinoma": 10}),
                                 "micro_crypt": ("micro", {"Normal": 5, "Adenoma": 5, "Carcinoma": 5}),
-                                "micro_mucosa": ("micro", {"Normal": 5, "Adenoma": 5, "Carcinoma": 5})}}}
+                                "micro_mucosa": ("micro", {"Normal": 5, "Adenoma": 5, "Carcinoma": 5})}},
+          "GSE37364": {"sets": {"bulk": ("bulk", {"Normal": 38, "Adenoma": 29, "Carcinoma": 27})}}}
 
 
 def selected_genes(expr, n_top):
@@ -134,7 +135,7 @@ def main():
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
     show = [s for s in cfg]
-    fig, axes = plt.subplots(len(show), 3, figsize=(15, 4.3 * len(show)))
+    fig, axes = plt.subplots(len(show), 3, figsize=(15, 4.3 * len(show)), squeeze=False)
     for r, aset in enumerate(show):
         raw = cfg[aset][0]
         for c, version in enumerate(("unadjusted", "adjusted", "stageaware")):

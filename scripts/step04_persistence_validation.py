@@ -34,7 +34,9 @@ COHORT = {"GSE20916": {"bulk": ["bulk"], "micro": ["micro_pooled", "micro_crypt"
                        "expected": {"bulk": {"Normal": 24, "Adenoma": 45, "Carcinoma": 36},
                                     "micro_pooled": {"Normal": 10, "Adenoma": 10, "Carcinoma": 10},
                                     "micro_crypt": {"Normal": 5, "Adenoma": 5, "Carcinoma": 5},
-                                    "micro_mucosa": {"Normal": 5, "Adenoma": 5, "Carcinoma": 5}}}}
+                                    "micro_mucosa": {"Normal": 5, "Adenoma": 5, "Carcinoma": 5}}},
+          "GSE37364": {"bulk": ["bulk"], "micro": [],
+                       "expected": {"bulk": {"Normal": 38, "Adenoma": 29, "Carcinoma": 27}}}}
 
 
 def load(gse, aset, version, expected):
@@ -142,6 +144,16 @@ def main():
         fig.tight_layout(); fig.savefig(os.path.join(out, f"step04_tsi_shape_only_{aset}.png"), dpi=150)
         plt.close(fig)
         L.append("")
+
+    if not cfg["micro"]:      # bulk-only cohort
+        L += ["Outputs:",
+              f"  results/step04/{gse}/step04_topology_bulk_<version>.png, step04_tsi_shape_only_bulk.png",
+              f"  results/step04/{gse}/stage_topology_bootstrap_bulk_<version>.csv, adjacent_transitions_descriptive_*.json",
+              f"Runtime: {time.time() - t0:.0f} s"]
+        with open(os.path.join(out, "summary.txt"), "w", encoding="utf-8") as fh:
+            fh.write("\n".join(L) + "\n")
+        print("\n".join(L))
+        return
 
     # ---------------------------------------------------------------- micro (D4)
     L += ["=== Microdissected sets (D4: one diagram per stage, all samples; descriptive) ==="]
