@@ -6,7 +6,7 @@ Seed: 42; each unit seeded by SeedSequence(42, crc32(unit name)) -> resumable, o
 Versions: gudhi 3.13.0, numpy 2.4.6, scipy 1.17.1, pandas 2.3.3
 Settings: VR H0+H1, exact 1-Wasserstein, k = 20 subsamples per group, m = 80% of smallest stage, groups aligned before permuting, 999 permutations, Holm across the 3 transitions per analysis x version x mode (S9: single comparison, no Holm).
 Reference functions used unchanged: permutation_test, holm, drop_shared_patients.
-Units finished: 12/112
+Units finished: 112/112
 
 SAMPLES PER STAGE (primary set main): Normal 53, Adenoma 48, Carcinoma 181, Metastasis 39
 
@@ -31,23 +31,123 @@ TIPPING-POINT DECISION (pre-specified: shape-only Holm p < 0.05 in BOTH versions
   Carcinoma->Metastasis    Holm p unadjusted 0.8420, adjusted 0.2820 -> not significant
 
 SENSITIVITY ANALYSES (descriptive support; do not replace the primary result)
-S1_withlung: not run yet
+--- S1_withlung (set withlung, embedding g2000_pc10) ---
+  unadjusted shape-only Normal->Adenoma        n=53/48 m=38  T=  3.1946  z=  4.80  p=0.0010  p_Holm 0.0030
+  unadjusted shape-only Adenoma->Carcinoma     n=48/181 m=38  T=  0.5490  z=  0.63  p=0.2130  p_Holm 0.4260
+  unadjusted shape-only Carcinoma->Metastasis  n=181/58 m=38  T=  0.0907  z= -1.04  p=0.8990  p_Holm 0.8990
+  unadjusted raw        Normal->Adenoma        n=53/48 m=38  T=147.0094  z=  6.32  p=0.0010  p_Holm 0.0030
+  unadjusted raw        Adenoma->Carcinoma     n=48/181 m=38  T= 55.3260  z=  2.54  p=0.0200  p_Holm 0.0400
+  unadjusted raw        Carcinoma->Metastasis  n=181/58 m=38  T=  3.7789  z= -1.10  p=0.9500  p_Holm 0.9500
+  adjusted   shape-only Normal->Adenoma        n=53/48 m=38  T=  1.3331  z=  1.38  p=0.0950  p_Holm 0.2580
+  adjusted   shape-only Adenoma->Carcinoma     n=48/181 m=38  T=  0.5776  z=  0.22  p=0.3340  p_Holm 0.3340
+  adjusted   shape-only Carcinoma->Metastasis  n=181/58 m=38  T=  0.6703  z=  1.48  p=0.0860  p_Holm 0.2580
+  adjusted   raw        Normal->Adenoma        n=53/48 m=38  T=170.4759  z=  8.32  p=0.0010  p_Holm 0.0030
+  adjusted   raw        Adenoma->Carcinoma     n=48/181 m=38  T= 34.2777  z=  0.71  p=0.2060  p_Holm 0.3060
+  adjusted   raw        Carcinoma->Metastasis  n=181/58 m=38  T= 26.1210  z=  0.91  p=0.1530  p_Holm 0.3060
 
-S2_main_allarrays: not run yet
+--- S2_main_allarrays (set main_allarrays, embedding g2000_pc10) ---
+  unadjusted shape-only Normal->Adenoma        n=54/51 m=37  T=  2.6113  z=  4.84  p=0.0010  p_Holm 0.0030
+  unadjusted shape-only Adenoma->Carcinoma     n=51/184 m=37  T=  0.2594  z= -0.40  p=0.6000  p_Holm 0.6000
+  unadjusted shape-only Carcinoma->Metastasis  n=184/47 m=37  T=  1.2598  z=  3.71  p=0.0050  p_Holm 0.0100
+  unadjusted raw        Normal->Adenoma        n=54/51 m=37  T=123.2232  z=  5.81  p=0.0010  p_Holm 0.0030
+  unadjusted raw        Adenoma->Carcinoma     n=51/184 m=37  T= 56.6652  z=  3.35  p=0.0110  p_Holm 0.0220
+  unadjusted raw        Carcinoma->Metastasis  n=184/47 m=37  T= 32.4726  z=  0.87  p=0.1580  p_Holm 0.1580
+  adjusted   shape-only Normal->Adenoma        n=54/51 m=37  T=  0.9605  z=  0.94  p=0.1540  p_Holm 0.3080
+  adjusted   shape-only Adenoma->Carcinoma     n=51/184 m=37  T=  0.5766  z=  0.80  p=0.1850  p_Holm 0.3080
+  adjusted   shape-only Carcinoma->Metastasis  n=184/47 m=37  T=  1.9471  z=  6.20  p=0.0010  p_Holm 0.0030
+  adjusted   raw        Normal->Adenoma        n=54/51 m=37  T=154.7445  z=  7.69  p=0.0010  p_Holm 0.0030
+  adjusted   raw        Adenoma->Carcinoma     n=51/184 m=37  T= 47.0813  z=  2.52  p=0.0240  p_Holm 0.0480
+  adjusted   raw        Carcinoma->Metastasis  n=184/47 m=37  T= 32.5643  z=  0.77  p=0.1900  p_Holm 0.1900
 
-S3_main_inclqc: not run yet
+--- S3_main_inclqc (set main_inclqc, embedding g2000_pc10) ---
+  unadjusted shape-only Normal->Adenoma        n=53/48 m=31  T=  2.1970  z=  4.75  p=0.0010  p_Holm 0.0030
+  unadjusted shape-only Adenoma->Carcinoma     n=48/183 m=31  T=  0.5722  z=  0.94  p=0.1630  p_Holm 0.3260
+  unadjusted shape-only Carcinoma->Metastasis  n=183/39 m=31  T=  0.1480  z= -1.18  p=0.9700  p_Holm 0.9700
+  unadjusted raw        Normal->Adenoma        n=53/48 m=31  T= 95.1215  z=  5.80  p=0.0020  p_Holm 0.0060
+  unadjusted raw        Adenoma->Carcinoma     n=48/183 m=31  T= 47.0929  z=  2.49  p=0.0240  p_Holm 0.0480
+  unadjusted raw        Carcinoma->Metastasis  n=183/39 m=31  T=  6.2140  z= -1.30  p=0.9910  p_Holm 0.9910
+  adjusted   shape-only Normal->Adenoma        n=53/48 m=31  T=  0.8243  z=  1.30  p=0.1120  p_Holm 0.3360
+  adjusted   shape-only Adenoma->Carcinoma     n=48/183 m=31  T=  0.2817  z= -0.17  p=0.4900  p_Holm 0.5700
+  adjusted   shape-only Carcinoma->Metastasis  n=183/39 m=31  T=  0.5397  z=  0.34  p=0.2850  p_Holm 0.5700
+  adjusted   raw        Normal->Adenoma        n=53/48 m=31  T=139.9882  z= 10.13  p=0.0010  p_Holm 0.0030
+  adjusted   raw        Adenoma->Carcinoma     n=48/183 m=31  T= 25.5964  z=  1.01  p=0.1370  p_Holm 0.2740
+  adjusted   raw        Carcinoma->Metastasis  n=183/39 m=31  T= 10.3353  z= -0.96  p=0.8770  p_Holm 0.8770
 
-S4_one_per_patient: not run yet
+--- S4_one_per_patient (set main, embedding g2000_pc10) ---
+  unadjusted shape-only Normal->Adenoma        n=51/44 m=31  T=  2.5052  z=  5.04  p=0.0010  p_Holm 0.0030  (patients resolved 6)
+  unadjusted shape-only Adenoma->Carcinoma     n=46/171 m=31  T=  0.2561  z= -0.03  p=0.4300  p_Holm 0.8600  (patients resolved 12)
+  unadjusted shape-only Carcinoma->Metastasis  n=178/38 m=30  T=  0.2022  z= -0.80  p=0.7800  p_Holm 0.8600  (patients resolved 4)
+  unadjusted raw        Normal->Adenoma        n=48/47 m=31  T=112.1547  z=  6.04  p=0.0010  p_Holm 0.0030  (patients resolved 6)
+  unadjusted raw        Adenoma->Carcinoma     n=41/176 m=31  T= 50.3767  z=  2.94  p=0.0210  p_Holm 0.0420  (patients resolved 12)
+  unadjusted raw        Carcinoma->Metastasis  n=177/39 m=31  T=  5.1286  z= -1.35  p=0.9890  p_Holm 0.9890  (patients resolved 4)
+  adjusted   shape-only Normal->Adenoma        n=53/42 m=31  T=  1.0403  z=  1.74  p=0.0570  p_Holm 0.1710  (patients resolved 6)
+  adjusted   shape-only Adenoma->Carcinoma     n=45/172 m=31  T=  0.4582  z=  0.50  p=0.2480  p_Holm 0.4080  (patients resolved 12)
+  adjusted   shape-only Carcinoma->Metastasis  n=179/37 m=29  T=  0.5755  z=  0.68  p=0.2040  p_Holm 0.4080  (patients resolved 4)
+  adjusted   raw        Normal->Adenoma        n=51/44 m=31  T=138.4265  z=  8.41  p=0.0010  p_Holm 0.0030  (patients resolved 6)
+  adjusted   raw        Adenoma->Carcinoma     n=39/178 m=31  T= 28.7689  z=  0.54  p=0.2380  p_Holm 0.4760  (patients resolved 12)
+  adjusted   raw        Carcinoma->Metastasis  n=178/38 m=30  T= 21.3651  z=  0.16  p=0.3250  p_Holm 0.4760  (patients resolved 4)
 
-S5_pc5: not run yet
+--- S5_pc5 (set main, embedding g2000_pc5) ---
+  unadjusted shape-only Normal->Adenoma        n=53/48 m=31  T=  2.2661  z=  6.94  p=0.0010  p_Holm 0.0030
+  unadjusted shape-only Adenoma->Carcinoma     n=48/181 m=31  T=  0.1396  z= -0.41  p=0.5870  p_Holm 0.5870
+  unadjusted shape-only Carcinoma->Metastasis  n=181/39 m=31  T=  0.3932  z=  0.40  p=0.2800  p_Holm 0.5600
+  unadjusted raw        Normal->Adenoma        n=53/48 m=31  T= 74.0993  z=  6.01  p=0.0010  p_Holm 0.0030
+  unadjusted raw        Adenoma->Carcinoma     n=48/181 m=31  T= 21.7452  z=  1.96  p=0.0500  p_Holm 0.1000
+  unadjusted raw        Carcinoma->Metastasis  n=181/39 m=31  T= 12.8028  z= -0.08  p=0.4280  p_Holm 0.4280
+  adjusted   shape-only Normal->Adenoma        n=53/48 m=31  T=  1.3371  z=  3.40  p=0.0050  p_Holm 0.0150
+  adjusted   shape-only Adenoma->Carcinoma     n=48/181 m=31  T=  0.4305  z=  0.77  p=0.1990  p_Holm 0.3980
+  adjusted   shape-only Carcinoma->Metastasis  n=181/39 m=31  T=  0.3470  z= -0.37  p=0.5680  p_Holm 0.5680
+  adjusted   raw        Normal->Adenoma        n=53/48 m=31  T=126.4501  z= 10.96  p=0.0010  p_Holm 0.0030
+  adjusted   raw        Adenoma->Carcinoma     n=48/181 m=31  T=  7.4589  z= -0.63  p=0.6890  p_Holm 1.0000
+  adjusted   raw        Carcinoma->Metastasis  n=181/39 m=31  T=  9.8543  z= -0.78  p=0.7720  p_Holm 1.0000
 
-S6_pc20: not run yet
+--- S6_pc20 (set main, embedding g2000_pc20) ---
+  unadjusted shape-only Normal->Adenoma        n=53/48 m=31  T=  2.5557  z=  6.39  p=0.0010  p_Holm 0.0030
+  unadjusted shape-only Adenoma->Carcinoma     n=48/181 m=31  T=  0.4439  z=  1.21  p=0.1090  p_Holm 0.2180
+  unadjusted shape-only Carcinoma->Metastasis  n=181/39 m=31  T=  0.1723  z= -0.96  p=0.8590  p_Holm 0.8590
+  unadjusted raw        Normal->Adenoma        n=53/48 m=31  T=141.6619  z=  7.72  p=0.0010  p_Holm 0.0030
+  unadjusted raw        Adenoma->Carcinoma     n=48/181 m=31  T= 55.8425  z=  3.89  p=0.0070  p_Holm 0.0140
+  unadjusted raw        Carcinoma->Metastasis  n=181/39 m=31  T= 13.5221  z= -0.67  p=0.7270  p_Holm 0.7270
+  adjusted   shape-only Normal->Adenoma        n=53/48 m=31  T=  0.6785  z=  0.83  p=0.1710  p_Holm 0.2320
+  adjusted   shape-only Adenoma->Carcinoma     n=48/181 m=31  T=  1.3401  z=  5.92  p=0.0010  p_Holm 0.0030
+  adjusted   shape-only Carcinoma->Metastasis  n=181/39 m=31  T=  0.6478  z=  1.13  p=0.1160  p_Holm 0.2320
+  adjusted   raw        Normal->Adenoma        n=53/48 m=31  T=170.7720  z=  9.98  p=0.0010  p_Holm 0.0030
+  adjusted   raw        Adenoma->Carcinoma     n=48/181 m=31  T= 51.5242  z=  3.18  p=0.0110  p_Holm 0.0220
+  adjusted   raw        Carcinoma->Metastasis  n=181/39 m=31  T= 20.8006  z= -0.13  p=0.4370  p_Holm 0.4370
 
-S7_genes1000: not run yet
+--- S7_genes1000 (set main, embedding g1000_pc10) ---
+  unadjusted shape-only Normal->Adenoma        n=53/48 m=31  T=  2.6851  z=  6.47  p=0.0010  p_Holm 0.0030
+  unadjusted shape-only Adenoma->Carcinoma     n=48/181 m=31  T=  0.1363  z= -0.65  p=0.7130  p_Holm 1.0000
+  unadjusted shape-only Carcinoma->Metastasis  n=181/39 m=31  T=  0.1571  z= -1.09  p=0.8980  p_Holm 1.0000
+  unadjusted raw        Normal->Adenoma        n=53/48 m=31  T= 80.8507  z=  7.08  p=0.0010  p_Holm 0.0030
+  unadjusted raw        Adenoma->Carcinoma     n=48/181 m=31  T= 36.9612  z=  4.46  p=0.0030  p_Holm 0.0060
+  unadjusted raw        Carcinoma->Metastasis  n=181/39 m=31  T=  6.3227  z= -0.97  p=0.8780  p_Holm 0.8780
+  adjusted   shape-only Normal->Adenoma        n=53/48 m=31  T=  0.4920  z=  0.25  p=0.3450  p_Holm 0.8160
+  adjusted   shape-only Adenoma->Carcinoma     n=48/181 m=31  T=  0.3728  z=  0.44  p=0.2720  p_Holm 0.8160
+  adjusted   shape-only Carcinoma->Metastasis  n=181/39 m=31  T=  0.2977  z= -0.57  p=0.6800  p_Holm 0.8160
+  adjusted   raw        Normal->Adenoma        n=53/48 m=31  T= 78.5953  z=  7.60  p=0.0010  p_Holm 0.0030
+  adjusted   raw        Adenoma->Carcinoma     n=48/181 m=31  T= 20.0917  z=  1.29  p=0.0920  p_Holm 0.1840
+  adjusted   raw        Carcinoma->Metastasis  n=181/39 m=31  T=  7.2044  z= -0.94  p=0.8700  p_Holm 0.8700
 
-S8_genes5000: not run yet
+--- S8_genes5000 (set main, embedding g5000_pc10) ---
+  unadjusted shape-only Normal->Adenoma        n=53/48 m=31  T=  1.4144  z=  3.09  p=0.0070  p_Holm 0.0210
+  unadjusted shape-only Adenoma->Carcinoma     n=48/181 m=31  T=  0.2052  z= -0.34  p=0.5480  p_Holm 0.5480
+  unadjusted shape-only Carcinoma->Metastasis  n=181/39 m=31  T=  0.8977  z=  2.43  p=0.0250  p_Holm 0.0500
+  unadjusted raw        Normal->Adenoma        n=53/48 m=31  T=118.3194  z=  4.31  p=0.0040  p_Holm 0.0120
+  unadjusted raw        Adenoma->Carcinoma     n=48/181 m=31  T= 57.6128  z=  2.26  p=0.0430  p_Holm 0.0860
+  unadjusted raw        Carcinoma->Metastasis  n=181/39 m=31  T=  8.7268  z= -1.32  p=0.9870  p_Holm 0.9870
+  adjusted   shape-only Normal->Adenoma        n=53/48 m=31  T=  0.5119  z=  0.24  p=0.3320  p_Holm 0.6640
+  adjusted   shape-only Adenoma->Carcinoma     n=48/181 m=31  T=  0.2545  z= -0.18  p=0.4850  p_Holm 0.6640
+  adjusted   shape-only Carcinoma->Metastasis  n=181/39 m=31  T=  0.8188  z=  1.99  p=0.0440  p_Holm 0.1320
+  adjusted   raw        Normal->Adenoma        n=53/48 m=31  T=203.9481  z=  8.92  p=0.0010  p_Holm 0.0030
+  adjusted   raw        Adenoma->Carcinoma     n=48/181 m=31  T= 24.4907  z=  0.10  p=0.3300  p_Holm 0.3300
+  adjusted   raw        Carcinoma->Metastasis  n=181/39 m=31  T= 78.4244  z=  2.65  p=0.0250  p_Holm 0.0500
 
-S9_no_high_liver_mets: not run yet
+--- S9_no_high_liver_mets (set main, embedding g2000_pc10) ---
+  unadjusted shape-only Carcinoma->Metastasis  n=181/36 m=28  T=  0.1738  z= -0.81  p=0.7970  p_Holm  n/a 
+  unadjusted raw        Carcinoma->Metastasis  n=181/36 m=28  T=  6.9986  z= -0.99  p=0.9200  p_Holm  n/a 
+  adjusted   shape-only Carcinoma->Metastasis  n=181/36 m=28  T=  0.8721  z=  2.16  p=0.0390  p_Holm  n/a 
+  adjusted   raw        Carcinoma->Metastasis  n=181/36 m=28  T=  8.3864  z= -1.02  p=0.9150  p_Holm  n/a 
 
 Outputs:
   results/step05/permutation_results_all.csv   one row per unit (T, z, p, Holm p, n, m)
