@@ -1,0 +1,29 @@
+DEVIATION D6 - Software cross-check: GUDHI vs Ripser (GSE41258 set main, step 4 subsamples)
+======================================================================
+CROSS-CHECK ONLY: no result, test or decision uses Ripser output (CLAUDE.md: GUDHI for all TDA).
+Versions: gudhi 3.13.0, ripser 0.6.15, numpy 2.4.6, scipy 1.17.1
+Seed 42; draws replayed exactly as step 4 (100 per stage x 4 stages x raw/shape-only x 2 versions = 1600 subsample pairs of 31 samples)
+
+Reproduction of saved step 4 GUDHI summaries (same draws):
+  unadjusted 800 subsamples matched; max |H0 total diff| 5.68e-14, max |H1 total diff| 3.55e-15
+  adjusted   800 subsamples matched; max |H0 total diff| 5.68e-14, max |H1 total diff| 3.55e-15
+
+GUDHI vs Ripser, per (version, mode):
+                       subsamples  max_W1_H0  max_W1_H1  median_W1_H0+H1  identical_counts_H0_%  identical_counts_H1_%  max_rel_diff_total_H0  max_rel_diff_total_H1  max_abs_bar_diff
+version    mode                                                                                                                                                                       
+adjusted   raw                400   1.77e-05    1.2e-05         1.74e-05                    100                    100               1.61e-08               8.19e-07          1.87e-06
+           shape-only         400   5.59e-07   4.74e-07          5.5e-07                    100                    100               1.33e-08               1.41e-06          5.96e-08
+unadjusted raw                400   1.79e-05   1.32e-05         1.86e-05                    100                    100               1.77e-08                2.2e-06           1.9e-06
+           shape-only         400    5.4e-07   3.65e-07         5.01e-07                    100                    100               1.32e-08               1.18e-05           5.9e-08
+
+Five largest GUDHI-Ripser distances (W1 H0 + H1):
+  unadjusted raw Carcinoma draw 44: W1 H0 1.78e-05, H1 1.09e-05; H1 bars gudhi/ripser 12/12
+  adjusted raw Carcinoma draw 23: W1 H0 1.68e-05, H1 1.11e-05; H1 bars gudhi/ripser 14/14
+  unadjusted raw Carcinoma draw 2: W1 H0 1.42e-05, H1 1.32e-05; H1 bars gudhi/ripser 12/12
+  adjusted raw Carcinoma draw 39: W1 H0 1.53e-05, H1 1.07e-05; H1 bars gudhi/ripser 14/14
+  adjusted raw Carcinoma draw 63: W1 H0 1.66e-05, H1 9.03e-06; H1 bars gudhi/ripser 10/10
+
+Note: Ripser stores filtration values in single precision (float32), GUDHI in double precision;
+differences of order 1e-6 relative to the distance scale are expected from this alone.
+Runtime: 9 s
+Outputs: results/step04/ripser_crosscheck/gudhi_vs_ripser_per_subsample.csv, gudhi_vs_ripser_summary.csv
