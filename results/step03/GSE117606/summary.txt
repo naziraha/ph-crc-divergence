@@ -1,0 +1,75 @@
+STEP 3 - Feature selection and PCA embedding (GSE117606)
+=======================================================
+Pre-specification: docs/addendum6_GSE117606.md (93613bd); deviations D10, D11.
+Method: tda_crc_pilot.preprocess unchanged (drop lowest 25% by mean, top 2,000 variable genes, z-score,
+  10 PCs; PCA random_state = 0), fitted on all 195 main-set arrays pooled WITHOUT stage labels.
+Seed: 42. Versions: scikit-learn 1.9.1, numpy 2.4.6, pandas 2.3.3, scipy 1.17.1
+Samples per stage (verified): Normal 65, Adenoma 59, Carcinoma 71
+
+=== unadjusted ===
+Variance explained: 10 PCs 51.6% | per PC: 16.7, 14.8, 6.8, 3.4, 2.3, 1.9, 1.7, 1.5, 1.2, 1.2
+Stage pseudo-R2 in 10-PC space: 0.364
+PC1 / PC2 stage medians: Normal 22.3 / -2.7; Adenoma -11.0 / -19.0; Carcinoma -16.3 / 12.7  (Kruskal-Wallis p: PC1 1.9e-27, PC2 8.4e-20)
+D10 - Spearman r of PCs with array quality (mean inter-array r, median, IQR) and composition:
+         mean_corr    median       IQREpithelial   Stromal    Immune
+  PC1        0.25      0.05     -0.07      0.08      0.45      0.40
+  PC2       -0.10     -0.36      0.40     -0.55      0.85      0.45
+  PC3        0.47     -0.72      0.66      0.48     -0.11     -0.19
+  PC4        0.23     -0.05      0.13      0.21     -0.07      0.64
+  PC5        0.10      0.06      0.10      0.43      0.05      0.03
+  PC6        0.15      0.06      0.17     -0.06      0.09      0.23
+  PC7        0.39      0.02      0.26      0.06      0.09     -0.01
+  PC8        0.09     -0.03      0.11      0.25      0.05     -0.18
+  PC9       -0.02      0.06      0.08     -0.04     -0.07      0.06
+  PC10       0.13      0.18      0.02      0.01      0.05      0.17
+  PCs with |r| >= 0.5 to any quality measure: PC3 (|r| 0.72); among PC1-PC3: PC3
+
+=== adjusted ===
+Variance explained: 10 PCs 39.7% | per PC: 18.4, 7.1, 2.6, 2.4, 2.0, 1.7, 1.6, 1.4, 1.3, 1.2
+Stage pseudo-R2 in 10-PC space: 0.309
+PC1 / PC2 stage medians: Normal -18.2 / 3.1; Adenoma -2.4 / 0.9; Carcinoma 18.0 / -1.4  (Kruskal-Wallis p: PC1 3.5e-28, PC2 5.3e-02)
+D10 - Spearman r of PCs with array quality (mean inter-array r, median, IQR) and composition:
+         mean_corr    median       IQREpithelial   Stromal    Immune
+  PC1        0.01     -0.37      0.48     -0.06     -0.02     -0.06
+  PC2        0.24     -0.58      0.40      0.02     -0.02      0.01
+  PC3        0.23      0.07      0.19     -0.04      0.03      0.02
+  PC4        0.24     -0.01      0.07      0.01      0.01     -0.04
+  PC5       -0.20     -0.04     -0.16      0.07     -0.06     -0.01
+  PC6       -0.05     -0.04      0.14      0.02      0.03     -0.09
+  PC7        0.04      0.04     -0.05     -0.04     -0.01      0.07
+  PC8       -0.04     -0.27     -0.11      0.02      0.03     -0.07
+  PC9       -0.01      0.00     -0.04      0.06     -0.04     -0.09
+  PC10       0.11      0.03     -0.09     -0.05     -0.00      0.02
+  PCs with |r| >= 0.5 to any quality measure: PC2 (|r| 0.58); among PC1-PC3: PC2
+
+=== stageaware ===
+Variance explained: 10 PCs 40.7% | per PC: 19.3, 7.0, 2.9, 2.4, 2.0, 1.7, 1.5, 1.4, 1.3, 1.2
+Stage pseudo-R2 in 10-PC space: 0.368
+PC1 / PC2 stage medians: Normal -22.1 / 3.4; Adenoma 0.9 / 1.2; Carcinoma 21.2 / -0.8  (Kruskal-Wallis p: PC1 6.8e-30, PC2 5.7e-02)
+D10 - Spearman r of PCs with array quality (mean inter-array r, median, IQR) and composition:
+         mean_corr    median       IQREpithelial   Stromal    Immune
+  PC1       -0.12     -0.29      0.36     -0.15     -0.12     -0.13
+  PC2        0.26     -0.61      0.44      0.05      0.00      0.03
+  PC3        0.23      0.19     -0.02      0.07     -0.34     -0.21
+  PC4        0.13     -0.01     -0.04      0.03     -0.04     -0.07
+  PC5       -0.23     -0.02     -0.20      0.09     -0.10     -0.03
+  PC6        0.00     -0.08      0.22     -0.02      0.15     -0.02
+  PC7       -0.01      0.05     -0.06     -0.05     -0.05      0.03
+  PC8       -0.03     -0.27     -0.10      0.01      0.05     -0.04
+  PC9       -0.07      0.01     -0.12      0.12     -0.18     -0.20
+  PC10       0.10      0.05     -0.10     -0.04     -0.03      0.01
+  PCs with |r| >= 0.5 to any quality measure: PC2 (|r| 0.61); among PC1-PC3: PC2
+
+Projected descriptive arrays (unadjusted embedding), median PC1 / PC2:
+                                  PC1   PC2
+  group                                    
+  SSA (descriptive)               5.8  -9.0
+  set aside (A-coded carcinoma) -14.3  16.9
+
+Sensitivity embeddings saved for later steps (not interpreted): 5/20 PCs, 1,000/5,000 genes (main);
+  main_noQAflag (n = 182; 13 flagged arrays removed), main_noGSM3304812 (n = 194).
+  For the adjusted versions of these two sets, the composition adjustment fitted on all 195 arrays is used.
+
+Outputs: results/step03/embeddings/GSE117606_<set>_<version>_g<genes>_pc<PCs>.csv (+ _genes.csv);
+  results/step03/GSE117606/embedding_index.csv, D10_pc_vs_quality_and_composition.csv,
+  projected_SSA_setaside_unadjusted.csv, pca_overview.png
