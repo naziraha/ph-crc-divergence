@@ -1,0 +1,11 @@
+{
+  "var_explained_10PC": 0.32720168256952875,
+  "covariates": [
+    "Epithelial",
+    "Stromal",
+    "Immune",
+    "mean_corr",
+    "median",
+    "IQR"
+  ]
+}
