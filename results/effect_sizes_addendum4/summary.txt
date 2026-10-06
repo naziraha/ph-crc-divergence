@@ -1,0 +1,66 @@
+ADDENDUM 4 - Standardised effect sizes with bootstrap 95% CIs (DESCRIPTIVE)
+======================================================================
+*** NOTE (2026-10-06, PI review): THE BOOTSTRAP INTERVALS, THE CATEGORIES AND THE POOLED ESTIMATES ARE
+*** INVALID AND MUST NOT BE INTERPRETED. Reasons: (1) resampling with replacement puts duplicate samples
+*** into each stage; subsamples then contain only ~70-80% distinct samples and overlap heavily, so
+*** same-stage diagrams look artificially similar; (2) d divides by the SD of within-stage distances
+*** between overlapping subsamples, which this shrinks further. Net effect: bootstrap d is inflated,
+*** most for null transitions (point estimate below the whole interval in 11 of 13 non-significant
+*** results). The pooled estimates use bootstrap SEs and are invalid for the same reason.
+*** ONLY THE POINT ESTIMATES OF d (original samples) ARE REPORTED, AS DESCRIPTIVE VALUES. d is not on
+*** Cohen's scale (the within-stage SD comes from 80%-overlapping subsamples), so d = 0.5 is not a
+*** meaningful threshold here. Power and 'no effect vs too few samples' -> deviation D7.
+*** Negative I2 / tau2 are shown as 0.
+
+Pre-specification: docs/analysis_prespecification_addendum4_effectsizes.md (commit 15cbf68), written after
+all step 5 p-values were known. Does NOT change the pre-specified tipping-point decision.
+d = (mean between W1 - mean within W1) / SD(within W1); k = 20 subsamples per stage; m = 80% of smallest stage;
+CI = percentile of 1000 bootstrap resamples of samples within stage; seed 42 (per-unit SeedSequence).
+Categories at d = 0.5 (conventional 'medium'); combined with the step 5 Holm p.
+Versions: gudhi 3.13.0, numpy 2.4.6, statsmodels 0.15.0
+Units finished: 28/28
+
+PER COHORT
+  GSE41258 unadjusted shape-only Normal->Adenoma         n=53/48 m=31 d =  4.73 [ 1.36,  6.87] (boot median  3.52)  step5 Holm p 0.003  -> Difference detected
+  GSE41258 unadjusted raw        Normal->Adenoma         n=53/48 m=31 d =  7.70 [ 3.50,  9.96] (boot median  6.29)  step5 Holm p 0.003  -> Difference detected
+  GSE41258 unadjusted shape-only Adenoma->Carcinoma      n=48/181 m=31 d =  0.36 [ 0.88,  2.96] (boot median  1.75)  step5 Holm p 0.716  -> Large effect but test not significant
+  GSE41258 unadjusted raw        Adenoma->Carcinoma      n=48/181 m=31 d =  1.88 [ 1.22,  3.52] (boot median  2.18)  step5 Holm p 0.008  -> Difference detected
+  GSE41258 unadjusted shape-only Carcinoma->Metastasis   n=181/39 m=31 d =  0.23 [ 1.16,  3.81] (boot median  2.26)  step5 Holm p 0.842  -> Large effect but test not significant
+  GSE41258 unadjusted raw        Carcinoma->Metastasis   n=181/39 m=31 d =  0.22 [ 0.96,  3.11] (boot median  1.87)  step5 Holm p 0.989  -> Large effect but test not significant
+  GSE41258 adjusted   shape-only Normal->Adenoma         n=53/48 m=31 d =  3.39 [ 0.51,  3.74] (boot median  1.68)  step5 Holm p 0.282  -> Large effect but test not significant
+  GSE41258 adjusted   raw        Normal->Adenoma         n=53/48 m=31 d =  9.98 [ 5.16, 12.75] (boot median  8.69)  step5 Holm p 0.003  -> Difference detected
+  GSE41258 adjusted   shape-only Adenoma->Carcinoma      n=48/181 m=31 d =  1.20 [ 1.01,  3.22] (boot median  1.91)  step5 Holm p 0.282  -> Large effect but test not significant
+  GSE41258 adjusted   raw        Adenoma->Carcinoma      n=48/181 m=31 d =  0.78 [ 0.94,  3.00] (boot median  1.77)  step5 Holm p 0.642  -> Large effect but test not significant
+  GSE41258 adjusted   shape-only Carcinoma->Metastasis   n=181/39 m=31 d =  1.42 [ 1.23,  3.69] (boot median  2.23)  step5 Holm p 0.282  -> Large effect but test not significant
+  GSE41258 adjusted   raw        Carcinoma->Metastasis   n=181/39 m=31 d =  0.45 [ 1.05,  3.17] (boot median  1.81)  step5 Holm p 0.642  -> Large effect but test not significant
+  GSE20916 unadjusted shape-only Normal->Adenoma         n=24/45 m=19 d =  3.68 [ 1.38,  5.49] (boot median  3.02)  step5 Holm p 0.006  -> Difference detected
+  GSE20916 unadjusted raw        Normal->Adenoma         n=24/45 m=19 d =  3.14 [ 1.69,  4.98] (boot median  3.00)  step5 Holm p 0.012  -> Difference detected
+  GSE20916 unadjusted shape-only Adenoma->Carcinoma      n=45/36 m=19 d =  1.77 [ 0.42,  2.43] (boot median  1.14)  step5 Holm p 0.006  -> Difference detected
+  GSE20916 unadjusted raw        Adenoma->Carcinoma      n=45/36 m=19 d =  5.81 [ 2.85,  8.62] (boot median  5.37)  step5 Holm p 0.002  -> Difference detected
+  GSE20916 adjusted   shape-only Normal->Adenoma         n=24/45 m=19 d =  2.30 [ 0.77,  4.70] (boot median  2.24)  step5 Holm p 0.054  -> Large effect but test not significant
+  GSE20916 adjusted   raw        Normal->Adenoma         n=24/45 m=19 d =  2.01 [ 1.04,  4.83] (boot median  2.60)  step5 Holm p 0.093  -> Large effect but test not significant
+  GSE20916 adjusted   shape-only Adenoma->Carcinoma      n=45/36 m=19 d =  0.11 [ 0.09,  1.40] (boot median  0.50)  step5 Holm p 0.436  -> Too few samples to tell
+  GSE20916 adjusted   raw        Adenoma->Carcinoma      n=45/36 m=19 d =  3.41 [ 1.14,  6.13] (boot median  3.30)  step5 Holm p 0.006  -> Difference detected
+  GSE37364 unadjusted shape-only Normal->Adenoma         n=38/29 m=21 d =  1.50 [ 0.66,  3.52] (boot median  1.67)  step5 Holm p 0.102  -> Large effect but test not significant
+  GSE37364 unadjusted raw        Normal->Adenoma         n=38/29 m=21 d =  7.74 [ 4.91, 13.68] (boot median  8.55)  step5 Holm p 0.002  -> Difference detected
+  GSE37364 unadjusted shape-only Adenoma->Carcinoma      n=29/27 m=21 d =  2.91 [ 1.02,  4.63] (boot median  2.52)  step5 Holm p 0.102  -> Large effect but test not significant
+  GSE37364 unadjusted raw        Adenoma->Carcinoma      n=29/27 m=21 d =  7.09 [ 2.76, 10.75] (boot median  6.01)  step5 Holm p 0.002  -> Difference detected
+  GSE37364 adjusted   shape-only Normal->Adenoma         n=38/29 m=21 d =  1.98 [ 0.58,  4.45] (boot median  1.87)  step5 Holm p 0.010  -> Difference detected
+  GSE37364 adjusted   raw        Normal->Adenoma         n=38/29 m=21 d =  7.65 [ 3.95, 12.78] (boot median  6.97)  step5 Holm p 0.002  -> Difference detected
+  GSE37364 adjusted   shape-only Adenoma->Carcinoma      n=29/27 m=21 d =  0.85 [ 0.59,  3.81] (boot median  1.66)  step5 Holm p 0.685  -> Large effect but test not significant
+  GSE37364 adjusted   raw        Adenoma->Carcinoma      n=29/27 m=21 d =  5.33 [ 2.70, 10.11] (boot median  5.66)  step5 Holm p 0.011  -> Difference detected
+
+POOLED (DerSimonian-Laird; variance = bootstrap SE^2)
+  Normal->Adenoma      shape-only unadjusted pooled d =  3.05 [ 1.09,  5.01]  tau2 1.86  I2  63%  -> Consistent meaningful effect across cohorts
+  Normal->Adenoma      shape-only adjusted   pooled d =  2.74 [ 1.89,  3.58]  tau2 0.00  I2   0%  -> Consistent meaningful effect across cohorts
+  Normal->Adenoma      raw        unadjusted pooled d =  5.85 [ 2.31,  9.40]  tau2 7.27  I2  76%  -> Consistent meaningful effect across cohorts
+  Normal->Adenoma      raw        adjusted   pooled d =  6.33 [ 0.82, 11.84]  tau2 20.42  I2  88%  -> Consistent meaningful effect across cohorts
+  Adenoma->Carcinoma   shape-only unadjusted pooled d =  1.52 [ 0.19,  2.85]  tau2 0.94  I2  70%  -> Too few samples to tell
+  Adenoma->Carcinoma   shape-only adjusted   pooled d =  0.57 [-0.16,  1.30]  tau2 0.14  I2  31%  -> Too few samples to tell
+  Adenoma->Carcinoma   raw        unadjusted pooled d =  4.58 [ 1.07,  8.08]  tau2 7.60  I2  82%  -> Consistent meaningful effect across cohorts
+  Adenoma->Carcinoma   raw        adjusted   pooled d =  2.75 [ 0.05,  5.46]  tau2 4.15  I2  75%  -> Too few samples to tell
+
+Limitation (stated in addendum 4): bootstrap resamples contain duplicate samples, which can bias d;
+the interval is a descriptive guide. Compare point estimate with bootstrap median as a bias indicator.
+Outputs: results/effect_sizes_addendum4/effect_sizes_per_cohort.csv, effect_sizes_pooled.csv,
+  checkpoints/<unit>.json (incl. all bootstrap values), effect_sizes_forest.png
