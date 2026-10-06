@@ -1,0 +1,18 @@
+DEVIATION D8 - Sample-size sensitivity of the shape-only test (DESCRIPTIVE)
+================================================================
+docs/analysis_deviations.md D8 (commit 9d814f9), specified before computation.
+Real shape-only Normal -> Adenoma differences (unadjusted) detected in step 5; groups reduced without
+replacement; step 5 test unchanged except 99 permutations; detection p <= 0.05/K; 50 replicates per cell.
+Versions: gudhi 3.13.0, numpy 2.4.6
+Replicates finished: 300/300
+
+  GSE20916 (step 5 z = 4.27)  groups 100%: n = 24/45, m = 19: detected  98% (strict) / 100% (p <= 0.05); median z 4.24
+  GSE20916 (step 5 z = 4.27)  groups  75%: n = 18/34, m = 14: detected  42% (strict) /  78% (p <= 0.05); median z 2.68
+  GSE20916 (step 5 z = 4.27)  groups  50%: n = 12/22, m = 9: detected  26% (strict) /  42% (p <= 0.05); median z 1.66
+  GSE41258 (step 5 z = 6.90)  groups 100%: n = 53/48, m = 31: detected  94% (strict) / 100% (p <= 0.05); median z 5.67
+  GSE41258 (step 5 z = 6.90)  groups  75%: n = 40/36, m = 28: detected  66% (strict) /  96% (p <= 0.05); median z 4.14
+  GSE41258 (step 5 z = 6.90)  groups  50%: n = 26/24, m = 19: detected  38% (strict) /  74% (p <= 0.05); median z 2.62
+
+Reading: how reliably a shape difference of the size actually observed is found with fewer samples.
+It does not estimate power for smaller shape effects.
+Outputs: results/power_D8/power_table.csv, checkpoints/
