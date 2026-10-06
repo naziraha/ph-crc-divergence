@@ -1,0 +1,5 @@
+unit,transition,n_from,n_to,shared,overlap,auc_scan_date,cramers_v,confounded
+plate,Normal->Adenoma,65,59,5,1.0,0.49778357235984355,0.08068643342862046,False
+plate,Adenoma->Carcinoma,59,71,4,0.9923076923076923,0.511577942229649,0.08068643342862046,False
+scan day,Normal->Adenoma,65,59,4,1.0,0.49778357235984355,0.07906617673042525,False
+scan day,Adenoma->Carcinoma,59,71,3,0.9923076923076923,0.511577942229649,0.07906617673042525,False

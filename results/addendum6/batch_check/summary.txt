@@ -1,0 +1,40 @@
+ADDENDUM 6 section 7.1 - GSE117606 batch check (descriptive)
+============================================================
+Pre-specified: docs/addendum6_GSE117606.md section 7.1 (commit 93613bd). CEL headers only (no intensities).
+Confounded if AUC >= 0.80 or <= 0.20, or overlap < 20%; Cramer's V >= 0.5 = strong association.
+
+CEL headers matched to GEO samples: 208/208
+Main set per stage: Normal 65, Adenoma 59, Carcinoma 71; patient-stage duplicates in main set: 0
+Set aside: GSM3304801, GSM3304813, GSM3304818; SSA (descriptive): 10
+Plates (ArrayPlateGUID): 5 (barcodes: 5); scan days: 4; scan period 2014-12-27 to 2014-12-31
+
+--- plate x stage (main set; SSA and set-aside shown for description) ---
+  stage                                 Normal  Adenoma  Carcinoma  SSA  set aside
+  plate                                                                           
+  059acfe7-4f41-4d31-a9fe-6cfb70056468       2        3          3    0          0
+  168e055f-0d49-42c9-9694-f313fca09b6f       5        6          8    2          0
+  6c584740-9aaf-44b7-b900-1aa95c97b300       1        1          0    0          0
+  ad008bf4-a718-47ff-ac9f-e60895bc7bee      30       29         32    3          0
+  badeaba9-53c7-4d91-9ad3-d708ebfa2efa      27       20         28    5          3
+  Cramer's V (plate x stage, main set) = 0.08 (chi2 = 2.5, df = 8, p = 0.96) -> weak association
+     Normal -> Adenoma   shared plates  5; overlap 100.0%; AUC (scan date) 0.50 -> not confounded
+    Adenoma -> Carcinoma shared plates  4; overlap  99.2%; AUC (scan date) 0.51 -> not confounded
+
+--- scan day x stage (main set; SSA and set-aside shown for description) ---
+  stage       Normal  Adenoma  Carcinoma  SSA  set aside
+  scan_day                                              
+  2014-12-27      30       29         32    3          0
+  2014-12-28      27       20         28    5          3
+  2014-12-29       7        9         11    2          0
+  2014-12-31       1        1          0    0          0
+  Cramer's V (scan day x stage, main set) = 0.08 (chi2 = 2.4, df = 6, p = 0.88) -> weak association
+     Normal -> Adenoma   shared scan days  4; overlap 100.0%; AUC (scan date) 0.50 -> not confounded
+    Adenoma -> Carcinoma shared scan days  3; overlap  99.2%; AUC (scan date) 0.51 -> not confounded
+
+Same-stage splits with >= 13 arrays on each side (for a batch-only contrast, if needed):
+  Normal: arrays per plate {'ad008bf4-a718-47ff-ac9f-e60895bc7bee': 30, 'badeaba9-53c7-4d91-9ad3-d708ebfa2efa': 27, '168e055f-0d49-42c9-9694-f313fca09b6f': 5, '059acfe7-4f41-4d31-a9fe-6cfb70056468': 2, '6c584740-9aaf-44b7-b900-1aa95c97b300': 1}
+  Adenoma: arrays per plate {'ad008bf4-a718-47ff-ac9f-e60895bc7bee': 29, 'badeaba9-53c7-4d91-9ad3-d708ebfa2efa': 20, '168e055f-0d49-42c9-9694-f313fca09b6f': 6, '059acfe7-4f41-4d31-a9fe-6cfb70056468': 3, '6c584740-9aaf-44b7-b900-1aa95c97b300': 1}
+  Carcinoma: arrays per plate {'ad008bf4-a718-47ff-ac9f-e60895bc7bee': 32, 'badeaba9-53c7-4d91-9ad3-d708ebfa2efa': 28, '168e055f-0d49-42c9-9694-f313fca09b6f': 8, '059acfe7-4f41-4d31-a9fe-6cfb70056468': 3}
+
+Outputs: results/addendum6/batch_check/sample_batch_table.csv, plate_x_stage.csv, scan_day_x_stage.csv,
+  batch_confounding.csv
