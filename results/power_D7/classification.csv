@@ -1,0 +1,29 @@
+cohort,version,mode,transition,z,p_holm,power_at_50,power_at_100,approx,classification
+GSE41258,adjusted,raw,Normal->Adenoma,10.029726512366215,0.003,0.48,1.0,power at actual group sizes,Difference detected (step 5)
+GSE41258,adjusted,raw,Adenoma->Carcinoma,0.1703909264590695,0.642,0.48,1.0,power from Normal->Adenoma group sizes,Too few samples to tell
+GSE41258,adjusted,raw,Carcinoma->Metastasis,-0.2684342298877641,0.642,0.48,1.0,power from Normal->Adenoma group sizes,Too few samples to tell
+GSE41258,adjusted,shape-only,Normal->Adenoma,0.9240496547177436,0.282,0.34,0.02,power at actual group sizes,Too few samples to tell
+GSE41258,adjusted,shape-only,Adenoma->Carcinoma,1.4028242229816303,0.282,0.34,0.02,power from Normal->Adenoma group sizes,Too few samples to tell
+GSE41258,adjusted,shape-only,Carcinoma->Metastasis,1.3573381753848168,0.282,0.34,0.02,power from Normal->Adenoma group sizes,Too few samples to tell
+GSE41258,unadjusted,raw,Normal->Adenoma,7.236040085487072,0.003,0.22,0.98,power at actual group sizes,Difference detected (step 5)
+GSE41258,unadjusted,raw,Adenoma->Carcinoma,4.43644820430116,0.008,0.22,0.98,power from Normal->Adenoma group sizes,Difference detected (step 5)
+GSE41258,unadjusted,raw,Carcinoma->Metastasis,-1.3047284827091843,0.989,0.22,0.98,power from Normal->Adenoma group sizes,Too few samples to tell
+GSE41258,unadjusted,shape-only,Normal->Adenoma,6.898615691427386,0.003,0.4,1.0,power at actual group sizes,Difference detected (step 5)
+GSE41258,unadjusted,shape-only,Adenoma->Carcinoma,0.1061434654520691,0.716,0.4,1.0,power from Normal->Adenoma group sizes,Too few samples to tell
+GSE41258,unadjusted,shape-only,Carcinoma->Metastasis,-0.8871493191329174,0.842,0.4,1.0,power from Normal->Adenoma group sizes,Too few samples to tell
+GSE20916,unadjusted,shape-only,Normal->Adenoma,4.2657662467681,0.006,0.62,1.0,power at actual group sizes,Difference detected (step 5)
+GSE20916,unadjusted,shape-only,Adenoma->Carcinoma,4.32395273602009,0.006,0.62,1.0,power from Normal->Adenoma group sizes,Difference detected (step 5)
+GSE20916,unadjusted,raw,Normal->Adenoma,3.1377682049509588,0.012,0.02,0.36,power at actual group sizes,Difference detected (step 5)
+GSE20916,unadjusted,raw,Adenoma->Carcinoma,9.57010009920901,0.002,0.02,0.36,power from Normal->Adenoma group sizes,Difference detected (step 5)
+GSE20916,adjusted,shape-only,Normal->Adenoma,2.4210886544276145,0.054,0.14,0.12,power at actual group sizes,Too few samples to tell
+GSE20916,adjusted,shape-only,Adenoma->Carcinoma,-0.1073988691001448,0.436,0.14,0.12,power from Normal->Adenoma group sizes,Too few samples to tell
+GSE20916,adjusted,raw,Normal->Adenoma,1.4269350701106076,0.093,0.08,0.06,power at actual group sizes,Too few samples to tell
+GSE20916,adjusted,raw,Adenoma->Carcinoma,6.285479735898181,0.006,0.08,0.06,power from Normal->Adenoma group sizes,Difference detected (step 5)
+GSE37364,unadjusted,shape-only,Normal->Adenoma,1.7521113149560046,0.102,0.34,0.06,power at actual group sizes,Too few samples to tell
+GSE37364,unadjusted,shape-only,Adenoma->Carcinoma,1.9357110693940216,0.102,0.34,0.06,power from Normal->Adenoma group sizes,Too few samples to tell
+GSE37364,unadjusted,raw,Normal->Adenoma,6.984853499224981,0.002,0.56,1.0,power at actual group sizes,Difference detected (step 5)
+GSE37364,unadjusted,raw,Adenoma->Carcinoma,4.484674017730246,0.002,0.56,1.0,power from Normal->Adenoma group sizes,Difference detected (step 5)
+GSE37364,adjusted,shape-only,Normal->Adenoma,3.427667117340204,0.01,0.1,0.46,power at actual group sizes,Difference detected (step 5)
+GSE37364,adjusted,shape-only,Adenoma->Carcinoma,-0.5658205700112378,0.685,0.1,0.46,power from Normal->Adenoma group sizes,Too few samples to tell
+GSE37364,adjusted,raw,Normal->Adenoma,8.498194007016707,0.002,0.4,1.0,power at actual group sizes,Difference detected (step 5)
+GSE37364,adjusted,raw,Adenoma->Carcinoma,3.4482131089016312,0.011,0.4,1.0,power from Normal->Adenoma group sizes,Difference detected (step 5)

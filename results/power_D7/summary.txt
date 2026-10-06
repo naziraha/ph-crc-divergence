@@ -1,0 +1,56 @@
+DEVIATION D7 - Empirical power of the step 5 test (DESCRIPTIVE)
+================================================================
+docs/analysis_deviations.md D7 (commit a446a34), specified before computation.
+Benchmark = each cohort's real raw Normal -> Adenoma difference; scaled by swapping samples between the
+groups so their composition differs by alpha of the full contrast. Step 5 test unchanged except 99
+permutations; detection p <= 0.05/K (K=3 GSE41258, 2 others); 50 replicates per cell (MC SE <= 7%).
+Versions: gudhi 3.13.0, numpy 2.4.6
+Replicates finished: 2400/2400
+
+POWER (Bonferroni-level detection rate; in brackets: p <= 0.05 rate)
+  GSE20916 adjusted   raw        n=24/45: 100%:   6% ( 30%)  75%:   8% ( 20%)  50%:   8% ( 14%)  25%:   6% (  6%)
+  GSE20916 adjusted   shape-only n=24/45: 100%:  12% ( 58%)  75%:   8% ( 18%)  50%:  14% ( 26%)  25%:   6% ( 10%)
+  GSE20916 unadjusted raw        n=24/45: 100%:  36% ( 86%)  75%:   0% (  0%)  50%:   2% (  2%)  25%:   4% (  8%)
+  GSE20916 unadjusted shape-only n=24/45: 100%: 100% (100%)  75%:  90% ( 94%)  50%:  62% ( 80%)  25%:  12% ( 16%)
+  GSE37364 adjusted   raw        n=38/29: 100%: 100% (100%)  75%:  96% (100%)  50%:  40% ( 68%)  25%:   4% ( 10%)
+  GSE37364 adjusted   shape-only n=38/29: 100%:  46% ( 82%)  75%:  44% ( 54%)  50%:  10% ( 28%)  25%:   6% (  8%)
+  GSE37364 unadjusted raw        n=38/29: 100%: 100% (100%)  75%:  98% (100%)  50%:  56% ( 80%)  25%:   4% ( 16%)
+  GSE37364 unadjusted shape-only n=38/29: 100%:   6% ( 32%)  75%:  54% ( 84%)  50%:  34% ( 60%)  25%:   0% ( 12%)
+  GSE41258 adjusted   raw        n=53/48: 100%: 100% (100%)  75%:  98% (100%)  50%:  48% ( 84%)  25%:   4% ( 24%)
+  GSE41258 adjusted   shape-only n=53/48: 100%:   2% ( 30%)  75%:  62% ( 92%)  50%:  34% ( 70%)  25%:   6% ( 18%)
+  GSE41258 unadjusted raw        n=53/48: 100%:  98% (100%)  75%:  80% ( 98%)  50%:  22% ( 52%)  25%:   4% ( 20%)
+  GSE41258 unadjusted shape-only n=53/48: 100%: 100% (100%)  75%:  96% (100%)  50%:  40% ( 80%)  25%:   6% ( 20%)
+
+CLASSIFICATION OF STEP 5 PRIMARY RESULTS (rule: power at 50% >= 80% -> likely no meaningful effect)
+  GSE41258 adjusted   raw        Normal->Adenoma         z=10.03 Holm p 0.003 | power@50%  48%  -> Difference detected (step 5)
+  GSE41258 adjusted   raw        Adenoma->Carcinoma      z= 0.17 Holm p 0.642 | power@50%  48%  -> Too few samples to tell   [approx.: N->A group sizes]
+  GSE41258 adjusted   raw        Carcinoma->Metastasis   z=-0.27 Holm p 0.642 | power@50%  48%  -> Too few samples to tell   [approx.: N->A group sizes]
+  GSE41258 adjusted   shape-only Normal->Adenoma         z= 0.92 Holm p 0.282 | power@50%  34%  -> Too few samples to tell
+  GSE41258 adjusted   shape-only Adenoma->Carcinoma      z= 1.40 Holm p 0.282 | power@50%  34%  -> Too few samples to tell   [approx.: N->A group sizes]
+  GSE41258 adjusted   shape-only Carcinoma->Metastasis   z= 1.36 Holm p 0.282 | power@50%  34%  -> Too few samples to tell   [approx.: N->A group sizes]
+  GSE41258 unadjusted raw        Normal->Adenoma         z= 7.24 Holm p 0.003 | power@50%  22%  -> Difference detected (step 5)
+  GSE41258 unadjusted raw        Adenoma->Carcinoma      z= 4.44 Holm p 0.008 | power@50%  22%  -> Difference detected (step 5)
+  GSE41258 unadjusted raw        Carcinoma->Metastasis   z=-1.30 Holm p 0.989 | power@50%  22%  -> Too few samples to tell   [approx.: N->A group sizes]
+  GSE41258 unadjusted shape-only Normal->Adenoma         z= 6.90 Holm p 0.003 | power@50%  40%  -> Difference detected (step 5)
+  GSE41258 unadjusted shape-only Adenoma->Carcinoma      z= 0.11 Holm p 0.716 | power@50%  40%  -> Too few samples to tell   [approx.: N->A group sizes]
+  GSE41258 unadjusted shape-only Carcinoma->Metastasis   z=-0.89 Holm p 0.842 | power@50%  40%  -> Too few samples to tell   [approx.: N->A group sizes]
+  GSE20916 unadjusted shape-only Normal->Adenoma         z= 4.27 Holm p 0.006 | power@50%  62%  -> Difference detected (step 5)
+  GSE20916 unadjusted shape-only Adenoma->Carcinoma      z= 4.32 Holm p 0.006 | power@50%  62%  -> Difference detected (step 5)
+  GSE20916 unadjusted raw        Normal->Adenoma         z= 3.14 Holm p 0.012 | power@50%   2%  -> Difference detected (step 5)
+  GSE20916 unadjusted raw        Adenoma->Carcinoma      z= 9.57 Holm p 0.002 | power@50%   2%  -> Difference detected (step 5)
+  GSE20916 adjusted   shape-only Normal->Adenoma         z= 2.42 Holm p 0.054 | power@50%  14%  -> Too few samples to tell
+  GSE20916 adjusted   shape-only Adenoma->Carcinoma      z=-0.11 Holm p 0.436 | power@50%  14%  -> Too few samples to tell   [approx.: N->A group sizes]
+  GSE20916 adjusted   raw        Normal->Adenoma         z= 1.43 Holm p 0.093 | power@50%   8%  -> Too few samples to tell
+  GSE20916 adjusted   raw        Adenoma->Carcinoma      z= 6.29 Holm p 0.006 | power@50%   8%  -> Difference detected (step 5)
+  GSE37364 unadjusted shape-only Normal->Adenoma         z= 1.75 Holm p 0.102 | power@50%  34%  -> Too few samples to tell
+  GSE37364 unadjusted shape-only Adenoma->Carcinoma      z= 1.94 Holm p 0.102 | power@50%  34%  -> Too few samples to tell   [approx.: N->A group sizes]
+  GSE37364 unadjusted raw        Normal->Adenoma         z= 6.98 Holm p 0.002 | power@50%  56%  -> Difference detected (step 5)
+  GSE37364 unadjusted raw        Adenoma->Carcinoma      z= 4.48 Holm p 0.002 | power@50%  56%  -> Difference detected (step 5)
+  GSE37364 adjusted   shape-only Normal->Adenoma         z= 3.43 Holm p 0.010 | power@50%  10%  -> Difference detected (step 5)
+  GSE37364 adjusted   shape-only Adenoma->Carcinoma      z=-0.57 Holm p 0.685 | power@50%  10%  -> Too few samples to tell   [approx.: N->A group sizes]
+  GSE37364 adjusted   raw        Normal->Adenoma         z= 8.50 Holm p 0.002 | power@50%  40%  -> Difference detected (step 5)
+  GSE37364 adjusted   raw        Adenoma->Carcinoma      z= 3.45 Holm p 0.011 | power@50%  40%  -> Difference detected (step 5)
+
+Limitation: power for Adenoma->Carcinoma and Carcinoma->Metastasis is approximated by the Normal->Adenoma
+group sizes of the same cohort (same subsample size m); larger real groups would give somewhat higher power.
+Outputs: results/power_D7/power_table.csv, classification.csv, power_curves.png, checkpoints/
