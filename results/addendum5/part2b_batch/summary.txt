@@ -1,0 +1,16 @@
+ADDENDUM 5, PART 2b - Batch-only comparison, GSE41258 normals (descriptive)
+================================================================
+Pre-specified: docs/analysis_prespecification_addendum5_checks.md, part 2b (commit 0a3a86a).
+Normals scanned spring 2003: n = 21; late 2005-2006: n = 30 (corrected dates, D9).
+Frozen step 5 test, 999 permutations, k = 20, aligned, m = 16; Holm across the 4 batch tests.
+Decision (fixed in advance): any batch Holm p < 0.05 -> batch can mimic a stage difference in this dataset.
+
+version    mode       |  BATCH z      p  Holm p |   N->A size-matched z: median [min, max] | step 5 N->A z (53 vs 48, m=31)
+unadjusted shape-only |    -0.37  0.558   1.000 |      4.13 [-0.63,  9.30] (p<=0.05 in 16/20) |         6.90 (Holm p 0.003)
+unadjusted raw        |     2.61  0.020   0.080 |      2.45 [ 0.16,  5.10] (p<=0.05 in 15/20) |         7.24 (Holm p 0.003)
+adjusted   shape-only |    -0.70  0.732   1.000 |      0.30 [-1.28,  4.83] (p<=0.05 in 3/20) |         0.92 (Holm p 0.282)
+adjusted   raw        |     1.90  0.052   0.156 |      4.23 [ 2.49,  7.66] (p<=0.05 in 20/20) |        10.03 (Holm p 0.003)
+
+DECISION: no batch-only test has Holm p < 0.05 -> batch did not produce a significant topological difference; compare its z with the size-matched N->A z above.
+
+Outputs: results/addendum5/part2b_batch/batch_vs_NA.csv, checkpoints/
