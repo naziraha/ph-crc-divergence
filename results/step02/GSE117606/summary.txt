@@ -51,3 +51,11 @@ Outputs:
   data/processed/GSE117606_<set>_samples_qc.csv
   data/processed/GSE117606_<set>_expr_genes_adjusted.csv (primary) and _adjusted_stageaware.csv (secondary)
   (unadjusted expression = step-1 file restricted to the set's samples)
+
+IDENTITY DECISION (PI, 2026-10-06, before step 3)
+  Keep all 195 main-set arrays in the primary analysis; no identity exclusions.
+  None of the 15 flagged arrays shows a non-colorectal identity. The colon-programme-low carcinomas
+  GSM3304834 (9872B) and GSM3304932 (1627B) are consistent with poorly differentiated / mucinous CRC
+  and are kept as real biology.
+  GSM3304812 (2488B, carcinoma; hepatocyte z 10.3, colon markers retained) is kept; a sensitivity
+  analysis of steps 3-5 without it is declared as deviation D11 (docs/analysis_deviations.md).
