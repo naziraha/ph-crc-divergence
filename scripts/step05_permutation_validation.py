@@ -34,7 +34,10 @@ TRANS = [("Normal", "Adenoma"), ("Adenoma", "Carcinoma")]
 VERSIONS = ("unadjusted", "adjusted", "stageaware")
 EMB = os.path.join(ROOT, "results", "step03", "embeddings")
 COHORT = {"GSE20916": {"set": "bulk", "expected": {"Normal": 24, "Adenoma": 45, "Carcinoma": 36}},
-          "GSE37364": {"set": "bulk", "expected": {"Normal": 38, "Adenoma": 29, "Carcinoma": 27}}}
+          "GSE37364": {"set": "bulk", "expected": {"Normal": 38, "Adenoma": 29, "Carcinoma": 27}},
+          # addendum 6: this run = PRIMARY data versions only; stage-aware and sensitivities in a separate run
+          "GSE117606": {"set": "main", "expected": {"Normal": 65, "Adenoma": 59, "Carcinoma": 71},
+                        "primary_versions": ("unadjusted", "adjusted"), "prespec": "addendum 6 (93613bd)"}}
 ANALYSES = {"primary": "g2000_pc10", "S5_pc5": "g2000_pc5", "S6_pc20": "g2000_pc20",
             "S7_genes1000": "g1000_pc10", "S8_genes5000": "g5000_pc10"}
 
@@ -45,7 +48,8 @@ def unit_name(gse, a, v, s, t, mode):
 
 def units(gse, which):
     an = ["primary"] if which == "primary" else [a for a in ANALYSES if a != "primary"]
-    return [(gse, a, v, s, t, mode) for a in an for v in VERSIONS for s, t in TRANS for mode in ("norm", "raw")]
+    vers = COHORT[gse].get("primary_versions", VERSIONS) if which == "primary" else VERSIONS
+    return [(gse, a, v, s, t, mode) for a in an for v in vers for s, t in TRANS for mode in ("norm", "raw")]
 
 
 def run_unit(u):
@@ -99,7 +103,7 @@ def summary(gse):
         .drop(columns=["_a", "_v"])
     df.to_csv(os.path.join(out, "permutation_results_all.csv"), index=False)
     L = [f"STEP 5 - Pre-specified permutation test ({gse}, set {COHORT[gse]['set']})", "=" * 60,
-         "Pre-specification: addendum 1 (6ea31ea), addendum 2 (d73e5d1)",
+         "Pre-specification: " + COHORT[gse].get("prespec", "addendum 1 (6ea31ea), addendum 2 (d73e5d1)"),
          f"Seed {SEED} (per-unit SeedSequence, resumable); "
          + ", ".join(f"{p} {metadata.version(p)}" for p in ("gudhi", "numpy", "scipy")),
          f"Settings: VR H0+H1, exact W1, k={K_DRAWS}, m = 80% of smallest stage, aligned, {N_PERM} permutations, "
@@ -114,16 +118,17 @@ def summary(gse):
         for _, r in sub.iterrows():
             L.append(f"  {r.version:<11} {r['mode']:<10} {r.transition:<20} n={r.n_from}/{r.n_to} m={r.subsample_size}"
                      f"  T={r.T_obs:9.4f}  z={r.z:6.2f}  p={r.p:.4f}  p_Holm {r.p_holm:.4f}")
-        if a == "primary" and len(sub) == 12:
+        if a == "primary" and len(sub) == len(units(gse, "primary")):
             L.append("  TIPPING-POINT DECISION (shape-only Holm p < 0.05 in BOTH unadjusted and adjusted):")
             for s, t in TRANS:
                 tr = f"{s}->{t}"
                 get = lambda v, mo: sub[(sub.version == v) & (sub["mode"] == mo) & (sub.transition == tr)].p_holm.iloc[0]
-                pu, pa, ps = get("unadjusted", "shape-only"), get("adjusted", "shape-only"), get("stageaware", "shape-only")
+                pu, pa = get("unadjusted", "shape-only"), get("adjusted", "shape-only")
+                ps = get("stageaware", "shape-only") if (sub.version == "stageaware").any() else float("nan")
                 call = ("TIPPING POINT" if pu < .05 and pa < .05 else "significant in unadjusted only" if pu < .05
                         else "significant in adjusted only" if pa < .05 else "not significant")
                 L.append(f"    {tr:<20} unadjusted {pu:.4f}, adjusted {pa:.4f} -> {call}   "
-                         f"[secondary stage-aware: {ps:.4f}]")
+                         + (f"[secondary stage-aware: {ps:.4f}]" if ps == ps else "[stage-aware: separate run]"))
             ru, ra = (sub[(sub.version == v) & (sub["mode"] == "raw") & (sub.transition == "Normal->Adenoma")]
                       .p_holm.iloc[0] for v in ("unadjusted", "adjusted"))
             L.append(f"  SECONDARY REPLICATION (Normal->Adenoma raw Holm p < 0.05 in both): unadjusted {ru:.4f}, "
@@ -134,13 +139,13 @@ def summary(gse):
     with open(os.path.join(out, "summary.txt"), "w", encoding="utf-8") as fh:
         fh.write("\n".join(L) + "\n")
     prim = df[df.analysis == "primary"]
-    if len(prim) == 12:
+    if len(prim) == len(units(gse, "primary")):
         import matplotlib
         matplotlib.use("Agg")
         import matplotlib.pyplot as plt
         fig, axes = plt.subplots(1, 2, figsize=(12, 4.2), sharey=True)
         for ax, mode in zip(axes, ("shape-only", "raw")):
-            for k, (v, col) in enumerate(zip(VERSIONS, ("#2a78d6", "#eb6834", "#7b4fb3"))):
+            for k, (v, col) in enumerate(zip([x for x in VERSIONS if (prim.version == x).any()], ("#2a78d6", "#eb6834", "#7b4fb3"))):
                 g = prim[(prim.version == v) & (prim["mode"] == mode)].set_index("transition").loc[
                     [f"{s}->{t}" for s, t in TRANS]]
                 x = np.arange(2) + (k - 1) * 0.27
@@ -151,7 +156,7 @@ def summary(gse):
             ax.set_xticks(range(2)); ax.set_xticklabels(["Norm→Aden", "Aden→Carc"])
             ax.set_title(f"{mode}{' (primary)' if mode == 'shape-only' else ' (secondary)'}"); ax.legend(fontsize=8)
         axes[0].set_ylabel("z vs permutation null (labels: Holm p)")
-        fig.suptitle(f"{gse} bulk: permutation test (999 permutations)")
+        fig.suptitle(f"{gse} {COHORT[gse]['set']}: permutation test (999 permutations)")
         fig.tight_layout(); fig.savefig(os.path.join(out, "step05_primary.png"), dpi=150); plt.close(fig)
 
 

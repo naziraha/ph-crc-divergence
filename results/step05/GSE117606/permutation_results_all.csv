@@ -1,0 +1,9 @@
+unit,cohort,analysis,version,transition,mode,n_from,n_to,subsample_size,T_obs,p,z,seconds,finished,p_holm
+GSE117606__primary__unadj__N-A__shape,GSE117606,primary,unadjusted,Normal->Adenoma,shape-only,65,59,47,0.7957539076616376,0.483,-0.1358626470317259,404.2,2026-10-06T22:41:16,0.483
+GSE117606__primary__unadj__A-C__shape,GSE117606,primary,unadjusted,Adenoma->Carcinoma,shape-only,59,71,47,2.4483947650484055,0.001,4.667615360817434,412.2,2026-10-06T22:41:24,0.002
+GSE117606__primary__unadj__N-A__raw,GSE117606,primary,unadjusted,Normal->Adenoma,raw,65,59,47,27.956293833090157,0.598,-0.42785754609995413,402.3,2026-10-06T22:41:14,0.598
+GSE117606__primary__unadj__A-C__raw,GSE117606,primary,unadjusted,Adenoma->Carcinoma,raw,59,71,47,161.45512540600984,0.001,6.429413162819057,405.7,2026-10-06T22:41:18,0.002
+GSE117606__primary__adjus__N-A__shape,GSE117606,primary,adjusted,Normal->Adenoma,shape-only,65,59,47,0.7912105482543061,0.291,0.32901307065297525,410.3,2026-10-06T22:41:23,0.582
+GSE117606__primary__adjus__A-C__shape,GSE117606,primary,adjusted,Adenoma->Carcinoma,shape-only,59,71,47,0.7043785106132605,0.321,0.26695467167706977,275.6,2026-10-06T22:45:50,0.582
+GSE117606__primary__adjus__N-A__raw,GSE117606,primary,adjusted,Normal->Adenoma,raw,65,59,47,16.767418851580864,0.729,-0.698324092325605,406.6,2026-10-06T22:41:19,0.729
+GSE117606__primary__adjus__A-C__raw,GSE117606,primary,adjusted,Adenoma->Carcinoma,raw,59,71,47,133.55323115315278,0.001,5.708053052674398,274.1,2026-10-06T22:45:50,0.002

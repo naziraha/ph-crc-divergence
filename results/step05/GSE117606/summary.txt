@@ -1,0 +1,28 @@
+STEP 5 - Pre-specified permutation test (GSE117606, set main)
+============================================================
+Pre-specification: addendum 6 (93613bd)
+Seed 42 (per-unit SeedSequence, resumable); gudhi 3.13.0, numpy 2.4.6, scipy 1.17.1
+Settings: VR H0+H1, exact W1, k=20, m = 80% of smallest stage, aligned, 999 permutations, Holm across 2 transitions per analysis x version x mode.
+Samples per stage: Normal 65, Adenoma 59, Carcinoma 71
+Units finished: 8/56
+
+--- primary (g2000_pc10) ---
+  unadjusted  shape-only Normal->Adenoma      n=65/59 m=47  T=   0.7958  z= -0.14  p=0.4830  p_Holm 0.4830
+  unadjusted  shape-only Adenoma->Carcinoma   n=59/71 m=47  T=   2.4484  z=  4.67  p=0.0010  p_Holm 0.0020
+  unadjusted  raw        Normal->Adenoma      n=65/59 m=47  T=  27.9563  z= -0.43  p=0.5980  p_Holm 0.5980
+  unadjusted  raw        Adenoma->Carcinoma   n=59/71 m=47  T= 161.4551  z=  6.43  p=0.0010  p_Holm 0.0020
+  adjusted    shape-only Normal->Adenoma      n=65/59 m=47  T=   0.7912  z=  0.33  p=0.2910  p_Holm 0.5820
+  adjusted    shape-only Adenoma->Carcinoma   n=59/71 m=47  T=   0.7044  z=  0.27  p=0.3210  p_Holm 0.5820
+  adjusted    raw        Normal->Adenoma      n=65/59 m=47  T=  16.7674  z= -0.70  p=0.7290  p_Holm 0.7290
+  adjusted    raw        Adenoma->Carcinoma   n=59/71 m=47  T= 133.5532  z=  5.71  p=0.0010  p_Holm 0.0020
+  TIPPING-POINT DECISION (shape-only Holm p < 0.05 in BOTH unadjusted and adjusted):
+    Normal->Adenoma      unadjusted 0.4830, adjusted 0.5820 -> not significant   [stage-aware: separate run]
+    Adenoma->Carcinoma   unadjusted 0.0020, adjusted 0.5820 -> significant in unadjusted only   [stage-aware: separate run]
+  SECONDARY REPLICATION (Normal->Adenoma raw Holm p < 0.05 in both): unadjusted 0.5980, adjusted 0.7290 -> not replicated
+
+S5_pc5: not run yet
+S6_pc20: not run yet
+S7_genes1000: not run yet
+S8_genes5000: not run yet
+Outputs: results/step05/<GSE>/permutation_results_all.csv, checkpoints/<unit>.json, step05_primary.png
+Resume after interruption: re-run the same command.
