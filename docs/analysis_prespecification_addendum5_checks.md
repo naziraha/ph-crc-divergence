@@ -97,3 +97,19 @@ Level 2 spread is not required to be ignored by shape-only, because a spread cha
 **Size-matched Normal → Adenoma reference:** z-scores depend on group size and m. The step 5 Normal → Adenoma test (53 vs 48, m = 31) is therefore also repeated at the batch comparison's sizes: **20 random draws** of 21 normals and 30 adenomas (without replacement), m = 16, 999 permutations, same four mode × version combinations. Median z and the range over the 20 draws are reported next to the step 5 z and the batch z.
 
 **Decision, stated in advance:** if any of the four batch-only tests has **Holm p < 0.05**, batch can mimic a stage difference in this dataset, and the GSE41258 Normal → Adenoma results must be treated as possibly batch-driven. If none is significant, the batch contrast is reported with its z-scores, which are compared with the size-matched Normal → Adenoma z-scores to judge how much of that difference batch could plausibly explain. This is descriptive; it changes no step 5 result.
+
+---
+
+## Part 3b (appended 2026-10-06, after the part 3 results and before running part 3b; earlier parts unchanged)
+
+**Why:** level 1 controls passed (C1–C5) but level 2 failed (C6): no insertion into 200 genes was detected after the full pipeline. Part 3b checks whether the insertion really reached the analysis (bug check) and, if it did, at which preprocessing step it is lost. **Descriptive only: no permutation tests, no change to the frozen pipeline.**
+
+**Data:** exact reconstructions of the level 2 data that were tested in part 3. For each insertion, the **first replicate of each of the 5 saved chunks** (5 repeats), rebuilt from the same per-unit seeds (`SeedSequence(42, crc32(unit name))`, shape-only units), so they are byte-identical to the tested data. Insertions: cluster split a = 1, loop a = 1, spread a = 0.5 (+50%) and spread a = 1 (+100%, the largest).
+
+**Measures per repeat:**
+- (a) **Sanity / bug check:** for the 200 altered genes, on the exact matrix passed to `tda_crc_pilot.preprocess` (log2, the 101 samples A ∪ B): mean B − A difference and SD ratio B/A **before and after** insertion (medians over genes); the number of changed matrix entries; and confirmation that only the 200 genes × 48 B samples changed.
+- (b) Number of the 200 genes in the top-2,000 variance selection, after insertion and (for reference) before.
+- (c) Inserted signal in z-space = z-scored(after) − z-scored(before, using the after-insertion gene means and SDs), restricted to the selected genes. Reported: the fraction of its squared norm lying in the first **10** principal components of the after-insertion data (exact SVD); the PC carrying the largest share, with that PC's share of total variance; the inserted signal's share of total z-space variance; and the fraction of the 200 genes' inserted energy kept by gene selection.
+- (d) As (c) for the first **50** components.
+
+**Outcome:** the table is used to decide between (i) the insertion did not reach the analysis (bug) and (ii) a real preprocessing loss, located by (b)–(d).
