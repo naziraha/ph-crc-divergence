@@ -1,0 +1,209 @@
+sample,title,patient id,tissue,stage,set,adenomadiagnosis,tnm,uicc,age,gender,plate,scan_date
+GSM3304749,789B: Tumor of Patient 789,789,Tumor,Carcinoma,main,Adenocarcinoma,"pT4b, pN0, pMx",IIB,65,Male,168e055f-0d49-42c9-9694-f313fca09b6f,2014-12-29T03:32:38Z
+GSM3304750,789A: Adenoma of Patient 789,789,Adenoma,Adenoma,main,Tubular Adenoma,--,--,65,Male,168e055f-0d49-42c9-9694-f313fca09b6f,2014-12-29T04:59:19Z
+GSM3304751,271C: Adjacent Mucosa of Patient 271,271,Adjacent Mucosa,Normal,main,Benign,--,--,66,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T05:31:10Z
+GSM3304752,271B: Tumor of Patient 271,271,Tumor,Carcinoma,main,Colonic Adenocarcinoma,"pT3, pN2a, pMx",IIIB,66,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T04:52:38Z
+GSM3304753,271A: Adenoma of Patient 271,271,Adenoma,Adenoma,main,Tubular Adenoma,--,--,66,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T03:48:10Z
+GSM3304754,2615C: Adjacent Mucosa of Patient 2615,2615,Adjacent Mucosa,Normal,main,Benign,--,--,76,Female,168e055f-0d49-42c9-9694-f313fca09b6f,2014-12-29T04:07:23Z
+GSM3304755,2615B: Tumor of Patient 2615,2615,Tumor,Carcinoma,main,Adenocarcinoma,"mpT2, pN0, pMx",I,76,Female,168e055f-0d49-42c9-9694-f313fca09b6f,2014-12-29T03:54:28Z
+GSM3304756,2615A: SSA of Patient 2615,2615,SSA,SSA,SSA (descriptive),Sessile Serrated Adenoma,--,--,76,Female,168e055f-0d49-42c9-9694-f313fca09b6f,2014-12-29T03:41:35Z
+GSM3304757,3492C: Adjacent Mucosa of Patient 3492,3492,Adjacent Mucosa,Normal,main,Benign,--,--,74,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T08:21:37Z
+GSM3304758,3492B: Tumor of Patient 3492,3492,Tumor,Carcinoma,main,Colonic Adenocarcinoma,"pT2, pN1a, pMx",IIIA,74,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T07:14:23Z
+GSM3304759,3492A: Adenoma of Patient 3492,3492,Adenoma,Adenoma,main,Tubulovillous Adenoma,--,--,74,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T06:35:54Z
+GSM3304760,1487C: Adjacent Mucosa of Patient 1487,1487,Adjacent Mucosa,Normal,main,Benign,--,--,65,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T03:43:53Z
+GSM3304761,1487B: Tumor of Patient 1487,1487,Tumor,Carcinoma,main,Adenocarcinoma,"pT3, pN0, pMx",IIA,65,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T03:11:26Z
+GSM3304762,1467C: Adjacent Mucosa of Patient 1467,1467,Adjacent Mucosa,Normal,main,Benign,--,--,71,Female,6c584740-9aaf-44b7-b900-1aa95c97b300,2014-12-31T07:22:27Z
+GSM3304763,833C: Adjacent Mucosa of Patient 833,833,Adjacent Mucosa,Normal,main,Benign,--,--,77,Female,168e055f-0d49-42c9-9694-f313fca09b6f,2014-12-29T04:46:25Z
+GSM3304764,833B: Tumor of Patient 833,833,Tumor,Carcinoma,main,Adenocarcinoma,"pT4, pN2, pMx",IIIC,77,Female,168e055f-0d49-42c9-9694-f313fca09b6f,2014-12-29T04:33:12Z
+GSM3304765,833A: Adenoma of Patient 833,833,Adenoma,Adenoma,main,Tubular Adenoma,--,--,77,Female,168e055f-0d49-42c9-9694-f313fca09b6f,2014-12-29T04:20:17Z
+GSM3304766,7479C: Adjacent Mucosa of Patient 7479,7479,Adjacent Mucosa,Normal,main,Benign,--,--,40,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T06:40:10Z
+GSM3304767,7479B: Tumor of Patient 7479,7479,Tumor,Carcinoma,main,Adenocarcinoma,"pT3, pN0, pMx",IIA,40,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T05:26:53Z
+GSM3304768,7479A: Adenoma of Patient 7479,7479,Adenoma,Adenoma,main,Tubular Adenoma,--,--,40,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T04:56:55Z
+GSM3304769,744C: Adjacent Mucosa of Patient 744,744,Adjacent Mucosa,Normal,main,Benign,--,--,76,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T04:48:21Z
+GSM3304770,744B: Tumor of Patient 744,744,Tumor,Carcinoma,main,Colonic Adenocarcinoma,"pT3, pN1, pMx",IIIB,76,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T03:52:32Z
+GSM3304771,744A: Adenoma of Patient 744,744,Adenoma,Adenoma,main,Tubulovillous Adenoma,--,--,76,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T03:02:46Z
+GSM3304772,533C: Adjacent Mucosa of Patient 533,533,Adjacent Mucosa,Normal,main,Benign,--,--,63,Female,168e055f-0d49-42c9-9694-f313fca09b6f,2014-12-29T04:24:36Z
+GSM3304773,533B: Tumor of Patient 533,533,Tumor,Carcinoma,main,Adenocarcinoma,"pT1, pN0, pMx",I,63,Female,168e055f-0d49-42c9-9694-f313fca09b6f,2014-12-29T04:03:07Z
+GSM3304774,533A: Adenoma of Patient 533,533,Adenoma,Adenoma,main,Tubulovillous Adenoma,--,--,63,Female,168e055f-0d49-42c9-9694-f313fca09b6f,2014-12-29T03:58:45Z
+GSM3304775,4250C: Adjacent Mucosa of Patient 4250,4250,Adjacent Mucosa,Normal,main,Benign,--,--,77,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T03:30:07Z
+GSM3304776,4250B: Tumor of Patient 4250,4250,Tumor,Carcinoma,main,Adenocarcinoma,"pT3, pN1, pMx",IIIB,77,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T03:25:26Z
+GSM3304777,4250A: Adenoma of Patient 4250,4250,Adenoma,Adenoma,main,Tubulovillous Adenoma with High Grade Dysplasia,--,--,77,Female,6c584740-9aaf-44b7-b900-1aa95c97b300,2014-12-31T07:09:17Z
+GSM3304778,4210C: Adjacent Mucosa of Patient 4210,4210,Adjacent Mucosa,Normal,main,Benign,--,--,59,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T08:34:31Z
+GSM3304779,4210B: Tumor of Patient 4210,4210,Tumor,Carcinoma,main,Adenocarcinoma,"pT3, pN1, pMx",IIIB,59,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T07:01:37Z
+GSM3304780,4210A: Adenoma of Patient 4210,4210,Adenoma,Adenoma,main,Tubular Adenoma,--,--,59,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T06:48:45Z
+GSM3304781,3550C: Adjacent Mucosa of Patient 3550,3550,Adjacent Mucosa,Normal,main,Benign,--,--,74,Male,168e055f-0d49-42c9-9694-f313fca09b6f,2014-12-29T04:37:29Z
+GSM3304782,3550B: Tumor of Patient 3550,3550,Tumor,Carcinoma,main,Adenocarcinoma,"pT3, pN1, pMx",IIIB,74,Male,168e055f-0d49-42c9-9694-f313fca09b6f,2014-12-29T04:15:58Z
+GSM3304783,3550A: SSA of Patient 3550,3550,SSA,SSA,SSA (descriptive),Sessile Serrated Adenoma,--,--,74,Male,168e055f-0d49-42c9-9694-f313fca09b6f,2014-12-29T04:11:40Z
+GSM3304784,3251C: Adjacent Mucosa of Patient 3251,3251,Adjacent Mucosa,Normal,main,Benign,--,--,73,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T06:53:02Z
+GSM3304785,3251B: Tumor of Patient 3251,3251,Tumor,Carcinoma,main,Adenocarcinoma,"pT1, pN0, pMx",I,73,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T05:14:08Z
+GSM3304786,3251A: Adenoma of Patient 3251,3251,Adenoma,Adenoma,main,Tubular Adenoma with High Grade Dysplasia,--,--,73,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T05:09:45Z
+GSM3304787,300B: Tumor of Patient 300,300,Tumor,Carcinoma,main,Invasive Adenocarcinoma,"pT1, pN0, pMx",I,77,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T08:12:50Z
+GSM3304788,300A: Adenoma of Patient 300,300,Adenoma,Adenoma,main,Tubulovillous Adenoma,--,--,77,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T07:22:56Z
+GSM3304789,2969B: Tumor of Patient 2969,2969,Tumor,Carcinoma,main,Adenocarcinoma,"pT4, pN1, pMx, pV1",IIIB,72,Female,168e055f-0d49-42c9-9694-f313fca09b6f,2014-12-29T03:45:53Z
+GSM3304790,2969A: Adenoma of Patient 2969,2969,Adenoma,Adenoma,main,Tubulovillous Adenoma,--,--,72,Female,168e055f-0d49-42c9-9694-f313fca09b6f,2014-12-29T03:23:30Z
+GSM3304791,2089C: Adjacent Mucosa of Patient 2089,2089,Adjacent Mucosa,Normal,main,Benign,--,--,59,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T07:18:38Z
+GSM3304792,2089B: Tumor of Patient 2089,2089,Tumor,Carcinoma,main,Colonic Adenocarcinoma,"pT2, pN0, pMx",I,59,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T06:31:38Z
+GSM3304793,2089A: Adenoma of Patient 2089,2089,Adenoma,Adenoma,main,Tubulovillous Adenoma,--,--,59,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T05:35:26Z
+GSM3304794,119C: Adjacent Mucosa of Patient 119,119,Adjacent Mucosa,Normal,main,Benign,--,--,77,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T05:01:11Z
+GSM3304795,119B: Tumor of Patient 119,119,Tumor,Carcinoma,main,Adenocarcinoma,"pT3, pN1, pMx",IIIB,77,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T03:39:24Z
+GSM3304796,119A: Adenoma of Patient 119,119,Adenoma,Adenoma,main,Tubulovillous Adenoma,--,--,77,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T03:16:05Z
+GSM3304797,355C: Adjacent Mucosa of Patient 355,355,Adjacent Mucosa,Normal,main,Benign,--,--,90,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T03:07:06Z
+GSM3304798,355A: Adenoma of Patient 355,355,Adenoma,Adenoma,main,Tubular Adenoma,--,--,90,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T08:17:20Z
+GSM3304799,1889C: Adjacent Mucosa of Patient 1889,1889,Adjacent Mucosa,Normal,main,Benign,--,--,47,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T05:18:24Z
+GSM3304800,1889B: Tumor of Patient 1889,1889,Tumor,Carcinoma,main,Adenocarcinoma,"pT4, R1pN2b, pMx",IIIC,47,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T05:05:28Z
+GSM3304801,1889A: Tumor of Patient 1889,1889,Tumor,Carcinoma,set aside (A-coded carcinoma),Carcinoma,--,--,47,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T03:34:45Z
+GSM3304802,2743C: Adjacent Mucosa of Patient 2743,2743,Adjacent Mucosa,Normal,main,Benign,--,--,81,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T07:05:53Z
+GSM3304803,2743B: Tumor of Patient 2743,2743,Tumor,Carcinoma,main,Adenocarcinoma,"pT2, pN0, pMx",I,81,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T06:44:28Z
+GSM3304804,2743A: Adenoma of Patient 2743,2743,Adenoma,Adenoma,main,Tubulovillous Adenoma,--,--,81,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T05:22:38Z
+GSM3304805,1998B: Tumor of Patient 1998,1998,Tumor,Carcinoma,main,Adenocarcinoma,"pT3, pN0, pMx",IIA,58,Male,168e055f-0d49-42c9-9694-f313fca09b6f,2014-12-29T05:03:59Z
+GSM3304806,1998A: Adenoma of Patient 1998,1998,Adenoma,Adenoma,main,Tubular Adenoma,--,--,58,Male,168e055f-0d49-42c9-9694-f313fca09b6f,2014-12-29T04:41:47Z
+GSM3304807,692C: Adjacent Mucosa of Patient 692,692,Adjacent Mucosa,Normal,main,Benign,--,--,53,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T06:27:19Z
+GSM3304808,692B: Tumor of Patient 692,692,Tumor,Carcinoma,main,Adenocarcinoma,"pT4a, pN1, pM1",IV,53,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T05:39:41Z
+GSM3304809,692A: Adenoma of Patient 692,692,Adenoma,Adenoma,main,Tubulovillous Adenoma,--,--,53,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T04:44:04Z
+GSM3304810,2505C: Adjacent Mucosa of Patient 2505,2505,Adjacent Mucosa,Normal,main,Benign,--,--,66,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T03:20:45Z
+GSM3304811,2505A: Adenoma of Patient 2505,2505,Adenoma,Adenoma,main,Regular adenoma,--,--,66,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T08:30:11Z
+GSM3304812,2488B: Tumor of Patient 2488,2488,Tumor,Carcinoma,main,Adenocarcinoma,"pT3, pN0, pMx",IIA,76,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T08:25:55Z
+GSM3304813,2488A: Tumor of Patient 2488,2488,Tumor,Carcinoma,set aside (A-coded carcinoma),Carcinoma,--,--,76,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T07:10:08Z
+GSM3304814,1860C: Adjacent Mucosa of Patient 1860,1860,Adjacent Mucosa,Normal,main,Benign,--,--,72,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T02:54:11Z
+GSM3304815,1860A: Adenoma of Patient 1860,1860,Adenoma,Adenoma,main,Adenomatous Polyp,--,--,72,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T08:03:31Z
+GSM3304816,1818C: Adjacent Mucosa of Patient 1818,1818,Adjacent Mucosa,Normal,main,Benign,--,--,90,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T07:31:26Z
+GSM3304817,1818B: Tumor of Patient 1818,1818,Tumor,Carcinoma,main,Adenocarcinoma with Focal Mucinous Features,"pT2, pN1, pMX",IIIA,90,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T06:18:45Z
+GSM3304818,1818A: Tumor of Patient 1818,1818,Tumor,Carcinoma,set aside (A-coded carcinoma),Carcinoma,--,--,90,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T05:48:11Z
+GSM3304819,2818C: Adjacent Mucosa of Patient 2818,2818,Adjacent Mucosa,Normal,main,Benign,--,--,66,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T04:35:30Z
+GSM3304820,2818B: Tumor of Patient 2818,2818,Tumor,Carcinoma,main,Mucinous Adenocarcinoma,"pT3, pN0, pMX",IIA,66,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T04:05:24Z
+GSM3304821,2818A: Adenoma of Patient 2818,2818,Adenoma,Adenoma,main,Tubular Adenoma,--,--,66,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T02:49:52Z
+GSM3304822,5073C: Adjacent Mucosa of Patient 5073,5073,Adjacent Mucosa,Normal,main,Benign,--,--,65,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T09:16:08Z
+GSM3304823,5073B: Tumor of Patient 5073,5073,Tumor,Carcinoma,main,Adenocarcinoma,"pT3, pN0, pMX",IIA,65,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T07:58:53Z
+GSM3304824,5073A: SSA of Patient 5073,5073,SSA,SSA,SSA (descriptive),Sessile Serrated Adenoma,--,--,65,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T07:35:53Z
+GSM3304825,5960C: Adjacent Mucosa of Patient 5960,5960,Adjacent Mucosa,Normal,main,Benign,--,--,68,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T06:14:30Z
+GSM3304826,5960B: Tumor of Patient 5960,5960,Tumor,Carcinoma,main,"Adenocarcinoma, Mucin Producing","pT3, pN0, pMX",IIA,68,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T05:52:26Z
+GSM3304827,5960A: Adenoma of Patient 5960,5960,Adenoma,Adenoma,main,Adenomatous Polyp,--,--,68,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T04:31:12Z
+GSM3304828,73C: Adjacent Mucosa of Patient 73,73,Adjacent Mucosa,Normal,main,Benign,--,--,69,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T04:09:41Z
+GSM3304829,73B: Tumor of Patient 73,73,Tumor,Carcinoma,main,Colonic Adenocarcinoma,"pT3, pN1, pMX",IIIB,69,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T02:45:33Z
+GSM3304830,3763C: Adjacent Mucosa of Patient 3763,3763,Adjacent Mucosa,Normal,main,Benign,--,--,58,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T02:41:14Z
+GSM3304831,3763B: Tumor of Patient 3763,3763,Tumor,Carcinoma,main,Adenocarcinoma,"pT3a/b, pN2, pMX",IIIB,58,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T09:24:07Z
+GSM3304832,3763A: Adenoma of Patient 3763,3763,Adenoma,Adenoma,main,Adenovillous Polyp,--,--,58,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T07:49:44Z
+GSM3304833,9872C: Adjacent Mucosa of Patient 9872,9872,Adjacent Mucosa,Normal,main,Benign,--,--,82,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T05:56:43Z
+GSM3304834,9872B: Tumor of Patient 9872,9872,Tumor,Carcinoma,main,Colonic Adenocarcinoma,"pT3, pN2, pMX",IIIB,82,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T04:26:54Z
+GSM3304835,9872A: Adenoma of Patient 9872,9872,Adenoma,Adenoma,main,Flat Tubulovillous Adenoma,--,--,82,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T04:13:59Z
+GSM3304836,12071C: Adjacent Mucosa of Patient 12071,12071,Adjacent Mucosa,Normal,main,Benign,--,--,75,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T07:45:08Z
+GSM3304837,12071B: Tumor of Patient 12071,12071,Tumor,Carcinoma,main,Colonic Adenocarcinoma,"pT3a/b, pN0, pMX",IIA,75,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T06:05:16Z
+GSM3304838,12071A: SSA of Patient 12071,12071,SSA,SSA,SSA (descriptive),Sessile Serrated Adenoma,--,--,75,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T06:00:59Z
+GSM3304839,984B: Tumor of Patient 984,984,Tumor,Carcinoma,main,Colonic Adenocarcinoma,"pT1, pN0, pMX",I,51,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T07:40:30Z
+GSM3304840,984A: SSA of Patient 984,984,SSA,SSA,SSA (descriptive),Sessile Serrated Adenoma,--,--,51,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T06:10:00Z
+GSM3304841,449C: Adjacent Mucosa of Patient 449,449,Adjacent Mucosa,Normal,main,Benign,--,--,53,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T07:17:52Z
+GSM3304842,449B: Tumor of Patient 449,449,Tumor,Carcinoma,main,Colonic Adenocarcinoma,"pT3, pN0, pMX",IIA,53,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T05:39:17Z
+GSM3304843,449A: Adenoma of Patient 449,449,Adenoma,Adenoma,main,Tubulovillous Adenoma with Low Grade Dysplasia,--,--,53,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T05:34:59Z
+GSM3304844,974C: Adjacent Mucosa of Patient 974,974,Adjacent Mucosa,Normal,main,Benign,--,--,58,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T03:55:44Z
+GSM3304845,974B: Tumor of Patient 974,974,Tumor,Carcinoma,main,Colonic Adenocarcinoma,"pT3, pN0, pMX",IIA,58,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T03:50:56Z
+GSM3304846,974A: Adenoma of Patient 974,974,Adenoma,Adenoma,main,Tubulovillous Adenoma,--,--,58,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T09:11:08Z
+GSM3304847,921C: Adjacent Mucosa of Patient 921,921,Adjacent Mucosa,Normal,main,Benign,--,--,58,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T09:18:25Z
+GSM3304848,921B: Tumor of Patient 921,921,Tumor,Carcinoma,main,Invasive Adenocarcinoma,"pT1, pN0, pMX",I,58,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T08:52:53Z
+GSM3304849,921A: Adenoma of Patient 921,921,Adenoma,Adenoma,main,Villous Adenoma with High Grade Dysplasia,--,--,58,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T07:42:27Z
+GSM3304850,1506C: Adjacent Mucosa of Patient 1506,1506,Adjacent Mucosa,Normal,main,Benign,--,--,68,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T05:26:26Z
+GSM3304851,1506B: Tumor of Patient 1506,1506,Tumor,Carcinoma,main,Colonic Adenocarcinoma,"pT3, pN2, pMX",IIIB,68,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T04:04:53Z
+GSM3304852,1506A: Adenoma of Patient 1506,1506,Adenoma,Adenoma,main,Tubulovillous Adenoma with Moderate Mucosal Dysplasia,--,--,68,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T03:41:37Z
+GSM3304853,11218B: Tumor of Patient 11218,11218,Tumor,Carcinoma,main,Colonic Adenocarcinoma,"pT3a/b, pN0, pMX",IIA,84,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T07:26:26Z
+GSM3304854,11218A: Adenoma of Patient 11218,11218,Adenoma,Adenoma,main,Tubulovillous Adenoma with High Grade Dysplasia,--,--,84,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T07:13:34Z
+GSM3304855,10743C: Adjacent Mucosa of Patient 10743,10743,Adjacent Mucosa,Normal,main,Benign,--,--,77,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T07:05:02Z
+GSM3304856,10743B: Tumor of Patient 10743,10743,Tumor,Carcinoma,main,Colonic Adenocarcinoma,"pT3, pN2, pMX",IIIB,77,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T05:52:04Z
+GSM3304857,10743A: Adenoma of Patient 10743,10743,Adenoma,Adenoma,main,Tubulovillous Adenoma with High Grade Dysplasia,--,--,77,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T05:22:09Z
+GSM3304858,290C: Adjacent Mucosa of Patient 290,290,Adjacent Mucosa,Normal,main,Benign,--,--,73,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T05:13:33Z
+GSM3304859,290B: Tumor of Patient 290,290,Tumor,Carcinoma,main,Invasive Adenocarcinoma,"pT2, pN0, MX",I,73,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T04:17:45Z
+GSM3304860,290A: Adenoma of Patient 290,290,Adenoma,Adenoma,main,Tubulovillous Adenoma with Moderate Dysplasia,--,--,73,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T03:28:32Z
+GSM3304861,9684C: Adjacent Mucosa of Patient 9684,9684,Adjacent Mucosa,Normal,main,Benign,--,--,62,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T09:29:53Z
+GSM3304862,9684B: Tumor of Patient 9684,9684,Tumor,Carcinoma,main,Colonic Adenocarcinoma,"pT2, pN1, pMX",IIIA,62,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T08:41:54Z
+GSM3304863,9684A: Adenoma of Patient 9684,9684,Adenoma,Adenoma,main,Tubulovillous Adenoma,--,--,62,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T07:55:46Z
+GSM3304864,9060C: Adjacent Mucosa of Patient 9060,9060,Adjacent Mucosa,Normal,main,Benign,--,--,91,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T06:52:09Z
+GSM3304865,9060B: Tumor of Patient 9060,9060,Tumor,Carcinoma,main,Colonic Adenocarcinoma,"pT3, pN0, pMX",IIA,91,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T06:04:48Z
+GSM3304866,9060A: Adenoma of Patient 9060,9060,Adenoma,Adenoma,main,Tubulovillos Adenoma with moderate cytologic atypia,--,--,91,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T05:09:17Z
+GSM3304867,7030C: Adjacent Mucosa of Patient 7030,7030,Adjacent Mucosa,Normal,main,Benign,--,--,73,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T08:37:52Z
+GSM3304868,7030B: Tumor of Patient 7030,7030,Tumor,Carcinoma,main,Colonic Adenocarcinoma,"pT3, pN1, pMX",IIIB,73,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T08:00:03Z
+GSM3304869,7030A: Adenoma of Patient 7030,7030,Adenoma,Adenoma,main,Tubulovillous Adenoma,--,--,73,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T06:47:51Z
+GSM3304870,4298C: Adjacent Mucosa of Patient 4298,4298,Adjacent Mucosa,Normal,main,Benign,--,--,66,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T03:19:53Z
+GSM3304871,4298B: Tumor of Patient 4298,4298,Tumor,Carcinoma,main,Colonic Adenocarcinoma,"pT3, pN0, pMX",IIA,66,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T09:37:50Z
+GSM3304872,4298A: Adenoma of Patient 4298,4298,Adenoma,Adenoma,main,Tubulovillous Adenoma,--,--,66,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T08:33:53Z
+GSM3304873,1093C: Adjacent Mucosa of Patient 1093,1093,Adjacent Mucosa,Normal,main,Benign,--,--,47,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T05:00:43Z
+GSM3304874,1093B: Tumor of Patient 1093,1093,Tumor,Carcinoma,main,Mucinous Adenocarcinoma,"pT2, pN0, pMX",I,47,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T04:30:37Z
+GSM3304875,1093A: Adenoma of Patient 1093,1093,Adenoma,Adenoma,main,Adenovillous Polyp,--,--,47,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T03:15:34Z
+GSM3304876,392C: Adjacent Mucosa of Patient 392,392,Adjacent Mucosa,Normal,main,Benign,--,--,45,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T09:41:49Z
+GSM3304877,392B: Tumor of Patient 392,392,Tumor,Carcinoma,main,Colonic Adenocarcinoma,"pT3, pN1, pMX",IIIB,45,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T08:29:52Z
+GSM3304878,392A: Adenoma of Patient 392,392,Adenoma,Adenoma,main,Tubulovillous Adenoma,--,--,45,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T08:08:41Z
+GSM3304879,3679B: Tumor of Patient 3679,3679,Tumor,Carcinoma,main,Infiltrating Adenocarcinoma,"pT3, pN0, pMX",IIA,54,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T04:18:18Z
+GSM3304880,3679A: Adenoma of Patient 3679,3679,Adenoma,Adenoma,main,Adenomatous Polyp,--,--,54,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T02:36:22Z
+GSM3304881,3392C: Adjacent Mucosa of Patient 3392,3392,Adjacent Mucosa,Normal,main,Benign,--,--,75,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T09:07:30Z
+GSM3304882,3392B: Tumor of Patient 3392,3392,Tumor,Carcinoma,main,Colonic Adenocarcinoma,"pT3, pN1, pMX",IIIB,75,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T09:03:51Z
+GSM3304883,3392A: Adenoma of Patient 3392,3392,Adenoma,Adenoma,main,Tubular Adenoma,--,--,75,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T07:22:09Z
+GSM3304884,1865C: Adjacent Mucosa of Patient 1865,1865,Adjacent Mucosa,Normal,main,Benign,--,--,26,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T05:43:57Z
+GSM3304885,1865B: Tumor of Patient 1865,1865,Tumor,Carcinoma,main,Colonic Adenocarcinoma,"pT3, pN1, pMX",IIIB,26,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T04:39:48Z
+GSM3304886,1865A: SSA of Patient 1865,1865,SSA,SSA,SSA (descriptive),Sessile Serrated Adenoma,--,--,26,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T04:01:08Z
+GSM3304887,5647C: Adjacent Mucosa of Patient 5647,5647,Adjacent Mucosa,Normal,main,Benign,--,--,74,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T05:43:32Z
+GSM3304888,5647B: Tumor of Patient 5647,5647,Tumor,Carcinoma,main,Adenocarcinoma with focal signet ring formation,"pT1, pN0, pMX",I,74,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T05:30:42Z
+GSM3304889,5647A: SSA of Patient 5647,5647,SSA,SSA,SSA (descriptive),Sessile Serrated Adenoma,--,--,74,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T04:00:23Z
+GSM3304890,2866C: Adjacent Mucosa of Patient 2866,2866,Adjacent Mucosa,Normal,main,Benign,--,--,69,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T03:46:16Z
+GSM3304891,2866B: Tumor of Patient 2866,2866,Tumor,Carcinoma,main,Adenocarcinoma,"pT3, pN0, pMX",IIA,69,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T09:14:46Z
+GSM3304892,2866A: Adenoma of Patient 2866,2866,Adenoma,Adenoma,main,Tubulovillous Adenoma,--,--,69,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T08:56:32Z
+GSM3304893,1716C: Adjacent Mucosa of Patient 1716,1716,Adjacent Mucosa,Normal,main,Benign,--,--,66,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T07:31:44Z
+GSM3304894,1716B: Tumor of Patient 1716,1716,Tumor,Carcinoma,main,Infiltrating Adenocarcinoma,"pT3, pN1, pMX",IIIB,66,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T07:09:17Z
+GSM3304895,1716A: SSA of Patient 1716,1716,SSA,SSA,SSA (descriptive),Sessile Serrated Adenoma,--,--,66,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T05:47:49Z
+GSM3304896,6758C: Adjacent Mucosa of Patient 6758,6758,Adjacent Mucosa,Normal,main,Benign,--,--,86,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T04:09:10Z
+GSM3304897,6758B: Tumor of Patient 6758,6758,Tumor,Carcinoma,main,Invasive Adenocarcinoma,"pT2, pN0, pMX",I,86,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T03:37:09Z
+GSM3304898,6758A: Adenoma of Patient 6758,6758,Adenoma,Adenoma,main,Tubulovillous Adenoma,--,--,86,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T09:22:05Z
+GSM3304899,6513C: Adjacent Mucosa of Patient 6513,6513,Adjacent Mucosa,Normal,main,Benign,--,--,75,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T08:49:15Z
+GSM3304900,6513B: Tumor of Patient 6513,6513,Tumor,Carcinoma,main,Mucin-producing Adenocarcinoma,"pT3, pN0, pM1",IV,75,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T07:47:13Z
+GSM3304901,6513A: Adenoma of Patient 6513,6513,Adenoma,Adenoma,main,Tubular Adenoma,--,--,75,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T07:00:44Z
+GSM3304902,4733C: Adjacent Mucosa of Patient 4733,4733,Adjacent Mucosa,Normal,main,Benign,--,--,56,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T05:56:18Z
+GSM3304903,4733B: Tumor of Patient 4733,4733,Tumor,Carcinoma,main,Adenocarcinoma,"pT2, pN1, pMX",IIIA,56,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T05:17:52Z
+GSM3304904,4733A: Adenoma of Patient 4733,4733,Adenoma,Adenoma,main,Adenomatous Polyp with Moderate Dysplasia,--,--,56,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T04:13:27Z
+GSM3304905,4390C: Adjacent Mucosa of Patient 4390,4390,Adjacent Mucosa,Normal,main,Benign,--,--,73,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T03:32:51Z
+GSM3304906,4390B: Tumor of Patient 4390,4390,Tumor,Carcinoma,main,Adenocarcinoma,"pT3, pN0, pMX",IIA,73,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T09:25:53Z
+GSM3304907,4390A: SSA of Patient 4390,4390,SSA,SSA,SSA (descriptive),Sessile Serrated Adenoma,--,--,73,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T08:45:35Z
+GSM3304908,1246C: Adjacent Mucosa of Patient 1246,1246,Adjacent Mucosa,Normal,main,Benign,--,--,86,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T07:51:29Z
+GSM3304909,1246B: Tumor of Patient 1246,1246,Tumor,Carcinoma,main,Adenocarcinoma,"pT3, pN0, pMX",IIA,86,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T06:56:28Z
+GSM3304910,1246A: Adenoma of Patient 1246,1246,Adenoma,Adenoma,main,Tubular Adenoma,--,--,86,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T06:00:33Z
+GSM3304911,435C: Adjacent Mucosa of Patient 435,435,Adjacent Mucosa,Normal,main,Benign,--,--,59,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T03:56:49Z
+GSM3304912,435B: Tumor of Patient 435,435,Tumor,Carcinoma,main,Invasive Adenocarcinoma,"pT3, pNX, pMX",IIA,59,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T02:58:29Z
+GSM3304913,435A: Adenoma of Patient 435,435,Adenoma,Adenoma,main,Tubulovillous Adenoma,--,--,59,Female,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T09:08:08Z
+GSM3304914,4155C: Adjacent Mucosa of Patient 4155,4155,Adjacent Mucosa,Normal,main,Benign,--,--,81,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T04:22:01Z
+GSM3304915,4155B: Tumor of Patient 4155,4155,Tumor,Carcinoma,main,Adenocarcinoma,"pT1, pN0, pMX",I,81,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T03:24:13Z
+GSM3304916,4155A: Adenoma of Patient 4155,4155,Adenoma,Adenoma,main,Tubulovillous Adenoma,--,--,81,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T09:33:51Z
+GSM3304917,2967C: Adjacent Mucosa of Patient 2967,2967,Adjacent Mucosa,Normal,main,Benign,--,--,78,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T08:08:11Z
+GSM3304918,2967B: Tumor of Patient 2967,2967,Tumor,Carcinoma,main,Infiltrating Adenocarcinoma,"pT3, pN1, pM1",IV,78,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T07:27:11Z
+GSM3304919,2967A: SSA of Patient 2967,2967,SSA,SSA,SSA (descriptive),Sessile Serrated Adenoma,--,--,78,Male,badeaba9-53c7-4d91-9ad3-d708ebfa2efa,2014-12-28T06:23:02Z
+GSM3304920,5570B: Tumor of Patient 5570,5570,Tumor,Carcinoma,main,Infiltrating Adenocarcinoma,"pT1, pN0, pMX",I,68,Female,059acfe7-4f41-4d31-a9fe-6cfb70056468,2014-12-29T06:56:29Z
+GSM3304921,5570A: Adenoma of Patient 5570,5570,Adenoma,Adenoma,main,Tubulovillous Adenoma,--,--,68,Female,059acfe7-4f41-4d31-a9fe-6cfb70056468,2014-12-29T06:52:13Z
+GSM3304922,5543C: Adjacent Mucosa of Patient 5543,5543,Adjacent Mucosa,Normal,main,Benign,--,--,76,Male,059acfe7-4f41-4d31-a9fe-6cfb70056468,2014-12-29T06:08:54Z
+GSM3304923,5543B: Tumor of Patient 5543,5543,Tumor,Carcinoma,main,Colonic Adenocarcinoma,"pT3, pN0, pMX",IIA,76,Male,059acfe7-4f41-4d31-a9fe-6cfb70056468,2014-12-29T08:15:18Z
+GSM3304924,5543A: Adenoma of Patient 5543,5543,Adenoma,Adenoma,main,Tubulovillous Adenoma,--,--,76,Male,059acfe7-4f41-4d31-a9fe-6cfb70056468,2014-12-29T07:31:30Z
+GSM3304925,4507C: Adjacent Mucosa of Patient 4507,4507,Adjacent Mucosa,Normal,main,Benign,--,--,84,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T06:09:04Z
+GSM3304926,4507B: Tumor of Patient 4507,4507,Tumor,Carcinoma,main,Adenocarcinoma of the Rectum,"pT3, pN0, pMX",IIA,84,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T05:05:00Z
+GSM3304927,4507A: Adenoma of Patient 4507,4507,Adenoma,Adenoma,main,Tubular Adenoma with High Grade Dysplasia,--,--,84,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T04:26:19Z
+GSM3304928,25C: Adjacent Mucosa of Patient 25,25,Adjacent Mucosa,Normal,main,Benign,--,--,66,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T06:39:15Z
+GSM3304929,25B: Tumor of Patient 25,25,Tumor,Carcinoma,main,Infiltrating Adenocarcinoma,"pT3, pN1, pMX",IIIB,66,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T06:17:35Z
+GSM3304930,25A: Adenoma of Patient 25,25,Adenoma,Adenoma,main,Tubular Adenoma (Sessile),--,--,66,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T04:56:24Z
+GSM3304931,1627C: Adjacent Mucosa of Patient 1627,1627,Adjacent Mucosa,Normal,main,Benign,--,--,82,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T08:04:18Z
+GSM3304932,1627B: Tumor of Patient 1627,1627,Tumor,Carcinoma,main,Infiltrating Adenocarcinoma,"pT3, pN1, pMX",IIIB,82,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T06:43:33Z
+GSM3304933,1627A: Adenoma of Patient 1627,1627,Adenoma,Adenoma,main,Tubular Adenoma,--,--,82,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T06:13:19Z
+GSM3304934,678C: Adjacent Mucosa of Patient 678,678,Adjacent Mucosa,Normal,main,Benign,--,--,80,Male,168e055f-0d49-42c9-9694-f313fca09b6f,2014-12-29T04:55:01Z
+GSM3304935,678B: Tumor of Patient 678,678,Tumor,Carcinoma,main,Invasive Adenocarcinoma,"pT2, pN0, pMX",I,80,Male,168e055f-0d49-42c9-9694-f313fca09b6f,2014-12-29T04:50:42Z
+GSM3304936,678A: Adenoma of Patient 678,678,Adenoma,Adenoma,main,Adenovillous Polyp,--,--,80,Male,168e055f-0d49-42c9-9694-f313fca09b6f,2014-12-29T04:28:55Z
+GSM3304937,559B: Tumor of Patient 559,559,Tumor,Carcinoma,main,Infiltrating Adenocarcinoma,"pT3, pN0, pMX",IIA,75,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T04:43:30Z
+GSM3304938,559A: Adenoma of Patient 559,559,Adenoma,Adenoma,main,Tubulovillous Adenoma,--,--,75,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T03:02:09Z
+GSM3304939,4755C: Adjacent Mucosa of Patient 4755,4755,Adjacent Mucosa,Normal,main,Benign,--,--,72,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T04:34:55Z
+GSM3304940,4755B: Tumor of Patient 4755,4755,Tumor,Carcinoma,main,Infiltrating Adenocarcinoma,"pT2, pN0, pMX",I,72,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T03:11:16Z
+GSM3304941,4755A: Adenoma of Patient 4755,4755,Adenoma,Adenoma,main,Tubulovillous Adenoma with Surface Atypia,--,--,72,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T09:45:47Z
+GSM3304942,4397C: Adjacent Mucosa of Patient 4397,4397,Adjacent Mucosa,Normal,main,Benign,--,--,82,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T08:25:52Z
+GSM3304943,4397B: Tumor of Patient 4397,4397,Tumor,Carcinoma,main,Colonic Adenocarcinoma,"pT3, pN1, pMX",IIIB,82,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T08:13:08Z
+GSM3304944,4397A: Adenoma of Patient 4397,4397,Adenoma,Adenoma,main,Tubulovillous Adenoma,--,--,82,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T06:34:52Z
+GSM3304945,3976C: Adjacent Mucosa of Patient 3976,3976,Adjacent Mucosa,Normal,main,Benign,--,--,83,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T06:21:50Z
+GSM3304946,3976B: Tumor of Patient 3976,3976,Tumor,Carcinoma,main,Colonic Adenocarcinoma,"pT2, pN0, pMX",I,83,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T04:52:07Z
+GSM3304947,3976A: Adenoma of Patient 3976,3976,Adenoma,Adenoma,main,Tubulovillous Adenoma,--,--,83,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T04:39:11Z
+GSM3304948,3809C: Adjacent Mucosa of Patient 3809,3809,Adjacent Mucosa,Normal,main,Benign,--,--,71,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T03:06:58Z
+GSM3304949,3809B: Tumor of Patient 3809,3809,Tumor,Carcinoma,main,Infiltrating Adenocarcinoma,"pT3, pN0, pMX",IIA,71,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T09:49:46Z
+GSM3304950,3809A: Adenoma of Patient 3809,3809,Adenoma,Adenoma,main,Tubulovillous Adenoma,--,--,71,Male,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T08:21:54Z
+GSM3304951,2942C: Adjacent Mucosa of Patient 2942,2942,Adjacent Mucosa,Normal,main,Benign,--,--,65,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T08:17:45Z
+GSM3304952,2942B: Tumor of Patient 2942,2942,Tumor,Carcinoma,main,Invasive Adenocarcinoma,"pT3, pN0, pMX",IIA,65,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T06:30:26Z
+GSM3304953,2942A: Adenoma of Patient 2942,2942,Adenoma,Adenoma,main,Villous Adenoma with Marked Dysplasia,--,--,65,Female,ad008bf4-a718-47ff-ac9f-e60895bc7bee,2014-12-27T06:26:08Z
+GSM3304954,2364C: Adjacent Mucosa of Patient 2364,2364,Adjacent Mucosa,Normal,main,Benign,--,--,80,Male,059acfe7-4f41-4d31-a9fe-6cfb70056468,2014-12-29T06:30:45Z
+GSM3304955,2364B: Tumor of Patient 2364,2364,Tumor,Carcinoma,main,Invasive Adenocarcinoma,"pT1, pNX, pMX",I,80,Male,059acfe7-4f41-4d31-a9fe-6cfb70056468,2014-12-29T06:26:29Z
+GSM3304956,2364A: Adenoma of Patient 2364,2364,Adenoma,Adenoma,main,Adenovillous polyp,--,--,80,Male,059acfe7-4f41-4d31-a9fe-6cfb70056468,2014-12-29T06:04:06Z

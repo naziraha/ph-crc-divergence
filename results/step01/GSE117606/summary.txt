@@ -1,0 +1,50 @@
+STEP 1 - Data preparation (GSE117606, GPL25373)
+=======================================================
+Pre-specification: docs/addendum6_GSE117606.md (commit 93613bd)
+Series matrix: data/raw/GSE117606_series_matrix.txt.gz (21.9 MB, md5 2b0ada7315a97e13fa90e720ecba134b, obtained 2026-10-06 21:26)
+Gene symbols: NCBI Homo_sapiens.gene_info.gz (5.2 MB, md5 16222e620681ad571893715cf1a4f66d, downloaded 2026-10-06 21:26)
+Versions: pandas 2.3.3, numpy 2.4.6, requests 2.34.2, python 3.11.16; seed 42 (not used)
+
+Arrays in series matrix: 208
+Sample sets:
+  set              SSA (descriptive)  main  set aside (A-coded carcinoma)
+  tissue                                                                 
+  Adenoma                          0    59                              0
+  Adjacent Mucosa                  0    65                              0
+  SSA                             10     0                              0
+  Tumor                            0    71                              3
+Main set per stage: Normal 65, Adenoma 59, Carcinoma 71 (expected 65/59/71; verified); patient-stage duplicates: 0
+Set aside (A-coded carcinomas): GSM3304801 (1889A), GSM3304813 (2488A), GSM3304818 (1818A)
+SSA (descriptive): 10 arrays from 10 patients
+
+GENE-ID MAPPING (rows dropped at each stage)
+  rows in series matrix: 19276 (rows with missing values: 0)
+  1. AFFX control probe sets removed: 0  -> 19276
+  2. Entrez IDs without a current NCBI symbol (dropped): 82  -> 19194
+  3. several IDs mapping to the same symbol, lower-mean IDs dropped: 0  -> 19194 genes
+Scale: 99th percentile = 7.58; log2 applied: False
+Per-array median log2 (main set): IQR 3.12-3.18, range 3.06-3.31
+
+ARRAY-QUALITY RULE (section 7.2; main set, all mapped genes)
+  mean correlation with other arrays: median 0.896, range 0.811-0.916; threshold Q1 - 1.5 IQR = 0.861
+  flagged arrays: 13 (correlation 13, median 3, IQR 2)
+    GSM3304776 [Carcinoma; 4250B: Tumor of Patient 4250] low correlation, median: mean r 0.851, median z 3.4, IQR z -2.3
+    GSM3304777 [Adenoma; 4250A: Adenoma of Patient 4250] low correlation: mean r 0.850, median z 2.2, IQR z -2.7
+    GSM3304808 [Carcinoma; 692B: Tumor of Patient 692] low correlation: mean r 0.848, median z 0.1, IQR z -1.0
+    GSM3304822 [Normal; 5073C: Adjacent Mucosa of Patient 5073] low correlation: mean r 0.857, median z 2.3, IQR z -2.3
+    GSM3304842 [Carcinoma; 449B: Tumor of Patient 449] low correlation: mean r 0.857, median z 1.9, IQR z -2.5
+    GSM3304843 [Adenoma; 449A: Adenoma of Patient 449] low correlation, median, IQR: mean r 0.842, median z 3.7, IQR z -3.0
+    GSM3304846 [Adenoma; 974A: Adenoma of Patient 974] low correlation: mean r 0.839, median z 3.0, IQR z -2.6
+    GSM3304852 [Adenoma; 1506A: Adenoma of Patient 1506] low correlation, median: mean r 0.811, median z 3.9, IQR z -3.0
+    GSM3304864 [Normal; 9060C: Adjacent Mucosa of Patient 9060] low correlation: mean r 0.855, median z 2.5, IQR z -2.7
+    GSM3304887 [Normal; 5647C: Adjacent Mucosa of Patient 5647] low correlation: mean r 0.850, median z 0.1, IQR z -1.4
+    GSM3304927 [Adenoma; 4507A: Adenoma of Patient 4507] low correlation: mean r 0.859, median z 2.2, IQR z -2.3
+    GSM3304944 [Adenoma; 4397A: Adenoma of Patient 4397] low correlation, IQR: mean r 0.847, median z 1.9, IQR z -3.1
+    GSM3304945 [Normal; 3976C: Adjacent Mucosa of Patient 3976] low correlation: mean r 0.849, median z 1.9, IQR z -2.8
+  flagged per stage: {'Normal': 4, 'Adenoma': 6, 'Carcinoma': 3}
+  Flagged arrays stay in the primary analysis; sensitivity analysis without them (section 7.2).
+
+Outputs:
+  data/processed/GSE117606_main_expr_genes.csv / _main_samples.csv   main set (genes x 195 arrays)
+  data/processed/GSE117606_other_expr_genes.csv / _other_samples.csv SSA (10) + set-aside (3), descriptive
+  results/step01/GSE117606/probe_to_gene.csv, all_samples_labels.csv, array_quality.csv, array_quality.png
