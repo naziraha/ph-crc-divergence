@@ -1,0 +1,42 @@
+ADDENDUM 5, PART 3b - Level 2 diagnostic with bug check (descriptive; no permutation tests)
+========================================================================
+Pre-specified: addendum 5 part 3b (commit 5c5791a). Exact reconstructions of the tested level-2 data
+(first replicate of each of the 5 saved shape-only chunks, same seeds). Values: median [min-max] over 5 repeats.
+
+--- cluster split a=1 ---
+  (a) changed entries 9600.00 [9600.00-9600.00]; changed rows = intended 200 genes: 5/5; changes only in B samples: 5/5
+      B-A mean difference (median over 200 genes): before -0.02 [-0.02-0.01], after -0.02 [-0.02-0.01]
+      B/A SD ratio (median over 200 genes):        before 1.00 [0.98-1.04], after 1.24 [1.22-1.27]
+  (b) altered genes in top 2,000: after 64.00 [50.00-68.00] (before 42.00 [34.00-44.00]); share of inserted energy kept by selection 0.42 [0.33-0.55]
+  (c) inserted signal = 1.07 [0.68-1.25]% of total z-space variance; share inside 10 PCs 0.09 [0.02-0.34]; top PC 13, 10, 31, 9, 15 (signal share 0.13 [0.08-0.29], PC variance share 0.02 [0.01-0.02])
+  (d) share inside 50 PCs 0.70 [0.64-0.74]
+      overall retained (selection x PCs): 10 PCs 0.04 [0.01-0.19], 50 PCs 0.30 [0.21-0.40]
+
+--- loop a=1 ---
+  (a) changed entries 9600.00 [9600.00-9600.00]; changed rows = intended 200 genes: 5/5; changes only in B samples: 5/5
+      B-A mean difference (median over 200 genes): before -0.00 [-0.02-0.01], after -0.00 [-0.02-0.01]
+      B/A SD ratio (median over 200 genes):        before 0.97 [0.94-1.02], after 1.30 [1.23-1.34]
+  (b) altered genes in top 2,000: after 67.00 [66.00-69.00] (before 41.00 [36.00-46.00]); share of inserted energy kept by selection 0.43 [0.38-0.46]
+  (c) inserted signal = 1.14 [1.03-1.21]% of total z-space variance; share inside 10 PCs 0.03 [0.01-0.08]; top PC 18, 21, 10, 20, 14 (signal share 0.05 [0.04-0.09], PC variance share 0.01 [0.01-0.02])
+  (d) share inside 50 PCs 0.52 [0.48-0.53]
+      overall retained (selection x PCs): 10 PCs 0.01 [0.01-0.04], 50 PCs 0.23 [0.18-0.24]
+
+--- spread +50% (a=0.5) ---
+  (a) changed entries 9600.00 [9600.00-9600.00]; changed rows = intended 200 genes: 5/5; changes only in B samples: 5/5
+      B-A mean difference (median over 200 genes): before 0.00 [-0.01-0.01], after 0.00 [-0.01-0.01]
+      B/A SD ratio (median over 200 genes):        before 0.98 [0.94-1.07], after 1.46 [1.41-1.61]
+  (b) altered genes in top 2,000: after 73.00 [65.00-95.00] (before 44.00 [39.00-51.00]); share of inserted energy kept by selection 0.37 [0.32-0.48]
+  (c) inserted signal = 0.26 [0.23-0.37]% of total z-space variance; share inside 10 PCs 0.03 [0.02-0.03]; top PC 2, 2, 2, 1, 2 (signal share 0.01 [0.00-0.01], PC variance share 0.10 [0.09-0.19])
+  (d) share inside 50 PCs 0.07 [0.06-0.08]
+      overall retained (selection x PCs): 10 PCs 0.01 [0.01-0.01], 50 PCs 0.03 [0.02-0.04]
+
+--- spread +100% (a=1, largest) ---
+  (a) changed entries 9600.00 [9600.00-9600.00]; changed rows = intended 200 genes: 5/5; changes only in B samples: 5/5
+      B-A mean difference (median over 200 genes): before -0.00 [-0.01-0.01], after -0.00 [-0.01-0.01]
+      B/A SD ratio (median over 200 genes):        before 0.99 [0.89-1.04], after 1.97 [1.78-2.07]
+  (b) altered genes in top 2,000: after 116.00 [110.00-123.00] (before 40.00 [32.00-47.00]); share of inserted energy kept by selection 0.59 [0.55-0.62]
+  (c) inserted signal = 1.09 [1.05-1.22]% of total z-space variance; share inside 10 PCs 0.03 [0.03-0.04]; top PC 3, 2, 2, 2, 2 (signal share 0.01 [0.01-0.01], PC variance share 0.10 [0.06-0.10])
+  (d) share inside 50 PCs 0.12 [0.11-0.12]
+      overall retained (selection x PCs): 10 PCs 0.02 [0.02-0.02], 50 PCs 0.07 [0.06-0.07]
+
+Outputs: results/addendum5/part3b_diagnostic/diagnostic_per_repeat.csv
