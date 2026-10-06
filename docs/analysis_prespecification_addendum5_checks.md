@@ -83,3 +83,17 @@ Level 2 spread is not required to be ignored by shape-only, because a spread cha
 - **Multiplicity:** Holm across the transitions within each cohort × version × mode × dimension.
 - **Role:** **secondary.** It shows which homology dimension drives the step 5 results (technical report, systematic-error row 14). It does not change the tipping-point definition (which uses H0 + H1).
 - **Seeds:** `SeedSequence(42, crc32(unit name))`; resumable checkpoints.
+
+---
+
+## Part 2b (appended 2026-10-06, after the part 2 results and before running part 2b; parts 1, 2, 3 and 4 above are unchanged)
+
+**Why:** part 2 (with the D9 date correction) showed that Normal and Adenoma arrays of GSE41258 were scanned on different days (1 shared day, 3% overlap). Part 2b measures how large a topological difference a pure scan-batch contrast produces in this dataset.
+
+**Batch-only comparison (same tissue, different scan periods):** GSE41258 `main` normals with corrected scan date (D9) in **spring 2003** (2003-01-01 to 2003-06-30; n = 21) vs normals scanned in **late 2005–2006** (2005-09-01 to 2006-12-31; n = 30). The two normals scanned outside these windows (2003-11-30, 2004-04-02) are not used.
+
+**Test:** frozen step 5 test (`tda_crc_pilot.permutation_test`; VR H0+H1; k = 20; aligned; **999 permutations**), with the **primary step 3 embeddings** of set `main` (unadjusted and adjusted; the same coordinates as the step 5 Normal → Adenoma test), **raw and shape-only**. The groups are smaller than the frozen subsample size (31), so the subsample size follows the pilot pair rule: m = min(31, ⌊0.8 × 21⌋) = **16**. Four tests; **Holm across the four.** Seeds: `SeedSequence(42, crc32(unit name))`.
+
+**Size-matched Normal → Adenoma reference:** z-scores depend on group size and m. The step 5 Normal → Adenoma test (53 vs 48, m = 31) is therefore also repeated at the batch comparison's sizes: **20 random draws** of 21 normals and 30 adenomas (without replacement), m = 16, 999 permutations, same four mode × version combinations. Median z and the range over the 20 draws are reported next to the step 5 z and the batch z.
+
+**Decision, stated in advance:** if any of the four batch-only tests has **Holm p < 0.05**, batch can mimic a stage difference in this dataset, and the GSE41258 Normal → Adenoma results must be treated as possibly batch-driven. If none is significant, the batch contrast is reported with its z-scores, which are compared with the size-matched Normal → Adenoma z-scores to judge how much of that difference batch could plausibly explain. This is descriptive; it changes no step 5 result.
