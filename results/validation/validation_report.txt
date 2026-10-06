@@ -1,0 +1,22 @@
+Validation of tda_crc_pilot.py (v2)
+========================================
+[PASS] A1 Wasserstein matches GUDHI reference (200 random pairs)  max |diff| = 8.88e-16
+[PASS] A2 noisy circle has one dominant loop  top two H1 lifetimes = 1.196, 0.000
+[PASS] A3 two clusters give one dominant finite H0 bar  top two H0 lifetimes = 8.174, 0.260
+[PASS] A4 invariance to rotation + translation  W1 = 2.88e-14
+[PASS] A5 shape-only is scale invariant, raw is not  shape-only W1 = 3.30e-15, raw W1 = 113.484
+[PASS] A6 Holm adjustment matches statsmodels  max |diff| = 0.0e+00
+[PASS] B1 type-I error with alignment (nominal 0.05)  rate = 0.050 (MC s.e. 0.022)
+[PASS] B2 type-I error with alignment (nominal 0.05)  rate = 0.050 (MC s.e. 0.022)
+[PASS] B3 type-I error with alignment (nominal 0.05)  rate = 0.050 (MC s.e. 0.022)
+[PASS] B4 power against a loop (shape-only)  power = 1.00
+
+Calibration (rejection rate at alpha = 0.05):
+  B1 H0 identical     aligned=True  0.050
+  B2 H0 shift only    aligned=False 0.030
+  B2 H0 shift only    aligned=True  0.050
+  B3 H0 scale only    aligned=False 0.020
+  B3 H0 scale only    aligned=True  0.050
+  B4 H1 ring vs blob  aligned=True  1.000
+
+10/10 checks passed
