@@ -43,11 +43,28 @@ for row in meta["!Sample_characteristics_ch1"]:
         if v.lower().startswith("scan date"):
             raw.iloc[i] = v.split(":", 1)[1].strip()
 fmt = raw.map(lambda v: "excel serial" if v.isdigit() else ("dd/mm/yyyy" if "/" in v else ("missing" if not v else "other")))
-dates = raw.map(parse)
+
+
+def parse_corrected(v):
+    """Deviation D9: integer = Excel serial produced by a day/month -> month/day locale error; swap back."""
+    x = parse(v)
+    if v.strip().isdigit() and not pd.isna(x):
+        return pd.Timestamp(year=x.year, month=x.day, day=x.month)
+    return x
+
+
+MODE = sys.argv[1] if len(sys.argv) > 1 else "as_specified"
+dates = raw.map(parse_corrected if MODE == "corrected" else parse)
+SUF = "" if MODE == "as_specified" else "_corrected"
 
 L = ["ADDENDUM 5, PART 2 - GSE41258 scan date vs stage (batch check, descriptive)", "=" * 64,
      "Pre-specified in docs/analysis_prespecification_addendum5_checks.md (commit d5673a7).",
-     "Scan date: GEO characteristic 'scan date' (dd/mm/yyyy or Excel serial date).",
+     f"PARSING: {MODE.upper()}" + ("  (deviation D9: Excel serial dates with day and month swapped back)"
+                                  if MODE == "corrected" else "  (integer = Excel serial, as in addendum 5; "
+                                  "found erroneous, see D9)"),
+     f"Check: text dates with day > 12: {int(raw[fmt == 'dd/mm/yyyy'].str.split('/').str[0].astype(int).gt(12).sum())}"
+     f"/{int((fmt == 'dd/mm/yyyy').sum())}; integer dates falling on day <= 12 as read: "
+     f"{int(raw[fmt == 'excel serial'].map(parse).dt.day.le(12).sum())}/{int((fmt == 'excel serial').sum())}",
      "Confounded if AUC >= 0.80 or <= 0.20, or day overlap < 20%; Cramer's V >= 0.5 = strong association.", ""]
 rows = []
 for set_name in ("main", "main_allarrays"):
@@ -55,7 +72,7 @@ for set_name in ("main", "main_allarrays"):
     d = pd.DataFrame({"stage": lab["stage"], "raw": raw.reindex(lab.index), "format": fmt.reindex(lab.index),
                       "date": dates.reindex(lab.index)})
     d["year"] = d.date.dt.year.astype("Int64")
-    d.to_csv(os.path.join(OUT, f"scan_dates_{set_name}.csv"), index_label="sample")
+    d.to_csv(os.path.join(OUT, f"scan_dates_{set_name}{SUF}.csv"), index_label="sample")
     n_missing = int(d.date.isna().sum())
     ok = d.dropna(subset=["date"])
     yt = pd.crosstab(ok.year, ok.stage).reindex(columns=T.STAGES).fillna(0).astype(int)
@@ -86,21 +103,21 @@ for set_name in ("main", "main_allarrays"):
         L.append(f"  {s:>10} -> {t:<10} AUC = {auc:.2f}  day overlap = {ov * 100:5.1f}% ({len(both)} shared scan days)"
                  f"  -> {'CONFOUNDED' if conf else 'not confounded'}")
     L.append("")
-pd.DataFrame(rows).to_csv(os.path.join(OUT, "scan_date_confounding.csv"), index=False)
+pd.DataFrame(rows).to_csv(os.path.join(OUT, f"scan_date_confounding{SUF}.csv"), index=False)
 
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
-d = pd.read_csv(os.path.join(OUT, "scan_dates_main.csv"), index_col=0, parse_dates=["date"])
+d = pd.read_csv(os.path.join(OUT, f"scan_dates_main{SUF}.csv"), index_col=0, parse_dates=["date"])
 fig, ax = plt.subplots(figsize=(10, 3.8))
 rng = np.random.default_rng(42)
 for i, s in enumerate(T.STAGES):
     x = d.date[d.stage == s].dropna()
     ax.scatter(x, i + rng.uniform(-0.25, 0.25, len(x)), s=10, color=T.COLORS[s], alpha=0.7)
 ax.set_yticks(range(4)); ax.set_yticklabels([f"{s} (n={(d.stage == s).sum()})" for s in T.STAGES])
-ax.set_xlabel("array scan date"); ax.set_title("GSE41258 set main: scan date by stage")
-fig.tight_layout(); fig.savefig(os.path.join(OUT, "scan_dates_by_stage.png"), dpi=150)
+ax.set_xlabel("array scan date"); ax.set_title(f"GSE41258 set main: scan date by stage ({MODE.replace(chr(95), chr(32))})")
+fig.tight_layout(); fig.savefig(os.path.join(OUT, f"scan_dates_by_stage{SUF}.png"), dpi=150)
 L += ["Outputs: results/addendum5/part2_scandates/scan_dates_<set>.csv, scan_date_confounding.csv,",
       "  scan_dates_by_stage.png"]
-open(os.path.join(OUT, "summary.txt"), "w", encoding="utf-8").write("\n".join(L) + "\n")
+open(os.path.join(OUT, f"summary{SUF}.txt"), "w", encoding="utf-8").write("\n".join(L) + "\n")
 print("\n".join(L))
