@@ -1,0 +1,59 @@
+ADDENDUM 5, PART 3 - Positive and negative controls (real GSE41258 carcinomas)
+======================================================================
+Pre-specified: docs/analysis_prespecification_addendum5_checks.md part 3 (commit d5673a7).
+Random carcinoma split A = 53 / B = 48; insertion into B; step 5 test (k = 20, m = 31, aligned), 99 permutations.
+Replicates finished: 2100/2100
+
+lvl condition           value  mode        det p<=.05 det p<=.0167  median z
+1   negative control        0  raw             6/50         1/50       -0.24
+1   negative control        0  shape-only      3/50         1/50       -0.22
+1   spread               1.05  raw             8/50         4/50        0.23
+1   spread               1.05  shape-only      5/50         1/50       -0.23
+1   spread                1.1  raw            14/50         5/50        0.99
+1   spread                1.1  shape-only      3/50         1/50       -0.09
+1   spread               1.25  raw            43/50        33/50        5.49
+1   spread               1.25  shape-only      4/50         2/50       -0.05
+1   spread                1.5  raw            50/50        50/50       10.20
+1   spread                1.5  shape-only      7/50         1/50       -0.45
+1   cluster split        0.25  raw            12/50         8/50        0.43
+1   cluster split        0.25  shape-only      1/50         0/50       -0.06
+1   cluster split         0.5  raw            25/50        14/50        2.22
+1   cluster split         0.5  shape-only     13/50         4/50        0.86
+1   cluster split           1  raw            35/50        20/50        2.97
+1   cluster split           1  shape-only     50/50        49/50       12.16
+1   loop                 0.25  raw             5/50         3/50        0.01
+1   loop                 0.25  shape-only      9/50         3/50        0.67
+1   loop                  0.5  raw            40/50        28/50        4.62
+1   loop                  0.5  shape-only      9/50         3/50        0.56
+1   loop                    1  raw            50/50        49/50        9.97
+1   loop                    1  shape-only     50/50        48/50        8.52
+2   negative control        0  raw             1/50         0/50       -0.10
+2   negative control        0  shape-only      1/50         0/50       -0.23
+2   spread               0.25  raw             4/50         2/50       -0.10
+2   spread               0.25  shape-only      4/50         2/50       -0.15
+2   spread                0.5  raw             6/50         0/50       -0.28
+2   spread                0.5  shape-only      3/50         0/50       -0.28
+2   spread                  1  raw             9/50         1/50        0.24
+2   spread                  1  shape-only      4/50         1/50       -0.17
+2   cluster split        0.25  raw             2/50         0/50       -0.07
+2   cluster split        0.25  shape-only      5/50         0/50       -0.30
+2   cluster split         0.5  raw             6/50         2/50        0.06
+2   cluster split         0.5  shape-only      3/50         1/50        0.12
+2   cluster split           1  raw             3/50         0/50       -0.15
+2   cluster split           1  shape-only      5/50         2/50        0.16
+2   loop                 0.25  raw             2/50         0/50       -0.28
+2   loop                 0.25  shape-only      3/50         2/50       -0.27
+2   loop                  0.5  raw             4/50         0/50       -0.39
+2   loop                  0.5  shape-only      3/50         1/50       -0.18
+2   loop                    1  raw             2/50         0/50       -0.03
+2   loop                    1  shape-only      3/50         1/50       -0.24
+
+ACCEPTANCE CRITERIA (fixed in advance)
+  C1: negative control <= 7/50 (levels 1 and 2, both modes): 3/50, 6/50, 1/50, 1/50  -> PASS
+  C2: raw detects spread s = 1.25 >= 40/50: 43/50  -> PASS
+  C3: shape-only ignores pure spread: every s <= 7/50: 5/50, 3/50, 4/50, 7/50  -> PASS
+  C4: shape-only detects cluster split delta = 1 x MPD >= 40/50: 50/50  -> PASS
+  C5: shape-only detects full loop w = 1 >= 40/50: 50/50  -> PASS
+  C6: level 2: a = 1 cluster and loop, shape-only, >= 40/50: 5/50, 3/50  -> FAIL
+
+Outputs: results/addendum5/part3_controls/controls_table.csv, checkpoints/
