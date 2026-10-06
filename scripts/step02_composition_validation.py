@@ -59,6 +59,19 @@ def raw_sets(gse):
                 muc = [s for s in keep if lab.loc[s, "morphology"] == "mucosa"]
                 out[raw] = (g, lab, {"micro_pooled": list(keep), "micro_crypt": crypt,
                                      "micro_mucosa": muc}, adj_n)
+    elif gse == "GSE117606":
+        # addendum 6: main set (65/59/71) for screen, scores and adjustment; SSA (10) and set-aside
+        # A-coded carcinomas (3) are screened and scored for description only (not used in any fit)
+        gm = pd.read_csv(os.path.join(PROC, f"{gse}_main_expr_genes.csv"), index_col=0)
+        go = pd.read_csv(os.path.join(PROC, f"{gse}_other_expr_genes.csv"), index_col=0)
+        lm = pd.read_csv(os.path.join(PROC, f"{gse}_main_samples.csv"), index_col=0)
+        lo = pd.read_csv(os.path.join(PROC, f"{gse}_other_samples.csv"), index_col=0)
+        assert list(gm.columns) == list(lm.index) and list(go.columns) == list(lo.index)
+        g = pd.concat([gm, go], axis=1)
+        lab = pd.concat([lm, lo])
+        lab["raw_label"] = lab["tissue"] + "; " + lab["title"]
+        lab["desc_group"] = np.where(lab["set"] == "main", lab["stage"], lab["set"])
+        out["all"] = (g, lab, {"main": list(lm.index)}, list(lo.index))
     elif gse == "GSE37364":
         g = pd.read_csv(os.path.join(PROC, f"{gse}_bulk_expr_genes.csv"), index_col=0)
         lab = pd.read_csv(os.path.join(PROC, f"{gse}_bulk_samples.csv"), index_col=0)
@@ -156,7 +169,8 @@ def main():
             lines.append(f"    {s} [{r.stage}; {r.raw_label}] {r.flag}: colon {r.colon:.2f} "
                          f"(z {r.colon_robust_z:.1f}), hepatocyte z {r.hepatocyte_robust_z:.1f}, "
                          f"lung z {r.lung_robust_z:.1f}, mullerian z {r.mullerian_robust_z:.1f}")
-        if lab.get("patient_id", pd.Series("", index=lab.index)).replace("", np.nan).isna().all():
+        if "patient id" not in lab.columns and \
+                lab.get("patient_id", pd.Series("", index=lab.index)).replace("", np.nan).isna().all():
             rep, thr = repeat_array_check(g, lab)
             rep.to_csv(os.path.join(out, f"repeat_array_check_{raw}.csv"), index_label="sample")
             nn = rep.r
@@ -168,7 +182,7 @@ def main():
             for s, rr in top.iterrows():
                 lines.append(f"    {s} [{rr.stage}] <-> {rr.nearest} [{rr.nearest_stage}] r = {rr.r:.4f}"
                              f"{'  FLAG' if rr.flag else ''}")
-        centre = asets["micro_pooled"] if raw == "micro" else asets[raw]
+        centre = asets["micro_pooled"] if raw == "micro" else (asets[raw] if raw in asets else asets["main"])
         sc, sizes = scores(g, centre)
         sc.insert(0, "stage", lab["stage"])
         for c in ("normal_type", "morphology"):
@@ -179,6 +193,12 @@ def main():
         all_scores.append((raw, sc))
         lines.append("Marker genes present: " + ", ".join(f"{k} {v}" for k, v in sizes.items())
                      + "  (GSE41258: Epithelial 18, Stromal 292, Immune 447)")
+        miss = NET[~NET["target"].isin(g.index)][["source", "target"]]
+        miss.to_csv(os.path.join(out, f"marker_genes_missing_{raw}.csv"), index=False)
+        lines.append("  missing marker genes: " + ", ".join(
+            f"{c} {int((miss.source == c).sum())}" for c in COMP)
+            + (f"; missing epithelial: {', '.join(miss[miss.source == 'Epithelial'].target)}"
+               if (miss.source == "Epithelial").any() else "; no epithelial genes missing"))
         for comp, gl in SANITY.items():
             gl = [x for x in gl if x in g.index]
             m = g.loc[gl].sub(g.loc[gl].mean(axis=1), axis=0).mean()
@@ -196,9 +216,13 @@ def main():
         tab = sc[sc.analysis_sample].groupby(grp)[COMP].median().round(2)
         lines += ["Median composition scores (analysis samples):", "  " + tab.to_string().replace("\n", "\n  ")]
         if desc_ids:
-            t2 = sc.loc[desc_ids].groupby("morphology")[COMP].median().round(2)
-            lines += ["Adjacent normals (descriptive only, not used for fitting):",
-                      "  " + t2.to_string().replace("\n", "\n  ")]
+            if "desc_group" in lab.columns:
+                t2 = sc.loc[desc_ids, COMP].groupby(lab.loc[desc_ids, "desc_group"]).median().round(2)
+                head = "Descriptive-only arrays (SSA, set-aside A-coded carcinomas; not used for fitting):"
+            else:
+                t2 = sc.loc[desc_ids].groupby("morphology")[COMP].median().round(2)
+                head = "Adjacent normals (descriptive only, not used for fitting):"
+            lines += [head, "  " + t2.to_string().replace("\n", "\n  ")]
         for aset, ids in asets.items():
             labs = lab.loc[ids].copy()
             labs["flag_identity"] = flags[ids]
@@ -222,6 +246,8 @@ def main():
     for row, (raw, sc) in enumerate(all_scores):
         d = sc.copy()
         d["group"] = d["stage"]
+        if raw != "micro":
+            d = d[d.analysis_sample]
         if raw == "micro":
             d["group"] = np.where(d.analysis_sample, d.stage, "Normal (adjacent)")
             d["prep"] = d["morphology"].map({"colonic crypt epithelial cells": "crypt", "mucosa": "mucosa"})

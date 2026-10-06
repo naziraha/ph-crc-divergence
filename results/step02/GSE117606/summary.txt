@@ -1,0 +1,53 @@
+STEP 2 - Identity screen and composition scoring (GSE117606)
+=======================================================
+Pre-specification: addendum 1 (6ea31ea) + addendum 2 (d73e5d1)
+Inputs: data/processed/GSE117606_<set>_expr_genes.csv, _samples.csv (step 1)
+Marker genes: frozen from GSE41258 (results/step02/marker_sets_used.csv)
+Seed: 42
+Versions: decoupler 2.2.0, pandas 2.3.3, numpy 2.4.6
+
+=== raw set all (208 samples) ===
+Identity screen (within set; flag at 3 robust SD):
+  panel medians: colon 7.36, hepatocyte 2.22, lung 2.22, mullerian 2.33
+  flagged samples: 15
+    GSM3304751 [Normal; Adjacent Mucosa; 271C: Adjacent Mucosa of Patient 271] high hepatocyte: colon 7.30 (z -0.1), hepatocyte z 3.3, lung z 1.2, mullerian z 2.7
+    GSM3304776 [Carcinoma; Tumor; 4250B: Tumor of Patient 4250] high lung: colon 6.58 (z -1.5), hepatocyte z 2.4, lung z 3.4, mullerian z 1.9
+    GSM3304778 [Normal; Adjacent Mucosa; 4210C: Adjacent Mucosa of Patient 4210] high mullerian: colon 7.62 (z 0.5), hepatocyte z -0.0, lung z 0.0, mullerian z 3.7
+    GSM3304808 [Carcinoma; Tumor; 692B: Tumor of Patient 692] low colon identity: colon 5.82 (z -3.0), hepatocyte z 1.4, lung z 2.3, mullerian z -0.1
+    GSM3304812 [Carcinoma; Tumor; 2488B: Tumor of Patient 2488] high hepatocyte: colon 6.28 (z -2.1), hepatocyte z 10.3, lung z -0.8, mullerian z 0.3
+    GSM3304826 [Carcinoma; Tumor; 5960B: Tumor of Patient 5960] low colon identity: colon 5.80 (z -3.1), hepatocyte z 0.3, lung z -0.7, mullerian z 0.0
+    GSM3304834 [Carcinoma; Tumor; 9872B: Tumor of Patient 9872] low colon identity: colon 3.25 (z -8.1), hepatocyte z -0.4, lung z -0.8, mullerian z 1.1
+    GSM3304846 [Adenoma; Adenoma; 974A: Adenoma of Patient 974] high lung: colon 6.86 (z -1.0), hepatocyte z 2.3, lung z 3.6, mullerian z 0.2
+    GSM3304852 [Adenoma; Adenoma; 1506A: Adenoma of Patient 1506] low colon identity: colon 5.70 (z -3.3), hepatocyte z 2.2, lung z 2.2, mullerian z 0.9
+    GSM3304870 [Normal; Adjacent Mucosa; 4298C: Adjacent Mucosa of Patient 4298] high mullerian: colon 7.62 (z 0.5), hepatocyte z 0.5, lung z 1.8, mullerian z 3.6
+    GSM3304887 [Normal; Adjacent Mucosa; 5647C: Adjacent Mucosa of Patient 5647] low colon identity; high mullerian: colon 4.99 (z -4.7), hepatocyte z 0.0, lung z 0.4, mullerian z 3.4
+    GSM3304888 [Carcinoma; Tumor; 5647B: Tumor of Patient 5647] low colon identity: colon 5.77 (z -3.1), hepatocyte z 0.6, lung z -0.3, mullerian z 0.5
+    GSM3304927 [Adenoma; Adenoma; 4507A: Adenoma of Patient 4507] high mullerian: colon 6.82 (z -1.1), hepatocyte z 2.1, lung z 0.8, mullerian z 3.9
+    GSM3304932 [Carcinoma; Tumor; 1627B: Tumor of Patient 1627] low colon identity; high mullerian: colon 3.69 (z -7.3), hepatocyte z -0.4, lung z -0.3, mullerian z 3.4
+    GSM3304944 [Adenoma; Adenoma; 4397A: Adenoma of Patient 4397] high lung: colon 7.71 (z 0.7), hepatocyte z 1.4, lung z 4.1, mullerian z 1.5
+Marker genes present: Epithelial 16, Stromal 289, Immune 436  (GSE41258: Epithelial 18, Stromal 292, Immune 447)
+  missing marker genes: Epithelial 2, Stromal 3, Immune 11; missing epithelial: KRT18, KRT8
+  sanity Epithelial vs mean(EPCAM,CDH1): Spearman r = 0.79
+  sanity Stromal    vs mean(COL1A2,COL3A1,DCN,VWF): Spearman r = 0.82
+  sanity Immune     vs mean(PTPRC,CD3E,CD74,LCP1): Spearman r = 0.83
+  frozen pan-epithelial genes, stage-median range in this set: median 0.36, max 0.74 log2 (0 of 16 genes > 1 log2; descriptive, not re-selected)
+Median composition scores (analysis samples):
+             Epithelial  Stromal  Immune
+  stage                                 
+  Adenoma          1.07    -9.75   -3.97
+  Carcinoma       -0.47     3.71    0.89
+  Normal           0.84     4.92    1.55
+Descriptive-only arrays (SSA, set-aside A-coded carcinomas; not used for fitting):
+                                 Epithelial  Stromal  Immune
+  desc_group                                                
+  SSA (descriptive)                    1.94    -2.37    2.23
+  set aside (A-coded carcinoma)       -0.13     5.71   -1.02
+Analysis set main: Normal 65, Adenoma 59, Carcinoma 71 | variance removed per gene, median: primary 0.074, stage-aware 0.081; genes > 0.5: 336 / 294
+
+Outputs:
+  results/step02/GSE117606/tissue_identity_qc_<raw>.csv, composition_scores_<raw>.csv
+  results/step02/GSE117606/pan_epithelial_medians_<raw>.csv, variance_removed_by_composition_<set>.csv
+  results/step02/GSE117606/composition_by_stage.png
+  data/processed/GSE117606_<set>_samples_qc.csv
+  data/processed/GSE117606_<set>_expr_genes_adjusted.csv (primary) and _adjusted_stageaware.csv (secondary)
+  (unadjusted expression = step-1 file restricted to the set's samples)
