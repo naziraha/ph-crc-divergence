@@ -1,0 +1,33 @@
+STEP 4 - Persistent homology profiles per stage (GSE117606; descriptive)
+============================================================
+Pre-specification: addendum 1 (6ea31ea), addendum 2 (d73e5d1); deviation D4 (ac2a591)
+Inputs: results/step03/embeddings/<GSE>_<set>_<version>_g2000_pc10.csv
+Seed: 42
+Versions: gudhi 3.13.0, numpy 2.4.6, pandas 2.3.3, scipy 1.17.1
+Settings: Vietoris-Rips (GUDHI), Euclidean in 10-PC space, max dimension 2, H0 and H1; raw and shape-only.
+  Bulk: 100 subsamples per stage of m = 80% of the smallest stage (frozen rule). TSI = mean between - mean
+  within W1 (H0+H1), 400 pairs, 95% CI from 500 pair resamples (precision, not a test).
+  Micro (D4): one diagram per stage on all samples; W1 between stage diagrams. No test.
+
+=== main (bulk; Normal 65, Adenoma 59, Carcinoma 71) ===
+--- unadjusted (m = 47) ---
+  stage spread (median pairwise distance): Normal 30.6, Adenoma 30.3, Carcinoma 37.0
+  shape-only per stage, median [IQR]:  H1 total | H1 n loops
+    Normal     0.709 [0.607-0.802] | 14
+    Adenoma    0.520 [0.459-0.603] | 14
+    Carcinoma  0.888 [0.729-1.010] | 18
+     Normal -> Adenoma   TSI shape-only 0.965 [0.904, 1.020] | TSI raw 29.50 [27.49, 31.60] | centroid shift 1.41 SD
+    Adenoma -> Carcinoma TSI shape-only 2.533 [2.462, 2.608] | TSI raw 155.29 [152.28, 158.28] | centroid shift 1.08 SD
+--- adjusted (m = 47) ---
+  stage spread (median pairwise distance): Normal 28.5, Adenoma 28.2, Carcinoma 34.8
+  shape-only per stage, median [IQR]:  H1 total | H1 n loops
+    Normal     0.568 [0.492-0.672] | 16
+    Adenoma    0.749 [0.653-0.856] | 19
+    Carcinoma  0.868 [0.745-1.030] | 19
+     Normal -> Adenoma   TSI shape-only 0.756 [0.701, 0.810] | TSI raw 20.21 [18.52, 22.11] | centroid shift 0.81 SD
+    Adenoma -> Carcinoma TSI shape-only 0.665 [0.611, 0.715] | TSI raw 126.57 [123.61, 129.71] | centroid shift 0.87 SD
+
+Outputs:
+  results/step04/GSE117606/step04_topology_main_<version>.png, step04_tsi_shape_only_main.png
+  results/step04/GSE117606/stage_topology_bootstrap_main_<version>.csv, adjacent_transitions_descriptive_*.json
+Runtime: 17 s

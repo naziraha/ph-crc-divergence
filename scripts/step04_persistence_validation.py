@@ -36,7 +36,9 @@ COHORT = {"GSE20916": {"bulk": ["bulk"], "micro": ["micro_pooled", "micro_crypt"
                                     "micro_crypt": {"Normal": 5, "Adenoma": 5, "Carcinoma": 5},
                                     "micro_mucosa": {"Normal": 5, "Adenoma": 5, "Carcinoma": 5}}},
           "GSE37364": {"bulk": ["bulk"], "micro": [],
-                       "expected": {"bulk": {"Normal": 38, "Adenoma": 29, "Carcinoma": 27}}}}
+                       "expected": {"bulk": {"Normal": 38, "Adenoma": 29, "Carcinoma": 27}}},
+          "GSE117606": {"bulk": ["main"], "micro": [], "versions": ("unadjusted", "adjusted"),
+                        "expected": {"main": {"Normal": 65, "Adenoma": 59, "Carcinoma": 71}}}}
 
 
 def load(gse, aset, version, expected):
@@ -54,6 +56,7 @@ def q(v):
 def main():
     gse = sys.argv[1]
     cfg = COHORT[gse]
+    versions = cfg.get("versions", VERSIONS)
     out = os.path.join(ROOT, "results", "step04", gse)
     os.makedirs(out, exist_ok=True)
     t0 = time.time()
@@ -70,7 +73,7 @@ def main():
     # ---------------------------------------------------------------- bulk (frozen rule)
     for aset in cfg["bulk"]:
         res = {}
-        for version in VERSIONS:
+        for version in versions:
             rng = np.random.default_rng(SEED)
             df, emb, stages = load(gse, aset, version, cfg["expected"][aset])
             pos = {s: np.where(stages.values == s)[0] for s in STAGES3}
@@ -115,7 +118,7 @@ def main():
             spread = {s: float(np.median(pdist(emb[pos[s]]))) for s in STAGES3}
             res[version] = (summ, adj, pairmat, m, spread)
         L += [f"=== {aset} (bulk; " + ", ".join(f"{k} {v}" for k, v in cfg["expected"][aset].items()) + ") ==="]
-        for version in VERSIONS:
+        for version in versions:
             summ, adj, pairmat, m, spread = res[version]
             L += [f"--- {version} (m = {m}) ---",
                   "  stage spread (median pairwise distance): " + ", ".join(f"{k} {v:.1f}" for k, v in spread.items()),
@@ -132,7 +135,7 @@ def main():
         matplotlib.use("Agg")
         import matplotlib.pyplot as plt
         fig, ax = plt.subplots(figsize=(7, 4))
-        for k, (version, col) in enumerate(zip(VERSIONS, ("#2a78d6", "#eb6834", "#7b4fb3"))):
+        for k, (version, col) in enumerate(zip(versions, ("#2a78d6", "#eb6834", "#7b4fb3"))):
             adj = res[version][1]
             v = np.array([a["tsi_norm"] for a in adj]); ci = np.array([a["tsi_norm_ci"] for a in adj])
             x = np.arange(2) + (k - 1) * 0.27
@@ -147,8 +150,8 @@ def main():
 
     if not cfg["micro"]:      # bulk-only cohort
         L += ["Outputs:",
-              f"  results/step04/{gse}/step04_topology_bulk_<version>.png, step04_tsi_shape_only_bulk.png",
-              f"  results/step04/{gse}/stage_topology_bootstrap_bulk_<version>.csv, adjacent_transitions_descriptive_*.json",
+              f"  results/step04/{gse}/step04_topology_{cfg['bulk'][0]}_<version>.png, step04_tsi_shape_only_{cfg['bulk'][0]}.png",
+              f"  results/step04/{gse}/stage_topology_bootstrap_{cfg['bulk'][0]}_<version>.csv, adjacent_transitions_descriptive_*.json",
               f"Runtime: {time.time() - t0:.0f} s"]
         with open(os.path.join(out, "summary.txt"), "w", encoding="utf-8") as fh:
             fh.write("\n".join(L) + "\n")
@@ -159,7 +162,7 @@ def main():
     L += ["=== Microdissected sets (D4: one diagram per stage, all samples; descriptive) ==="]
     rows = []
     for aset in cfg["micro"]:
-        for version in VERSIONS:
+        for version in versions:
             df, emb, stages = load(gse, aset, version, cfg["expected"][aset])
             dg = {mode: {s: T.persistence(emb[stages.values == s], mode == "norm") for s in STAGES3}
                   for mode in ("raw", "norm")}
@@ -218,8 +221,8 @@ def main():
     ax.set_title(f"{gse} crypt epithelium, unadjusted: within-stage spread")
     fig.tight_layout(); fig.savefig(os.path.join(out, "crypt_within_stage_spread.png"), dpi=150)
     L += ["", "Outputs:",
-          f"  results/step04/{gse}/step04_topology_bulk_<version>.png, step04_tsi_shape_only_bulk.png",
-          f"  results/step04/{gse}/stage_topology_bootstrap_bulk_<version>.csv, adjacent_transitions_descriptive_*.json",
+          f"  results/step04/{gse}/step04_topology_{cfg['bulk'][0]}_<version>.png, step04_tsi_shape_only_{cfg['bulk'][0]}.png",
+          f"  results/step04/{gse}/stage_topology_bootstrap_{cfg['bulk'][0]}_<version>.csv, adjacent_transitions_descriptive_*.json",
           f"  results/step04/{gse}/micro_stage_diagrams_summary.csv",
           f"  results/step04/{gse}/crypt_unadjusted_within_stage_spread.csv, crypt_within_stage_spread.png",
           f"Runtime: {time.time() - t0:.0f} s"]
