@@ -1,0 +1,47 @@
+STEP 13 - Section 4 validation on simulated data (addendum 7, commit c165512)
+======================================================================
+No real data used. 10 dimensions; 200 replicates per scenario; 999 permutations; MST test k = 20, m = 80% of smaller group (40; 38 in V5).
+Seed 42 (SeedSequence per scenario x replicate x method). numpy 2.4.6, scipy 1.17.1, scikit-learn 1.9.1, gudhi 3.13.0
+Monte Carlo SE at 5% = 0.0154; type I threshold = 0.0885.
+
+Exact checks:
+  PASS  PERMDISP F = scipy f_oneway on centroid distances: 54.589123 vs 54.589123
+  PASS  PERMANOVA pseudo-F / R2 = centroid sums of squares: 0.960526 vs 0.960526; R2 0.009706
+  PASS  ARI = sklearn adjusted_rand_score: -0.003281 vs -0.003281
+  PASS  1-D W1 shortcut = scipy wasserstein_distance: 1.27707672 vs 1.27707672
+  PASS  MST edges = GUDHI H0 deaths (Gaussian, raw): 39 edges, max |diff| 0.00e+00
+  PASS  MST edges = GUDHI H0 deaths (two-cluster, raw): 39 edges, max |diff| 0.00e+00
+  PASS  MST edges = GUDHI H0 deaths (Gaussian, shape-only): 39 edges, max |diff| 0.00e+00
+  PASS  MST edges = GUDHI H0 deaths (two-cluster, shape-only): 39 edges, max |diff| 0.00e+00
+
+Rejection rates (p < 0.05):
+  scenario                 PERMDISP               PERMANOVA  Stage separation (ARI)                 MST raw          MST shape-only
+  V1                          0.030                   0.035                   0.015                   0.070                   0.045   (identical Gaussian groups (SD 1), n 50/50)
+  V2                          1.000                   0.035                   0.180                   1.000                   0.055   (group 2 scaled x1.5, same centroid, n 50/50)
+  V3                          0.035                   0.955                   0.315                   0.025                   0.050   (group 2 shifted 1 SD along one axis, n 50/50)
+  V4                          1.000                   0.000                   0.555                   1.000                   1.000   (group 1 one Gaussian (SD 1); group 2 two clusters (SD 0.5) at +/-2 on one axis, n 50/50)
+  V5                          0.060                   0.055                   0.025                   0.075                   0.055   (identical Gaussian groups, unequal n 48/181)
+  V6                          0.030                   1.000                   1.000                   0.050                   0.045   (group 2 shifted 4 SD along one axis, n 50/50)
+
+Acceptance criteria:
+  PASS  V1 PERMDISP                 type I <= 0.089    0.030
+  PASS  V1 PERMANOVA                type I <= 0.089    0.035
+  PASS  V1 Stage separation (ARI)   type I <= 0.089    0.015
+  PASS  V1 MST raw                  type I <= 0.089    0.070
+  PASS  V1 MST shape-only           type I <= 0.089    0.045
+  PASS  V5 PERMDISP                 type I <= 0.089    0.060
+  PASS  V5 PERMANOVA                type I <= 0.089    0.055
+  PASS  V5 Stage separation (ARI)   type I <= 0.089    0.025
+  PASS  V5 MST raw                  type I <= 0.089    0.075
+  PASS  V5 MST shape-only           type I <= 0.089    0.055
+  PASS  V3 PERMDISP                 type I <= 0.089    0.035
+  PASS  V2 PERMDISP                 power >= 0.80      1.000
+  PASS  V2 PERMDISP                 D > 1 (median)     1.512
+  PASS  V3 PERMANOVA                power >= 0.80      0.955
+  PASS  V4 MST raw                  power >= 0.80      1.000
+  PASS  V4 MST shape-only           power >= 0.80      1.000
+  PASS  V6 Stage separation (ARI)   power >= 0.80      1.000
+
+OVERALL: ALL CRITERIA PASSED - real-data benchmark may proceed
+Run time 176.1 min.
+Outputs: validation_summary.txt, validation_criteria.csv, validation_replicates.csv

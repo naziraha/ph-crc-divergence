@@ -1,0 +1,18 @@
+scenario,method,requirement,value,pass
+V1,PERMDISP,type I <= 0.089,0.03,True
+V1,PERMANOVA,type I <= 0.089,0.035,True
+V1,Stage separation (ARI),type I <= 0.089,0.015,True
+V1,MST raw,type I <= 0.089,0.07,True
+V1,MST shape-only,type I <= 0.089,0.045,True
+V5,PERMDISP,type I <= 0.089,0.06,True
+V5,PERMANOVA,type I <= 0.089,0.055,True
+V5,Stage separation (ARI),type I <= 0.089,0.025,True
+V5,MST raw,type I <= 0.089,0.075,True
+V5,MST shape-only,type I <= 0.089,0.055,True
+V3,PERMDISP,type I <= 0.089,0.035,True
+V2,PERMDISP,power >= 0.80,1.0,True
+V2,PERMDISP,D > 1 (median),1.5123371260830512,True
+V3,PERMANOVA,power >= 0.80,0.955,True
+V4,MST raw,power >= 0.80,1.0,True
+V4,MST shape-only,power >= 0.80,1.0,True
+V6,Stage separation (ARI),power >= 0.80,1.0,True
