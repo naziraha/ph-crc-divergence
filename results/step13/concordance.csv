@@ -1,0 +1,6 @@
+n,both,tda_only,conv_only,neither,a1,a2,kappa,largely_captured,pairing
+18,10,2,0,6,0.8333333333333334,1.0,0.7692307692307692,True,P1 TDA raw vs PERMDISP
+18,12,0,0,6,1.0,1.0,1.0,True,P2 TDA raw vs MST raw
+18,5,0,0,13,1.0,1.0,1.0,True,P3 TDA shape-only vs MST shape-only
+14,9,0,1,4,1.0,0.9,0.8372093023255814,True,MST raw vs H0-only raw (descriptive)
+14,4,0,0,10,1.0,1.0,1.0,True,MST shape vs H0-only shape (descriptive)

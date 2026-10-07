@@ -306,8 +306,295 @@ def validate():
     print("\n".join(L))
 
 
+# ================================================================ real-data benchmark (addendum 7 sections 2-3, 5)
+EMB = os.path.join(ROOT, "results", "step03", "embeddings")
+CK = os.path.join(OUT, "checkpoints")
+VERS = ("unadjusted", "adjusted")
+COH = {  # set, expected counts, transitions (as step 5)
+    "GSE41258": ("main", {"Normal": 53, "Adenoma": 48, "Carcinoma": 181, "Metastasis": 39},
+                 [("Normal", "Adenoma"), ("Adenoma", "Carcinoma"), ("Carcinoma", "Metastasis")]),
+    "GSE20916": ("bulk", {"Normal": 24, "Adenoma": 45, "Carcinoma": 36}, [("Normal", "Adenoma"), ("Adenoma", "Carcinoma")]),
+    "GSE37364": ("bulk", {"Normal": 38, "Adenoma": 29, "Carcinoma": 27}, [("Normal", "Adenoma"), ("Adenoma", "Carcinoma")]),
+    "GSE117606": ("main", {"Normal": 65, "Adenoma": 59, "Carcinoma": 71}, [("Normal", "Adenoma"), ("Adenoma", "Carcinoma")]),
+}
+METHODS = ("permdisp", "permanova", "stagesep", "mst_raw", "mst_shape", "sizematched")
+
+
+def load(gse, v):
+    st, exp, _ = COH[gse]
+    df = pd.read_csv(os.path.join(EMB, f"{gse}_{st}_{v}_g2000_pc10.csv"), index_col=0)
+    if df["stage"].value_counts().to_dict() != exp:
+        raise SystemExit(f"Stage counts changed: {gse} {v}: {df['stage'].value_counts().to_dict()}")
+    emb = df[[c for c in df.columns if c.startswith("PC")]].values
+    m = max(10, int(0.8 * min(exp.values())))  # as step 5
+    return emb, df["stage"].values, m
+
+
+def bench_units():
+    return [(g, v, s, t, meth) for g in COH for v in VERS for s, t in COH[g][2] for meth in METHODS]
+
+
+def bunit_name(g, v, s, t, meth):
+    return f"{g}__{v[:5]}__{s[0]}-{t[0]}__{meth}"
+
+
+def run_bunit(u):
+    import json
+    g, v, s, t, meth = u
+    name = bunit_name(*u)
+    path = os.path.join(CK, name + ".json")
+    if os.path.exists(path):
+        return name, "skipped"
+    t0 = time.time()
+    rng = rng_for(name)
+    emb, st, m = load(g, v)
+    i_s, i_t = np.where(st == s)[0], np.where(st == t)[0]
+    A, B = emb[i_s], emb[i_t]
+    rec = dict(unit=name, cohort=g, version=v, transition=f"{s}->{t}", method=meth, n_from=len(i_s), n_to=len(i_t), m=m)
+    if meth == "permdisp":
+        rec["stat"], rec["p"], rec["effect"] = permdisp(A, B, rng)
+    elif meth == "permanova":
+        rec["stat"], rec["p"], rec["effect"] = permanova(A, B, rng)
+    elif meth == "stagesep":
+        ari, p, _ = stage_separation(A, B, rng)
+        rec["stat"], rec["p"], rec["effect"] = ari, p, ari
+    elif meth in ("mst_raw", "mst_shape"):
+        obs, p, z = mst_test(emb, i_s, i_t, m, meth == "mst_shape", rng)
+        rec["stat"], rec["p"], rec["effect"] = obs, p, z
+    else:  # size-matched PERMDISP and PERMANOVA on the same k subsample pairs
+        res = []
+        for _ in range(K_DRAWS):
+            a, b = emb[rng.choice(i_s, m, replace=False)], emb[rng.choice(i_t, m, replace=False)]
+            res.append(permdisp(a, b, rng) + permanova(a, b, rng))
+        res = np.array(res)
+        med = np.median(res, axis=0)
+        rec.update(sm_permdisp_F=med[0], sm_permdisp_p=med[1], sm_D=med[2], sm_permanova_F=med[3],
+                   sm_permanova_p=med[4], sm_R2=med[5], sm_permdisp_frac_sig=float((res[:, 1] < .05).mean()),
+                   sm_permanova_frac_sig=float((res[:, 4] < .05).mean()))
+    rec = {k: (float(x) if isinstance(x, (np.floating, np.integer)) else x) for k, x in rec.items()}
+    rec["seconds"] = round(time.time() - t0, 1)
+    with open(path + ".tmp", "w") as fh:
+        json.dump(rec, fh)
+    os.replace(path + ".tmp", path)
+    return name, f"done in {rec['seconds']:.0f} s"
+
+
+def real_crosscheck():
+    """MST edge lengths = GUDHI H0 deaths on one real subsample (addendum 7 section 3.4)."""
+    import tda_crc_pilot as T
+    emb, st, m = load("GSE41258", "unadjusted")
+    rng = rng_for("GSE41258__crosscheck")
+    X = emb[rng.choice(np.where(st == "Normal")[0], m, replace=False)]
+    out = []
+    for norm in (False, True):
+        e, h0 = mst_edges(X, norm), np.sort(T.persistence(X, norm)[0][:, 1])
+        ok = len(e) == len(h0) and np.allclose(e, h0, atol=1e-6)
+        out.append((f"GSE41258 unadjusted Normal subsample (m={m}), {'shape-only' if norm else 'raw'}",
+                    f"{len(e)} MST edges vs {len(h0)} H0 deaths, max |diff| "
+                    f"{np.max(np.abs(e - h0)) if len(e) == len(h0) else float('nan'):.2e}", ok))
+    return out
+
+
+def tda_results():
+    rows = []
+    S5 = os.path.join(ROOT, "results", "step05")
+    for g in COH:
+        f = os.path.join(S5, "permutation_results_all.csv") if g == "GSE41258" else os.path.join(S5, g, "permutation_results_all.csv")
+        d = pd.read_csv(f)
+        d = d[(d.analysis == "primary") & d.version.isin(VERS)]
+        for _, r in d.iterrows():
+            rows.append(dict(cohort=g, version=r.version, transition=r.transition,
+                             mode="raw" if r["mode"] == "raw" else "shape", tda_z=r.z, tda_p_holm=r.p_holm))
+    tda = pd.DataFrame(rows).pivot_table(index=["cohort", "version", "transition"], columns="mode",
+                                         values=["tda_z", "tda_p_holm"])
+    tda.columns = [f"{a}_{b}" for a, b in tda.columns]
+    h0 = pd.read_csv(os.path.join(ROOT, "results", "addendum5", "part4_dims", "dims_results_all.csv"))
+    h0 = h0[h0.dim == "H0"].assign(mode=lambda x: np.where(x["mode"] == "raw", "raw", "shape"))
+    h0 = h0.pivot_table(index=["cohort", "version", "transition"], columns="mode", values=["z", "p_holm"])
+    h0.columns = [f"h0_{a}_{b}" for a, b in h0.columns]
+    return tda.join(h0, how="left").reset_index()
+
+
+def concord(x, y):
+    """x = TDA significant, y = conventional significant (boolean arrays)."""
+    x, y = np.asarray(x, bool), np.asarray(y, bool)
+    n = len(x)
+    a, b, c, d = (x & y).sum(), (x & ~y).sum(), (~x & y).sum(), (~x & ~y).sum()
+    a1 = a / (a + b) if a + b else np.nan
+    a2 = a / (a + c) if a + c else np.nan
+    po = (a + d) / n
+    pe = ((a + b) * (a + c) + (c + d) * (b + d)) / n ** 2
+    kappa = (po - pe) / (1 - pe) if pe < 1 else np.nan
+    return dict(n=n, both=a, tda_only=b, conv_only=c, neither=d, a1=a1, a2=a2, kappa=kappa,
+                largely_captured=bool(a1 >= .75 and a2 >= .75) if a1 == a1 and a2 == a2 else None)
+
+
+def fmt_pct(x):
+    return "n/a" if x != x else f"{100 * x:.0f}%"
+
+
+def bench_summary():
+    import json
+    import tda_crc_pilot as T
+    recs = [json.load(open(os.path.join(CK, f))) for f in sorted(os.listdir(CK)) if f.endswith(".json")]
+    df = pd.DataFrame(recs)
+    if len(df) < len(bench_units()):
+        print(f"[summary] {len(df)}/{len(bench_units())} units finished"); return
+    main = df[df.method != "sizematched"].copy()
+    main["p_holm"] = np.nan
+    for _, g in main.groupby(["cohort", "version", "method"]):
+        main.loc[g.index, "p_holm"] = T.holm(g.p.values)
+    sm = df[df.method == "sizematched"].copy()
+    for c in ("sm_permdisp_p", "sm_permanova_p"):
+        sm[c + "_holm"] = np.nan
+        for _, g in sm.groupby(["cohort", "version"]):
+            sm.loc[g.index, c + "_holm"] = T.holm(g[c].values)
+    key = ["cohort", "version", "transition"]
+    wide = main.pivot_table(index=key, columns="method", values=["stat", "effect", "p", "p_holm"])
+    wide.columns = [f"{m}_{a}" for a, m in wide.columns]
+    wide = wide.reset_index().merge(tda_results(), on=key, how="left").merge(
+        sm[key + [c for c in sm.columns if c.startswith("sm_")]], on=key, how="left")
+    order = {g: i for i, g in enumerate(COH)}
+    wide["_o"] = wide.cohort.map(order) * 100 + wide.version.map({"unadjusted": 0, "adjusted": 1}) * 10 + \
+        wide.transition.map({"Normal->Adenoma": 0, "Adenoma->Carcinoma": 1, "Carcinoma->Metastasis": 2})
+    wide = wide.sort_values("_o").drop(columns="_o").reset_index(drop=True)
+    assert len(wide) == 18 and wide.tda_p_holm_raw.notna().all()
+    main.to_csv(os.path.join(OUT, "benchmark_results_long.csv"), index=False)
+    wide.to_csv(os.path.join(OUT, "benchmark_results.csv"), index=False)
+    sm.to_csv(os.path.join(OUT, "size_matched_results.csv"), index=False)
+
+    sig = lambda c: (wide[c] < .05).values
+    L = ["STEP 13 - Benchmark against conventional methods (addendum 7, commit c165512)", "=" * 70,
+         "Embeddings: frozen 10-PC step 3 embeddings (unadjusted, stage-blind adjusted); transitions as step 5.",
+         f"PERMDISP / PERMANOVA / stage separation on all samples; MST test and size-matched analysis with k = {K_DRAWS},",
+         "m as step 5 (GSE41258 31, GSE20916 19, GSE37364 21, GSE117606 47). 999 permutations; Holm across transitions",
+         "within cohort x version x method (x mode). Significant = Holm p < 0.05.",
+         f"Seed {SEED} (per-unit SeedSequence). " + ", ".join(f"{p} {metadata.version(p)}" for p in ("numpy", "scipy", "gudhi")),
+         "Samples per stage: " + "; ".join(f"{g} " + "/".join(str(x) for x in COH[g][1].values()) for g in COH), ""]
+    L += ["GUDHI cross-check on one real subsample:"] + [f"  {'PASS' if c[2] else 'FAIL'}  {c[0]}: {c[1]}"
+                                                         for c in real_crosscheck()] + [""]
+    L.append("Per-comparison results (Holm p; * < 0.05):")
+    L.append(f"  {'cohort':<9} {'version':<10} {'transition':<21} {'TDAraw':>7} {'TDAshp':>7} {'PDISP':>7} {'D':>5} "
+             f"{'PANOVA':>7} {'R2':>5} {'StSep':>7} {'ARI':>5} {'MSTraw':>7} {'MSTshp':>7}")
+    st = lambda p: f"{p:.3f}{'*' if p < .05 else ' '}"
+    for _, r in wide.iterrows():
+        L.append(f"  {r.cohort:<9} {r.version:<10} {r.transition:<21} {st(r.tda_p_holm_raw):>7} {st(r.tda_p_holm_shape):>7} "
+                 f"{st(r.permdisp_p_holm):>7} {r.permdisp_effect:5.2f} {st(r.permanova_p_holm):>7} {r.permanova_effect:5.2f} "
+                 f"{st(r.stagesep_p_holm):>7} {r.stagesep_effect:5.2f} {st(r.mst_raw_p_holm):>7} {st(r.mst_shape_p_holm):>7}")
+    L += ["", "5.1 CONCORDANCE (18 comparisons). a1 = of TDA-significant, % also conventional-significant;",
+          "    a2 = of conventional-significant, % also TDA-significant. 'Largely captured' if a1 >= 75% AND a2 >= 75%."]
+    conc = []
+    for lab, x, y in (("P1 TDA raw vs PERMDISP", "tda_p_holm_raw", "permdisp_p_holm"),
+                      ("P2 TDA raw vs MST raw", "tda_p_holm_raw", "mst_raw_p_holm"),
+                      ("P3 TDA shape-only vs MST shape-only", "tda_p_holm_shape", "mst_shape_p_holm")):
+        c = concord(sig(x), sig(y)); c["pairing"] = lab; conc.append(c)
+        concl = ("LARGELY CAPTURED" if c["largely_captured"] else "not applicable (denominator 0)"
+                 if c["largely_captured"] is None else "NOT largely captured - discordant comparisons listed below")
+        L.append(f"  {lab}: both {c['both']}, TDA only {c['tda_only']}, conventional only {c['conv_only']}, "
+                 f"neither {c['neither']}; a1 {fmt_pct(c['a1'])}, a2 {fmt_pct(c['a2'])}, kappa "
+                 f"{'n/a' if c['kappa'] != c['kappa'] else round(c['kappa'], 2)} -> {concl}")
+        disc = wide[sig(x) != sig(y)]
+        for _, r in disc.iterrows():
+            L.append(f"      discordant: {r.cohort} {r.version} {r.transition}: TDA {r[x]:.3f}, conventional {r[y]:.3f}")
+    L += ["", "  Descriptive extra (no conclusion): MST vs H0-only TDA (addendum 5 part 4; 3 cohorts, 14 comparisons)"]
+    h = wide[wide.h0_p_holm_raw.notna()]
+    for lab, x, y in (("MST raw vs H0-only raw", "h0_p_holm_raw", "mst_raw_p_holm"),
+                      ("MST shape vs H0-only shape", "h0_p_holm_shape", "mst_shape_p_holm")):
+        c = concord(h[x] < .05, h[y] < .05); c["pairing"] = lab + " (descriptive)"; conc.append(c)
+        L.append(f"  {lab}: n {c['n']}; both {c['both']}, H0-TDA only {c['tda_only']}, MST only {c['conv_only']}, "
+                 f"neither {c['neither']}; a1 {fmt_pct(c['a1'])}, a2 {fmt_pct(c['a2'])}, kappa "
+                 f"{'n/a' if c['kappa'] != c['kappa'] else round(c['kappa'], 2)}")
+    pd.DataFrame(conc).to_csv(os.path.join(OUT, "concordance.csv"), index=False)
+
+    L += ["", "5.1(2) ADENOMA -> CARCINOMA DIRECTION (supported if PERMDISP Holm p < 0.05 AND D > 1):"]
+    for _, r in wide[wide.transition == "Adenoma->Carcinoma"].iterrows():
+        call = ("SUPPORTED (spread increases)" if r.permdisp_p_holm < .05 and r.permdisp_effect > 1 else
+                "CONTRADICTION (significant, D < 1)" if r.permdisp_p_holm < .05 else "not significant (no support)")
+        L.append(f"  {r.cohort:<9} {r.version:<10} D = {r.permdisp_effect:.2f}, PERMDISP Holm p {r.permdisp_p_holm:.3f} -> {call}"
+                 f"   [TDA raw Holm p {r.tda_p_holm_raw:.3f}]")
+
+    L += ["", "5.2 SHAPE RULE (each TDA shape-only significant comparison; 'not captured' only if PERMDISP,",
+          "    stage separation and MST shape-only are ALL non-significant; PERMANOVA reported only):"]
+    shp = wide[wide.tda_p_holm_shape < .05]
+    for _, r in shp.iterrows():
+        hits = [n for n, c in (("PERMDISP", "permdisp_p_holm"), ("stage separation", "stagesep_p_holm"),
+                               ("MST shape-only", "mst_shape_p_holm")) if r[c] < .05]
+        L.append(f"  {r.cohort} {r.version} {r.transition} (TDA shape Holm p {r.tda_p_holm_shape:.3f}): "
+                 + ("NOT CAPTURED by conventional methods" if not hits else "accompanied by " + ", ".join(hits))
+                 + f"   [PERMANOVA Holm p {r.permanova_p_holm:.3f}]")
+    if shp.empty:
+        L.append("  (no TDA shape-only significant comparisons)")
+
+    L += ["", "3.6 SIZE-MATCHED (secondary; medians over 20 subsamples of size m; median p is descriptive):",
+          f"  {'cohort':<9} {'version':<10} {'transition':<21} {'PDISP all':>9} {'PDISP m':>8} {'D m':>5} {'%sig':>5} "
+          f"{'PANOVA all':>10} {'PANOVA m':>9} {'%sig':>5}"]
+    for _, r in wide.iterrows():
+        L.append(f"  {r.cohort:<9} {r.version:<10} {r.transition:<21} {st(r.permdisp_p_holm):>9} {st(r.sm_permdisp_p_holm):>8} "
+                 f"{r.sm_D:5.2f} {100 * r.sm_permdisp_frac_sig:4.0f}% {st(r.permanova_p_holm):>10} {st(r.sm_permanova_p_holm):>9} "
+                 f"{100 * r.sm_permanova_frac_sig:4.0f}%")
+    L.append("  Reading for comparisons where the conventional test is significant on all samples but TDA raw is not:")
+    any_ = False
+    for _, r in wide.iterrows():
+        for n, ca, cm in (("PERMDISP", "permdisp_p_holm", "sm_permdisp_p_holm"),
+                          ("PERMANOVA", "permanova_p_holm", "sm_permanova_p_holm")):
+            if r[ca] < .05 and r.tda_p_holm_raw >= .05:
+                any_ = True
+                L.append(f"    {r.cohort} {r.version} {r.transition}, {n}: at size m {r[cm]:.3f} -> "
+                         + ("still significant: DIFFERENT PROPERTY" if r[cm] < .05 else "not significant: POWER"))
+    if not any_:
+        L.append("    (none)")
+    L += ["", "Outputs: benchmark_results.csv (wide, with TDA), benchmark_results_long.csv, size_matched_results.csv,",
+          "concordance.csv, benchmark_overview.png, checkpoints/<unit>.json"]
+    open(os.path.join(OUT, "summary.txt"), "w", encoding="utf-8").write("\n".join(L) + "\n")
+    print("\n".join(L))
+
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    lab = [f"{r.cohort[3:]} {r.version[:3]} {r.transition[0]}→{r.transition.split('>')[1][0]}" for _, r in wide.iterrows()]
+    y = np.arange(len(wide))[::-1]
+    fig, axes = plt.subplots(1, 3, figsize=(15, 7), sharey=True)
+    for ax, col, xl, ref in ((axes[0], "permdisp_effect", "PERMDISP dispersion ratio D (later/earlier)", 1),
+                             (axes[1], "stagesep_effect", "Stage separation ARI", 0),
+                             (axes[2], "mst_shape_effect", "MST z (filled = shape-only, open = raw)", 0)):
+        sigc = {"permdisp_effect": "permdisp_p_holm", "stagesep_effect": "stagesep_p_holm",
+                "mst_shape_effect": "mst_shape_p_holm"}[col]
+        cols = np.where(wide.tda_p_holm_raw < .05, "#eb6834", "0.6")
+        ax.scatter(wide[col], y, c=cols, marker="o", s=np.where(wide[sigc] < .05, 70, 25), zorder=3)
+        if col == "mst_shape_effect":
+            ax.scatter(wide.mst_raw_effect, y, facecolors="none", edgecolors=cols, s=np.where(wide.mst_raw_p_holm < .05, 70, 25))
+        ax.axvline(ref, color="0.5", lw=1); ax.set_xlabel(xl, fontsize=9)
+    axes[0].set_yticks(y); axes[0].set_yticklabels(lab, fontsize=8)
+    fig.suptitle("Step 13 benchmark: orange = TDA raw significant (Holm); large marker = conventional test significant (Holm)", fontsize=10)
+    fig.tight_layout(); fig.savefig(os.path.join(OUT, "benchmark_overview.png"), dpi=150); plt.close(fig)
+
+
+def run_benchmark():
+    os.makedirs(CK, exist_ok=True)
+    cc = real_crosscheck()
+    for c in cc:
+        print(("PASS " if c[2] else "FAIL ") + c[0] + ": " + c[1], flush=True)
+    if not all(c[2] for c in cc):
+        raise SystemExit("GUDHI cross-check on real subsample FAILED - stopping before any benchmark computation.")
+    todo = [u for u in bench_units() if not os.path.exists(os.path.join(CK, bunit_name(*u) + ".json"))]
+    # longest (MST) units first
+    todo.sort(key=lambda u: 0 if u[4].startswith("mst") else 1)
+    print(f"[step13] {len(todo)} units to run", flush=True)
+    t0 = time.time()
+    with Pool(WORKERS) as pool:
+        for i, (n, msg) in enumerate(pool.imap_unordered(run_bunit, todo), 1):
+            print(f"[step13] {i}/{len(todo)} {n}: {msg} [{(time.time() - t0) / 60:.1f} min]", flush=True)
+    bench_summary()
+    print(f"[step13] finished in {(time.time() - t0) / 60:.1f} min", flush=True)
+
+
 if __name__ == "__main__":
-    if len(sys.argv) > 1 and sys.argv[1] == "validate":
+    cmd = sys.argv[1] if len(sys.argv) > 1 else ""
+    if cmd == "validate":
         validate()
+    elif cmd == "run":
+        run_benchmark()
+    elif cmd == "summary":
+        bench_summary()
     else:
-        raise SystemExit("Only 'validate' is implemented at this stage (addendum 7 section 4).")
+        raise SystemExit("Usage: step13_benchmark.py validate | run | summary")

@@ -1,0 +1,206 @@
+﻿PASS GSE41258 unadjusted Normal subsample (m=31), raw: 30 MST edges vs 30 H0 deaths, max |diff| 0.00e+00
+PASS GSE41258 unadjusted Normal subsample (m=31), shape-only: 30 MST edges vs 30 H0 deaths, max |diff| 0.00e+00
+[step13] 108 units to run
+[step13] 1/108 GSE41258__unadj__N-A__mst_raw: done in 56 s [1.1 min]
+[step13] 2/108 GSE41258__unadj__A-C__mst_raw: done in 56 s [1.1 min]
+[step13] 3/108 GSE41258__unadj__C-M__mst_raw: done in 57 s [1.1 min]
+[step13] 4/108 GSE41258__unadj__N-A__mst_shape: done in 70 s [1.4 min]
+[step13] 5/108 GSE41258__unadj__A-C__mst_shape: done in 71 s [1.4 min]
+[step13] 6/108 GSE41258__unadj__C-M__mst_shape: done in 71 s [1.4 min]
+[step13] 7/108 GSE41258__adjus__N-A__mst_raw: done in 47 s [1.9 min]
+[step13] 8/108 GSE41258__adjus__A-C__mst_raw: done in 47 s [1.9 min]
+[step13] 9/108 GSE41258__adjus__N-A__mst_shape: done in 61 s [2.1 min]
+[step13] 10/108 GSE41258__adjus__C-M__mst_raw: done in 47 s [2.1 min]
+[step13] 11/108 GSE41258__adjus__A-C__mst_shape: done in 62 s [2.4 min]
+[step13] 12/108 GSE41258__adjus__C-M__mst_shape: done in 61 s [2.4 min]
+[step13] 13/108 GSE20916__unadj__N-A__mst_raw: done in 43 s [2.6 min]
+[step13] 14/108 GSE20916__unadj__N-A__mst_shape: done in 55 s [2.8 min]
+[step13] 15/108 GSE20916__unadj__A-C__mst_raw: done in 42 s [2.9 min]
+[step13] 16/108 GSE20916__unadj__A-C__mst_shape: done in 55 s [3.1 min]
+[step13] 17/108 GSE20916__adjus__N-A__mst_raw: done in 42 s [3.1 min]
+[step13] 18/108 GSE20916__adjus__A-C__mst_raw: done in 41 s [3.3 min]
+[step13] 19/108 GSE20916__adjus__N-A__mst_shape: done in 54 s [3.3 min]
+[step13] 20/108 GSE37364__unadj__N-A__mst_raw: done in 30 s [3.4 min]
+[step13] 21/108 GSE20916__adjus__A-C__mst_shape: done in 34 s [3.4 min]
+[step13] 22/108 GSE37364__unadj__A-C__mst_raw: done in 19 s [3.4 min]
+[step13] 23/108 GSE37364__unadj__N-A__mst_shape: done in 23 s [3.5 min]
+[step13] 24/108 GSE37364__adjus__N-A__mst_raw: done in 10 s [3.5 min]
+[step13] 25/108 GSE37364__unadj__A-C__mst_shape: done in 13 s [3.5 min]
+[step13] 26/108 GSE37364__adjus__A-C__mst_raw: done in 10 s [3.6 min]
+[step13] 27/108 GSE37364__adjus__N-A__mst_shape: done in 13 s [3.6 min]
+[step13] 28/108 GSE37364__adjus__A-C__mst_shape: done in 14 s [3.6 min]
+[step13] 29/108 GSE117606__unadj__N-A__mst_raw: done in 17 s [3.7 min]
+[step13] 30/108 GSE117606__unadj__A-C__mst_raw: done in 16 s [3.8 min]
+[step13] 31/108 GSE117606__unadj__N-A__mst_shape: done in 20 s [3.8 min]
+[step13] 32/108 GSE41258__unadj__N-A__permdisp: done in 0 s [3.8 min]
+[step13] 33/108 GSE41258__unadj__N-A__permanova: done in 0 s [3.8 min]
+[step13] 34/108 GSE41258__unadj__N-A__stagesep: done in 0 s [3.8 min]
+[step13] 35/108 GSE41258__unadj__N-A__sizematched: done in 0 s [3.8 min]
+[step13] 36/108 GSE41258__unadj__A-C__permdisp: done in 0 s [3.8 min]
+[step13] 37/108 GSE41258__unadj__A-C__permanova: done in 0 s [3.8 min]
+[step13] 38/108 GSE41258__unadj__A-C__stagesep: done in 0 s [3.8 min]
+[step13] 39/108 GSE41258__unadj__A-C__sizematched: done in 0 s [3.8 min]
+[step13] 40/108 GSE41258__unadj__C-M__permdisp: done in 0 s [3.8 min]
+[step13] 41/108 GSE41258__unadj__C-M__permanova: done in 0 s [3.8 min]
+[step13] 42/108 GSE41258__unadj__C-M__stagesep: done in 0 s [3.8 min]
+[step13] 43/108 GSE41258__unadj__C-M__sizematched: done in 0 s [3.8 min]
+[step13] 44/108 GSE41258__adjus__N-A__permdisp: done in 0 s [3.8 min]
+[step13] 45/108 GSE41258__adjus__N-A__permanova: done in 0 s [3.8 min]
+[step13] 46/108 GSE41258__adjus__N-A__stagesep: done in 0 s [3.8 min]
+[step13] 47/108 GSE41258__adjus__N-A__sizematched: done in 0 s [3.8 min]
+[step13] 48/108 GSE41258__adjus__A-C__permdisp: done in 0 s [3.8 min]
+[step13] 49/108 GSE41258__adjus__A-C__permanova: done in 0 s [3.8 min]
+[step13] 50/108 GSE41258__adjus__A-C__stagesep: done in 0 s [3.8 min]
+[step13] 51/108 GSE41258__adjus__A-C__sizematched: done in 0 s [3.8 min]
+[step13] 52/108 GSE41258__adjus__C-M__permdisp: done in 0 s [3.8 min]
+[step13] 53/108 GSE41258__adjus__C-M__permanova: done in 0 s [3.8 min]
+[step13] 54/108 GSE41258__adjus__C-M__stagesep: done in 0 s [3.8 min]
+[step13] 55/108 GSE41258__adjus__C-M__sizematched: done in 0 s [3.8 min]
+[step13] 56/108 GSE20916__unadj__N-A__permdisp: done in 0 s [3.8 min]
+[step13] 57/108 GSE20916__unadj__N-A__permanova: done in 0 s [3.8 min]
+[step13] 58/108 GSE20916__unadj__N-A__stagesep: done in 0 s [3.8 min]
+[step13] 59/108 GSE20916__unadj__N-A__sizematched: done in 0 s [3.8 min]
+[step13] 60/108 GSE20916__unadj__A-C__permdisp: done in 0 s [3.8 min]
+[step13] 61/108 GSE20916__unadj__A-C__permanova: done in 0 s [3.8 min]
+[step13] 62/108 GSE20916__unadj__A-C__stagesep: done in 0 s [3.8 min]
+[step13] 63/108 GSE20916__unadj__A-C__sizematched: done in 0 s [3.8 min]
+[step13] 64/108 GSE20916__adjus__N-A__permdisp: done in 0 s [3.8 min]
+[step13] 65/108 GSE20916__adjus__N-A__permanova: done in 0 s [3.8 min]
+[step13] 66/108 GSE20916__adjus__N-A__stagesep: done in 0 s [3.8 min]
+[step13] 67/108 GSE20916__adjus__N-A__sizematched: done in 0 s [3.8 min]
+[step13] 68/108 GSE20916__adjus__A-C__permdisp: done in 0 s [3.8 min]
+[step13] 69/108 GSE20916__adjus__A-C__permanova: done in 0 s [3.8 min]
+[step13] 70/108 GSE20916__adjus__A-C__stagesep: done in 0 s [3.8 min]
+[step13] 71/108 GSE20916__adjus__A-C__sizematched: done in 0 s [3.8 min]
+[step13] 72/108 GSE37364__unadj__N-A__permdisp: done in 0 s [3.8 min]
+[step13] 73/108 GSE37364__unadj__N-A__permanova: done in 0 s [3.8 min]
+[step13] 74/108 GSE37364__unadj__N-A__stagesep: done in 0 s [3.8 min]
+[step13] 75/108 GSE37364__unadj__N-A__sizematched: done in 0 s [3.8 min]
+[step13] 76/108 GSE37364__unadj__A-C__permdisp: done in 0 s [3.8 min]
+[step13] 77/108 GSE37364__unadj__A-C__permanova: done in 0 s [3.8 min]
+[step13] 78/108 GSE37364__unadj__A-C__stagesep: done in 0 s [3.8 min]
+[step13] 79/108 GSE37364__unadj__A-C__sizematched: done in 0 s [3.8 min]
+[step13] 80/108 GSE37364__adjus__N-A__permdisp: done in 0 s [3.8 min]
+[step13] 81/108 GSE37364__adjus__N-A__permanova: done in 0 s [3.8 min]
+[step13] 82/108 GSE37364__adjus__N-A__stagesep: done in 0 s [3.8 min]
+[step13] 83/108 GSE37364__adjus__N-A__sizematched: done in 0 s [3.8 min]
+[step13] 84/108 GSE37364__adjus__A-C__permdisp: done in 0 s [3.9 min]
+[step13] 85/108 GSE117606__adjus__N-A__mst_raw: done in 16 s [3.9 min]
+[step13] 86/108 GSE37364__adjus__A-C__permanova: done in 0 s [3.9 min]
+[step13] 87/108 GSE37364__adjus__A-C__stagesep: done in 0 s [3.9 min]
+[step13] 88/108 GSE117606__unadj__N-A__permdisp: done in 0 s [3.9 min]
+[step13] 89/108 GSE37364__adjus__A-C__sizematched: done in 0 s [3.9 min]
+[step13] 90/108 GSE117606__unadj__N-A__permanova: done in 0 s [3.9 min]
+[step13] 91/108 GSE117606__unadj__N-A__stagesep: done in 0 s [3.9 min]
+[step13] 92/108 GSE117606__unadj__A-C__permdisp: done in 0 s [3.9 min]
+[step13] 93/108 GSE117606__unadj__A-C__permanova: done in 0 s [3.9 min]
+[step13] 94/108 GSE117606__unadj__N-A__sizematched: done in 0 s [3.9 min]
+[step13] 95/108 GSE117606__unadj__A-C__stagesep: done in 0 s [3.9 min]
+[step13] 96/108 GSE117606__adjus__N-A__permdisp: done in 0 s [3.9 min]
+[step13] 97/108 GSE117606__adjus__N-A__permanova: done in 0 s [3.9 min]
+[step13] 98/108 GSE117606__adjus__N-A__stagesep: done in 0 s [3.9 min]
+[step13] 99/108 GSE117606__unadj__A-C__sizematched: done in 0 s [3.9 min]
+[step13] 100/108 GSE117606__adjus__A-C__permdisp: done in 0 s [3.9 min]
+[step13] 101/108 GSE117606__adjus__A-C__permanova: done in 0 s [3.9 min]
+[step13] 102/108 GSE117606__adjus__A-C__stagesep: done in 0 s [3.9 min]
+[step13] 103/108 GSE117606__adjus__N-A__sizematched: done in 0 s [3.9 min]
+[step13] 104/108 GSE117606__adjus__A-C__sizematched: done in 0 s [3.9 min]
+[step13] 105/108 GSE117606__unadj__A-C__mst_shape: done in 20 s [3.9 min]
+[step13] 106/108 GSE117606__adjus__N-A__mst_shape: done in 21 s [4.0 min]
+[step13] 107/108 GSE117606__adjus__A-C__mst_raw: done in 17 s [4.0 min]
+[step13] 108/108 GSE117606__adjus__A-C__mst_shape: done in 20 s [4.1 min]
+STEP 13 - Benchmark against conventional methods (addendum 7, commit c165512)
+======================================================================
+Embeddings: frozen 10-PC step 3 embeddings (unadjusted, stage-blind adjusted); transitions as step 5.
+PERMDISP / PERMANOVA / stage separation on all samples; MST test and size-matched analysis with k = 20,
+m as step 5 (GSE41258 31, GSE20916 19, GSE37364 21, GSE117606 47). 999 permutations; Holm across transitions
+within cohort x version x method (x mode). Significant = Holm p < 0.05.
+Seed 42 (per-unit SeedSequence). numpy 2.4.6, scipy 1.17.1, gudhi 3.13.0
+Samples per stage: GSE41258 53/48/181/39; GSE20916 24/45/36; GSE37364 38/29/27; GSE117606 65/59/71
+
+GUDHI cross-check on one real subsample:
+  PASS  GSE41258 unadjusted Normal subsample (m=31), raw: 30 MST edges vs 30 H0 deaths, max |diff| 0.00e+00
+  PASS  GSE41258 unadjusted Normal subsample (m=31), shape-only: 30 MST edges vs 30 H0 deaths, max |diff| 0.00e+00
+
+Per-comparison results (Holm p; * < 0.05):
+  cohort    version    transition             TDAraw  TDAshp   PDISP     D  PANOVA    R2   StSep   ARI  MSTraw  MSTshp
+  GSE41258  unadjusted Normal->Adenoma        0.003*  0.003*  1.000   0.95  0.003*  0.45  0.003*  0.92  0.003*  0.003*
+  GSE41258  unadjusted Adenoma->Carcinoma     0.008*  0.716   0.018*  1.19  0.003*  0.19  1.000  -0.02  0.026*  1.000 
+  GSE41258  unadjusted Carcinoma->Metastasis  0.989   0.842   1.000   1.04  0.003*  0.07  1.000  -0.04  0.993   1.000 
+  GSE41258  adjusted   Normal->Adenoma        0.003*  0.282   0.003*  1.31  0.003*  0.30  0.003*  0.85  0.003*  0.216 
+  GSE41258  adjusted   Adenoma->Carcinoma     0.642   0.282   0.410   1.07  0.003*  0.15  0.003*  0.66  0.414   0.290 
+  GSE41258  adjusted   Carcinoma->Metastasis  0.642   0.282   0.410   1.08  0.003*  0.07  0.003*  0.14  0.881   0.290 
+  GSE20916  unadjusted Normal->Adenoma        0.012*  0.006*  0.464   0.93  0.002*  0.44  0.002*  1.00  0.031*  0.032*
+  GSE20916  unadjusted Adenoma->Carcinoma     0.002*  0.006*  0.002*  1.40  0.002*  0.31  0.002*  0.81  0.002*  0.032*
+  GSE20916  adjusted   Normal->Adenoma        0.093   0.054   0.542   1.06  0.002*  0.08  0.002*  0.21  0.139   0.114 
+  GSE20916  adjusted   Adenoma->Carcinoma     0.006*  0.436   0.002*  1.25  0.002*  0.14  0.002*  0.20  0.004*  0.728 
+  GSE37364  unadjusted Normal->Adenoma        0.002*  0.102   0.002*  1.59  0.002*  0.45  0.002*  0.83  0.002*  0.108 
+  GSE37364  unadjusted Adenoma->Carcinoma     0.002*  0.102   0.003*  1.40  0.002*  0.20  0.002*  0.45  0.004*  0.108 
+  GSE37364  adjusted   Normal->Adenoma        0.002*  0.010*  0.018*  1.32  0.002*  0.14  0.002*  0.40  0.004*  0.046*
+  GSE37364  adjusted   Adenoma->Carcinoma     0.011*  0.685   0.010*  1.37  0.002*  0.09  0.015*  0.07  0.011*  0.589 
+  GSE117606 unadjusted Normal->Adenoma        0.598   0.483   0.934   0.99  0.002*  0.33  0.002*  0.67  0.690   0.373 
+  GSE117606 unadjusted Adenoma->Carcinoma     0.002*  0.002*  0.012*  1.19  0.002*  0.22  0.002*  0.30  0.002*  0.010*
+  GSE117606 adjusted   Normal->Adenoma        0.729   0.582   0.670   1.03  0.002*  0.14  0.002*  0.43  0.523   0.572 
+  GSE117606 adjusted   Adenoma->Carcinoma     0.002*  0.582   0.010*  1.19  0.002*  0.16  0.002*  0.27  0.002*  0.572 
+
+5.1 CONCORDANCE (18 comparisons). a1 = of TDA-significant, % also conventional-significant;
+    a2 = of conventional-significant, % also TDA-significant. 'Largely captured' if a1 >= 75% AND a2 >= 75%.
+  P1 TDA raw vs PERMDISP: both 10, TDA only 2, conventional only 0, neither 6; a1 83%, a2 100%, kappa 0.77 -> LARGELY CAPTURED
+      discordant: GSE41258 unadjusted Normal->Adenoma: TDA 0.003, conventional 1.000
+      discordant: GSE20916 unadjusted Normal->Adenoma: TDA 0.012, conventional 0.464
+  P2 TDA raw vs MST raw: both 12, TDA only 0, conventional only 0, neither 6; a1 100%, a2 100%, kappa 1.0 -> LARGELY CAPTURED
+  P3 TDA shape-only vs MST shape-only: both 5, TDA only 0, conventional only 0, neither 13; a1 100%, a2 100%, kappa 1.0 -> LARGELY CAPTURED
+
+  Descriptive extra (no conclusion): MST vs H0-only TDA (addendum 5 part 4; 3 cohorts, 14 comparisons)
+  MST raw vs H0-only raw: n 14; both 9, H0-TDA only 0, MST only 1, neither 4; a1 100%, a2 90%, kappa 0.84
+  MST shape vs H0-only shape: n 14; both 4, H0-TDA only 0, MST only 0, neither 10; a1 100%, a2 100%, kappa 1.0
+
+5.1(2) ADENOMA -> CARCINOMA DIRECTION (supported if PERMDISP Holm p < 0.05 AND D > 1):
+  GSE41258  unadjusted D = 1.19, PERMDISP Holm p 0.018 -> SUPPORTED (spread increases)   [TDA raw Holm p 0.008]
+  GSE41258  adjusted   D = 1.07, PERMDISP Holm p 0.410 -> not significant (no support)   [TDA raw Holm p 0.642]
+  GSE20916  unadjusted D = 1.40, PERMDISP Holm p 0.002 -> SUPPORTED (spread increases)   [TDA raw Holm p 0.002]
+  GSE20916  adjusted   D = 1.25, PERMDISP Holm p 0.002 -> SUPPORTED (spread increases)   [TDA raw Holm p 0.006]
+  GSE37364  unadjusted D = 1.40, PERMDISP Holm p 0.003 -> SUPPORTED (spread increases)   [TDA raw Holm p 0.002]
+  GSE37364  adjusted   D = 1.37, PERMDISP Holm p 0.010 -> SUPPORTED (spread increases)   [TDA raw Holm p 0.011]
+  GSE117606 unadjusted D = 1.19, PERMDISP Holm p 0.012 -> SUPPORTED (spread increases)   [TDA raw Holm p 0.002]
+  GSE117606 adjusted   D = 1.19, PERMDISP Holm p 0.010 -> SUPPORTED (spread increases)   [TDA raw Holm p 0.002]
+
+5.2 SHAPE RULE (each TDA shape-only significant comparison; 'not captured' only if PERMDISP,
+    stage separation and MST shape-only are ALL non-significant; PERMANOVA reported only):
+  GSE41258 unadjusted Normal->Adenoma (TDA shape Holm p 0.003): accompanied by stage separation, MST shape-only   [PERMANOVA Holm p 0.003]
+  GSE20916 unadjusted Normal->Adenoma (TDA shape Holm p 0.006): accompanied by stage separation, MST shape-only   [PERMANOVA Holm p 0.002]
+  GSE20916 unadjusted Adenoma->Carcinoma (TDA shape Holm p 0.006): accompanied by PERMDISP, stage separation, MST shape-only   [PERMANOVA Holm p 0.002]
+  GSE37364 adjusted Normal->Adenoma (TDA shape Holm p 0.010): accompanied by PERMDISP, stage separation, MST shape-only   [PERMANOVA Holm p 0.002]
+  GSE117606 unadjusted Adenoma->Carcinoma (TDA shape Holm p 0.002): accompanied by PERMDISP, stage separation, MST shape-only   [PERMANOVA Holm p 0.002]
+
+3.6 SIZE-MATCHED (secondary; medians over 20 subsamples of size m; median p is descriptive):
+  cohort    version    transition            PDISP all  PDISP m   D m  %sig PANOVA all  PANOVA m  %sig
+  GSE41258  unadjusted Normal->Adenoma          1.000    0.755   0.93    0%     0.003*    0.003*  100%
+  GSE41258  unadjusted Adenoma->Carcinoma       0.018*   0.096   1.20   60%     0.003*    0.003*  100%
+  GSE41258  unadjusted Carcinoma->Metastasis    1.000    0.755   1.06   10%     0.003*    0.003*  100%
+  GSE41258  adjusted   Normal->Adenoma          0.003*   0.011*  1.33   95%     0.003*    0.003*  100%
+  GSE41258  adjusted   Adenoma->Carcinoma       0.410    0.669   1.06    0%     0.003*    0.003*  100%
+  GSE41258  adjusted   Carcinoma->Metastasis    0.410    0.669   1.07   20%     0.003*    0.003*  100%
+  GSE20916  unadjusted Normal->Adenoma          0.464    0.623   0.95    0%     0.002*    0.002*  100%
+  GSE20916  unadjusted Adenoma->Carcinoma       0.002*   0.010*  1.37  100%     0.002*    0.002*  100%
+  GSE20916  adjusted   Normal->Adenoma          0.542    0.629   1.06    0%     0.002*    0.003*   95%
+  GSE20916  adjusted   Adenoma->Carcinoma       0.002*   0.071   1.23   65%     0.002*    0.002*  100%
+  GSE37364  unadjusted Normal->Adenoma          0.002*   0.010*  1.53   85%     0.002*    0.002*  100%
+  GSE37364  unadjusted Adenoma->Carcinoma       0.003*   0.007*  1.42  100%     0.002*    0.002*  100%
+  GSE37364  adjusted   Normal->Adenoma          0.018*   0.053   1.33   50%     0.002*    0.002*  100%
+  GSE37364  adjusted   Adenoma->Carcinoma       0.010*   0.024*  1.36   90%     0.002*    0.003*  100%
+  GSE117606 unadjusted Normal->Adenoma          0.934    0.748   0.99    0%     0.002*    0.002*  100%
+  GSE117606 unadjusted Adenoma->Carcinoma       0.012*   0.055   1.19   65%     0.002*    0.002*  100%
+  GSE117606 adjusted   Normal->Adenoma          0.670    0.729   1.03    0%     0.002*    0.002*  100%
+  GSE117606 adjusted   Adenoma->Carcinoma       0.010*   0.032*  1.20   75%     0.002*    0.002*  100%
+  Reading for comparisons where the conventional test is significant on all samples but TDA raw is not:
+    GSE41258 unadjusted Carcinoma->Metastasis, PERMANOVA: at size m 0.003 -> still significant: DIFFERENT PROPERTY
+    GSE41258 adjusted Adenoma->Carcinoma, PERMANOVA: at size m 0.003 -> still significant: DIFFERENT PROPERTY
+    GSE41258 adjusted Carcinoma->Metastasis, PERMANOVA: at size m 0.003 -> still significant: DIFFERENT PROPERTY
+    GSE20916 adjusted Normal->Adenoma, PERMANOVA: at size m 0.003 -> still significant: DIFFERENT PROPERTY
+    GSE117606 unadjusted Normal->Adenoma, PERMANOVA: at size m 0.002 -> still significant: DIFFERENT PROPERTY
+    GSE117606 adjusted Normal->Adenoma, PERMANOVA: at size m 0.002 -> still significant: DIFFERENT PROPERTY
+
+Outputs: benchmark_results.csv (wide, with TDA), benchmark_results_long.csv, size_matched_results.csv,
+concordance.csv, benchmark_overview.png, checkpoints/<unit>.json
+[step13] finished in 4.1 min
