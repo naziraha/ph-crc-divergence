@@ -9,7 +9,7 @@ Half scores recover t (clusters),median Spearman >= 0.90,0.9859247077647897,True
 "VR three clusters, A->C",median VR upper CI < 0.25,0.1875,True
 "Linear genes, continuum: candidate switch rate",<= 0.05,0.0,True
 "Linear genes, clusters: candidate switch rate",<= 0.05,0.0,True
-"Sigmoid genes, continuum: candidate switch power",>= 0.80,0.618,False
-"Sigmoid genes, clusters: step-like unresolvable",>= 0.80 (switch-like reported),0.915,True
+"Sigmoid genes, continuum: candidate switch power",>= 0.80,0.84,True
+"Sigmoid genes, clusters: step-like unresolvable",>= 0.80 (switch-like reported),0.793,False
 "Peak genes, continuum: non-monotonic",>= 0.80,0.955,True
 Grid vs direct bootstrap p (20 genes),max |diff| <= 0.02,0.0015000000000000013,True

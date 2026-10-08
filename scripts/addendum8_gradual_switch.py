@@ -31,6 +31,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "results", "addendum8")
 SEED, WORKERS = 42, 6
 LN81 = 2 * np.log(9)                       # W = 2 ln 9 / k  (10% -> 90% width)
+RES_HALF, RES_FRAC = 0.125, 0.10          # Amendment 1 (0275b7a): resolvable if >= 10% (and >= 5) within x0 +/- 0.125
 K_GRID = np.unique(np.r_[np.geomspace(1, 200, 40), [2, 5, 10, 20, 50]])
 
 
@@ -215,12 +216,13 @@ def fit_genes(x, Y, astar, n_all=None):
                    "peak", "trough")
     A_l, A_s, A_p = aic(rl, n, 2), aic(rs, n, 4), aic(rsp, n, 4)
     W = LN81 / k
-    win = np.array([np.sum((x >= c - w / 2) & (x <= c + w / 2)) for c, w in zip(x0, W)])
+    win_fit = np.array([np.sum((x >= c - w / 2) & (x <= c + w / 2)) for c, w in zip(x0, W)])  # record only
+    win = np.array([np.sum(np.abs(x - c) <= RES_HALF) for c in x0])   # Amendment 1: fixed window x0 +/- 0.125
     sigma = np.sqrt(rl / (n - 2))
     return pd.DataFrame(dict(p_assoc=p_assoc, slope=slope, r_std=np.abs(slope) / sigma, aic_lin=A_l, aic_sig=A_s,
                              aic_spl=A_p, dAIC=A_l - A_s, a=a, b=b, k=k, x0=x0, W=W, amp=np.abs(b - a),
-                             direction=np.sign(b - a), n_window=win,
-                             resolvable=win >= max(5, 0.05 * n_all), spline_turn=change, turn_type=ext,
+                             direction=np.sign(b - a), n_window=win, n_window_fitted=win_fit,
+                             resolvable=win >= max(5, RES_FRAC * n_all), spline_turn=change, turn_type=ext,
                              astar=astar)), fitter
 
 
@@ -399,7 +401,8 @@ def validate():
     cdf.to_csv(os.path.join(OUT, "validation_criteria.csv"), index=False)
     ok = bool(cdf["pass"].all())
 
-    L = ["ADDENDUM 8 - Section 6 validation on simulated data (addendum 8 8e8df5b; D13 248d295)", "=" * 72,
+    L = ["ADDENDUM 8 - Section 6 validation on simulated data (addendum 8 8e8df5b; D13 248d295;",
+         "Amendment 1 0275b7a: fixed-window resolvability, x0 +/- 0.125, >= 10% and >= 5 samples) - RERUN", "=" * 72,
          "No real data used. n = 150 per simulated cohort; 2,000 genes (1,000 progression background, 960 noise,",
          "20 scenario test genes, 20 linear test genes). Population checks: 200 replicates per layout, all-gene PC1.",
          "Gene checks: 50 replicates per scenario, cross-fitted half scores, grid 21 x 499 simulations, BH over 40",

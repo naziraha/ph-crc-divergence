@@ -1,4 +1,5 @@
-ADDENDUM 8 - Section 6 validation on simulated data (addendum 8 8e8df5b; D13 248d295)
+ADDENDUM 8 - Section 6 validation on simulated data (addendum 8 8e8df5b; D13 248d295;
+Amendment 1 0275b7a: fixed-window resolvability, x0 +/- 0.125, >= 10% and >= 5 samples) - RERUN
 ========================================================================
 No real data used. n = 150 per simulated cohort; 2,000 genes (1,000 progression background, 960 noise,
 20 scenario test genes, 20 linear test genes). Population checks: 200 replicates per layout, all-gene PC1.
@@ -16,20 +17,20 @@ Seed 42 (SeedSequence per replicate). numpy 2.4.6, scipy 1.17.1, scikit-learn 1.
   PASS  VR three clusters, A->C                            median VR upper CI < 0.25        0.188
   PASS  Linear genes, continuum: candidate switch rate     <= 0.05                          0.000
   PASS  Linear genes, clusters: candidate switch rate      <= 0.05                          0.000
-  FAIL  Sigmoid genes, continuum: candidate switch power   >= 0.80                          0.618
-  PASS  Sigmoid genes, clusters: step-like unresolvable    >= 0.80 (switch-like reported)   0.915
+  PASS  Sigmoid genes, continuum: candidate switch power   >= 0.80                          0.840
+  FAIL  Sigmoid genes, clusters: step-like unresolvable    >= 0.80 (switch-like reported)   0.793
   PASS  Peak genes, continuum: non-monotonic               >= 0.80                          0.955
   PASS  Grid vs direct bootstrap p (20 genes)              max |diff| <= 0.02               0.002
 
 Descriptive:
   PC1 ordered (a* in (0,1)): continuum 1.00, clusters 1.00
   Median VR: continuum N->A 0.89, A->C 0.90; clusters N->A 0.06, A->C 0.06
-  Sigmoid genes in clusters classified switch-like: 0.013
+  Sigmoid genes in clusters classified switch-like: 0.135
   Classes, clusters / linear genes: gradual 0.96, intermediate 0.04
-  Classes, clusters / sigmoid genes: step-like unresolvable 0.92, intermediate 0.07, switch-like 0.01
+  Classes, clusters / sigmoid genes: step-like unresolvable 0.79, switch-like 0.14, intermediate 0.07
   Classes, continuum / linear genes: gradual 1.00, intermediate 0.00
   Classes, continuum / peak genes: non-monotonic 0.95, intermediate 0.04
-  Classes, continuum / sigmoid genes: switch-like 0.62, step-like unresolvable 0.29, intermediate 0.09
+  Classes, continuum / sigmoid genes: switch-like 0.84, intermediate 0.09, step-like unresolvable 0.07
 
 OVERALL: FAILED - do not analyse real data
-Run time 151.0 min.
+Run time 122.2 min.
