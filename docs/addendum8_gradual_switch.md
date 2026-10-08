@@ -255,3 +255,20 @@ If a check fails, no real data are analysed; the problem is reported and recorde
   - `enrichment_replicated.csv`;
   - `summary.txt` (section 5 calls and conclusions);
   - figures: score densities by stage per cohort; example trajectories of replicated switch genes; class proportions per cohort.
+
+---
+
+## Amendment 1 (2026-10-08): fixed-window resolvability rule (reference: deviation D14)
+
+**Status:** decided by the PI and committed **before** the section 6 validation is rerun. No real data have been analysed.
+
+**Reason:** in the first section 6 validation (commit cca77b1), true switch genes on a continuum were detected in only 61.8% of cases (required ≥ 80%). The main cause was the resolvability criterion (§4.2 item 5). It counted samples inside the **fitted** 10–90% window, which becomes very narrow whenever noise makes the fitted sigmoid too steep. As a result, 29% of true switches were labelled "unresolvable" although samples densely covered the switch region.
+
+**Change:** §4.2 item 5 is replaced by:
+> 5. **resolvable:** at least 10% of the cohort's samples (and at least 5 samples) lie within the **fixed** window x₀ ± 0.125 (half the maximum switch width W = 0.25) on the score the gene is fitted against.
+
+The rule applies everywhere item 5 is used: the step-like-unresolvable class (§4.2), replication (§4.4) and the validation (§6).
+
+**Unchanged:** all other criteria and thresholds, including W ≤ 0.25, the 80% power target and all section 5 rules.
+
+**Pre-stated consequence:** if any section 6 criterion still fails after the rerun, the rule will **not** be amended again. The classifier will be reported as conservative, and the PI will be asked before any real data are used.
