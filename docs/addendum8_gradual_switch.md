@@ -272,3 +272,23 @@ The rule applies everywhere item 5 is used: the step-like-unresolvable class (§
 **Unchanged:** all other criteria and thresholds, including W ≤ 0.25, the 80% power target and all section 5 rules.
 
 **Pre-stated consequence:** if any section 6 criterion still fails after the rerun, the rule will **not** be amended again. The classifier will be reported as conservative, and the PI will be asked before any real data are used.
+
+---
+
+## Amendment 2 (2026-10-08): conditional interpretation of switch-gene calls (reference: deviation D15)
+
+**Status:** decided by the PI and committed **before any real data are analysed**.
+
+**Validation result that motivates it (rerun with Amendment 1, commit 1f15bf9):**
+- **On a continuum** the classifier works as intended: true switches detected 84.0%, and 0% false switch calls from linear (gradual) genes.
+- **In gapped data** (stages forming separate clusters), jumps placed inside a gap were classified "step-like unresolvable" in 79.3% of cases (required ≥ 80%), and **13.5% were called candidate switch genes**. The midpoint of a jump inside a gap is poorly located; when it falls near a cluster edge, the fixed resolvability window reaches into the neighbouring cluster.
+- All other checks passed, including all part (a) checks and the non-monotonic check.
+
+**Change:**
+- **Where switch calls count:** switch-gene calls, candidate (§4.3) and replicated (§4.4), for a transition are interpreted **only in cohorts where part (a) classes that transition as "continuous" or "overlapping"** (§5.1).
+- **Elsewhere:** in cohorts where part (a) classes the transition as "discontinuous" or "inconclusive", switch-gene calls for that transition are reported as **"not interpretable (possible gap artefact)"**. In those cohorts they:
+  - do not count as discovery or as replication (§4.4);
+  - do not count towards the gene-level switch-like call (§5.2) or the section 5.3 switch rules.
+- **Unchanged:** the part (a) rules, the "gradual" gene rules, the non-monotonic analysis (§4.5a) and all thresholds.
+
+**Note (logical consequence, stated in advance):** if a transition is "discontinuous" or "inconclusive" in 2 or more of the 4 cohorts, at most 2 cohorts can contribute switch genes, so a gene cannot replicate in 2 other cohorts. In that case **no replicated switch genes are possible for that transition**, and the §5.3 conclusion "support for switch-like change" cannot be reached. Such a transition will be reported as **inconclusive** about gene-level switches.
