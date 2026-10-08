@@ -1,0 +1,3 @@
+transition,ordered_a,ordered_b,pop_continuous_or_overlapping,pop_discontinuous,gene_gradual,replicated_switch_genes,conclusion
+N->A,4,4,4,0,4,0,SUPPORT FOR GRADUAL CHANGE
+A->C,4,4,2,0,4,0,INCONCLUSIVE

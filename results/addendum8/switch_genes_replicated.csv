@@ -1,0 +1,10 @@
+gene,discovery,interval,direction,discovery_interpretable,n_replicating,replicating,rep_GSE41258,rep_GSE20916,rep_GSE37364,rep_GSE117606,replicated
+MTSS1,GSE41258,A->C,down,True,0,,discovery,no,no,no,False
+EDN3,GSE41258,N->A,down,True,0,,discovery,no,no,no,False
+FRZB,GSE41258,A->C,down,True,0,,discovery,no,no,no,False
+DNAJC12,GSE41258,A->C,down,True,0,,discovery,no,no,no,False
+EPHA2,GSE20916,N->A,up,True,0,,no,discovery,no,no,False
+FBLN7,GSE37364,N->A,down,True,0,,not testable,not testable,discovery,no,False
+CCDC42B,GSE37364,N->A,up,True,0,,not testable,not testable,discovery,not testable,False
+ACKR1,GSE37364,A->C,down,False,0,,not testable,not testable,discovery,no,False
+PDZK1IP1,GSE37364,N->A,up,True,0,,no,no,discovery,no,False

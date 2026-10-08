@@ -1,0 +1,65 @@
+﻿[a8] GSE41258: done in 1236 s [20.8 min]
+[a8] GSE117606: done in 1325 s [22.2 min]
+[a8] GSE37364: done in 2054 s [34.4 min]
+[a8] GSE20916: done in 2067 s [34.6 min]
+ADDENDUM 8 - Gradual vs switch-like change (8e8df5b; Amendment 1 0275b7a; Amendment 2 a3af4f9; D13)
+==============================================================================
+Stage-blind adjusted data; N/A/C samples (GSE41258 metastases excluded). Part (a): frozen all-gene PC1.
+Part (b): cross-fitted half scores (primary); all-gene score = sensitivity. Bootstrap grid 21 x 1,999.
+Seed 42. numpy 2.4.6, scipy 1.17.1, scikit-learn 1.9.1, patsy 1.0.3, diptest 0.11.0, decoupler 2.2.0
+Samples (N/A/C): GSE41258 53/48/181; GSE20916 24/45/36; GSE37364 38/29/27; GSE117606 65/59/71
+
+PART (a) - continuity along adjusted PC1 (s: normal median 0, carcinoma median 1)
+  GSE41258  a* = 0.40 (ordered); PC1 var 17.8%, stage R2 0.78; dip Holm p: all 0.1311, N+A 1.0000, A+C 1.0000
+      N->A: AUC 0.93; VR 1.43 [0.74, 2.53]; between medians: 25/53 Norm, 23/48 Aden  -> CONTINUOUS
+      A->C: AUC 0.93; VR 0.87 [0.42, 1.26]; between medians: 23/48 Aden, 89/181 Carc  -> CONTINUOUS
+  GSE20916  a* = 0.21 (ordered); PC1 var 20.7%, stage R2 0.42; dip Holm p: all 1.0000, N+A 1.0000, A+C 1.0000
+      N->A: AUC 0.67; VR nan [nan, nan]; between medians: 7/24 Norm, 8/45 Aden  -> OVERLAPPING
+      A->C: AUC 0.87; VR 1.53 [0.40, 3.00]; between medians: 22/45 Aden, 14/36 Carc  -> CONTINUOUS
+  GSE37364  a* = 0.56 (ordered); PC1 var 17.8%, stage R2 0.40; dip Holm p: all 1.0000, N+A 1.0000, A+C 1.0000
+      N->A: AUC 0.80; VR 0.70 [0.25, 1.75]; between medians: 16/38 Norm, 10/29 Aden  -> CONTINUOUS
+      A->C: AUC 0.74; VR 0.38 [0.00, 1.67]; between medians: 10/29 Aden, 8/27 Carc  -> INCONCLUSIVE
+  GSE117606 a* = 0.44 (ordered); PC1 var 18.4%, stage R2 0.63; dip Holm p: all 1.0000, N+A 1.0000, A+C 0.6339
+      N->A: AUC 0.87; VR 0.84 [0.37, 1.33]; between medians: 29/65 Norm, 23/59 Aden  -> CONTINUOUS
+      A->C: AUC 0.87; VR 0.36 [0.16, 0.82]; between medians: 25/59 Aden, 29/71 Carc  -> INCONCLUSIVE
+  (PC1 recomputed from the frozen genes matches the frozen PC1: |r| = GSE41258 1.0000, GSE20916 1.0000, GSE37364 1.0000, GSE117606 1.0000)
+
+PART (b) - class proportions of progression-associated genes (cross-fitted)
+  GSE41258  half-score rho with all-gene 0.997/0.997; half a* 0.41/0.37 (ordered); progression-associated 1695/2000
+      gradual 72.7%, intermediate 26.4%, non-monotonic 0.6%, switch-like 0.2%
+      N->A: candidate switch genes (FDR) 1 (0.1%); interpretable: True; gene-level call: GRADUAL
+      A->C: candidate switch genes (FDR) 3 (0.2%); interpretable: True; gene-level call: GRADUAL
+  GSE20916  half-score rho with all-gene 0.998/0.997; half a* 0.24/0.20 (ordered); progression-associated 1520/2000
+      gradual 83.0%, intermediate 16.6%, step-like unresolvable 0.3%, non-monotonic 0.1%, switch-like 0.1%
+      N->A: candidate switch genes (FDR) 1 (0.1%); interpretable: True; gene-level call: GRADUAL
+      A->C: candidate switch genes (FDR) 0 (0.0%); interpretable: True; gene-level call: GRADUAL
+  GSE37364  half-score rho with all-gene 0.997/0.998; half a* 0.50/0.59 (ordered); progression-associated 1290/2000
+      gradual 79.3%, intermediate 20.2%, switch-like 0.3%, non-monotonic 0.2%
+      N->A: candidate switch genes (FDR) 3 (0.2%); interpretable: True; gene-level call: GRADUAL
+      A->C: candidate switch genes (FDR) 1 (0.1%); interpretable: False; gene-level call: GRADUAL
+  GSE117606 half-score rho with all-gene 0.999/0.999; half a* 0.46/0.41 (ordered); progression-associated 1478/2000
+      gradual 86.4%, intermediate 13.3%, non-monotonic 0.3%
+      N->A: candidate switch genes (FDR) 0 (0.0%); interpretable: True; gene-level call: GRADUAL
+      A->C: candidate switch genes (FDR) 0 (0.0%); interpretable: False; gene-level call: GRADUAL
+
+  Sensitivity (all-gene score): GSE41258 cand 3 vs cross-fitted 4, gradual 72%; GSE20916 cand 1 vs cross-fitted 1, gradual 83%; GSE37364 cand 7 vs cross-fitted 4, gradual 78%; GSE117606 cand 0 vs cross-fitted 0, gradual 86%
+
+REPLICATED SWITCH GENES (interpretable discovery + >= 2 other interpretable cohorts):
+  none
+  (candidate discoveries: 9; interpretable 8; not interpretable (gap) 1)
+  Sensitivity (all-gene score): 0 replicated switch genes
+
+REPLICATED NON-MONOTONIC GENES (>= 2 other cohorts, same pattern; descriptive):
+  none
+
+ENRICHMENT (descriptive; 1837 gene sets (Hallmark + Reactome where available); background 3373 genes):
+  no list with >= 5 genes
+
+SECTION 5 - OVERALL CONCLUSION PER TRANSITION
+  N->A: population continuous/overlapping 4, discontinuous 0 (of 4 ordered); gene-level gradual 4 (of 4); replicated switch genes 0
+      -> SUPPORT FOR GRADUAL CHANGE
+  A->C: population continuous/overlapping 2, discontinuous 0 (of 4 ordered); gene-level gradual 4 (of 4); replicated switch genes 0
+      -> INCONCLUSIVE
+
+Secondary score (N->C centroid axis; descriptive): GSE41258 N->A continuous, A->C continuous; GSE20916 N->A inconclusive, A->C continuous; GSE37364 N->A continuous, A->C inconclusive; GSE117606 N->A continuous, A->C inconclusive
+Run time 38.7 min (summary stage).
