@@ -29,6 +29,7 @@ if (mode == "example") {
   out <- data.frame(sample = rownames(res), nearest = nearest(res), prediction = as.character(res$prediction),
                     FDR = res$FDR, stringsAsFactors = FALSE)
   write.csv(out, args[3], row.names = FALSE)
+  write.csv(templates.CMS, file.path(dirname(args[3]), "templates.csv"), row.names = FALSE)
   write.csv(data.frame(template = names(cov), coverage = cov,
                        overall = mean(templates.CMS$symbol %in% rownames(x))),
             sub("\\.csv$", "_coverage.csv", args[3]), row.names = FALSE)

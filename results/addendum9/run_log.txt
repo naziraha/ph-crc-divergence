@@ -1,0 +1,71 @@
+﻿[a9] GSE41258: CMS done (coverage 94.9%) [0.3 min]
+[a9] GSE41258: variability + decomposition done [0.4 min]
+[a9] GSE20916: CMS done (coverage 85.3%) [0.5 min]
+[a9] GSE20916: variability + decomposition done [0.5 min]
+[a9] GSE37364: CMS done (coverage 95.1%) [0.6 min]
+[a9] GSE37364: variability + decomposition done [0.7 min]
+[a9] GSE117606: CMS done (coverage 99.2%) [0.9 min]
+[a9] GSE117606: variability + decomposition done [1.0 min]
+ADDENDUM 9 - Carcinoma vs adenoma heterogeneity (5a9b03a; D16 9590f65; Amendment 1 12dfc3c)
+==============================================================================
+Stage-blind adjusted data (dispersion: frozen 10-PC embeddings; variability: adjusted expression). CMS: CMScaller
+2.0.1 on unadjusted expression of carcinomas, centred per gene within cohort (D16a); nearest template = primary.
+Bias-adjusted PERMDISP distances sqrt(n/(n-1))*||x-c||; 999 permutations; seed 42 per unit.
+Samples (A/C): GSE41258 48/181; GSE20916 45/36; GSE37364 29/27; GSE117606 59/71
+
+1. CMS TEMPLATE COVERAGE (flag < 80%)
+  GSE41258  94.9%  (per template: CMS1 96%, CMS2 94%, CMS3 96%, CMS4 94%)
+  GSE20916  85.3%  (per template: CMS1 83%, CMS2 85%, CMS3 94%, CMS4 83%)
+  GSE37364  95.1%  (per template: CMS1 96%, CMS2 94%, CMS3 96%, CMS4 95%)
+  GSE117606 99.2%  (per template: CMS1 99%, CMS2 99%, CMS3 99%, CMS4 100%)
+
+2. CMS PROPORTIONS (primary nearest template | confident-only, FDR < 0.05)
+  Guinney 2015: CMS1 14%, CMS2 37%, CMS3 13%, CMS4 23%, unclassified 13%
+  GSE41258  n 181: primary CMS1 21%, CMS2 39%, CMS3 12%, CMS4 29% | confident CMS1 17%, CMS2 28%, CMS3 9%, CMS4 29%, unclassified 18%; entropy 1.30; kappa unadj vs adj 0.45
+  GSE20916  n 36: primary CMS1 8%, CMS2 33%, CMS3 25%, CMS4 33% | confident CMS1 8%, CMS2 22%, CMS3 25%, CMS4 31%, unclassified 14%; entropy 1.29; kappa unadj vs adj 0.62
+  GSE37364  n 27: primary CMS1 11%, CMS2 26%, CMS3 30%, CMS4 33% | confident CMS1 11%, CMS2 22%, CMS3 30%, CMS4 33%, unclassified 4%; entropy 1.32; kappa unadj vs adj 0.66
+  GSE117606 n 71: primary CMS1 13%, CMS2 24%, CMS3 25%, CMS4 38% | confident CMS1 11%, CMS2 18%, CMS3 25%, CMS4 35%, unclassified 10%; entropy 1.32; kappa unadj vs adj 0.61
+
+3-4. DISPERSION DECOMPOSITION (stage-blind adjusted 10-PC space)
+  -- labels: primary --
+  GSE41258  D_total 1.06 (p 0.309); R2_CMS 0.17 (p 0.001); D_within 0.96 (p 0.533); f 1.64 vs f_rand95 0.06; n within 181 (excluded small groups 0) -> NOT INFORMATIVE
+  GSE20916  D_total 1.25 (p 0.001); R2_CMS 0.27 (p 0.001); D_within 1.14 (p 0.031); f 0.44 vs f_rand95 0.14; n within 36 (excluded small groups 0) -> WITHIN-SUBTYPE HETEROGENEITY
+  GSE37364  D_total 1.37 (p 0.001); R2_CMS 0.27 (p 0.006); D_within 1.24 (p 0.027); f 0.35 vs f_rand95 0.12; n within 27 (excluded small groups 0) -> WITHIN-SUBTYPE HETEROGENEITY
+  GSE117606 D_total 1.19 (p 0.007); R2_CMS 0.24 (p 0.001); D_within 1.05 (p 0.391); f 0.72 vs f_rand95 0.07; n within 71 (excluded small groups 0) -> SUBTYPE DIVERSITY
+  -- labels: confident-only --
+  GSE41258  D_total 1.06 (p 0.340); R2_CMS 0.21 (p 0.001); D_within 0.94 (p 0.248); f 2.10 vs f_rand95 0.19; n within 149 (excluded small groups 0) -> NOT INFORMATIVE
+  GSE20916  D_total 1.25 (p 0.003); R2_CMS 0.27 (p 0.001); D_within 1.15 (p 0.043); f 0.42 vs f_rand95 0.14; n within 31 (excluded small groups 0) -> WITHIN-SUBTYPE HETEROGENEITY
+  GSE37364  D_total 1.37 (p 0.005); R2_CMS 0.27 (p 0.004); D_within 1.26 (p 0.015); f 0.29 vs f_rand95 0.09; n within 26 (excluded small groups 0) -> WITHIN-SUBTYPE HETEROGENEITY
+  GSE117606 D_total 1.19 (p 0.004); R2_CMS 0.27 (p 0.001); D_within 1.04 (p 0.506); f 0.78 vs f_rand95 0.11; n within 64 (excluded small groups 0) -> SUBTYPE DIVERSITY
+  -- labels: adjusted-CMS --
+  GSE41258  D_total 1.06 (p 0.345); R2_CMS 0.20 (p 0.001); D_within 0.95 (p 0.385); f 1.80 vs f_rand95 0.07; n within 181 (excluded small groups 0) -> NOT INFORMATIVE
+  GSE20916  D_total 1.25 (p 0.004); R2_CMS 0.34 (p 0.001); D_within 1.08 (p 0.203); f 0.70 vs f_rand95 0.14; n within 36 (excluded small groups 0) -> SUBTYPE DIVERSITY
+  GSE37364  D_total 1.37 (p 0.002); R2_CMS 0.39 (p 0.001); D_within 1.13 (p 0.234); f 0.63 vs f_rand95 0.11; n within 27 (excluded small groups 0) -> SUBTYPE DIVERSITY
+  GSE117606 D_total 1.19 (p 0.007); R2_CMS 0.26 (p 0.001); D_within 1.05 (p 0.480); f 0.76 vs f_rand95 0.09; n within 71 (excluded small groups 0) -> SUBTYPE DIVERSITY
+  Per-subtype PERMDISP (CMS groups >= 10 vs all adenomas; Holm within cohort; primary labels):
+    GSE41258  CMS2 n 70: D 0.92, p 0.242, Holm 0.968
+    GSE41258  CMS4 n 52: D 0.98, p 0.745, Holm 1.000
+    GSE41258  CMS1 n 38: D 1.04, p 0.607, Holm 1.000
+    GSE41258  CMS3 n 21: D 0.95, p 0.538, Holm 1.000
+    GSE20916  CMS4 n 12: D 1.15, p 0.128, Holm 0.256
+    GSE20916  CMS2 n 12: D 1.06, p 0.457, Holm 0.457
+    GSE117606 CMS4 n 27: D 1.09, p 0.322, Holm 0.966
+    GSE117606 CMS3 n 18: D 1.00, p 0.993, Holm 1.000
+    GSE117606 CMS2 n 17: D 1.03, p 0.792, Holm 1.000
+
+5. SECTION 5 OVERALL CONCLUSION
+  primary         -> INCONCLUSIVE   (calls: GSE41258 not informative, GSE20916 within-subtype heterogeneity, GSE37364 within-subtype heterogeneity, GSE117606 subtype diversity)
+  confident-only  -> INCONCLUSIVE   (calls: GSE41258 not informative, GSE20916 within-subtype heterogeneity, GSE37364 within-subtype heterogeneity, GSE117606 subtype diversity)
+  adjusted-CMS    -> HETEROGENEITY REFLECTS SUBTYPE DIVERSITY   (calls: GSE41258 not informative, GSE20916 subtype diversity, GSE37364 subtype diversity, GSE117606 subtype diversity)
+  ROBUST (confident-only gives the same conclusion): True
+
+6. DIFFERENTIAL VARIABILITY (Brown-Forsythe; discovery BH q < 0.05; replication p < 0.05 same direction in >= 2 other cohorts)
+  Genes tested: GSE41258 9411, GSE20916 9690, GSE37364 16241, GSE117606 14395; discoveries (q < 0.05): GSE41258 more 109 / less 40, GSE20916 more 610 / less 5, GSE37364 more 4 / less 0, GSE117606 more 84 / less 5
+  Replicated MORE variable in carcinoma: 117; LESS variable: 0
+  Without mean shift (median |mean diff| < 0.5 log2): 67 of 117; median CMS R2 among carcinomas 0.16
+  Top 25 by median variability ratio: FCGBP (3.56*), AGR3 (3.43*), MUC2 (2.91*), EREG (2.76*), MUC4 (2.53*), SPINK1 (2.45*), LEFTY1 (2.40*), FOXA1 (2.35*), SPINK4 (2.32*), NXPE4 (2.27*), GGT6 (2.26*), OLFM4 (2.25*), ZBTB7C (2.25*), CA12 (2.24*), CKB (2.22*), VSIG2 (2.21*), PADI2 (2.18*), MOSPD1 (2.15), FXYD3 (2.14), RPIA (2.09), SYNPO2 (2.09*), ERLIN2 (2.07), G0S2 (2.07*), AAR2 (2.06), GPA33 (2.03*)
+  (* = mean shift >= 0.5 log2)
+  overlap of more-variable genes with CMS templates: 30 of 117 (template genes in background 380; hypergeometric p 8.09e-18)
+  Enrichment (1837 gene sets (Hallmark + Reactome where available); background 10467 genes testable in >= 3 cohorts):
+    more variable in carcinoma: no gene set with q < 0.05
+Run time 5.3 min.
