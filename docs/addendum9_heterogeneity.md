@@ -158,3 +158,25 @@ If a check fails, no real data are analysed; the problem is reported and recorde
 - `summary.txt` (section 5 calls and conclusion);
 - figures: carcinoma and adenoma samples in PC1–PC2 of the adjusted space coloured by CMS; D_total vs D_within per cohort; variability ratios of replicated genes.
 - **Scripts:** `scripts/addendum9_heterogeneity.py`, and `scripts/addendum9_cms.R` (Option A).
+
+---
+
+## Amendment 1 (2026-10-09): bias-adjusted distances, recalibrated V1, CMScaller acceptance (reference: deviation D17)
+
+**Status:** decided by the PI and committed **before** the section 6 validation is rerun. No real data have been analysed.
+
+**Reason:** the first section 6 validation (commit 4f1ce27) failed 5 of 17 criteria (D17):
+- the leave-one-out distances over-correct small-group bias (V3, V4);
+- the V1 scenario produced almost no excess dispersion;
+- CMScaller agreed with the gold-standard example labels in 0.889 of samples (56/63) against an arbitrary bar of 0.90.
+
+**Changes:**
+- **(a) Bias-adjusted distances.** Everywhere in §4.3 (D_total, D_within, the random-label calibration f_rand95 and the per-subtype PERMDISP), the leave-one-out distance is replaced by the standard bias-adjusted PERMDISP distance √(n_g/(n_g − 1))·‖x − c_g‖. Here c_g is the centroid of the sample's own group (all members) and n_g the group size, as in vegan `betadisper(bias.adjust = TRUE)`. The rule excluding subtype groups with fewer than 3 carcinomas is unchanged. The §4.3 sentence about LOO "removing small-group bias" is withdrawn.
+- **(b) V1 recalibrated.** V1 subtype centres form a regular tetrahedron with **edge 4 SD** (target D_total ≈ 1.25, matching the observed real-data range 1.19–1.37). All V1 acceptance criteria are unchanged.
+- **(c) CMScaller acceptance.** CMScaller is accepted at its demonstrated agreement with the gold-standard labels (0.889, 56/63). The §6.3 criterion is considered met by this decision.
+  - The full confusion table is reported in the results.
+  - **Named limitation:** CMS3 samples were called CMS1 in 4 of 10 gold-standard CMS3 cases, so CMS3/CMS1 assignments are the least reliable.
+
+**Unchanged:** all other methods, thresholds, section 5 rules and acceptance criteria.
+
+**Pre-stated consequence:** if any section 6 criterion fails after the rerun, the analysis will **not** be amended again. The failure will be reported, and the PI will decide before any real data are used.
