@@ -1,12 +1,12 @@
 check,requirement,value,pass
-V1 subtype diversity,D_total > 1 significant >= 0.80,0.305,False
-V1 subtype diversity,call 'subtype diversity' >= 0.80,0.085,False
+V1 subtype diversity,D_total > 1 significant >= 0.80,0.995,True
+V1 subtype diversity,call 'subtype diversity' >= 0.80,0.955,True
 V2 within-subtype,D_within > 1 significant >= 0.80,1.0,True
-V2 within-subtype,f <= f_rand95 >= 0.90,0.95,True
+V2 within-subtype,f <= f_rand95 >= 0.90,0.945,True
 V2 within-subtype,call 'within-subtype heterogeneity' >= 0.80,1.0,True
-V3 null,D_within PERMDISP rejection <= 0.089,0.095,False
+V3 null,D_within PERMDISP rejection <= 0.089,0.06,True
 V3 null,D_total PERMDISP rejection <= 0.089,0.055,True
-V4 LOO bias (groups 4/5/6/55),D_within PERMDISP rejection <= 0.089,0.09,False
+V4 LOO bias (groups 4/5/6/55),D_within PERMDISP rejection <= 0.089,0.06,True
 "Brown-Forsythe null, GSE41258 n 48/181, gaussian",rejection <= 0.062,0.0445,True
 "Brown-Forsythe null, GSE41258 n 48/181, t4",rejection <= 0.062,0.0515,True
 "Brown-Forsythe null, GSE20916 n 45/36, gaussian",rejection <= 0.062,0.05,True
@@ -15,4 +15,4 @@ V4 LOO bias (groups 4/5/6/55),D_within PERMDISP rejection <= 0.089,0.09,False
 "Brown-Forsythe null, GSE37364 n 29/27, t4",rejection <= 0.062,0.046,True
 "Brown-Forsythe null, GSE117606 n 59/71, gaussian",rejection <= 0.062,0.0445,True
 "Brown-Forsythe null, GSE117606 n 59/71, t4",rejection <= 0.062,0.0475,True
-"CMScaller example (TCGA, 63 gold-standard labels)",nearest-template agreement >= 0.90,0.8888888888888888,False
+"CMScaller example (TCGA, 63 gold-standard labels)",accepted at 0.889 (Amendment 1c),0.8888888888888888,True

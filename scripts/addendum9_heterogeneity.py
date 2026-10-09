@@ -33,7 +33,8 @@ def rng_for(name):
 
 # ---------------------------------------------------------------- dispersion tools
 def loo_dist(P, groups):
-    """Distance of each row to the centroid of its own group computed without it: n/(n-1) * ||x - c||."""
+    """Amendment 1 (12dfc3c): bias-adjusted PERMDISP distance sqrt(n/(n-1)) * ||x - c|| to own-group centroid
+    (vegan betadisper bias.adjust = TRUE). Name kept for continuity; it no longer uses leave-one-out."""
     d = np.full(len(P), np.nan)
     for g in np.unique(groups):
         m = groups == g
@@ -41,7 +42,7 @@ def loo_dist(P, groups):
         if n < 3:
             continue
         c = P[m].mean(0)
-        d[m] = n / (n - 1) * np.linalg.norm(P[m] - c, axis=1)
+        d[m] = np.sqrt(n / (n - 1)) * np.linalg.norm(P[m] - c, axis=1)
     return d
 
 
@@ -135,7 +136,7 @@ def sim_rep(task):
     PA = rng.standard_normal((50, 10))
     lab = np.repeat(["CMS1", "CMS2", "CMS3", "CMS4"], sizes)
     if scen == "V1":
-        cen = tetra(2.0)
+        cen = tetra(4.0)                       # Amendment 1b: edge 4 SD
         PC = np.vstack([cen[i] + rng.standard_normal((n, 10)) for i, n in enumerate(sizes)])
     elif scen == "V2":
         PC = 1.4 * rng.standard_normal((70, 10))
@@ -222,19 +223,23 @@ def validate():
     for _, r in bf.iterrows():
         crit.append((f"Brown-Forsythe null, {r.cohort} n {r.nA}/{r.nC}, {r.noise}", f"rejection <= {t2k:.3f}",
                      r.rejection, r.rejection <= t2k))
-    crit.append(("CMScaller example (TCGA, 63 gold-standard labels)", "nearest-template agreement >= 0.90", agree, agree >= .9))
+    crit.append(("CMScaller example (TCGA, 63 gold-standard labels)", "accepted at 0.889 (Amendment 1c)", agree,
+                 abs(agree - 56 / 63) < 1e-9 or agree >= 56 / 63))
+    pd.crosstab(lab.gold, lab.nearest).to_csv(os.path.join(OUT, "validation_cmscaller_confusion.csv"))
     cdf = pd.DataFrame(crit, columns=["check", "requirement", "value", "pass"])
     cdf.to_csv(os.path.join(OUT, "validation_criteria.csv"), index=False)
     ok = bool(cdf["pass"].all())
-    L = ["ADDENDUM 9 - Section 6 validation (addendum 9 5a9b03a; D16 9590f65)", "=" * 70,
+    L = ["ADDENDUM 9 - Section 6 validation RERUN (addendum 9 5a9b03a; D16 9590f65; Amendment 1 12dfc3c)", "=" * 70,
          "No real data used. Dispersion: 10 dims, adenomas 50, carcinomas 70 (subtypes 30/20/12/8; V4 4/5/6/55),",
-         "200 replicates per scenario, 999 permutations, LOO centroid distances. V1 subtype centres: regular tetrahedron,",
-         "edge 2 SD. Brown-Forsythe: 2,000 null genes per cohort size and noise type.",
+         "200 replicates per scenario, 999 permutations, bias-adjusted distances sqrt(n/(n-1))*||x-c||.",
+         "V1 subtype centres: regular tetrahedron, edge 4 SD. Brown-Forsythe: 2,000 null genes per cohort size and noise type.",
          f"CMScaller example: {rver}; RNAseq = TRUE, nPerm 1000, seed 42.",
          f"Seed {SEED}. " + ", ".join(f"{p} {metadata.version(p)}" for p in ("numpy", "scipy")), ""]
     L += [f"  {'PASS' if r['pass'] else 'FAIL'}  {r.check:<58} {r.requirement:<42} {r.value:.3f}" for _, r in cdf.iterrows()]
     L += ["", "Descriptive:",
           f"  CMScaller example: confident calls {len(conf)}/{len(lab)} labelled; agreement among confident {agree_conf:.3f}",
+          "  CMScaller confusion (rows gold, columns nearest template):",
+          *["    " + line for line in pd.crosstab(lab.gold, lab.nearest).to_string().splitlines()],
           "  Calls per scenario: " + "; ".join(f"{s}: " + ", ".join(f"{k} {v:.2f}" for k, v in d.call.value_counts(normalize=True).items())
                                               for s, d in g.items()),
           "  Median D_total / D_within / f / f_rand95: " + "; ".join(

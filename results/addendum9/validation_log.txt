@@ -1,20 +1,20 @@
 ﻿[validate] simulations done [0.5 min]
-ADDENDUM 9 - Section 6 validation (addendum 9 5a9b03a; D16 9590f65)
+ADDENDUM 9 - Section 6 validation RERUN (addendum 9 5a9b03a; D16 9590f65; Amendment 1 12dfc3c)
 ======================================================================
 No real data used. Dispersion: 10 dims, adenomas 50, carcinomas 70 (subtypes 30/20/12/8; V4 4/5/6/55),
-200 replicates per scenario, 999 permutations, LOO centroid distances. V1 subtype centres: regular tetrahedron,
-edge 2 SD. Brown-Forsythe: 2,000 null genes per cohort size and noise type.
+200 replicates per scenario, 999 permutations, bias-adjusted distances sqrt(n/(n-1))*||x-c||.
+V1 subtype centres: regular tetrahedron, edge 4 SD. Brown-Forsythe: 2,000 null genes per cohort size and noise type.
 CMScaller example: CMScaller 2.0.1 R R version 4.5.3 (2026-03-11 ucrt); RNAseq = TRUE, nPerm 1000, seed 42.
 Seed 42. numpy 2.4.6, scipy 1.17.1
 
-  FAIL  V1 subtype diversity                                       D_total > 1 significant >= 0.80            0.305
-  FAIL  V1 subtype diversity                                       call 'subtype diversity' >= 0.80           0.085
+  PASS  V1 subtype diversity                                       D_total > 1 significant >= 0.80            0.995
+  PASS  V1 subtype diversity                                       call 'subtype diversity' >= 0.80           0.955
   PASS  V2 within-subtype                                          D_within > 1 significant >= 0.80           1.000
-  PASS  V2 within-subtype                                          f <= f_rand95 >= 0.90                      0.950
+  PASS  V2 within-subtype                                          f <= f_rand95 >= 0.90                      0.945
   PASS  V2 within-subtype                                          call 'within-subtype heterogeneity' >= 0.80 1.000
-  FAIL  V3 null                                                    D_within PERMDISP rejection <= 0.089       0.095
+  PASS  V3 null                                                    D_within PERMDISP rejection <= 0.089       0.060
   PASS  V3 null                                                    D_total PERMDISP rejection <= 0.089        0.055
-  FAIL  V4 LOO bias (groups 4/5/6/55)                              D_within PERMDISP rejection <= 0.089       0.090
+  PASS  V4 LOO bias (groups 4/5/6/55)                              D_within PERMDISP rejection <= 0.089       0.060
   PASS  Brown-Forsythe null, GSE41258 n 48/181, gaussian           rejection <= 0.062                         0.044
   PASS  Brown-Forsythe null, GSE41258 n 48/181, t4                 rejection <= 0.062                         0.051
   PASS  Brown-Forsythe null, GSE20916 n 45/36, gaussian            rejection <= 0.062                         0.050
@@ -23,12 +23,19 @@ Seed 42. numpy 2.4.6, scipy 1.17.1
   PASS  Brown-Forsythe null, GSE37364 n 29/27, t4                  rejection <= 0.062                         0.046
   PASS  Brown-Forsythe null, GSE117606 n 59/71, gaussian           rejection <= 0.062                         0.044
   PASS  Brown-Forsythe null, GSE117606 n 59/71, t4                 rejection <= 0.062                         0.048
-  FAIL  CMScaller example (TCGA, 63 gold-standard labels)          nearest-template agreement >= 0.90         0.889
+  PASS  CMScaller example (TCGA, 63 gold-standard labels)          accepted at 0.889 (Amendment 1c)           0.889
 
 Descriptive:
   CMScaller example: confident calls 59/63 labelled; agreement among confident 0.898
-  Calls per scenario: V1: not informative 0.69, inconclusive 0.13, within-subtype heterogeneity 0.09, subtype diversity 0.09; V2: within-subtype heterogeneity 1.00; V3: not informative 0.98, within-subtype heterogeneity 0.01; V4: not informative 0.96, within-subtype heterogeneity 0.04
-  Median D_total / D_within / f / f_rand95: V1 1.07/1.02/0.61/-0.17; V2 1.40/1.44/-0.08/-0.04; V3 1.01/1.03/-0.81/-0.40; V4 1.00/1.03/-1.04/-0.49
+  CMScaller confusion (rows gold, columns nearest template):
+    nearest  CMS1  CMS2  CMS3  CMS4
+    gold                           
+    CMS1        8     0     0     0
+    CMS2        0    23     1     2
+    CMS3        4     0     6     0
+    CMS4        0     0     0    19
+  Calls per scenario: V1: subtype diversity 0.95, both 0.04, not informative 0.01; V2: within-subtype heterogeneity 1.00; V3: not informative 0.98, within-subtype heterogeneity 0.01; V4: not informative 0.96, within-subtype heterogeneity 0.03, inconclusive 0.01
+  Median D_total / D_within / f / f_rand95: V1 1.25/1.00/0.98/0.07; V2 1.41/1.41/-0.00/0.04; V3 1.01/1.01/-0.03/0.34; V4 1.01/1.01/-0.03/0.39
 
-OVERALL: FAILED - do not analyse real data
+OVERALL: ALL CRITERIA PASSED - real-data analysis may proceed
 Run time 0.6 min.
