@@ -165,6 +165,8 @@ def cms():
          + f"; unclassified (confident) {100 * (~tab.confident).mean():.0f}%",
          "Guinney 2015: CMS1 14%, CMS2 37%, CMS3 13%, CMS4 23%, unclassified 13%",
          "", "CMS (primary) by MSI status (counts):", "  " + msi.to_string().replace("\n", "\n  "),
+         "", "Caution: CMS4 calls on unadjusted expression partly reflect stromal content of the sample, so the rise",
+         "of CMS4 with stage may partly reflect more stroma in advanced tumours rather than tumour-cell biology alone.",
          "", "Outputs: results/addendum10/cms/cms_labels_TCGA.csv, cms_by_stage_primary.csv, cms_by_stage_confident.csv"]
     open(os.path.join(out, "summary.txt"), "w", encoding="utf-8").write("\n".join(L) + "\n")
     print("\n".join(L))

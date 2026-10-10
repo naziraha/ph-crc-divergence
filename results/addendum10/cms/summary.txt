@@ -39,4 +39,7 @@ CMS (primary) by MSI status (counts):
   CMS3           9         35
   CMS4           6         86
 
+Caution: CMS4 calls on unadjusted expression partly reflect stromal content of the sample, so the rise
+of CMS4 with stage may partly reflect more stroma in advanced tumours rather than tumour-cell biology alone.
+
 Outputs: results/addendum10/cms/cms_labels_TCGA.csv, cms_by_stage_primary.csv, cms_by_stage_confident.csv
