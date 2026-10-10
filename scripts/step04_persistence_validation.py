@@ -38,7 +38,13 @@ COHORT = {"GSE20916": {"bulk": ["bulk"], "micro": ["micro_pooled", "micro_crypt"
           "GSE37364": {"bulk": ["bulk"], "micro": [],
                        "expected": {"bulk": {"Normal": 38, "Adenoma": 29, "Carcinoma": 27}}},
           "GSE117606": {"bulk": ["main"], "micro": [], "versions": ("unadjusted", "adjusted"),
-                        "expected": {"main": {"Normal": 65, "Adenoma": 59, "Carcinoma": 71}}}}
+                        "expected": {"main": {"Normal": 65, "Adenoma": 59, "Carcinoma": 71}}},
+          # addendum 10: carcinoma stages; same frozen rule (m = 80% of smallest stage); 3 adjacent transitions
+          "TCGA_COAD": {"bulk": ["main"], "micro": [], "versions": ("unadjusted", "adjusted"),
+                        "stages": ["Stage I", "Stage II", "Stage III", "Stage IV"],
+                        "colors": {"Stage I": "#7fb800", "Stage II": "#e0a100", "Stage III": "#e05a00",
+                                   "Stage IV": "#c0392b"},
+                        "expected": {"main": {"Stage I": 45, "Stage II": 110, "Stage III": 80, "Stage IV": 39}}}}
 
 
 def load(gse, aset, version, expected):
@@ -54,9 +60,14 @@ def q(v):
 
 
 def main():
+    global STAGES3
     gse = sys.argv[1]
     cfg = COHORT[gse]
     versions = cfg.get("versions", VERSIONS)
+    if "stages" in cfg:            # cohort-specific stage order; figure labels/colours set on the reference module
+        STAGES3 = cfg["stages"]
+        T.STAGES = list(cfg["stages"])
+        T.COLORS.update(cfg["colors"])
     out = os.path.join(ROOT, "results", "step04", gse)
     os.makedirs(out, exist_ok=True)
     t0 = time.time()
@@ -138,10 +149,12 @@ def main():
         for k, (version, col) in enumerate(zip(versions, ("#2a78d6", "#eb6834", "#7b4fb3"))):
             adj = res[version][1]
             v = np.array([a["tsi_norm"] for a in adj]); ci = np.array([a["tsi_norm_ci"] for a in adj])
-            x = np.arange(2) + (k - 1) * 0.27
+            x = np.arange(len(adj)) + (k - 1) * 0.27
             ax.bar(x, v, width=0.25, color=col, label=version)
             ax.errorbar(x, v, yerr=[v - ci[:, 0], ci[:, 1] - v], fmt="none", ecolor="k", capsize=3, lw=1)
-        ax.set_xticks(range(2)); ax.set_xticklabels(["Norm→Aden", "Aden→Carc"])
+        ax.set_xticks(range(len(adj)))
+        ax.set_xticklabels([f"{a['from'][:4]}→{a['to'][:4]}" if "stages" not in cfg
+                            else f"{a['from'].replace('Stage ', '')}→{a['to'].replace('Stage ', '')}" for a in adj])
         ax.set_ylabel("TSI, shape-only"); ax.legend(fontsize=8)
         ax.set_title(f"{gse} {aset}: adjacent-stage separation (descriptive)")
         fig.tight_layout(); fig.savefig(os.path.join(out, f"step04_tsi_shape_only_{aset}.png"), dpi=150)

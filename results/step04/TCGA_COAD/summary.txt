@@ -1,0 +1,37 @@
+STEP 4 - Persistent homology profiles per stage (TCGA_COAD; descriptive)
+============================================================
+Pre-specification: addendum 1 (6ea31ea), addendum 2 (d73e5d1); deviation D4 (ac2a591)
+Inputs: results/step03/embeddings/<GSE>_<set>_<version>_g2000_pc10.csv
+Seed: 42
+Versions: gudhi 3.13.0, numpy 2.4.6, pandas 2.3.3, scipy 1.17.1
+Settings: Vietoris-Rips (GUDHI), Euclidean in 10-PC space, max dimension 2, H0 and H1; raw and shape-only.
+  Bulk: 100 subsamples per stage of m = 80% of the smallest stage (frozen rule). TSI = mean between - mean
+  within W1 (H0+H1), 400 pairs, 95% CI from 500 pair resamples (precision, not a test).
+  Micro (D4): one diagram per stage on all samples; W1 between stage diagrams. No test.
+
+=== main (bulk; Stage I 45, Stage II 110, Stage III 80, Stage IV 39) ===
+--- unadjusted (m = 31) ---
+  stage spread (median pairwise distance): Stage I 41.6, Stage II 42.5, Stage III 42.5, Stage IV 36.9
+  shape-only per stage, median [IQR]:  H1 total | H1 n loops
+    Stage I    0.498 [0.384-0.554] | 10
+    Stage II   0.406 [0.297-0.486] | 9
+    Stage III  0.384 [0.304-0.479] | 8
+    Stage IV   0.471 [0.383-0.552] | 8
+    Stage I -> Stage II  TSI shape-only 0.229 [0.177, 0.282] | TSI raw 9.97 [7.57, 12.21] | centroid shift 0.17 SD
+   Stage II -> Stage III TSI shape-only 0.057 [0.006, 0.107] | TSI raw 2.61 [-0.02, 5.41] | centroid shift 0.21 SD
+  Stage III -> Stage IV  TSI shape-only 0.524 [0.475, 0.582] | TSI raw 26.51 [23.90, 29.11] | centroid shift 0.20 SD
+--- adjusted (m = 31) ---
+  stage spread (median pairwise distance): Stage I 36.9, Stage II 35.3, Stage III 35.2, Stage IV 33.3
+  shape-only per stage, median [IQR]:  H1 total | H1 n loops
+    Stage I    0.422 [0.342-0.498] | 9
+    Stage II   0.437 [0.312-0.557] | 10
+    Stage III  0.416 [0.291-0.495] | 10
+    Stage IV   0.594 [0.498-0.728] | 11
+    Stage I -> Stage II  TSI shape-only 0.222 [0.170, 0.274] | TSI raw 11.05 [8.99, 13.34] | centroid shift 0.16 SD
+   Stage II -> Stage III TSI shape-only 0.078 [0.021, 0.137] | TSI raw 3.04 [0.84, 5.29] | centroid shift 0.23 SD
+  Stage III -> Stage IV  TSI shape-only 0.338 [0.281, 0.402] | TSI raw 8.90 [6.84, 10.97] | centroid shift 0.17 SD
+
+Outputs:
+  results/step04/TCGA_COAD/step04_topology_main_<version>.png, step04_tsi_shape_only_main.png
+  results/step04/TCGA_COAD/stage_topology_bootstrap_main_<version>.csv, adjacent_transitions_descriptive_*.json
+Runtime: 15 s
