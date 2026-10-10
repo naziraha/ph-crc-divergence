@@ -1,0 +1,23 @@
+ADDENDUM 10 section 6 - positive-control check on TCGA-COAD (D20, 92f9de4)
+================================================================
+Stage II tumours (110) split at random A 55 / B 55; insertion into B (addendum 5 level 1 functions);
+step 5 test k = 20, m = 31, aligned, 99 permutations; 20 replicates per condition and mode; seed 42.
+
+  condition   mode         detected/20   median z
+  CL          raw            17/20         4.16
+  CL          shape-only     20/20        14.08
+  LP          raw            20/20        15.27
+  LP          shape-only     20/20        10.45
+  N0          raw             2/20        -0.42
+  N0          shape-only      1/20        -0.02
+  SP          raw            19/20         7.33
+  SP          shape-only      4/20         0.22
+
+Acceptance:
+  PASS  N0 shape-only <= 3/20      1
+  PASS  N0 raw <= 3/20             2
+  PASS  SP raw >= 16/20            19
+  FAIL  SP shape-only <= 3/20      4
+  PASS  CL shape-only >= 16/20     20
+  PASS  LP shape-only >= 16/20     20
+OVERALL: FAILED - report with limitation; PI decides before interpretation

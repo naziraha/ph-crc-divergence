@@ -1,0 +1,39 @@
+﻿[ctl] 1/16 TCGActl__N00__raw__c1: 2/10 detected (139 s) [2.6 min]
+[ctl] 2/16 TCGActl__N00__shape__c0: 0/10 detected (142 s) [2.7 min]
+[ctl] 3/16 TCGActl__SP1.25__shape__c0: 2/10 detected (142 s) [2.7 min]
+[ctl] 4/16 TCGActl__N00__raw__c0: 0/10 detected (142 s) [2.7 min]
+[ctl] 5/16 TCGActl__SP1.25__shape__c1: 2/10 detected (142 s) [2.7 min]
+[ctl] 6/16 TCGActl__N00__shape__c1: 1/10 detected (143 s) [2.7 min]
+[ctl] 7/16 TCGActl__SP1.25__raw__c0: 10/10 detected (151 s) [5.1 min]
+[ctl] 8/16 TCGActl__SP1.25__raw__c1: 9/10 detected (149 s) [5.2 min]
+[ctl] 9/16 TCGActl__CL1__raw__c1: 9/10 detected (148 s) [5.2 min]
+[ctl] 10/16 TCGActl__CL1__raw__c0: 8/10 detected (149 s) [5.2 min]
+[ctl] 11/16 TCGActl__CL1__shape__c0: 10/10 detected (153 s) [5.2 min]
+[ctl] 12/16 TCGActl__CL1__shape__c1: 10/10 detected (156 s) [5.3 min]
+[ctl] 13/16 TCGActl__LP1__raw__c0: 10/10 detected (125 s) [7.2 min]
+[ctl] 14/16 TCGActl__LP1__raw__c1: 10/10 detected (126 s) [7.3 min]
+[ctl] 15/16 TCGActl__LP1__shape__c1: 10/10 detected (131 s) [7.3 min]
+[ctl] 16/16 TCGActl__LP1__shape__c0: 10/10 detected (132 s) [7.3 min]
+ADDENDUM 10 section 6 - positive-control check on TCGA-COAD (D20, 92f9de4)
+================================================================
+Stage II tumours (110) split at random A 55 / B 55; insertion into B (addendum 5 level 1 functions);
+step 5 test k = 20, m = 31, aligned, 99 permutations; 20 replicates per condition and mode; seed 42.
+
+  condition   mode         detected/20   median z
+  CL          raw            17/20         4.16
+  CL          shape-only     20/20        14.08
+  LP          raw            20/20        15.27
+  LP          shape-only     20/20        10.45
+  N0          raw             2/20        -0.42
+  N0          shape-only      1/20        -0.02
+  SP          raw            19/20         7.33
+  SP          shape-only      4/20         0.22
+
+Acceptance:
+  PASS  N0 shape-only <= 3/20      1
+  PASS  N0 raw <= 3/20             2
+  PASS  SP raw >= 16/20            19
+  FAIL  SP shape-only <= 3/20      4
+  PASS  CL shape-only >= 16/20     20
+  PASS  LP shape-only >= 16/20     20
+OVERALL: FAILED - report with limitation; PI decides before interpretation
