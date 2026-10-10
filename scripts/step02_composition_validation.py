@@ -31,6 +31,7 @@ import decoupler as dc  # noqa: E402
 SEED = 42
 PROC = os.path.join(ROOT, "data", "processed")
 STAGES3 = ["Normal", "Adenoma", "Carcinoma"]
+STAGES = STAGES3                      # stage order (first = reference); overridden for TCGA_COAD in main()
 COMP = ["Epithelial", "Stromal", "Immune"]
 PANELS = {"colon": ["CDX1", "CDX2", "CDH17", "VIL1", "KRT20", "CEACAM5", "LGALS4"],
           "hepatocyte": ["ALB", "APOA1", "APOA2", "APOH", "FGA", "FGB", "FGG", "AHSG", "TF",
@@ -72,6 +73,15 @@ def raw_sets(gse):
         lab["raw_label"] = lab["tissue"] + "; " + lab["title"]
         lab["desc_group"] = np.where(lab["set"] == "main", lab["stage"], lab["set"])
         out["all"] = (g, lab, {"main": list(lm.index)}, list(lo.index))
+    elif gse == "TCGA_COAD":
+        # addendum 10: scores centred on the staged tumours (main); adjustment fitted per analysis set:
+        # main = tumours stage I-IV (primary); withnormal = solid-tissue normals + tumours (secondary, section 4.3)
+        g = pd.read_csv(os.path.join(PROC, f"{gse}_withnormal_expr_genes.csv"), index_col=0)
+        lab = pd.read_csv(os.path.join(PROC, f"{gse}_withnormal_samples.csv"), index_col=0)
+        assert list(g.columns) == list(lab.index)
+        lab["raw_label"] = lab["sample_type"]
+        main_ids = list(lab.index[lab.stage != "Normal"])
+        out["withnormal"] = (g, lab, {"main": main_ids, "withnormal": list(lab.index)}, [])
     elif gse == "GSE37364":
         g = pd.read_csv(os.path.join(PROC, f"{gse}_bulk_expr_genes.csv"), index_col=0)
         lab = pd.read_csv(os.path.join(PROC, f"{gse}_bulk_samples.csv"), index_col=0)
@@ -130,7 +140,7 @@ def adjust(g, cov, stage=None):
     C = (cov - cov.mean()).values
     X = [np.ones(len(cov))]
     if stage is not None:
-        X += [(stage.values == s).astype(float) for s in STAGES3[1:] if (stage.values == s).any()]
+        X += [(stage.values == s).astype(float) for s in STAGES[1:] if (stage.values == s).any()]
     X = np.c_[tuple(X) + (C,)]
     Y = g.T.values
     beta, *_ = np.linalg.lstsq(X, Y, rcond=None)
@@ -141,7 +151,10 @@ def adjust(g, cov, stage=None):
 
 
 def main():
+    global STAGES
     gse = sys.argv[1]
+    if gse == "TCGA_COAD":                      # addendum 10: reference level first (Normal only in 'withnormal')
+        STAGES = ["Normal", "Stage I", "Stage II", "Stage III", "Stage IV"]
     out = os.path.join(ROOT, "results", "step02", gse)
     os.makedirs(out, exist_ok=True)
     lines = [f"STEP 2 - Identity screen and composition scoring ({gse})", "=" * 55,
@@ -206,7 +219,8 @@ def main():
                          f"{sc.loc[centre, comp].corr(m[centre], method='spearman'):.2f}")
         epi = NET.loc[NET.source == "Epithelial", "target"]
         epi = [x for x in epi if x in g.index]
-        flat = g.loc[epi, centre].T.groupby(lab.loc[centre, "stage"]).median().T.reindex(columns=STAGES3)
+        flat = g.loc[epi, centre].T.groupby(lab.loc[centre, "stage"]).median().T.reindex(
+            columns=[s for s in STAGES if s in set(lab.loc[centre, "stage"])])
         flat["range"] = flat.max(axis=1) - flat.min(axis=1)
         flat.round(2).to_csv(os.path.join(out, f"pan_epithelial_medians_{raw}.csv"), index_label="gene")
         lines.append(f"  frozen pan-epithelial genes, stage-median range in this set: median "
@@ -235,8 +249,8 @@ def main():
                 a.to_csv(os.path.join(PROC, f"{gse}_{aset}_expr_genes_{suffix}.csv"), float_format="%.5f")
             pd.DataFrame({"R2_primary": v1, "R2_stageaware": v2}).to_csv(
                 os.path.join(out, f"variance_removed_by_composition_{aset}.csv"), index_label="gene")
-            cnt = st.value_counts().reindex(STAGES3).fillna(0).astype(int)
-            lines.append(f"Analysis set {aset}: " + ", ".join(f"{s} {cnt[s]}" for s in STAGES3)
+            cnt = st.value_counts().reindex(STAGES).fillna(0).astype(int)
+            lines.append(f"Analysis set {aset}: " + ", ".join(f"{s} {cnt[s]}" for s in STAGES if cnt[s] > 0)
                          + f" | variance removed per gene, median: primary {v1.median():.3f}, "
                            f"stage-aware {v2.median():.3f}; genes > 0.5: {int((v1 > .5).sum())} / {int((v2 > .5).sum())}")
         lines.append("")
@@ -251,7 +265,7 @@ def main():
         if raw == "micro":
             d["group"] = np.where(d.analysis_sample, d.stage, "Normal (adjacent)")
             d["prep"] = d["morphology"].map({"colonic crypt epithelial cells": "crypt", "mucosa": "mucosa"})
-        groups = STAGES3 + (["Normal (adjacent)"] if raw == "micro" else [])
+        groups = [s for s in STAGES if s in set(d.group)] + (["Normal (adjacent)"] if raw == "micro" else [])
         for col, comp in enumerate(COMP):
             ax = axes[row, col]
             for i, gname in enumerate(groups):
