@@ -1,0 +1,62 @@
+ADDENDUM 11 PART A - chromosome arms and 20q (baf4bc4; Amendment 1 384c81e; D23)
+========================================================================
+Arm annotation: MSigDB C1 positional sets (decoupler/OmniPath), genes on one autosomal arm only (D23).
+Primary: adjusted expression, the 117 addendum 9 genes excluded; arms with >= 20 genes.
+Packages: decoupler 2.2.0, numpy 2.4.6, scipy 1.17.1, pandas 2.3.3
+Genes with a single-arm annotation: 23840; 117 genes excluded from arm statistics (117 in list).
+
+A2 - 20q rank among arms by median log variability ratio (carcinoma vs adenoma); top 8 arms per cohort:
+  GSE41258  20q rank 4 of 39 (median logV +0.180)  | top 8: 20p(+0.26), 8q(+0.24), 13q(+0.19), 20q(+0.18), 5p(+0.17), 8p(+0.17), 4p(+0.16), 9p(+0.16)
+  GSE20916  20q rank 1 of 39 (median logV +0.347)  | top 8: 20q(+0.35), 20p(+0.34), 8p(+0.31), 17p(+0.28), 8q(+0.28), 18q(+0.26), 22q(+0.25), 14q(+0.25)
+  GSE37364  20q rank 3 of 39 (median logV +0.248)  | top 8: 18p(+0.31), 13q(+0.29), 20q(+0.25), 10p(+0.24), 17p(+0.23), 20p(+0.23), 18q(+0.21), 3q(+0.21)
+  GSE117606 20q rank 1 of 39 (median logV +0.140)  | top 8: 20q(+0.14), 20p(+0.11), 8q(+0.07), 13q(+0.07), 18q(+0.06), 7q(+0.05), 8p(+0.05), 5p(+0.04)
+  CRC arms, rank per cohort (GSE41258/GSE20916/GSE37364/GSE117606): 7p 27/23/37/9; 7q 13/16/36/6; 8q 2/5/24/3; 13q 3/9/2/4; 20p 1/2/6/2; 20q 4/1/3/1; 8p 6/3/12/7; 17p 14/4/5/24; 18p 11/39/1/38; 18q 38/6/7/5
+
+A3 - arm score variability, carcinoma vs adenoma (adjusted, 117 excluded): V_arm (Brown-Forsythe p) | median diff (MW p):
+  20q  GSE41258 1.92 (0.0495) | +0.54 (7.5e-11); GSE20916 2.35 (0.00126) | +0.42 (0.0029); GSE37364 3.42 (0.00548) | +0.21 (0.17); GSE117606 1.99 (0.000675) | +0.18 (0.00016)
+  20p  GSE41258 2.12 (0.000373) | +0.12 (0.0056); GSE20916 2.11 (0.00361) | +0.22 (0.032); GSE37364 2.32 (0.173) | +0.01 (0.76); GSE117606 1.76 (0.000311) | +0.14 (0.0012)
+  13q  GSE41258 1.90 (0.00219) | +0.31 (6.9e-05); GSE20916 2.46 (0.0106) | +0.34 (0.0088); GSE37364 3.85 (0.000267) | +0.23 (0.074); GSE117606 1.60 (0.0347) | +0.27 (5.2e-07)
+  8q   GSE41258 2.76 (8.41e-07) | +0.22 (0.00015); GSE20916 1.56 (0.0211) | -0.07 (0.65); GSE37364 1.37 (0.177) | -0.00 (0.74); GSE117606 3.66 (0.000149) | +0.19 (3.4e-05)
+  7p   GSE41258 1.51 (0.297) | +0.34 (9.8e-08); GSE20916 1.61 (0.0881) | +0.23 (0.039); GSE37364 1.32 (0.162) | -0.01 (1); GSE117606 1.99 (0.00104) | +0.18 (5.8e-08)
+  7q   GSE41258 1.75 (0.3) | +0.16 (0.064); GSE20916 1.63 (0.062) | +0.09 (0.35); GSE37364 1.60 (0.144) | -0.03 (0.57); GSE117606 2.60 (0.000592) | +0.12 (0.00016)
+  20q gain-like carcinomas (score > adenoma 97.5th pct): GSE41258 7%, GSE20916 28%, GSE37364 15%, GSE117606 25%
+  sensitivity, unadjusted expression: 20q V_arm (BF p) GSE41258 3.32 (0.00085); GSE20916 3.12 (5.42e-05); GSE37364 3.47 (0.00547); GSE117606 2.13 (0.000377)
+  sensitivity, full arm incl. 117 genes: 20q V_arm (BF p) GSE41258 2.02 (0.0377); GSE20916 2.38 (0.00107); GSE37364 3.60 (0.00373); GSE117606 2.21 (0.000269)
+
+A4 - TCGA (272 tumours with copy number): arm expression score vs mean GISTIC2 copy number of the arm's genes:
+  20q  rho 0.85 (p 2.8e-78); expr genes 232, CN genes 331; tumours with mean CN > 0.1: 72%, > 0.3: 67%, < -0.1: 0%
+  20p  rho 0.92 (p 7.6e-112); expr genes 108, CN genes 168; tumours with mean CN > 0.1: 46%, > 0.3: 35%, < -0.1: 15%
+  13q  rho 0.87 (p 5.2e-85); expr genes 216, CN genes 296; tumours with mean CN > 0.1: 60%, > 0.3: 54%, < -0.1: 2%
+  8q   rho 0.88 (p 6.9e-89); expr genes 280, CN genes 369; tumours with mean CN > 0.1: 59%, > 0.3: 46%, < -0.1: 2%
+  7p   rho 0.86 (p 3.8e-80); expr genes 196, CN genes 268; tumours with mean CN > 0.1: 58%, > 0.3: 50%, < -0.1: 0%
+  7q   rho 0.84 (p 1.6e-72); expr genes 411, CN genes 559; tumours with mean CN > 0.1: 52%, > 0.3: 41%, < -0.1: 1%
+  8p   rho 0.90 (p 6.6e-102); expr genes 153, CN genes 228; tumours with mean CN > 0.1: 22%, > 0.3: 15%, < -0.1: 43%
+  17p  rho 0.80 (p 6e-63); expr genes 226, CN genes 305; tumours with mean CN > 0.1: 3%, > 0.3: 2%, < -0.1: 55%
+  18p  rho 0.81 (p 2.7e-65); expr genes 46, CN genes 64; tumours with mean CN > 0.1: 7%, > 0.3: 5%, < -0.1: 55%
+  18q  rho 0.75 (p 4.3e-50); expr genes 123, CN genes 182; tumours with mean CN > 0.1: 3%, > 0.3: 2%, < -0.1: 62%
+  (gain shares from the continuous GISTIC2 values; the thresholded file was not downloaded - descriptive only)
+  TCGA 20q expression score by stage (median): Stage I -0.08, Stage II -0.06, Stage III +0.03, Stage IV +0.00  (Kruskal p 0.47)
+  TCGA 20q expression score by CMS (median): CMS1 -0.38, CMS2 +0.24, CMS3 -0.43, CMS4 +0.17  (Kruskal p 4.5e-19)
+  Chromosome 20 genes among the 117, expression vs own copy number (TCGA): ABHD12 [20p] 0.77, BMP7 [20q] 0.07, DDX27 [20q] 0.78, DIDO1 [20q] 0.67, DYNLRB1 [20q] 0.72, ENTPD6 [20p] 0.76, ID1 [20q] 0.32, PLAGL2 [20q] 0.73
+
+Arm confirmation of the eight genes (Amendment 1; MSigDB C1 bands):
+  PLAGL2   20q  [chr20q11]
+  DIDO1    20q  [chr20q13]
+  AAR2     20q  [chr20q11]
+  NELFCD   20q  [chr20q13]
+  OSER1    20q  [chr20q13]
+  DYNLRB1  20q  [chr20q11]
+  ABHD12   20p  [chr20p11]
+  ENTPD6   20p  [chr20p11]
+  20p: ABHD12, ENTPD6 | 20q: PLAGL2, DIDO1, AAR2, NELFCD, OSER1, DYNLRB1
+
+A5 - CALLS (i: rank <= 5 in >= 3/4 cohorts; ii: BF p < 0.05 and V_arm > 1 in >= 3/4; iii: TCGA rho >= 0.5, p < 0.05):
+  20q  (i) 4/4  (ii) 4/4  (iii) yes  -> CONFIRMED
+  20p  (i) 3/4  (ii) 3/4  (iii) yes  -> CONFIRMED   [comparator]
+  13q  (i) 3/4  (ii) 4/4  (iii) yes  -> CONFIRMED   [comparator]
+  8q   (i) 3/4  (ii) 3/4  (iii) yes  -> CONFIRMED   [comparator]
+  7p   (i) 0/4  (ii) 1/4  (iii) yes  -> NOT CONFIRMED   [comparator]
+  7q   (i) 0/4  (ii) 1/4  (iii) yes  -> NOT CONFIRMED   [comparator]
+
+Outputs: results/addendum11/partA_chr/arm_variability_ranking.csv, arm_scores_tests.csv,
+  tcga_expression_vs_copynumber.csv, tcga_20q_score.csv, tcga_chr20_variable_genes_vs_cn.csv
