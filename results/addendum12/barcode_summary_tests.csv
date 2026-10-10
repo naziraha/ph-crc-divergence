@@ -1,0 +1,337 @@
+cohort,version,mode,transition,statistic,obs,z,p,p_holm_trans,p_holm_both
+GSE117606,adjusted,raw,Adenoma->Carcinoma,H0_total_persistence,154.47166034501777,4.233107098355527,0.002,0.004,0.028
+GSE117606,adjusted,raw,Adenoma->Carcinoma,H0_max_persistence,5.167472654018283,1.8840422347580181,0.038,0.076,0.45599999999999996
+GSE117606,adjusted,raw,Adenoma->Carcinoma,H0_entropy,0.011854368282393501,0.7837113483982965,0.219,0.438,1.0
+GSE117606,adjusted,raw,Adenoma->Carcinoma,H1_total_persistence,6.026045677734398,0.1928361268356149,0.362,0.604,1.0
+GSE117606,adjusted,raw,Adenoma->Carcinoma,H1_max_persistence,0.17772243838565593,-0.942825734479776,0.834,0.834,1.0
+GSE117606,adjusted,raw,Adenoma->Carcinoma,H1_n_features,0.4499999999999993,-1.0906006469112477,0.882,0.882,1.0
+GSE117606,adjusted,raw,Adenoma->Carcinoma,H1_entropy,0.06986618574870951,-0.8044658141767957,0.751,1.0,1.0
+GSE117606,adjusted,raw,Normal->Adenoma,H0_total_persistence,26.317259601613728,-0.24648041497111925,0.514,0.514,1.0
+GSE117606,adjusted,raw,Normal->Adenoma,H0_max_persistence,2.4473236711072666,0.6836788325481082,0.251,0.251,1.0
+GSE117606,adjusted,raw,Normal->Adenoma,H0_entropy,0.006192699148813485,-0.2797536023884198,0.535,0.535,1.0
+GSE117606,adjusted,raw,Normal->Adenoma,H1_total_persistence,6.5653602572064536,0.40668128642617146,0.302,0.604,1.0
+GSE117606,adjusted,raw,Normal->Adenoma,H1_max_persistence,1.0187856941844804,1.0777038743621776,0.138,0.276,1.0
+GSE117606,adjusted,raw,Normal->Adenoma,H1_n_features,2.9499999999999993,0.06073639922258782,0.421,0.842,1.0
+GSE117606,adjusted,raw,Normal->Adenoma,H1_entropy,0.07340398106305424,-0.7724724022207057,0.721,1.0,1.0
+GSE117606,adjusted,shape-only,Adenoma->Carcinoma,H0_total_persistence,0.3940557122420074,-0.6082068396650451,0.661,0.661,1.0
+GSE117606,adjusted,shape-only,Adenoma->Carcinoma,H0_max_persistence,0.08174428180498039,0.4432290816421709,0.263,0.526,1.0
+GSE117606,adjusted,shape-only,Adenoma->Carcinoma,H0_entropy,0.012839953125098003,1.2766326356649986,0.128,0.256,1.0
+GSE117606,adjusted,shape-only,Adenoma->Carcinoma,H1_total_persistence,0.054577268045015614,-0.9635425159981889,0.833,1.0,1.0
+GSE117606,adjusted,shape-only,Adenoma->Carcinoma,H1_max_persistence,0.0249003112000762,0.3481856767002233,0.328,0.454,1.0
+GSE117606,adjusted,shape-only,Adenoma->Carcinoma,H1_n_features,0.5500000000000007,-1.1215248618382874,0.891,1.0,1.0
+GSE117606,adjusted,shape-only,Adenoma->Carcinoma,H1_entropy,0.12744095851462545,-0.4116674587390023,0.59,1.0,1.0
+GSE117606,adjusted,shape-only,Normal->Adenoma,H0_total_persistence,1.4660838115783115,1.3402712815961835,0.113,0.226,1.0
+GSE117606,adjusted,shape-only,Normal->Adenoma,H0_max_persistence,0.06948119498962468,-0.03840685635701316,0.426,0.526,1.0
+GSE117606,adjusted,shape-only,Normal->Adenoma,H0_entropy,0.004919204662085619,-0.47573753592416024,0.599,0.599,1.0
+GSE117606,adjusted,shape-only,Normal->Adenoma,H1_total_persistence,0.13332977438347826,-0.41238893641707547,0.608,1.0,1.0
+GSE117606,adjusted,shape-only,Normal->Adenoma,H1_max_persistence,0.029119213644722003,0.6610221303076743,0.227,0.454,1.0
+GSE117606,adjusted,shape-only,Normal->Adenoma,H1_n_features,1.8500000000000014,-0.4846477589379247,0.602,1.0,1.0
+GSE117606,adjusted,shape-only,Normal->Adenoma,H1_entropy,0.034416467232365466,-1.0840308909501106,0.878,1.0,1.0
+GSE117606,unadjusted,raw,Adenoma->Carcinoma,H0_total_persistence,168.2544784775572,3.96215019503676,0.002,0.004,0.024
+GSE117606,unadjusted,raw,Adenoma->Carcinoma,H0_max_persistence,5.153075111349587,0.4636516320916611,0.299,0.598,1.0
+GSE117606,unadjusted,raw,Adenoma->Carcinoma,H0_entropy,0.04738041636743384,4.892606811663615,0.001,0.002,0.014
+GSE117606,unadjusted,raw,Adenoma->Carcinoma,H1_total_persistence,13.380861362337143,1.9895790841372836,0.048,0.096,0.384
+GSE117606,unadjusted,raw,Adenoma->Carcinoma,H1_max_persistence,2.626849563173757,3.619991637077259,0.007,0.014,0.07
+GSE117606,unadjusted,raw,Adenoma->Carcinoma,H1_n_features,1.5500000000000007,-0.45549278613194855,0.594,1.0,1.0
+GSE117606,unadjusted,raw,Adenoma->Carcinoma,H1_entropy,0.020544219090607108,-1.1347528028544438,0.918,1.0,1.0
+GSE117606,unadjusted,raw,Normal->Adenoma,H0_total_persistence,31.12872110023295,-0.42786351194467487,0.591,0.591,1.0
+GSE117606,unadjusted,raw,Normal->Adenoma,H0_max_persistence,1.1417183682962389,-1.2858723257413018,0.903,0.903,1.0
+GSE117606,unadjusted,raw,Normal->Adenoma,H0_entropy,0.02061667506433862,0.542673706038202,0.262,0.262,1.0
+GSE117606,unadjusted,raw,Normal->Adenoma,H1_total_persistence,4.801258683361276,-0.009108653310371433,0.428,0.428,1.0
+GSE117606,unadjusted,raw,Normal->Adenoma,H1_max_persistence,1.7918537811910955,2.2119223592668478,0.035,0.035,0.24500000000000002
+GSE117606,unadjusted,raw,Normal->Adenoma,H1_n_features,0.75,-0.8994267450915076,0.799,1.0,1.0
+GSE117606,unadjusted,raw,Normal->Adenoma,H1_entropy,0.08322416390675658,-0.6523642485276957,0.685,1.0,1.0
+GSE117606,unadjusted,shape-only,Adenoma->Carcinoma,H0_total_persistence,0.2541171322859981,-0.9376571389156936,0.828,0.828,1.0
+GSE117606,unadjusted,shape-only,Adenoma->Carcinoma,H0_max_persistence,0.3600084292861574,2.8754351746808346,0.009,0.018,0.10799999999999998
+GSE117606,unadjusted,shape-only,Adenoma->Carcinoma,H0_entropy,0.049714292914992075,5.423577461060968,0.001,0.002,0.014
+GSE117606,unadjusted,shape-only,Adenoma->Carcinoma,H1_total_persistence,0.32487378142682477,1.1398218288696014,0.135,0.27,1.0
+GSE117606,unadjusted,shape-only,Adenoma->Carcinoma,H1_max_persistence,0.03836354019724858,1.5414942075253126,0.088,0.176,0.8799999999999999
+GSE117606,unadjusted,shape-only,Adenoma->Carcinoma,H1_n_features,3.1000000000000014,0.24771387963608332,0.348,0.696,1.0
+GSE117606,unadjusted,shape-only,Adenoma->Carcinoma,H1_entropy,0.19292934713700927,0.282952191474888,0.345,0.69,1.0
+GSE117606,unadjusted,shape-only,Normal->Adenoma,H0_total_persistence,1.7345601789626457,1.3592344515700414,0.105,0.21,1.0
+GSE117606,unadjusted,shape-only,Normal->Adenoma,H0_max_persistence,0.07655140234238811,-0.7973916049043955,0.753,0.753,1.0
+GSE117606,unadjusted,shape-only,Normal->Adenoma,H0_entropy,0.02109839736806496,0.6724671484898829,0.237,0.237,1.0
+GSE117606,unadjusted,shape-only,Normal->Adenoma,H1_total_persistence,0.1548127072569132,-0.1142739151481408,0.48,0.48,1.0
+GSE117606,unadjusted,shape-only,Normal->Adenoma,H1_max_persistence,0.03684702934655243,0.9908842763021887,0.156,0.176,1.0
+GSE117606,unadjusted,shape-only,Normal->Adenoma,H1_n_features,0.6500000000000004,-0.9335378033149772,0.82,0.82,1.0
+GSE117606,unadjusted,shape-only,Normal->Adenoma,H1_entropy,0.0018120722083732055,-1.2826680874743348,0.994,0.994,1.0
+GSE20916,adjusted,raw,Adenoma->Carcinoma,H0_total_persistence,99.90730026876872,3.2160947662454498,0.01,0.02,0.14
+GSE20916,adjusted,raw,Adenoma->Carcinoma,H0_max_persistence,5.103699870921709,0.6030246498678505,0.277,0.554,1.0
+GSE20916,adjusted,raw,Adenoma->Carcinoma,H0_entropy,0.012599901350061504,0.5320015288534315,0.263,0.263,1.0
+GSE20916,adjusted,raw,Adenoma->Carcinoma,H1_total_persistence,0.3015458105458322,-1.1623846299633902,0.918,0.918,1.0
+GSE20916,adjusted,raw,Adenoma->Carcinoma,H1_max_persistence,0.10981419905685552,-1.16564638203562,0.92,0.92,1.0
+GSE20916,adjusted,raw,Adenoma->Carcinoma,H1_n_features,0.5,-0.5402186546841273,0.654,0.654,1.0
+GSE20916,adjusted,raw,Adenoma->Carcinoma,H1_entropy,0.14679465000849423,-0.47495607248729355,0.611,0.611,1.0
+GSE20916,adjusted,raw,Normal->Adenoma,H0_total_persistence,77.71418887822728,1.8019780355263746,0.067,0.067,0.324
+GSE20916,adjusted,raw,Normal->Adenoma,H0_max_persistence,3.1257426013857383,-1.0959865290677357,0.835,0.835,0.835
+GSE20916,adjusted,raw,Normal->Adenoma,H0_entropy,0.03341463267893552,1.248042602628368,0.118,0.236,0.472
+GSE20916,adjusted,raw,Normal->Adenoma,H1_total_persistence,6.957062482538736,2.6741823317426703,0.015,0.03,0.21
+GSE20916,adjusted,raw,Normal->Adenoma,H1_max_persistence,2.5415635075132457,2.3072823865696916,0.031,0.062,0.324
+GSE20916,adjusted,raw,Normal->Adenoma,H1_n_features,2.2,1.7355428050426664,0.071,0.142,0.42599999999999993
+GSE20916,adjusted,raw,Normal->Adenoma,H1_entropy,0.7522419258759078,2.3193100158644113,0.027,0.054,0.324
+GSE20916,adjusted,shape-only,Adenoma->Carcinoma,H0_total_persistence,0.018953573315624084,-1.2348533542538314,0.966,0.966,1.0
+GSE20916,adjusted,shape-only,Adenoma->Carcinoma,H0_max_persistence,0.044099458034448924,-0.5487254270096799,0.655,1.0,1.0
+GSE20916,adjusted,shape-only,Adenoma->Carcinoma,H0_entropy,0.01070244537867282,0.5521637148187161,0.261,0.318,1.0
+GSE20916,adjusted,shape-only,Adenoma->Carcinoma,H1_total_persistence,0.1062312931902856,1.179084734050365,0.132,0.16,1.0
+GSE20916,adjusted,shape-only,Adenoma->Carcinoma,H1_max_persistence,0.03486884644794491,1.0875854658449442,0.159,0.159,1.0
+GSE20916,adjusted,shape-only,Adenoma->Carcinoma,H1_n_features,0.7999999999999998,0.04411943837929347,0.427,0.427,1.0
+GSE20916,adjusted,shape-only,Adenoma->Carcinoma,H1_entropy,0.3319182634757729,0.7915544186921429,0.211,0.278,1.0
+GSE20916,adjusted,shape-only,Normal->Adenoma,H0_total_persistence,1.1175606736724255,2.219316302500969,0.033,0.066,0.462
+GSE20916,adjusted,shape-only,Normal->Adenoma,H0_max_persistence,0.20931598856664302,-0.274548144896024,0.534,1.0,1.0
+GSE20916,adjusted,shape-only,Normal->Adenoma,H0_entropy,0.03166715570081369,0.9852965277017148,0.159,0.318,1.0
+GSE20916,adjusted,shape-only,Normal->Adenoma,H1_total_persistence,0.14640032455050128,1.5364596039769522,0.08,0.16,0.8
+GSE20916,adjusted,shape-only,Normal->Adenoma,H1_max_persistence,0.060812313492481264,1.9469277627496786,0.052,0.104,0.624
+GSE20916,adjusted,shape-only,Normal->Adenoma,H1_n_features,1.9499999999999997,1.1773916628040995,0.14,0.28,1.0
+GSE20916,adjusted,shape-only,Normal->Adenoma,H1_entropy,0.5419202037350345,1.1826427711391987,0.139,0.278,1.0
+GSE20916,unadjusted,raw,Adenoma->Carcinoma,H0_total_persistence,129.27280567291018,4.735176937586237,0.001,0.002,0.014
+GSE20916,unadjusted,raw,Adenoma->Carcinoma,H0_max_persistence,2.2525693297268248,0.1531374019857043,0.378,0.51,0.708
+GSE20916,unadjusted,raw,Adenoma->Carcinoma,H0_entropy,0.03598928143407676,3.0292801566246776,0.01,0.01,0.06
+GSE20916,unadjusted,raw,Adenoma->Carcinoma,H1_total_persistence,5.016370823328118,2.412919831608879,0.02,0.04,0.2
+GSE20916,unadjusted,raw,Adenoma->Carcinoma,H1_max_persistence,1.9776246968740219,2.052652303117616,0.043,0.086,0.344
+GSE20916,unadjusted,raw,Adenoma->Carcinoma,H1_n_features,1.1999999999999997,0.9716390554074913,0.182,0.28,0.708
+GSE20916,unadjusted,raw,Adenoma->Carcinoma,H1_entropy,0.39869014327282093,1.145112503212793,0.136,0.236,0.708
+GSE20916,unadjusted,raw,Normal->Adenoma,H0_total_persistence,45.07320770601342,0.4183293644227479,0.304,0.304,1.0
+GSE20916,unadjusted,raw,Normal->Adenoma,H0_max_persistence,17.203856744679968,0.7500737149350394,0.255,0.51,1.0
+GSE20916,unadjusted,raw,Normal->Adenoma,H0_entropy,0.10141962022838813,3.790155407765358,0.001,0.002,0.014
+GSE20916,unadjusted,raw,Normal->Adenoma,H1_total_persistence,2.200593710703196,0.2083331740244745,0.354,0.354,1.0
+GSE20916,unadjusted,raw,Normal->Adenoma,H1_max_persistence,0.7673311121007966,-0.15051488937385152,0.458,0.458,1.0
+GSE20916,unadjusted,raw,Normal->Adenoma,H1_n_features,1.75,1.1179632388636347,0.14,0.28,1.0
+GSE20916,unadjusted,raw,Normal->Adenoma,H1_entropy,0.5824841118172798,1.289614665818644,0.118,0.236,1.0
+GSE20916,unadjusted,shape-only,Adenoma->Carcinoma,H0_total_persistence,0.07555275927712657,-1.026436882852029,0.841,0.841,1.0
+GSE20916,unadjusted,shape-only,Adenoma->Carcinoma,H0_max_persistence,0.18325357625196514,1.4833293724882537,0.09,0.18,1.0
+GSE20916,unadjusted,shape-only,Adenoma->Carcinoma,H0_entropy,0.028655051192892245,2.898213893591038,0.014,0.014,0.098
+GSE20916,unadjusted,shape-only,Adenoma->Carcinoma,H1_total_persistence,0.09400958003646662,0.9068766277537587,0.175,0.35,1.0
+GSE20916,unadjusted,shape-only,Adenoma->Carcinoma,H1_max_persistence,0.02490882039753102,0.3193370209839761,0.319,0.638,1.0
+GSE20916,unadjusted,shape-only,Adenoma->Carcinoma,H1_n_features,0.6499999999999999,-0.23457276147999562,0.529,0.529,1.0
+GSE20916,unadjusted,shape-only,Adenoma->Carcinoma,H1_entropy,0.2683833208809965,0.23968712153294736,0.35,0.35,1.0
+GSE20916,unadjusted,shape-only,Normal->Adenoma,H0_total_persistence,1.3869083730032656,1.6530850491349822,0.075,0.15,0.75
+GSE20916,unadjusted,shape-only,Normal->Adenoma,H0_max_persistence,0.628946339148496,1.162920424537715,0.118,0.18,0.75
+GSE20916,unadjusted,shape-only,Normal->Adenoma,H0_entropy,0.09538856785835836,3.207533270482079,0.003,0.006,0.042
+GSE20916,unadjusted,shape-only,Normal->Adenoma,H1_total_persistence,0.09122394911952765,0.7442068585307932,0.211,0.35,0.786
+GSE20916,unadjusted,shape-only,Normal->Adenoma,H1_max_persistence,0.03147134730444385,0.2741205541539301,0.328,0.638,0.786
+GSE20916,unadjusted,shape-only,Normal->Adenoma,H1_n_features,1.85,1.179709320096346,0.131,0.262,0.786
+GSE20916,unadjusted,shape-only,Normal->Adenoma,H1_entropy,0.7287198152320897,1.95320665266278,0.042,0.084,0.504
+GSE37364,adjusted,raw,Adenoma->Carcinoma,H0_total_persistence,132.91321404774635,3.065852351822933,0.003,0.003,0.021
+GSE37364,adjusted,raw,Adenoma->Carcinoma,H0_max_persistence,21.55414751259208,0.7997753556530226,0.221,0.442,1.0
+GSE37364,adjusted,raw,Adenoma->Carcinoma,H0_entropy,0.016436459860754482,-0.6232441178135452,0.705,0.705,1.0
+GSE37364,adjusted,raw,Adenoma->Carcinoma,H1_total_persistence,3.7300014811499658,0.5679820811399383,0.267,0.534,1.0
+GSE37364,adjusted,raw,Adenoma->Carcinoma,H1_max_persistence,0.05062904290843662,-1.2748057555612549,0.97,1.0,1.0
+GSE37364,adjusted,raw,Adenoma->Carcinoma,H1_n_features,1.7000000000000002,0.45770465913109,0.291,0.582,1.0
+GSE37364,adjusted,raw,Adenoma->Carcinoma,H1_entropy,0.47391298877759036,0.5327113579738268,0.267,0.534,1.0
+GSE37364,adjusted,raw,Normal->Adenoma,H0_total_persistence,153.13222249513598,4.1545262277657224,0.001,0.002,0.014
+GSE37364,adjusted,raw,Normal->Adenoma,H0_max_persistence,1.3704310681282976,-3.253016108211968,1.0,1.0,1.0
+GSE37364,adjusted,raw,Normal->Adenoma,H0_entropy,0.08826622030530995,1.720418666428826,0.058,0.116,0.6960000000000001
+GSE37364,adjusted,raw,Normal->Adenoma,H1_total_persistence,0.6649168835716397,-0.8364670271272185,0.77,0.77,1.0
+GSE37364,adjusted,raw,Normal->Adenoma,H1_max_persistence,0.5014374520572891,-0.4662664581741376,0.595,1.0,1.0
+GSE37364,adjusted,raw,Normal->Adenoma,H1_n_features,0.7500000000000004,-0.22174609121355798,0.496,0.582,1.0
+GSE37364,adjusted,raw,Normal->Adenoma,H1_entropy,0.14352056151608827,-0.6532304028469765,0.691,0.691,1.0
+GSE37364,adjusted,shape-only,Adenoma->Carcinoma,H0_total_persistence,0.5165926169261716,-0.11043153552699854,0.469,0.694,1.0
+GSE37364,adjusted,shape-only,Adenoma->Carcinoma,H0_max_persistence,0.26831034428469747,0.005990929476852373,0.482,0.964,1.0
+GSE37364,adjusted,shape-only,Adenoma->Carcinoma,H0_entropy,0.013679086586895206,-0.39347983350462795,0.601,0.601,1.0
+GSE37364,adjusted,shape-only,Adenoma->Carcinoma,H1_total_persistence,0.06866758931058645,-0.3902639194289404,0.586,1.0,1.0
+GSE37364,adjusted,shape-only,Adenoma->Carcinoma,H1_max_persistence,0.006701475695191403,-1.0864842115925908,0.861,1.0,1.0
+GSE37364,adjusted,shape-only,Adenoma->Carcinoma,H1_n_features,1.9000000000000004,0.4026287069166036,0.305,0.61,1.0
+GSE37364,adjusted,shape-only,Adenoma->Carcinoma,H1_entropy,0.5320854133828006,0.7549750794957552,0.207,0.414,1.0
+GSE37364,adjusted,shape-only,Normal->Adenoma,H0_total_persistence,1.1682210967089137,0.388807943792112,0.347,0.694,1.0
+GSE37364,adjusted,shape-only,Normal->Adenoma,H0_max_persistence,0.5375804622796068,-1.1056313007342917,0.864,0.964,1.0
+GSE37364,adjusted,shape-only,Normal->Adenoma,H0_entropy,0.08143076356991585,0.7732530796333563,0.209,0.418,1.0
+GSE37364,adjusted,shape-only,Normal->Adenoma,H1_total_persistence,0.011679878622053885,-1.048593514176027,0.882,1.0,1.0
+GSE37364,adjusted,shape-only,Normal->Adenoma,H1_max_persistence,0.015076506563255099,-0.5411419175162155,0.632,1.0,1.0
+GSE37364,adjusted,shape-only,Normal->Adenoma,H1_n_features,0.04999999999999982,-1.2633008340654597,0.988,0.988,1.0
+GSE37364,adjusted,shape-only,Normal->Adenoma,H1_entropy,0.008657299203646551,-1.326666203303323,0.986,0.986,1.0
+GSE37364,unadjusted,raw,Adenoma->Carcinoma,H0_total_persistence,159.62123736065348,3.6887222701745226,0.001,0.002,0.014
+GSE37364,unadjusted,raw,Adenoma->Carcinoma,H0_max_persistence,27.052985015720342,0.7479580650235156,0.239,0.478,0.956
+GSE37364,unadjusted,raw,Adenoma->Carcinoma,H0_entropy,0.01238321670285325,-1.119916289422923,0.862,0.862,0.956
+GSE37364,unadjusted,raw,Adenoma->Carcinoma,H1_total_persistence,8.965256814142254,1.9185447386529564,0.053,0.106,0.636
+GSE37364,unadjusted,raw,Adenoma->Carcinoma,H1_max_persistence,3.483077842050691,1.695457728947576,0.063,0.126,0.636
+GSE37364,unadjusted,raw,Adenoma->Carcinoma,H1_n_features,2.8000000000000003,1.5380581255568455,0.083,0.166,0.636
+GSE37364,unadjusted,raw,Adenoma->Carcinoma,H1_entropy,0.8420502887509105,1.7498927777325317,0.059,0.118,0.636
+GSE37364,unadjusted,raw,Normal->Adenoma,H0_total_persistence,147.6502365435538,4.255082646655494,0.002,0.002,0.014
+GSE37364,unadjusted,raw,Normal->Adenoma,H0_max_persistence,8.97534022375146,0.29525256150222406,0.397,0.478,1.0
+GSE37364,unadjusted,raw,Normal->Adenoma,H0_entropy,0.12692975082002178,3.8066600126369026,0.002,0.004,0.024
+GSE37364,unadjusted,raw,Normal->Adenoma,H1_total_persistence,0.21876137961418518,-1.002788263103526,0.856,0.856,1.0
+GSE37364,unadjusted,raw,Normal->Adenoma,H1_max_persistence,0.4543502255292853,-0.23683104844246058,0.499,0.499,1.0
+GSE37364,unadjusted,raw,Normal->Adenoma,H1_n_features,1.2,0.5508509272074616,0.257,0.257,1.0
+GSE37364,unadjusted,raw,Normal->Adenoma,H1_entropy,0.38548058096086646,0.5014024988296398,0.275,0.275,1.0
+GSE37364,unadjusted,shape-only,Adenoma->Carcinoma,H0_total_persistence,1.1412881528301941,1.2219323829056343,0.131,0.262,1.0
+GSE37364,unadjusted,shape-only,Adenoma->Carcinoma,H0_max_persistence,0.4417505326071943,0.23557583942894075,0.378,0.378,1.0
+GSE37364,unadjusted,shape-only,Adenoma->Carcinoma,H0_entropy,0.005640238604584624,-1.230790546963587,0.882,0.882,1.0
+GSE37364,unadjusted,shape-only,Adenoma->Carcinoma,H1_total_persistence,0.17146822061953915,1.3648427600538866,0.105,0.21,1.0
+GSE37364,unadjusted,shape-only,Adenoma->Carcinoma,H1_max_persistence,0.06156037400948406,1.3492500420675937,0.102,0.204,1.0
+GSE37364,unadjusted,shape-only,Adenoma->Carcinoma,H1_n_features,2.9,1.4262250107110335,0.098,0.196,1.0
+GSE37364,unadjusted,shape-only,Adenoma->Carcinoma,H1_entropy,0.7709707738326453,1.3878396342382902,0.1,0.2,1.0
+GSE37364,unadjusted,shape-only,Normal->Adenoma,H0_total_persistence,0.2492225184563015,-1.1724899513277138,0.883,0.883,1.0
+GSE37364,unadjusted,shape-only,Normal->Adenoma,H0_max_persistence,1.0431802442992428,1.1554764935979234,0.126,0.252,1.0
+GSE37364,unadjusted,shape-only,Normal->Adenoma,H0_entropy,0.10220466105962123,1.3295855051180019,0.107,0.214,1.0
+GSE37364,unadjusted,shape-only,Normal->Adenoma,H1_total_persistence,0.07611925992863776,0.4892727784834423,0.265,0.265,1.0
+GSE37364,unadjusted,shape-only,Normal->Adenoma,H1_max_persistence,0.020929865259506242,-0.05180010243817261,0.44,0.44,1.0
+GSE37364,unadjusted,shape-only,Normal->Adenoma,H1_n_features,1.3499999999999996,0.4805641844320819,0.298,0.298,1.0
+GSE37364,unadjusted,shape-only,Normal->Adenoma,H1_entropy,0.43362648892907485,0.5358386886632869,0.277,0.277,1.0
+GSE41258,adjusted,raw,Adenoma->Carcinoma,H0_total_persistence,52.023041631775754,1.0221833531530249,0.159,0.318,1.0
+GSE41258,adjusted,raw,Adenoma->Carcinoma,H0_max_persistence,15.353130590986833,1.449483137194523,0.088,0.264,1.0
+GSE41258,adjusted,raw,Adenoma->Carcinoma,H0_entropy,0.01984239419009537,0.5751300722917471,0.272,0.544,1.0
+GSE41258,adjusted,raw,Adenoma->Carcinoma,H1_total_persistence,2.1685123945517795,-0.3545581591776976,0.559,1.0,1.0
+GSE41258,adjusted,raw,Adenoma->Carcinoma,H1_max_persistence,0.004263101638819045,-1.2756986417774858,0.995,0.995,1.0
+GSE41258,adjusted,raw,Adenoma->Carcinoma,H1_n_features,2.1500000000000004,0.714489846030803,0.219,0.42000000000000004,1.0
+GSE41258,adjusted,raw,Adenoma->Carcinoma,H1_entropy,0.23291468708506757,0.6644049707747494,0.219,0.45599999999999996,1.0
+GSE41258,adjusted,raw,Carcinoma->Metastasis,H0_total_persistence,18.254390789869376,-0.5990280492519392,0.672,0.672,1.0
+GSE41258,adjusted,raw,Carcinoma->Metastasis,H0_max_persistence,7.336838061035998,-0.1532098177244368,0.521,1.0,1.0
+GSE41258,adjusted,raw,Carcinoma->Metastasis,H0_entropy,0.0185323638482342,0.48928771194552473,0.286,0.544,1.0
+GSE41258,adjusted,raw,Carcinoma->Metastasis,H1_total_persistence,0.05817503326171014,-1.3175996948024213,0.991,1.0,1.0
+GSE41258,adjusted,raw,Carcinoma->Metastasis,H1_max_persistence,1.189984813019981,1.184087198718846,0.121,0.242,1.0
+GSE41258,adjusted,raw,Carcinoma->Metastasis,H1_n_features,3.1000000000000005,1.105565767916359,0.161,0.42000000000000004,1.0
+GSE41258,adjusted,raw,Carcinoma->Metastasis,H1_entropy,0.34299119024284286,1.103649972865723,0.152,0.45599999999999996,1.0
+GSE41258,adjusted,raw,Normal->Adenoma,H0_total_persistence,159.84665433317497,5.916040749751377,0.001,0.003,0.021
+GSE41258,adjusted,raw,Normal->Adenoma,H0_max_persistence,1.8826870672129736,-0.45798507109369324,0.621,1.0,1.0
+GSE41258,adjusted,raw,Normal->Adenoma,H0_entropy,0.02464386308869715,1.5678704317706125,0.076,0.22799999999999998,0.9119999999999999
+GSE41258,adjusted,raw,Normal->Adenoma,H1_total_persistence,6.9360298667953275,2.8277362839472078,0.013,0.039,0.195
+GSE41258,adjusted,raw,Normal->Adenoma,H1_max_persistence,1.8550952110996075,3.9368301894504443,0.002,0.006,0.036000000000000004
+GSE41258,adjusted,raw,Normal->Adenoma,H1_n_features,2.5999999999999996,1.1793618587409336,0.14,0.42000000000000004,1.0
+GSE41258,adjusted,raw,Normal->Adenoma,H1_entropy,0.17556978065124706,-0.253959355882584,0.528,0.528,1.0
+GSE41258,adjusted,shape-only,Adenoma->Carcinoma,H0_total_persistence,1.1807575366249807,1.9787884820672217,0.04,0.08,0.56
+GSE41258,adjusted,shape-only,Adenoma->Carcinoma,H0_max_persistence,0.4173843846247778,1.2648602370309383,0.111,0.22499999999999998,1.0
+GSE41258,adjusted,shape-only,Adenoma->Carcinoma,H0_entropy,0.019260944321418894,0.5516818896387051,0.265,0.53,1.0
+GSE41258,adjusted,shape-only,Adenoma->Carcinoma,H1_total_persistence,0.07144652768692134,-0.2671553400418966,0.529,1.0,1.0
+GSE41258,adjusted,shape-only,Adenoma->Carcinoma,H1_max_persistence,0.02708312642510116,1.1597582087427676,0.14,0.42000000000000004,1.0
+GSE41258,adjusted,shape-only,Adenoma->Carcinoma,H1_n_features,0.5999999999999996,-0.7254599682273764,0.746,1.0,1.0
+GSE41258,adjusted,shape-only,Adenoma->Carcinoma,H1_entropy,0.02631582734455118,-1.0522263812903772,0.892,1.0,1.0
+GSE41258,adjusted,shape-only,Carcinoma->Metastasis,H0_total_persistence,1.8458713770963229,2.900114247993457,0.012,0.036000000000000004,0.252
+GSE41258,adjusted,shape-only,Carcinoma->Metastasis,H0_max_persistence,0.38491877521880025,0.8959441241720524,0.191,0.22499999999999998,1.0
+GSE41258,adjusted,shape-only,Carcinoma->Metastasis,H0_entropy,0.01986879760062532,0.426752589216906,0.313,0.53,1.0
+GSE41258,adjusted,shape-only,Carcinoma->Metastasis,H1_total_persistence,0.08439970875789832,-0.32607524994102977,0.548,1.0,1.0
+GSE41258,adjusted,shape-only,Carcinoma->Metastasis,H1_max_persistence,0.007817556019874591,-0.7109289567946658,0.719,0.719,1.0
+GSE41258,adjusted,shape-only,Carcinoma->Metastasis,H1_n_features,1.75,0.0038162550008694804,0.43,1.0,1.0
+GSE41258,adjusted,shape-only,Carcinoma->Metastasis,H1_entropy,0.13238319496632278,-0.3982058571267758,0.589,1.0,1.0
+GSE41258,adjusted,shape-only,Normal->Adenoma,H0_total_persistence,0.0875447924877939,-1.1308911464599132,0.895,0.895,1.0
+GSE41258,adjusted,shape-only,Normal->Adenoma,H0_max_persistence,0.4497378463661367,1.49246998905316,0.075,0.22499999999999998,1.0
+GSE41258,adjusted,shape-only,Normal->Adenoma,H0_entropy,0.02475203978870022,1.1584009905016193,0.154,0.46199999999999997,1.0
+GSE41258,adjusted,shape-only,Normal->Adenoma,H1_total_persistence,0.08971712163157897,-0.12816575219038379,0.47,1.0,1.0
+GSE41258,adjusted,shape-only,Normal->Adenoma,H1_max_persistence,0.019946710551625224,0.33499434955885,0.298,0.596,1.0
+GSE41258,adjusted,shape-only,Normal->Adenoma,H1_n_features,1.8000000000000007,0.17156035638557587,0.36,1.0,1.0
+GSE41258,adjusted,shape-only,Normal->Adenoma,H1_entropy,0.16260330461520045,-0.20965946912299666,0.492,1.0,1.0
+GSE41258,unadjusted,raw,Adenoma->Carcinoma,H0_total_persistence,87.51208904160251,2.8958591881153932,0.011,0.033,0.231
+GSE41258,unadjusted,raw,Adenoma->Carcinoma,H0_max_persistence,11.672503710930862,1.9500712316534776,0.034,0.10200000000000001,0.6120000000000001
+GSE41258,unadjusted,raw,Adenoma->Carcinoma,H0_entropy,0.01236487073375736,0.2551886710717885,0.35,0.7,1.0
+GSE41258,unadjusted,raw,Adenoma->Carcinoma,H1_total_persistence,2.250146868655998,-0.32617825660001915,0.547,1.0,1.0
+GSE41258,unadjusted,raw,Adenoma->Carcinoma,H1_max_persistence,0.21029580207117693,-0.8118986882513028,0.769,0.814,1.0
+GSE41258,unadjusted,raw,Adenoma->Carcinoma,H1_n_features,1.9000000000000004,0.603726594878126,0.253,0.506,1.0
+GSE41258,unadjusted,raw,Adenoma->Carcinoma,H1_entropy,0.15607891886317016,-0.017514020231285628,0.443,0.886,1.0
+GSE41258,unadjusted,raw,Carcinoma->Metastasis,H0_total_persistence,17.199396573535182,-0.5931858627841651,0.663,0.663,1.0
+GSE41258,unadjusted,raw,Carcinoma->Metastasis,H0_max_persistence,5.017826164284209,-0.09272627958710156,0.495,0.495,1.0
+GSE41258,unadjusted,raw,Carcinoma->Metastasis,H0_entropy,0.006627986610934666,-0.590135376759315,0.653,0.7,1.0
+GSE41258,unadjusted,raw,Carcinoma->Metastasis,H1_total_persistence,0.12568796028211615,-1.2239069606022113,0.987,1.0,1.0
+GSE41258,unadjusted,raw,Carcinoma->Metastasis,H1_max_persistence,0.7902257162227388,-0.02859412160554657,0.407,0.814,1.0
+GSE41258,unadjusted,raw,Carcinoma->Metastasis,H1_n_features,0.45000000000000107,-0.882230742204879,0.81,0.81,1.0
+GSE41258,unadjusted,raw,Carcinoma->Metastasis,H1_entropy,0.047894889308330635,-0.923308161441157,0.835,0.886,1.0
+GSE41258,unadjusted,raw,Normal->Adenoma,H0_total_persistence,108.84927037378247,2.903679900030385,0.011,0.033,0.066
+GSE41258,unadjusted,raw,Normal->Adenoma,H0_max_persistence,11.113902289036137,1.241010723713514,0.132,0.264,0.264
+GSE41258,unadjusted,raw,Normal->Adenoma,H0_entropy,0.057161701546116106,3.0113146417023087,0.004,0.012,0.036000000000000004
+GSE41258,unadjusted,raw,Normal->Adenoma,H1_total_persistence,14.05835322460712,5.796446180265376,0.001,0.003,0.021
+GSE41258,unadjusted,raw,Normal->Adenoma,H1_max_persistence,2.5087537040113013,3.6740665137594273,0.003,0.009000000000000001,0.036000000000000004
+GSE41258,unadjusted,raw,Normal->Adenoma,H1_n_features,6.8,4.648667523568713,0.001,0.003,0.021
+GSE41258,unadjusted,raw,Normal->Adenoma,H1_entropy,0.9876706820319441,3.891037959843575,0.002,0.006,0.03
+GSE41258,unadjusted,shape-only,Adenoma->Carcinoma,H0_total_persistence,0.21663334496647835,-0.6922697326536099,0.701,1.0,1.0
+GSE41258,unadjusted,shape-only,Adenoma->Carcinoma,H0_max_persistence,0.2599551820938928,1.6896911374502157,0.062,0.186,1.0
+GSE41258,unadjusted,shape-only,Adenoma->Carcinoma,H0_entropy,0.01681366019025532,0.9744540344371846,0.162,0.324,1.0
+GSE41258,unadjusted,shape-only,Adenoma->Carcinoma,H1_total_persistence,0.21801503594888505,1.9405645670129237,0.05,0.1,0.7000000000000001
+GSE41258,unadjusted,shape-only,Adenoma->Carcinoma,H1_max_persistence,0.022826124985116242,0.6069048362991271,0.244,0.488,1.0
+GSE41258,unadjusted,shape-only,Adenoma->Carcinoma,H1_n_features,2.3499999999999996,1.0917011954893647,0.168,0.336,1.0
+GSE41258,unadjusted,shape-only,Adenoma->Carcinoma,H1_entropy,0.3030903674877854,1.1871218693942915,0.129,0.258,1.0
+GSE41258,unadjusted,shape-only,Carcinoma->Metastasis,H0_total_persistence,0.3802443022396709,-0.36948284349615856,0.582,1.0,1.0
+GSE41258,unadjusted,shape-only,Carcinoma->Metastasis,H0_max_persistence,0.05625667131173484,-0.8368748955008273,0.765,0.765,1.0
+GSE41258,unadjusted,shape-only,Carcinoma->Metastasis,H0_entropy,0.009389900567932319,-0.27034619967789303,0.546,0.546,1.0
+GSE41258,unadjusted,shape-only,Carcinoma->Metastasis,H1_total_persistence,0.15692811964002507,0.7150096786064032,0.224,0.224,1.0
+GSE41258,unadjusted,shape-only,Carcinoma->Metastasis,H1_max_persistence,0.005694361755247332,-0.922515760235417,0.814,0.814,1.0
+GSE41258,unadjusted,shape-only,Carcinoma->Metastasis,H1_n_features,1.950000000000001,0.38763943731033257,0.303,0.336,1.0
+GSE41258,unadjusted,shape-only,Carcinoma->Metastasis,H1_entropy,0.3421300175776909,1.0385799617424352,0.145,0.258,1.0
+GSE41258,unadjusted,shape-only,Normal->Adenoma,H0_total_persistence,1.820819003798153,1.3427761177216353,0.102,0.306,0.372
+GSE41258,unadjusted,shape-only,Normal->Adenoma,H0_max_persistence,0.5117791945110801,1.6936722804529178,0.065,0.186,0.372
+GSE41258,unadjusted,shape-only,Normal->Adenoma,H0_entropy,0.05932945342177165,2.6295578076134576,0.018,0.05399999999999999,0.16199999999999998
+GSE41258,unadjusted,shape-only,Normal->Adenoma,H1_total_persistence,0.45762251716540536,5.519943339049056,0.001,0.003,0.021
+GSE41258,unadjusted,shape-only,Normal->Adenoma,H1_max_persistence,0.0764721373730985,3.8292914268616696,0.002,0.006,0.036000000000000004
+GSE41258,unadjusted,shape-only,Normal->Adenoma,H1_n_features,6.4,4.296452401406976,0.002,0.006,0.036000000000000004
+GSE41258,unadjusted,shape-only,Normal->Adenoma,H1_entropy,1.0470422170036167,4.397865146879348,0.003,0.009000000000000001,0.036000000000000004
+TCGA_COAD,adjusted,raw,Stage I->Stage II,H0_total_persistence,15.490347375314968,-0.4520344042785904,0.597,1.0,1.0
+TCGA_COAD,adjusted,raw,Stage I->Stage II,H0_max_persistence,1.179844208486113,-0.734561590801514,0.728,1.0,1.0
+TCGA_COAD,adjusted,raw,Stage I->Stage II,H0_entropy,0.009687969050622858,1.1782880967078215,0.126,0.378,1.0
+TCGA_COAD,adjusted,raw,Stage I->Stage II,H1_total_persistence,2.007732269822469,-0.5375495485873802,0.64,1.0,1.0
+TCGA_COAD,adjusted,raw,Stage I->Stage II,H1_max_persistence,0.37896130978496556,-0.5297866717590621,0.629,1.0,1.0
+TCGA_COAD,adjusted,raw,Stage I->Stage II,H1_n_features,0.9499999999999993,-0.4122627629032763,0.61,1.0,1.0
+TCGA_COAD,adjusted,raw,Stage I->Stage II,H1_entropy,0.0513846290958857,-0.8484909795027824,0.775,1.0,1.0
+TCGA_COAD,adjusted,raw,Stage II->Stage III,H0_total_persistence,8.373751991593394,-0.7855436282741494,0.753,1.0,1.0
+TCGA_COAD,adjusted,raw,Stage II->Stage III,H0_max_persistence,1.2067546810243996,-0.603615667224558,0.668,1.0,1.0
+TCGA_COAD,adjusted,raw,Stage II->Stage III,H0_entropy,1.9797594204007396e-05,-1.2663723642222227,0.998,1.0,1.0
+TCGA_COAD,adjusted,raw,Stage II->Stage III,H1_total_persistence,1.040707176936941,-0.7854155966398428,0.74,1.0,1.0
+TCGA_COAD,adjusted,raw,Stage II->Stage III,H1_max_persistence,0.32705376212586934,-0.42323018506315474,0.595,1.0,1.0
+TCGA_COAD,adjusted,raw,Stage II->Stage III,H1_n_features,0.5999999999999996,-0.6060946885358286,0.678,1.0,1.0
+TCGA_COAD,adjusted,raw,Stage II->Stage III,H1_entropy,0.0019987562052552477,-1.2991710236209981,0.993,1.0,1.0
+TCGA_COAD,adjusted,raw,Stage III->Stage IV,H0_total_persistence,15.996259187760984,-0.6042146720385753,0.655,1.0,1.0
+TCGA_COAD,adjusted,raw,Stage III->Stage IV,H0_max_persistence,0.22324499974516243,-1.5079705727516997,0.964,1.0,1.0
+TCGA_COAD,adjusted,raw,Stage III->Stage IV,H0_entropy,0.0019666918251388665,-0.9744385250434273,0.833,1.0,1.0
+TCGA_COAD,adjusted,raw,Stage III->Stage IV,H1_total_persistence,3.6686861304095935,-0.22779478572219428,0.511,1.0,1.0
+TCGA_COAD,adjusted,raw,Stage III->Stage IV,H1_max_persistence,0.08977889691135577,-1.1414873216049535,0.918,1.0,1.0
+TCGA_COAD,adjusted,raw,Stage III->Stage IV,H1_n_features,0.8499999999999996,-0.7861469836575082,0.754,1.0,1.0
+TCGA_COAD,adjusted,raw,Stage III->Stage IV,H1_entropy,0.14236602772504847,-0.48964276771781523,0.624,1.0,1.0
+TCGA_COAD,adjusted,shape-only,Stage I->Stage II,H0_total_persistence,0.25054104447924885,-0.7029474370400011,0.714,1.0,1.0
+TCGA_COAD,adjusted,shape-only,Stage I->Stage II,H0_max_persistence,0.07449784103949653,0.016405853530983984,0.423,1.0,1.0
+TCGA_COAD,adjusted,shape-only,Stage I->Stage II,H0_entropy,0.010929847595007924,1.5484794766274628,0.076,0.22799999999999998,1.0
+TCGA_COAD,adjusted,shape-only,Stage I->Stage II,H1_total_persistence,0.05455286805682902,-0.5727390047351972,0.661,1.0,1.0
+TCGA_COAD,adjusted,shape-only,Stage I->Stage II,H1_max_persistence,0.015127418413278401,-0.17837493500128998,0.48,1.0,1.0
+TCGA_COAD,adjusted,shape-only,Stage I->Stage II,H1_n_features,0.3500000000000014,-0.991802558504318,0.821,1.0,1.0
+TCGA_COAD,adjusted,shape-only,Stage I->Stage II,H1_entropy,0.01236164499489445,-1.2064415594432278,0.954,1.0,1.0
+TCGA_COAD,adjusted,shape-only,Stage II->Stage III,H0_total_persistence,0.19168288738100614,-0.6395219097597498,0.687,1.0,1.0
+TCGA_COAD,adjusted,shape-only,Stage II->Stage III,H0_max_persistence,0.02909971319802851,-0.6576336516800911,0.688,1.0,1.0
+TCGA_COAD,adjusted,shape-only,Stage II->Stage III,H0_entropy,0.0008099520243471936,-1.0889256753738044,0.899,1.0,1.0
+TCGA_COAD,adjusted,shape-only,Stage II->Stage III,H1_total_persistence,0.045459987941443736,-0.5280556515697631,0.626,1.0,1.0
+TCGA_COAD,adjusted,shape-only,Stage II->Stage III,H1_max_persistence,0.007198784745706843,-0.5693104053862863,0.649,1.0,1.0
+TCGA_COAD,adjusted,shape-only,Stage II->Stage III,H1_n_features,0.5,-0.7287839723333088,0.744,1.0,1.0
+TCGA_COAD,adjusted,shape-only,Stage II->Stage III,H1_entropy,0.09732877862406197,-0.25600257412085087,0.514,1.0,1.0
+TCGA_COAD,adjusted,shape-only,Stage III->Stage IV,H0_total_persistence,0.6431757900505417,0.35634656024866973,0.33,0.99,1.0
+TCGA_COAD,adjusted,shape-only,Stage III->Stage IV,H0_max_persistence,0.03191497821402012,-0.8942554214309367,0.783,1.0,1.0
+TCGA_COAD,adjusted,shape-only,Stage III->Stage IV,H0_entropy,0.0014426435687084904,-1.03059713209999,0.868,1.0,1.0
+TCGA_COAD,adjusted,shape-only,Stage III->Stage IV,H1_total_persistence,0.14844751541458118,0.3059256158333868,0.314,0.942,1.0
+TCGA_COAD,adjusted,shape-only,Stage III->Stage IV,H1_max_persistence,0.012084303789591175,-0.35199664148623866,0.547,1.0,1.0
+TCGA_COAD,adjusted,shape-only,Stage III->Stage IV,H1_n_features,0.25,-1.1447708694189045,0.93,1.0,1.0
+TCGA_COAD,adjusted,shape-only,Stage III->Stage IV,H1_entropy,0.12458428850966285,-0.5263253823095398,0.63,1.0,1.0
+TCGA_COAD,unadjusted,raw,Stage I->Stage II,H0_total_persistence,34.89019764531179,0.4336185051059671,0.292,0.47,1.0
+TCGA_COAD,unadjusted,raw,Stage I->Stage II,H0_max_persistence,4.70318023711642,0.8792985968599197,0.193,0.579,1.0
+TCGA_COAD,unadjusted,raw,Stage I->Stage II,H0_entropy,0.00961577336544428,0.9310936112925012,0.178,0.534,1.0
+TCGA_COAD,unadjusted,raw,Stage I->Stage II,H1_total_persistence,0.9604090012207926,-0.9435428749851766,0.832,1.0,1.0
+TCGA_COAD,unadjusted,raw,Stage I->Stage II,H1_max_persistence,1.5023979687943134,0.9561921890491079,0.167,0.501,1.0
+TCGA_COAD,unadjusted,raw,Stage I->Stage II,H1_n_features,0.3000000000000007,-0.996045083077037,0.849,1.0,1.0
+TCGA_COAD,unadjusted,raw,Stage I->Stage II,H1_entropy,0.07849961754830281,-0.6088002025533413,0.665,1.0,1.0
+TCGA_COAD,unadjusted,raw,Stage II->Stage III,H0_total_persistence,32.230130020763,0.6508021325584624,0.235,0.47,1.0
+TCGA_COAD,unadjusted,raw,Stage II->Stage III,H0_max_persistence,1.5389796885811933,-0.6376172406507289,0.698,1.0,1.0
+TCGA_COAD,unadjusted,raw,Stage II->Stage III,H0_entropy,0.0021616229947545307,-0.7390039333573157,0.734,0.828,1.0
+TCGA_COAD,unadjusted,raw,Stage II->Stage III,H1_total_persistence,3.4003664689774205,0.4026860477535795,0.31,0.9299999999999999,1.0
+TCGA_COAD,unadjusted,raw,Stage II->Stage III,H1_max_persistence,0.3715154036145556,-0.5151212108366858,0.627,0.627,1.0
+TCGA_COAD,unadjusted,raw,Stage II->Stage III,H1_n_features,0.25,-0.930687144728405,0.843,1.0,1.0
+TCGA_COAD,unadjusted,raw,Stage II->Stage III,H1_entropy,0.11429771443043912,0.06627266382095644,0.396,1.0,1.0
+TCGA_COAD,unadjusted,raw,Stage III->Stage IV,H0_total_persistence,54.295330700339605,1.3031738327853324,0.126,0.378,1.0
+TCGA_COAD,unadjusted,raw,Stage III->Stage IV,H0_max_persistence,2.929245554701467,-0.2368849888142346,0.532,1.0,1.0
+TCGA_COAD,unadjusted,raw,Stage III->Stage IV,H0_entropy,0.0070921617490724564,0.04668911681886407,0.414,0.828,1.0
+TCGA_COAD,unadjusted,raw,Stage III->Stage IV,H1_total_persistence,1.7767906199368824,-0.7718941563671506,0.75,1.0,1.0
+TCGA_COAD,unadjusted,raw,Stage III->Stage IV,H1_max_persistence,1.105368172307438,0.3638952613694436,0.305,0.61,1.0
+TCGA_COAD,unadjusted,raw,Stage III->Stage IV,H1_n_features,0.4999999999999991,-0.8895592351839896,0.807,1.0,1.0
+TCGA_COAD,unadjusted,raw,Stage III->Stage IV,H1_entropy,0.0767604461978757,-0.7783245230232347,0.75,1.0,1.0
+TCGA_COAD,unadjusted,shape-only,Stage I->Stage II,H0_total_persistence,0.16930756174955874,-0.9049351828040787,0.801,1.0,1.0
+TCGA_COAD,unadjusted,shape-only,Stage I->Stage II,H0_max_persistence,0.0908268611110381,0.5146686924951217,0.287,0.861,1.0
+TCGA_COAD,unadjusted,shape-only,Stage I->Stage II,H0_entropy,0.013136080360702351,1.7832052265656027,0.062,0.186,1.0
+TCGA_COAD,unadjusted,shape-only,Stage I->Stage II,H1_total_persistence,0.03010328429000536,-0.825738947134398,0.772,1.0,1.0
+TCGA_COAD,unadjusted,shape-only,Stage I->Stage II,H1_max_persistence,0.04793316576981803,2.2430390537994347,0.028,0.084,0.5880000000000001
+TCGA_COAD,unadjusted,shape-only,Stage I->Stage II,H1_n_features,0.75,-0.5117766182984876,0.643,1.0,1.0
+TCGA_COAD,unadjusted,shape-only,Stage I->Stage II,H1_entropy,0.19402688644153843,0.4484791152089804,0.291,0.582,1.0
+TCGA_COAD,unadjusted,shape-only,Stage II->Stage III,H0_total_persistence,0.035733046066209084,-1.191792838044299,0.947,1.0,1.0
+TCGA_COAD,unadjusted,shape-only,Stage II->Stage III,H0_max_persistence,0.029931674586062718,-0.7087587679477656,0.717,0.861,1.0
+TCGA_COAD,unadjusted,shape-only,Stage II->Stage III,H0_entropy,0.0023230653135888346,-0.6997588092544113,0.706,0.92,1.0
+TCGA_COAD,unadjusted,shape-only,Stage II->Stage III,H1_total_persistence,0.044083519244179026,-0.35465111210587313,0.547,1.0,1.0
+TCGA_COAD,unadjusted,shape-only,Stage II->Stage III,H1_max_persistence,0.006377251493696584,-0.6925715048365283,0.689,1.0,1.0
+TCGA_COAD,unadjusted,shape-only,Stage II->Stage III,H1_n_features,1.4000000000000004,0.6784094574430904,0.235,0.705,1.0
+TCGA_COAD,unadjusted,shape-only,Stage II->Stage III,H1_entropy,0.18931236618024028,0.8966622304144048,0.18,0.54,1.0
+TCGA_COAD,unadjusted,shape-only,Stage III->Stage IV,H0_total_persistence,1.1639283810276595,1.5734555219715092,0.089,0.267,1.0
+TCGA_COAD,unadjusted,shape-only,Stage III->Stage IV,H0_max_persistence,0.10052804221323353,0.3358200287747891,0.334,0.861,1.0
+TCGA_COAD,unadjusted,shape-only,Stage III->Stage IV,H0_entropy,0.006265437101609539,-0.10107466829799737,0.46,0.92,1.0
+TCGA_COAD,unadjusted,shape-only,Stage III->Stage IV,H1_total_persistence,0.08710432060148465,-0.26666710979250013,0.515,1.0,1.0
+TCGA_COAD,unadjusted,shape-only,Stage III->Stage IV,H1_max_persistence,0.004830331074108601,-0.9882658861343573,0.85,1.0,1.0
+TCGA_COAD,unadjusted,shape-only,Stage III->Stage IV,H1_n_features,0.34999999999999964,-1.0585417714652194,0.871,1.0,1.0
+TCGA_COAD,unadjusted,shape-only,Stage III->Stage IV,H1_entropy,0.23082025247863736,0.24023693205347219,0.351,0.582,1.0

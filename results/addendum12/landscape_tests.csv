@@ -1,0 +1,49 @@
+cohort,version,mode,transition,statistic,obs,z,p,p_holm_trans
+GSE117606,adjusted,raw,Adenoma->Carcinoma,landscape_H1,5.996082952726951,0.5163799702242644,0.27,0.54
+GSE117606,adjusted,raw,Normal->Adenoma,landscape_H1,4.453026892744979,-0.08644976480888965,0.487,0.54
+GSE117606,adjusted,shape-only,Adenoma->Carcinoma,landscape_H1,0.19745950480360858,0.9073651233373137,0.172,0.344
+GSE117606,adjusted,shape-only,Normal->Adenoma,landscape_H1,0.16039798461610433,0.2511792223631199,0.359,0.359
+GSE117606,unadjusted,raw,Adenoma->Carcinoma,landscape_H1,10.344347495210956,3.2363616415195198,0.006,0.012
+GSE117606,unadjusted,raw,Normal->Adenoma,landscape_H1,4.996127786073814,0.1908155466988693,0.373,0.373
+GSE117606,unadjusted,shape-only,Adenoma->Carcinoma,landscape_H1,0.21394662369508882,1.7883648068887508,0.058,0.116
+GSE117606,unadjusted,shape-only,Normal->Adenoma,landscape_H1,0.1143890579758154,-0.5517652518576257,0.68,0.68
+GSE20916,adjusted,raw,Adenoma->Carcinoma,landscape_H1,4.410000206096589,1.516488674812292,0.084,0.168
+GSE20916,adjusted,raw,Normal->Adenoma,landscape_H1,4.588137086020741,1.2702456134946443,0.105,0.168
+GSE20916,adjusted,shape-only,Adenoma->Carcinoma,landscape_H1,0.0938718768292401,1.3242865032511244,0.098,0.196
+GSE20916,adjusted,shape-only,Normal->Adenoma,landscape_H1,0.09851480475156371,0.875383113236607,0.158,0.196
+GSE20916,unadjusted,raw,Adenoma->Carcinoma,landscape_H1,3.8421290404078396,2.180698124148966,0.036,0.072
+GSE20916,unadjusted,raw,Normal->Adenoma,landscape_H1,0.9873237622822711,-1.0367592423155119,0.974,0.974
+GSE20916,unadjusted,shape-only,Adenoma->Carcinoma,landscape_H1,0.07588641159452507,0.9432635273181271,0.15,0.3
+GSE20916,unadjusted,shape-only,Normal->Adenoma,landscape_H1,0.041928757130665226,-0.490527778528631,0.663,0.663
+GSE37364,adjusted,raw,Adenoma->Carcinoma,landscape_H1,4.609232038747755,2.175011509235227,0.028,0.056
+GSE37364,adjusted,raw,Normal->Adenoma,landscape_H1,2.54217849658981,0.3760010485680318,0.3,0.3
+GSE37364,adjusted,shape-only,Adenoma->Carcinoma,landscape_H1,0.05204648339773153,-1.0259559932896019,0.864,1.0
+GSE37364,adjusted,shape-only,Normal->Adenoma,landscape_H1,0.04674943611881726,-0.7160937543216797,0.754,1.0
+GSE37364,unadjusted,raw,Adenoma->Carcinoma,landscape_H1,7.744887690588637,1.6659498760328586,0.068,0.136
+GSE37364,unadjusted,raw,Normal->Adenoma,landscape_H1,1.5194105688376922,0.917295181845314,0.147,0.147
+GSE37364,unadjusted,shape-only,Adenoma->Carcinoma,landscape_H1,0.15377700494044638,1.8333414849191245,0.055,0.11
+GSE37364,unadjusted,shape-only,Normal->Adenoma,landscape_H1,0.05082024594825861,-0.046774116059451955,0.441,0.441
+GSE41258,adjusted,raw,Adenoma->Carcinoma,landscape_H1,2.45431039593201,-0.11078870778222069,0.49,0.49
+GSE41258,adjusted,raw,Carcinoma->Metastasis,landscape_H1,6.2330168160934605,2.0062499799859324,0.036,0.072
+GSE41258,adjusted,raw,Normal->Adenoma,landscape_H1,6.037811626396548,5.911939394735595,0.001,0.003
+GSE41258,adjusted,shape-only,Adenoma->Carcinoma,landscape_H1,0.0815585815531863,0.04993838463099553,0.407,0.814
+GSE41258,adjusted,shape-only,Carcinoma->Metastasis,landscape_H1,0.0674055366222945,-1.0462466425686994,0.887,0.887
+GSE41258,adjusted,shape-only,Normal->Adenoma,landscape_H1,0.10906118188177578,0.5828840389975942,0.25,0.75
+GSE41258,unadjusted,raw,Adenoma->Carcinoma,landscape_H1,3.2800649082386286,0.11879191628023354,0.381,0.762
+GSE41258,unadjusted,raw,Carcinoma->Metastasis,landscape_H1,3.332640233932649,-0.5883819759285625,0.716,0.762
+GSE41258,unadjusted,raw,Normal->Adenoma,landscape_H1,7.496507733986845,5.00117836564472,0.003,0.009000000000000001
+GSE41258,unadjusted,shape-only,Adenoma->Carcinoma,landscape_H1,0.11311466305307186,0.9829709314790303,0.152,0.304
+GSE41258,unadjusted,shape-only,Carcinoma->Metastasis,landscape_H1,0.0958737076432381,-0.03558200895315311,0.421,0.421
+GSE41258,unadjusted,shape-only,Normal->Adenoma,landscape_H1,0.20979377725066675,5.16560729134078,0.001,0.003
+TCGA_COAD,adjusted,raw,Stage I->Stage II,landscape_H1,3.4899766902995384,-0.46170941996970755,0.641,1.0
+TCGA_COAD,adjusted,raw,Stage II->Stage III,landscape_H1,3.007170403907134,-0.03329230757158292,0.461,1.0
+TCGA_COAD,adjusted,raw,Stage III->Stage IV,landscape_H1,4.4532053394639535,0.2596463829812755,0.335,1.0
+TCGA_COAD,adjusted,shape-only,Stage I->Stage II,landscape_H1,0.0655626296258385,-1.0145300063430083,0.886,1.0
+TCGA_COAD,adjusted,shape-only,Stage II->Stage III,landscape_H1,0.0603035470849119,-0.5557930372102817,0.675,1.0
+TCGA_COAD,adjusted,shape-only,Stage III->Stage IV,landscape_H1,0.15308002363022707,1.4041046601685354,0.095,0.28500000000000003
+TCGA_COAD,unadjusted,raw,Stage I->Stage II,landscape_H1,6.079483475722213,0.6029494628262625,0.215,0.645
+TCGA_COAD,unadjusted,raw,Stage II->Stage III,landscape_H1,2.6665941341612167,-0.831817983643329,0.795,1.0
+TCGA_COAD,unadjusted,raw,Stage III->Stage IV,landscape_H1,3.3410280536022476,-0.9889240006739971,0.868,1.0
+TCGA_COAD,unadjusted,shape-only,Stage I->Stage II,landscape_H1,0.14309474293750038,0.9793363349213617,0.159,0.477
+TCGA_COAD,unadjusted,shape-only,Stage II->Stage III,landscape_H1,0.08539157816994915,0.39257406904785175,0.302,0.604
+TCGA_COAD,unadjusted,shape-only,Stage III->Stage IV,landscape_H1,0.11362204840949022,-0.14221999211637718,0.494,0.604

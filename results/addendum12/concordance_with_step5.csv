@@ -1,0 +1,25 @@
+cohort,version,mode,transition,statistic,obs,z,p,p_holm_trans,step5_p_holm,step5_sig,land_sig,agree
+GSE117606,adjusted,shape-only,Adenoma->Carcinoma,landscape_H1,0.19745950480360858,0.9073651233373137,0.172,0.344,0.582,False,False,True
+GSE117606,adjusted,shape-only,Normal->Adenoma,landscape_H1,0.16039798461610433,0.2511792223631199,0.359,0.359,0.582,False,False,True
+GSE117606,unadjusted,shape-only,Adenoma->Carcinoma,landscape_H1,0.21394662369508882,1.7883648068887508,0.058,0.116,0.002,True,False,False
+GSE117606,unadjusted,shape-only,Normal->Adenoma,landscape_H1,0.1143890579758154,-0.5517652518576257,0.68,0.68,0.483,False,False,True
+GSE20916,adjusted,shape-only,Adenoma->Carcinoma,landscape_H1,0.0938718768292401,1.3242865032511244,0.098,0.196,0.436,False,False,True
+GSE20916,adjusted,shape-only,Normal->Adenoma,landscape_H1,0.09851480475156371,0.875383113236607,0.158,0.196,0.054,False,False,True
+GSE20916,unadjusted,shape-only,Adenoma->Carcinoma,landscape_H1,0.07588641159452507,0.9432635273181271,0.15,0.3,0.006,True,False,False
+GSE20916,unadjusted,shape-only,Normal->Adenoma,landscape_H1,0.041928757130665226,-0.490527778528631,0.663,0.663,0.006,True,False,False
+GSE37364,adjusted,shape-only,Adenoma->Carcinoma,landscape_H1,0.05204648339773153,-1.0259559932896019,0.864,1.0,0.685,False,False,True
+GSE37364,adjusted,shape-only,Normal->Adenoma,landscape_H1,0.04674943611881726,-0.7160937543216797,0.754,1.0,0.01,True,False,False
+GSE37364,unadjusted,shape-only,Adenoma->Carcinoma,landscape_H1,0.15377700494044638,1.8333414849191245,0.055,0.11,0.102,False,False,True
+GSE37364,unadjusted,shape-only,Normal->Adenoma,landscape_H1,0.05082024594825861,-0.046774116059451955,0.441,0.441,0.102,False,False,True
+GSE41258,adjusted,shape-only,Adenoma->Carcinoma,landscape_H1,0.0815585815531863,0.04993838463099553,0.407,0.814,0.282,False,False,True
+GSE41258,adjusted,shape-only,Carcinoma->Metastasis,landscape_H1,0.0674055366222945,-1.0462466425686994,0.887,0.887,0.282,False,False,True
+GSE41258,adjusted,shape-only,Normal->Adenoma,landscape_H1,0.10906118188177578,0.5828840389975942,0.25,0.75,0.282,False,False,True
+GSE41258,unadjusted,shape-only,Adenoma->Carcinoma,landscape_H1,0.11311466305307186,0.9829709314790303,0.152,0.304,0.716,False,False,True
+GSE41258,unadjusted,shape-only,Carcinoma->Metastasis,landscape_H1,0.0958737076432381,-0.03558200895315311,0.421,0.421,0.842,False,False,True
+GSE41258,unadjusted,shape-only,Normal->Adenoma,landscape_H1,0.20979377725066675,5.16560729134078,0.001,0.003,0.003,True,True,True
+TCGA_COAD,adjusted,shape-only,Stage I->Stage II,landscape_H1,0.0655626296258385,-1.0145300063430083,0.886,1.0,0.897,False,False,True
+TCGA_COAD,adjusted,shape-only,Stage II->Stage III,landscape_H1,0.0603035470849119,-0.5557930372102817,0.675,1.0,0.897,False,False,True
+TCGA_COAD,adjusted,shape-only,Stage III->Stage IV,landscape_H1,0.15308002363022707,1.4041046601685354,0.095,0.28500000000000003,0.897,False,False,True
+TCGA_COAD,unadjusted,shape-only,Stage I->Stage II,landscape_H1,0.14309474293750038,0.9793363349213617,0.159,0.477,1.0,False,False,True
+TCGA_COAD,unadjusted,shape-only,Stage II->Stage III,landscape_H1,0.08539157816994915,0.39257406904785175,0.302,0.604,1.0,False,False,True
+TCGA_COAD,unadjusted,shape-only,Stage III->Stage IV,landscape_H1,0.11362204840949022,-0.14221999211637718,0.494,0.604,0.729,False,False,True

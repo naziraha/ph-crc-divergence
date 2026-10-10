@@ -1,0 +1,115 @@
+ADDENDUM 12 - quantitative persistence outputs (73b4e71; Amendment 1 d5fe9e6; D25, D26)
+========================================================================
+Secondary analyses; the step 5 tipping-point decision is unchanged. Patient-level permutation (999), aligned groups,
+k = 20 subsamples of m per stage (as step 5); shared draws for all statistics (D25b).
+Landscape test: H1 only (Amendment 1); H0 landscapes are figures only (validation: H0 landscape underpowered).
+Seed 42 per unit. gudhi 3.13.0, numpy 2.4.6, scipy 1.17.1
+
+1. H1 LANDSCAPE TEST (L2 distance between mean landscapes; Holm across transitions):
+  GSE117606  adjusted   raw        Adenoma->Carcinoma     z   0.52  p 0.270  Holm 0.540
+  GSE117606  adjusted   raw        Normal->Adenoma        z  -0.09  p 0.487  Holm 0.540
+  GSE117606  adjusted   shape-only Adenoma->Carcinoma     z   0.91  p 0.172  Holm 0.344
+  GSE117606  adjusted   shape-only Normal->Adenoma        z   0.25  p 0.359  Holm 0.359
+  GSE117606  unadjusted raw        Adenoma->Carcinoma     z   3.24  p 0.006  Holm 0.012  *
+  GSE117606  unadjusted raw        Normal->Adenoma        z   0.19  p 0.373  Holm 0.373
+  GSE117606  unadjusted shape-only Adenoma->Carcinoma     z   1.79  p 0.058  Holm 0.116
+  GSE117606  unadjusted shape-only Normal->Adenoma        z  -0.55  p 0.680  Holm 0.680
+  GSE20916   adjusted   raw        Adenoma->Carcinoma     z   1.52  p 0.084  Holm 0.168
+  GSE20916   adjusted   raw        Normal->Adenoma        z   1.27  p 0.105  Holm 0.168
+  GSE20916   adjusted   shape-only Adenoma->Carcinoma     z   1.32  p 0.098  Holm 0.196
+  GSE20916   adjusted   shape-only Normal->Adenoma        z   0.88  p 0.158  Holm 0.196
+  GSE20916   unadjusted raw        Adenoma->Carcinoma     z   2.18  p 0.036  Holm 0.072
+  GSE20916   unadjusted raw        Normal->Adenoma        z  -1.04  p 0.974  Holm 0.974
+  GSE20916   unadjusted shape-only Adenoma->Carcinoma     z   0.94  p 0.150  Holm 0.300
+  GSE20916   unadjusted shape-only Normal->Adenoma        z  -0.49  p 0.663  Holm 0.663
+  GSE37364   adjusted   raw        Adenoma->Carcinoma     z   2.18  p 0.028  Holm 0.056
+  GSE37364   adjusted   raw        Normal->Adenoma        z   0.38  p 0.300  Holm 0.300
+  GSE37364   adjusted   shape-only Adenoma->Carcinoma     z  -1.03  p 0.864  Holm 1.000
+  GSE37364   adjusted   shape-only Normal->Adenoma        z  -0.72  p 0.754  Holm 1.000
+  GSE37364   unadjusted raw        Adenoma->Carcinoma     z   1.67  p 0.068  Holm 0.136
+  GSE37364   unadjusted raw        Normal->Adenoma        z   0.92  p 0.147  Holm 0.147
+  GSE37364   unadjusted shape-only Adenoma->Carcinoma     z   1.83  p 0.055  Holm 0.110
+  GSE37364   unadjusted shape-only Normal->Adenoma        z  -0.05  p 0.441  Holm 0.441
+  GSE41258   adjusted   raw        Adenoma->Carcinoma     z  -0.11  p 0.490  Holm 0.490
+  GSE41258   adjusted   raw        Carcinoma->Metastasis  z   2.01  p 0.036  Holm 0.072
+  GSE41258   adjusted   raw        Normal->Adenoma        z   5.91  p 0.001  Holm 0.003  *
+  GSE41258   adjusted   shape-only Adenoma->Carcinoma     z   0.05  p 0.407  Holm 0.814
+  GSE41258   adjusted   shape-only Carcinoma->Metastasis  z  -1.05  p 0.887  Holm 0.887
+  GSE41258   adjusted   shape-only Normal->Adenoma        z   0.58  p 0.250  Holm 0.750
+  GSE41258   unadjusted raw        Adenoma->Carcinoma     z   0.12  p 0.381  Holm 0.762
+  GSE41258   unadjusted raw        Carcinoma->Metastasis  z  -0.59  p 0.716  Holm 0.762
+  GSE41258   unadjusted raw        Normal->Adenoma        z   5.00  p 0.003  Holm 0.009  *
+  GSE41258   unadjusted shape-only Adenoma->Carcinoma     z   0.98  p 0.152  Holm 0.304
+  GSE41258   unadjusted shape-only Carcinoma->Metastasis  z  -0.04  p 0.421  Holm 0.421
+  GSE41258   unadjusted shape-only Normal->Adenoma        z   5.17  p 0.001  Holm 0.003  *
+  TCGA_COAD  adjusted   raw        Stage I->Stage II      z  -0.46  p 0.641  Holm 1.000
+  TCGA_COAD  adjusted   raw        Stage II->Stage III    z  -0.03  p 0.461  Holm 1.000
+  TCGA_COAD  adjusted   raw        Stage III->Stage IV    z   0.26  p 0.335  Holm 1.000
+  TCGA_COAD  adjusted   shape-only Stage I->Stage II      z  -1.01  p 0.886  Holm 1.000
+  TCGA_COAD  adjusted   shape-only Stage II->Stage III    z  -0.56  p 0.675  Holm 1.000
+  TCGA_COAD  adjusted   shape-only Stage III->Stage IV    z   1.40  p 0.095  Holm 0.285
+  TCGA_COAD  unadjusted raw        Stage I->Stage II      z   0.60  p 0.215  Holm 0.645
+  TCGA_COAD  unadjusted raw        Stage II->Stage III    z  -0.83  p 0.795  Holm 1.000
+  TCGA_COAD  unadjusted raw        Stage III->Stage IV    z  -0.99  p 0.868  Holm 1.000
+  TCGA_COAD  unadjusted shape-only Stage I->Stage II      z   0.98  p 0.159  Holm 0.477
+  TCGA_COAD  unadjusted shape-only Stage II->Stage III    z   0.39  p 0.302  Holm 0.604
+  TCGA_COAD  unadjusted shape-only Stage III->Stage IV    z  -0.14  p 0.494  Holm 0.604
+
+2. BARCODE SUMMARIES (Holm across transitions, then across 7 summaries): 23 significant of 336 tests
+  GSE117606  adjusted   raw        Adenoma->Carcinoma     H0_total_persistence   z   4.23  final p 0.028
+  GSE117606  unadjusted raw        Adenoma->Carcinoma     H0_total_persistence   z   3.96  final p 0.024
+  GSE117606  unadjusted raw        Adenoma->Carcinoma     H0_entropy             z   4.89  final p 0.014
+  GSE117606  unadjusted shape-only Adenoma->Carcinoma     H0_entropy             z   5.42  final p 0.014
+  GSE20916   unadjusted raw        Adenoma->Carcinoma     H0_total_persistence   z   4.74  final p 0.014
+  GSE20916   unadjusted raw        Normal->Adenoma        H0_entropy             z   3.79  final p 0.014
+  GSE20916   unadjusted shape-only Normal->Adenoma        H0_entropy             z   3.21  final p 0.042
+  GSE37364   adjusted   raw        Adenoma->Carcinoma     H0_total_persistence   z   3.07  final p 0.021
+  GSE37364   adjusted   raw        Normal->Adenoma        H0_total_persistence   z   4.15  final p 0.014
+  GSE37364   unadjusted raw        Adenoma->Carcinoma     H0_total_persistence   z   3.69  final p 0.014
+  GSE37364   unadjusted raw        Normal->Adenoma        H0_total_persistence   z   4.26  final p 0.014
+  GSE37364   unadjusted raw        Normal->Adenoma        H0_entropy             z   3.81  final p 0.024
+  GSE41258   adjusted   raw        Normal->Adenoma        H0_total_persistence   z   5.92  final p 0.021
+  GSE41258   adjusted   raw        Normal->Adenoma        H1_max_persistence     z   3.94  final p 0.036
+  GSE41258   unadjusted raw        Normal->Adenoma        H0_entropy             z   3.01  final p 0.036
+  GSE41258   unadjusted raw        Normal->Adenoma        H1_total_persistence   z   5.80  final p 0.021
+  GSE41258   unadjusted raw        Normal->Adenoma        H1_max_persistence     z   3.67  final p 0.036
+  GSE41258   unadjusted raw        Normal->Adenoma        H1_n_features          z   4.65  final p 0.021
+  GSE41258   unadjusted raw        Normal->Adenoma        H1_entropy             z   3.89  final p 0.030
+  GSE41258   unadjusted shape-only Normal->Adenoma        H1_total_persistence   z   5.52  final p 0.021
+  GSE41258   unadjusted shape-only Normal->Adenoma        H1_max_persistence     z   3.83  final p 0.036
+  GSE41258   unadjusted shape-only Normal->Adenoma        H1_n_features          z   4.30  final p 0.036
+  GSE41258   unadjusted shape-only Normal->Adenoma        H1_entropy             z   4.40  final p 0.036
+
+3. CONCORDANCE, shape-only: step 5 (H0+H1 Wasserstein) vs H1 landscape test
+  agreement 83% of 24 comparisons -> SUPPORTIVE
+    discordant: GSE117606 unadjusted Adenoma->Carcinoma: step 5 Holm 0.002, H1 landscape Holm 0.116
+    discordant: GSE20916 unadjusted Adenoma->Carcinoma: step 5 Holm 0.006, H1 landscape Holm 0.300
+    discordant: GSE20916 unadjusted Normal->Adenoma: step 5 Holm 0.006, H1 landscape Holm 0.663
+    discordant: GSE37364 adjusted Normal->Adenoma: step 5 Holm 0.010, H1 landscape Holm 1.000
+
+4. DIMENSION SPLIT, all cohorts (Wasserstein; H0+H1 = step 5)
+  significant combined results: 17; reproduced by H0-only: 94%; H1-only significant where combined not: 1
+  -> 'predominantly H0' REVISED - see table
+  'loops drive progression' rule (H1 significant in both versions in >= 3 of 4 GEO cohorts): NOT MET (H1-only Wasserstein: none; H1 landscape: none)
+  GSE117606 H0/H1 split (new):
+    adjusted   raw        H0 Adenoma->Carcinoma   z   5.39  Holm 0.006  *
+    adjusted   raw        H0 Normal->Adenoma      z  -0.25  Holm 0.498
+    adjusted   raw        H1 Adenoma->Carcinoma   z   1.89  Holm 0.110
+    adjusted   raw        H1 Normal->Adenoma      z  -0.38  Holm 0.603
+    adjusted   shape-only H0 Adenoma->Carcinoma   z   0.69  Holm 0.420
+    adjusted   shape-only H0 Normal->Adenoma      z   0.64  Holm 0.420
+    adjusted   shape-only H1 Adenoma->Carcinoma   z   0.20  Holm 0.656
+    adjusted   shape-only H1 Normal->Adenoma      z  -0.50  Holm 0.656
+    unadjusted raw        H0 Adenoma->Carcinoma   z   6.72  Holm 0.002  *
+    unadjusted raw        H0 Normal->Adenoma      z  -0.33  Holm 0.538
+    unadjusted raw        H1 Adenoma->Carcinoma   z   4.18  Holm 0.008  *
+    unadjusted raw        H1 Normal->Adenoma      z  -0.35  Holm 0.575
+    unadjusted shape-only H0 Adenoma->Carcinoma   z   5.07  Holm 0.002  *
+    unadjusted shape-only H0 Normal->Adenoma      z   0.13  Holm 0.386
+    unadjusted shape-only H1 Adenoma->Carcinoma   z   2.43  Holm 0.060
+    unadjusted shape-only H1 Normal->Adenoma      z  -0.50  Holm 0.632
+
+5. VALIDATION (section 6; full table incl. the two failures, for the supplement): results/addendum12/validation_summary.txt
+
+Figures: results/addendum12/figures/<cohort>_<version>_<mode>_{diagrams,barcodes,landscapes_betti}.png
+Outputs: landscape_tests.csv, barcode_summary_tests.csv, concordance_with_step5.csv, dimension_split_all_cohorts.csv
