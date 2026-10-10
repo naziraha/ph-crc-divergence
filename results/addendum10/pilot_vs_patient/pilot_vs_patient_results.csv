@@ -1,0 +1,9 @@
+method,n_subsamples,mean_I,mean_IV,p
+(a) pilot: Mann-Whitney across bootstrap subsamples,25,13.887949810828154,13.891402905857833,0.953582510349677
+(a) pilot: Mann-Whitney across bootstrap subsamples,50,13.690350387141581,12.700352932250661,0.42589476304532514
+(a) pilot: Mann-Whitney across bootstrap subsamples,100,14.252303380867447,13.302782602374336,0.25537214066557345
+(a) pilot: Mann-Whitney across bootstrap subsamples,250,14.449285995677977,13.052479472596415,0.004645419361266576
+(a) pilot: Mann-Whitney across bootstrap subsamples,500,14.452461630214424,13.237489781808865,0.0008776559834177221
+(a) pilot: Mann-Whitney across bootstrap subsamples,1000,14.19940659109474,13.238324986694373,0.0011292555717274766
+"(b) patient-level permutation, raw",20,12.883617834235128,13.607010665615567,0.885
+"(c) patient-level permutation, shape-only",20,0.3310872728390455,0.3411005743329015,0.941

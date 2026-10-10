@@ -1,0 +1,22 @@
+ADDENDUM 10 section 4.4 - pilot method vs patient-level test (TCGA-COAD Stage I 45 vs Stage IV 39)
+========================================================================
+Embedding: TCGA_COAD_main_unadjusted_g2000_pc10 (GUDHI Vietoris-Rips). Statistic: total H1 persistence per subsample
+of k = 25 patients per stage (the pilot's statistic). The pilot's original numbers are not re-used.
+Seed 42 per unit. gudhi 3.13.0, numpy 2.4.6, scipy 1.17.1
+
+(a) Pilot method - subsamples drawn from the same 45 / 39 patients, Mann-Whitney test across subsamples (raw):
+       25 subsamples per stage: mean H1 total I 13.89 vs IV 13.89  ->  p = 0.95
+       50 subsamples per stage: mean H1 total I 13.69 vs IV 12.70  ->  p = 0.43
+      100 subsamples per stage: mean H1 total I 14.25 vs IV 13.30  ->  p = 0.26
+      250 subsamples per stage: mean H1 total I 14.45 vs IV 13.05  ->  p = 0.0046
+      500 subsamples per stage: mean H1 total I 14.45 vs IV 13.24  ->  p = 0.00088
+     1000 subsamples per stage: mean H1 total I 14.20 vs IV 13.24  ->  p = 0.0011
+
+(b)/(c) Patient-level test - stage labels permuted across the 84 patients, 999 permutations, 20 subsamples per stage:
+    raw       : mean H1 total I 12.884 vs IV 13.607; |difference| 0.723; z -1.07; p = 0.885
+    shape-only: mean H1 total I 0.331 vs IV 0.341; |difference| 0.010; z -1.19; p = 0.941
+
+Reading: in (a) the p-value depends on how many subsamples are drawn from the same patients (pseudo-replication);
+the patient-level test (b)/(c) treats patients as the unit and gives the valid p-value.
+Run time 0.6 min.
+Outputs: results/addendum10/pilot_vs_patient/pilot_vs_patient_results.csv

@@ -246,8 +246,82 @@ def normal():
     print("\n".join(L))
 
 
+# ---------------------------------------------------------------- 4.4 pilot method vs patient-level test
+def h1_total(points, normalize):
+    d = T.persistence(points, normalize)[1]
+    return float((d[:, 1] - d[:, 0]).sum()) if len(d) else 0.0
+
+
+def subsample_stats(emb, idx, k, n, normalize, rng):
+    return np.array([h1_total(emb[rng.choice(idx, k, replace=False)], normalize) for _ in range(n)])
+
+
+def perm_unit(u):
+    normalize, chunk = u
+    rng = rng_for(f"TCGA44__perm__{'shape' if normalize else 'raw'}__c{chunk}")
+    emb, st = load("unadjusted")
+    pool = np.r_[np.where(st == "Stage I")[0], np.where(st == "Stage IV")[0]]
+    n1 = int((st == "Stage I").sum())
+    out = []
+    for _ in range(111):                      # 9 chunks x 111 = 999 permutations
+        perm = rng.permutation(pool)
+        a, b = subsample_stats(emb, perm[:n1], 25, 20, normalize, rng), subsample_stats(emb, perm[n1:], 25, 20, normalize, rng)
+        out.append(abs(a.mean() - b.mean()))
+    return out
+
+
+def pilot():
+    from scipy.stats import mannwhitneyu
+    out = os.path.join(OUT, "pilot_vs_patient")
+    os.makedirs(out, exist_ok=True)
+    t0 = time.time()
+    emb, st = load("unadjusted")
+    i1, i4 = np.where(st == "Stage I")[0], np.where(st == "Stage IV")[0]
+    rows = []
+    # (a) pilot method: bootstrap subsamples (k = 25, without replacement within a subsample), Mann-Whitney across subsamples
+    rng = rng_for("TCGA44__pilot")
+    big1, big4 = subsample_stats(emb, i1, 25, 1000, False, rng), subsample_stats(emb, i4, 25, 1000, False, rng)
+    for nb in (25, 50, 100, 250, 500, 1000):
+        u, p = mannwhitneyu(big1[:nb], big4[:nb], alternative="two-sided")
+        rows.append(dict(method="(a) pilot: Mann-Whitney across bootstrap subsamples", n_subsamples=nb,
+                         mean_I=big1[:nb].mean(), mean_IV=big4[:nb].mean(), p=float(p)))
+    # (b), (c) patient-level permutation of stage labels; statistic |mean_I - mean_IV| over 20 subsamples per stage
+    with Pool(WORKERS) as pool:
+        res = {}
+        for normalize in (False, True):
+            r0 = rng_for(f"TCGA44__obs__{'shape' if normalize else 'raw'}")
+            a, b = subsample_stats(emb, i1, 25, 20, normalize, r0), subsample_stats(emb, i4, 25, 20, normalize, r0)
+            obs = abs(a.mean() - b.mean())
+            null = np.concatenate(pool.map(perm_unit, [(normalize, c) for c in range(9)]))
+            p = (1 + np.sum(null >= obs)) / (1 + len(null))
+            res[normalize] = (a.mean(), b.mean(), obs, p, (obs - null.mean()) / null.std(ddof=1))
+            rows.append(dict(method=f"({'c' if normalize else 'b'}) patient-level permutation, {'shape-only' if normalize else 'raw'}",
+                             n_subsamples=20, mean_I=a.mean(), mean_IV=b.mean(), p=float(p)))
+    d = pd.DataFrame(rows)
+    d.to_csv(os.path.join(out, "pilot_vs_patient_results.csv"), index=False)
+    L = ["ADDENDUM 10 section 4.4 - pilot method vs patient-level test (TCGA-COAD Stage I 45 vs Stage IV 39)", "=" * 72,
+         "Embedding: TCGA_COAD_main_unadjusted_g2000_pc10 (GUDHI Vietoris-Rips). Statistic: total H1 persistence per subsample",
+         "of k = 25 patients per stage (the pilot's statistic). The pilot's original numbers are not re-used.",
+         f"Seed {SEED} per unit. " + ", ".join(f"{p} {metadata.version(p)}" for p in ("gudhi", "numpy", "scipy")), "",
+         "(a) Pilot method - subsamples drawn from the same 45 / 39 patients, Mann-Whitney test across subsamples (raw):"]
+    for _, r in d[d.method.str.startswith("(a)")].iterrows():
+        L.append(f"    {int(r.n_subsamples):>5} subsamples per stage: mean H1 total I {r.mean_I:.2f} vs IV {r.mean_IV:.2f}  ->  p = {r.p:.2g}")
+    L += ["", "(b)/(c) Patient-level test - stage labels permuted across the 84 patients, 999 permutations, 20 subsamples per stage:"]
+    for normalize in (False, True):
+        mI, mIV, obs, p, z = res[normalize]
+        L.append(f"    {'shape-only' if normalize else 'raw       '}: mean H1 total I {mI:.3f} vs IV {mIV:.3f}; |difference| {obs:.3f}; z {z:.2f}; p = {p:.3f}")
+    L += ["", "Reading: in (a) the p-value depends on how many subsamples are drawn from the same patients (pseudo-replication);",
+          "the patient-level test (b)/(c) treats patients as the unit and gives the valid p-value.",
+          f"Run time {(time.time() - t0) / 60:.1f} min.", "Outputs: results/addendum10/pilot_vs_patient/pilot_vs_patient_results.csv"]
+    open(os.path.join(out, "summary.txt"), "w", encoding="utf-8").write("\n".join(L) + "\n")
+    print("\n".join(L))
+
+
 if __name__ == "__main__":
     cmd = sys.argv[1] if len(sys.argv) > 1 else ""
+    if cmd == "pilot":
+        pilot()
+        sys.exit()
     if cmd == "spread":
         spread()
     elif cmd == "cms":
