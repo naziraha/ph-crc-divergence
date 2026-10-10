@@ -1,0 +1,73 @@
+ADDENDUM 11 PART B + AMENDMENT 2 - differentiation axis and chromosome-arm scores vs carcinoma dispersion
+==============================================================================
+Scores: decoupler ULM, PanglaoDB human canonical Goblet cells + Enterocytes (union = Differentiation), the 117
+addendum 9 genes removed (primary); full sets = sensitivity. Adjusted expression centred over adenomas + carcinomas.
+Dispersion: adjusted 10-PC embedding, bias-adjusted PERMDISP distances; axis removal within stage; f = (D_total - D_resid)
+/ (D_total - 1); f_rand95 from 999 within-stage permutations of the score rows. D_resid p descriptive only (D24).
+Packages: decoupler 2.2.0, numpy 2.4.6, scipy 1.17.1
+
+Marker set sizes (primary | full): GSE41258 Diff 80/88, Goblet 7/12, Enterocyte 73/76; GSE20916 Diff 80/88, Goblet 8/13, Enterocyte 72/75; GSE37364 Diff 101/109, Goblet 9/14, Enterocyte 92/95; GSE117606 Diff 100/108, Goblet 8/13, Enterocyte 92/95
+
+B2 - Differentiation score, carcinoma vs adenoma: V (Brown-Forsythe p) | median difference (Mann-Whitney p)
+  primary    Differentiation GSE41258 1.03 (0.43) | -4.05 (2.3e-09); GSE20916 1.66 (0.0054) | -1.89 (0.21); GSE37364 1.28 (0.42) | -3.19 (0.033); GSE117606 1.47 (0.056) | -5.10 (9.3e-10)
+  primary    Enterocyte      GSE41258 1.16 (0.55) | -3.73 (2.4e-08); GSE20916 1.36 (0.024) | -1.37 (0.33); GSE37364 1.28 (0.31) | -2.68 (0.039); GSE117606 1.10 (0.33) | -4.30 (1.6e-08)
+  full sets  Differentiation GSE41258 1.42 (0.027) | -5.89 (1.2e-14); GSE20916 1.90 (0.00088) | -4.07 (0.13); GSE37364 1.17 (0.22) | -4.77 (0.017); GSE117606 1.69 (0.0013) | -6.07 (2e-10)
+  full sets  Goblet          GSE41258 1.11 (0.029) | -7.13 (1.9e-11); GSE20916 2.15 (3.2e-05) | -3.02 (0.027); GSE37364 2.14 (0.093) | -0.65 (0.34); GSE117606 2.87 (2.5e-06) | -5.78 (7.6e-06)
+  full sets  Enterocyte      GSE41258 1.29 (0.27) | -4.35 (6.6e-10); GSE20916 1.36 (0.016) | -1.18 (0.27); GSE37364 1.15 (0.28) | -2.39 (0.033); GSE117606 0.99 (0.36) | -4.71 (2.4e-09)
+  unadjusted Differentiation GSE41258 1.06 (0.34) | -3.30 (4.2e-11); GSE20916 1.83 (0.014) | -1.85 (0.23); GSE37364 1.07 (0.12) | -6.19 (0.0059); GSE117606 1.05 (0.55) | -5.62 (6.3e-11)
+  unadjusted Enterocyte      GSE41258 0.96 (0.54) | -2.89 (7e-09); GSE20916 1.30 (0.091) | -0.62 (0.52); GSE37364 1.42 (0.15) | -5.02 (0.013); GSE117606 0.94 (0.83) | -4.02 (2.3e-09)
+
+B3 / Amendment 2 - share of excess carcinoma dispersion explained (f vs within-stage permutation 95th pct):
+  GSE41258  D_total 1.06 (p 0.317) NOT informative
+      differentiation              f -0.25 vs rand95 -0.01   (D_resid 1.07, descriptive p 0.242)
+      differentiation (full sets)  f -0.36 vs rand95 -0.00   (D_resid 1.08, descriptive p 0.192)
+      20q score                    f -0.24 vs rand95 +0.00   (D_resid 1.07, descriptive p 0.246)
+      20q+20p+13q+8q               f -0.12 vs rand95 -0.31   (D_resid 1.07, descriptive p 0.309)
+      differentiation + 4 arms     f -0.50 vs rand95 -0.44   (D_resid 1.09, descriptive p 0.198)
+      CMS centroids: f_CMS +1.64; CMS + differentiation +1.42; incremental -0.22 vs rand95 -0.01
+      periphery: rho(distance to carcinoma centroid, |score - median|) = -0.01 (p 0.9)
+  GSE20916  D_total 1.25 (p 0.002) informative
+      differentiation              f -0.23 vs rand95 +0.11   (D_resid 1.31, descriptive p 0.001)
+      differentiation (full sets)  f -0.17 vs rand95 +0.11   (D_resid 1.30, descriptive p 0.001)
+      20q score                    f +0.18 vs rand95 +0.11   (D_resid 1.21, descriptive p 0.006)
+      20q+20p+13q+8q               f +0.10 vs rand95 +0.24   (D_resid 1.23, descriptive p 0.002)
+      differentiation + 4 arms     f +0.19 vs rand95 +0.27   (D_resid 1.21, descriptive p 0.006)
+      CMS centroids: f_CMS +0.44; CMS + differentiation +0.32; incremental -0.12 vs rand95 +0.11
+      periphery: rho(distance to carcinoma centroid, |score - median|) = +0.24 (p 0.17)
+  GSE37364  D_total 1.37 (p 0.001) informative
+      differentiation              f +0.00 vs rand95 +0.10   (D_resid 1.37, descriptive p 0.002)
+      differentiation (full sets)  f -0.03 vs rand95 +0.09   (D_resid 1.38, descriptive p 0.002)
+      20q score                    f +0.15 vs rand95 +0.09   (D_resid 1.31, descriptive p 0.006)
+      20q+20p+13q+8q               f +0.19 vs rand95 +0.15   (D_resid 1.30, descriptive p 0.005)
+      differentiation + 4 arms     f +0.17 vs rand95 +0.20   (D_resid 1.31, descriptive p 0.001)
+      CMS centroids: f_CMS +0.35; CMS + differentiation +0.42; incremental +0.07 vs rand95 +0.11
+      periphery: rho(distance to carcinoma centroid, |score - median|) = +0.43 (p 0.027)
+  GSE117606 D_total 1.19 (p 0.011) informative
+      differentiation              f +0.27 vs rand95 +0.06   (D_resid 1.14, descriptive p 0.023)
+      differentiation (full sets)  f +0.45 vs rand95 +0.06   (D_resid 1.11, descriptive p 0.078)
+      20q score                    f -0.07 vs rand95 +0.06   (D_resid 1.20, descriptive p 0.006)
+      20q+20p+13q+8q               f -0.76 vs rand95 +0.10   (D_resid 1.34, descriptive p 0.001)
+      differentiation + 4 arms     f -0.62 vs rand95 +0.12   (D_resid 1.31, descriptive p 0.001)
+      CMS centroids: f_CMS +0.72; CMS + differentiation +0.80; incremental +0.09 vs rand95 +0.05
+      periphery: rho(distance to carcinoma centroid, |score - median|) = +0.47 (p 4.1e-05)
+
+B4 - Differentiation score by CMS among carcinomas (R2; Kruskal p; medians CMS1/2/3/4):
+  GSE41258   R2 0.07 (p 0.011); -2.81 / +0.15 / -0.60 / -0.99
+  GSE20916   R2 0.15 (p 0.2); -5.00 / -2.55 / +3.23 / -5.30
+  GSE37364   R2 0.15 (p 0.5); -8.68 / -2.62 / -1.41 / -0.46
+  GSE117606  R2 0.31 (p 9.9e-05); +0.07 / -2.69 / +0.87 / -4.21
+  TCGA_COAD  R2 0.05 (p 0.014); -2.44 / +0.24 / +0.20 / +0.70
+  TCGA differentiation score by stage (median): Stage I -0.74, Stage II -0.02, Stage III +0.23, Stage IV -0.41 (Kruskal p 0.95)
+
+CALLS (B5 / Amendment 2):
+  Differentiation axis confirmed (BF p < 0.05 and V > 1 in >= 3/4): 1/4 -> NOT CONFIRMED   [full-set sensitivity 3/4 -> DIFFERENT]
+  Differentiation share of excess dispersion: MINOR (1/3 substantial)   [full sets: MINOR (1/3 substantial)]
+  20q score share: MINOR (0/3 substantial)
+  20q+20p+13q+8q share: MINOR (0/3 substantial)
+  Differentiation + 4 arms share: MINOR (0/3 substantial)
+  Same axis as subtype (R2 >= 0.30 in >= 3/5 cohorts: 1/5; incremental f < 0.10 in >= 2 informative: 3/3) -> not met
+  Adds beyond subtype (incremental f >= 0.10 and > rand95 in >= 2 informative: 0/3) -> not met
+
+Run time 1.2 min.
+Outputs: results/addendum11/partB_differentiation/B2_variability_level.csv, B3_dispersion_decomposition.csv,
+  B4_cms_relation.csv, marker_set_sizes.csv, differentiation_scores_GEO.csv

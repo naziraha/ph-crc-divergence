@@ -215,7 +215,7 @@ def part_a(arms, bands, excl):
           "excess dispersion is quantified in Amendment 2.",
           "NOTE: the GEO 'gain-like' percentage (expression score above the adenoma 97.5th percentile) is not comparable",
           "to the TCGA GISTIC2 gain percentage (copy-number values).",
-          "", "Outputs: results/addendum11/partA_chr/arm_variability_ranking.csv, arm_scores_tests.csv,"]
+          "", "Outputs: results/addendum11/partA_chr/arm_variability_ranking.csv, arm_scores_tests.csv,",
           "  tcga_expression_vs_copynumber.csv, tcga_20q_score.csv, tcga_chr20_variable_genes_vs_cn.csv"]
     open(os.path.join(OUTA, "summary.txt"), "w", encoding="utf-8").write("\n".join(L) + "\n")
     print("\n".join(L))
