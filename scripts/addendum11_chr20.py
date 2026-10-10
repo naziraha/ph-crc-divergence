@@ -211,7 +211,11 @@ def part_a(arms, bands, excl):
     for a in ["20q"] + COMPARATORS:
         i_ok, ii_ok, iii, c = call(a)
         L.append(f"  {a:<4} (i) {i_ok}/4  (ii) {ii_ok}/4  (iii) {'yes' if iii else 'no'}  -> {c}" + ("" if a == "20q" else "   [comparator]"))
-    L += ["", "Outputs: results/addendum11/partA_chr/arm_variability_ranking.csv, arm_scores_tests.csv,",
+    L += ["", "INTERPRETATION: chromosome-arm gains are a confirmed source of carcinoma heterogeneity; their share of the",
+          "excess dispersion is quantified in Amendment 2.",
+          "NOTE: the GEO 'gain-like' percentage (expression score above the adenoma 97.5th percentile) is not comparable",
+          "to the TCGA GISTIC2 gain percentage (copy-number values).",
+          "", "Outputs: results/addendum11/partA_chr/arm_variability_ranking.csv, arm_scores_tests.csv,"]
           "  tcga_expression_vs_copynumber.csv, tcga_20q_score.csv, tcga_chr20_variable_genes_vs_cn.csv"]
     open(os.path.join(OUTA, "summary.txt"), "w", encoding="utf-8").write("\n".join(L) + "\n")
     print("\n".join(L))

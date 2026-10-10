@@ -155,3 +155,26 @@ Only the new procedure in B3/B4 (removing a score axis and calibrating f) needs 
 - **Genes:** PLAGL2, DIDO1, AAR2, NELFCD, OSER1, DYNLRB1, ABHD12, ENTPD6.
 - **Source:** their chromosome arm and band are listed from the annotation used in A1. The platform files contain no location column, so the MSigDB C1 positional sets are used (D23).
 - **Reported:** which genes are on 20p and which on 20q.
+
+---
+
+## Amendment 2 (2026-10-10): share of excess dispersion explained by chromosome-arm scores
+
+**Status:** requested by the PI after reviewing Part A, and committed **before** Part B or this amendment is computed.
+
+**D24 restriction (applies to Part B and this amendment):** D_resid PERMDISP p-values are descriptive only. All calls rely on f versus its within-stage permutation calibration.
+
+**Procedure:** the validated Part B axis-removal procedure (§B3), applied to chromosome-arm scores instead of the differentiation score:
+- **Data:** informative GEO cohorts (D_total > 1, PERMDISP p < 0.05; adjusted 10-PC embedding).
+- **Removal:** within each stage group (adenomas; carcinomas), the PCs are regressed on the score(s) with an intercept, and the fitted part is removed.
+- **Scores:** Part A §A3 arm scores (adjusted expression; mean gene-wise z over adenomas and carcinomas; the 117 genes excluded).
+- **Calibration:** score rows are permuted jointly within stage 999 times, and the 95th percentile of f is taken.
+
+**Removals reported:**
+1. **20q score alone:** f_chr20q.
+2. **Combined 20q + 20p + 13q + 8q:** the four arm scores entered **together** in one regression; f_chr4. Multi-score removal is a direct extension of the validated single-score procedure. It is not separately simulated, and the joint permutation calibrates for the larger number of removed directions.
+3. **Differentiation score + the four arm scores together:** f_diff+chr.
+
+**Interpretation (same thresholds as Part B):** a removal explains a **substantial** part of the excess dispersion if f ≥ 0.25 **and** f > f_rand95 in ≥ 2 informative cohorts. It is **minor** if f < 0.25 or f ≤ f_rand95 in ≥ 2 informative cohorts. Otherwise it is **inconclusive**.
+
+**Part A wording:** the Part A summary states that "chromosome-arm gains are a confirmed source of carcinoma heterogeneity; their share of the excess dispersion is quantified in Amendment 2". It also notes that the GEO "gain-like" percentage (an expression threshold relative to adenomas) is **not comparable** to the TCGA GISTIC2 gain percentage (copy-number values).

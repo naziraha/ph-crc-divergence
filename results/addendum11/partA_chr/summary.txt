@@ -58,5 +58,10 @@ A5 - CALLS (i: rank <= 5 in >= 3/4 cohorts; ii: BF p < 0.05 and V_arm > 1 in >= 
   7p   (i) 0/4  (ii) 1/4  (iii) yes  -> NOT CONFIRMED   [comparator]
   7q   (i) 0/4  (ii) 1/4  (iii) yes  -> NOT CONFIRMED   [comparator]
 
+INTERPRETATION: chromosome-arm gains are a confirmed source of carcinoma heterogeneity; their share of the
+excess dispersion is quantified in Amendment 2.
+NOTE: the GEO 'gain-like' percentage (expression score above the adenoma 97.5th percentile) is not comparable
+to the TCGA GISTIC2 gain percentage (copy-number values).
+
 Outputs: results/addendum11/partA_chr/arm_variability_ranking.csv, arm_scores_tests.csv,
   tcga_expression_vs_copynumber.csv, tcga_20q_score.csv, tcga_chr20_variable_genes_vs_cn.csv
