@@ -1,0 +1,42 @@
+ADDENDUM 10 section 4.2 - CMS subtypes by stage, TCGA-COAD (descriptive)
+==================================================================
+CMScaller via r-cms: CMScaller 2.0.1 R R version 4.5.3 (2026-03-11 ucrt); unadjusted log2(RSEM+1) of 274 tumours, gene-wise centred (D16a), RNAseq = FALSE,
+nPerm 1000, seed 42, FDR 0.05. Primary = nearest template; confident = FDR < 0.05.
+Genes passed to CMScaller: 20025 (missing values and zero-variance genes removed).
+Template coverage: 95.5% (per template: CMS1 94%, CMS2 96%, CMS3 99%, CMS4 95%)
+
+Primary labels, counts:
+  nearest    CMS1  CMS2  CMS3  CMS4
+  stage                            
+  Stage I       8    15    13     9
+  Stage II     30    30    18    32
+  Stage III    12    23    12    33
+  Stage IV      5    15     1    18
+Primary labels, % of stage:
+  nearest    CMS1  CMS2  CMS3  CMS4
+  stage                            
+  Stage I      18    33    29    20
+  Stage II     27    27    16    29
+  Stage III    15    29    15    41
+  Stage IV     13    38     3    46
+
+Confident labels (FDR < 0.05), % of stage:
+  prediction  CMS1  CMS2  CMS3  CMS4  unclassified
+  stage                                           
+  Stage I       18    31    29    20             2
+  Stage II      25    25    15    29             5
+  Stage III     10    25    14    41            10
+  Stage IV      13    31     3    44            10
+
+All tumours: CMS1 20%, CMS2 30%, CMS3 16%, CMS4 34%; unclassified (confident) 7%
+Guinney 2015: CMS1 14%, CMS2 37%, CMS3 13%, CMS4 23%, unclassified 13%
+
+CMS (primary) by MSI status (counts):
+  msi_class  MSI-H  MSS/other
+  nearest                    
+  CMS1          36         19
+  CMS2           0         83
+  CMS3           9         35
+  CMS4           6         86
+
+Outputs: results/addendum10/cms/cms_labels_TCGA.csv, cms_by_stage_primary.csv, cms_by_stage_confident.csv

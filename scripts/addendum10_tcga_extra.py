@@ -120,9 +120,61 @@ def spread():
     print("\n".join(L))
 
 
+# ---------------------------------------------------------------- 4.2 CMS by stage (descriptive)
+def cms():
+    """CMScaller (r-cms; as addendum 9 / D16a): unadjusted log2 expression of the 274 tumours, gene-wise centred,
+    RNAseq = FALSE (Xena data already log2-normalised), nPerm 1000, seed 42. Proportions by stage (descriptive)."""
+    from addendum9_heterogeneity import run_r
+    out = os.path.join(OUT, "cms")
+    cache = os.path.join(out, "cache")
+    os.makedirs(cache, exist_ok=True)
+    lab = pd.read_csv(os.path.join(ROOT, "data", "processed", "TCGA_COAD_main_samples_qc.csv"), index_col=0)
+    if [int((lab.stage == s).sum()) for s in STAGES] != EXPECTED:
+        raise SystemExit("Stage counts changed")
+    X = pd.read_csv(os.path.join(ROOT, "data", "processed", "TCGA_COAD_main_expr_genes.csv"), index_col=0)[lab.index]
+    X = X.dropna(axis=0, how="any")
+    X = X[X.var(axis=1) > 0]                       # constant genes carry no information for template correlation
+    inp, outp = os.path.join(cache, "cms_in_TCGA_COAD.csv"), os.path.join(cache, "cms_out_TCGA_COAD.csv")
+    X.to_csv(inp)
+    rver = run_r("classify", inp, outp)
+    res = pd.read_csv(outp).set_index("sample").loc[lab.index]
+    cov = pd.read_csv(outp.replace(".csv", "_coverage.csv"))
+    tab = lab[["stage", "msi_class"]].join(res)
+    tab["confident"] = tab.prediction.notna()
+    tab["coverage"] = float(cov.overall.iloc[0])
+    tab.to_csv(os.path.join(out, "cms_labels_TCGA.csv"), index_label="sample")
+    cms4 = ["CMS1", "CMS2", "CMS3", "CMS4"]
+    prim = pd.crosstab(tab.stage, tab.nearest).reindex(index=STAGES, columns=cms4, fill_value=0)
+    conf = pd.crosstab(tab.stage, tab.prediction.fillna("unclassified")).reindex(index=STAGES, columns=cms4 + ["unclassified"],
+                                                                                 fill_value=0)
+    msi = pd.crosstab(tab.nearest, tab.msi_class.str.startswith("MSI-H").map({True: "MSI-H", False: "MSS/other"}))
+    prim.to_csv(os.path.join(out, "cms_by_stage_primary.csv"))
+    conf.to_csv(os.path.join(out, "cms_by_stage_confident.csv"))
+    pct = lambda t: (100 * t.div(t.sum(axis=1), axis=0)).round(0).astype(int)
+    covall = float(cov.overall.iloc[0])
+    L = ["ADDENDUM 10 section 4.2 - CMS subtypes by stage, TCGA-COAD (descriptive)", "=" * 66,
+         f"CMScaller via r-cms: {rver}; unadjusted log2(RSEM+1) of 274 tumours, gene-wise centred (D16a), RNAseq = FALSE,",
+         "nPerm 1000, seed 42, FDR 0.05. Primary = nearest template; confident = FDR < 0.05.",
+         f"Genes passed to CMScaller: {X.shape[0]} (missing values and zero-variance genes removed).",
+         f"Template coverage: {100 * covall:.1f}%" + ("  ** LOW COVERAGE (< 80%) **" if covall < .8 else "")
+         + " (per template: " + ", ".join(f"{r.template} {100 * r.coverage:.0f}%" for _, r in cov.iterrows()) + ")",
+         "", "Primary labels, counts:", "  " + prim.to_string().replace("\n", "\n  "),
+         "Primary labels, % of stage:", "  " + pct(prim).to_string().replace("\n", "\n  "),
+         "", "Confident labels (FDR < 0.05), % of stage:", "  " + pct(conf).to_string().replace("\n", "\n  "),
+         "", "All tumours: " + ", ".join(f"{k} {100 * v:.0f}%" for k, v in tab.nearest.value_counts(normalize=True).reindex(cms4).items())
+         + f"; unclassified (confident) {100 * (~tab.confident).mean():.0f}%",
+         "Guinney 2015: CMS1 14%, CMS2 37%, CMS3 13%, CMS4 23%, unclassified 13%",
+         "", "CMS (primary) by MSI status (counts):", "  " + msi.to_string().replace("\n", "\n  "),
+         "", "Outputs: results/addendum10/cms/cms_labels_TCGA.csv, cms_by_stage_primary.csv, cms_by_stage_confident.csv"]
+    open(os.path.join(out, "summary.txt"), "w", encoding="utf-8").write("\n".join(L) + "\n")
+    print("\n".join(L))
+
+
 if __name__ == "__main__":
     cmd = sys.argv[1] if len(sys.argv) > 1 else ""
     if cmd == "spread":
         spread()
+    elif cmd == "cms":
+        cms()
     else:
-        raise SystemExit("Usage: addendum10_tcga_extra.py spread")
+        raise SystemExit("Usage: addendum10_tcga_extra.py spread | cms")
