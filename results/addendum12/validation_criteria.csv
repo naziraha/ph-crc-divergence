@@ -1,0 +1,17 @@
+check,requirement,detected,pass
+N0 landscape H0 shape,<= 3/20,1,True
+N0 landscape H1 shape,<= 3/20,2,True
+N0 landscape H0 raw,<= 3/20,0,True
+N0 landscape H1 raw,<= 3/20,3,True
+SP landscape H0 shape-only (ignore pure spread),<= 3/20,2,True
+SP landscape H1 shape-only (ignore pure spread),<= 3/20,1,True
+SP landscape H0 raw (D25a),>= 16/20,10,False
+CL landscape H0 shape-only,>= 16/20,12,False
+LP landscape H1 shape-only,>= 16/20,20,True
+N0 barcode summary H0_total_persistence shape-only,<= 3/20,0,True
+N0 barcode summary H0_max_persistence shape-only,<= 3/20,2,True
+N0 barcode summary H0_entropy shape-only,<= 3/20,2,True
+N0 barcode summary H1_total_persistence shape-only,<= 3/20,1,True
+N0 barcode summary H1_max_persistence shape-only,<= 3/20,2,True
+N0 barcode summary H1_n_features shape-only,<= 3/20,0,True
+N0 barcode summary H1_entropy shape-only,<= 3/20,0,True

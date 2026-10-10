@@ -1,0 +1,43 @@
+﻿[a12 val] 10/80 [0.8 min]
+[a12 val] 20/80 [1.2 min]
+[a12 val] 30/80 [1.5 min]
+[a12 val] 40/80 [2.0 min]
+[a12 val] 50/80 [2.5 min]
+[a12 val] 60/80 [2.8 min]
+[a12 val] 70/80 [3.3 min]
+[a12 val] 80/80 [3.7 min]
+ADDENDUM 12 section 6 - validation of landscape and barcode-summary permutation tests (D25)
+========================================================================
+GSE41258 carcinomas split A 53 / B 48; insertion into B (addendum 5 level 1); k = 20, m = 31, aligned;
+99 permutations; 20 replicates per condition; detection = p <= 0.05; shared draws for all statistics (D25b).
+Seed 42 per replicate. gudhi 3.13.0, numpy 2.4.6, pandas 2.3.3
+
+  PASS  N0 landscape H0 shape                                <= 3/20   1/20
+  PASS  N0 landscape H1 shape                                <= 3/20   2/20
+  PASS  N0 landscape H0 raw                                  <= 3/20   0/20
+  PASS  N0 landscape H1 raw                                  <= 3/20   3/20
+  PASS  SP landscape H0 shape-only (ignore pure spread)      <= 3/20   2/20
+  PASS  SP landscape H1 shape-only (ignore pure spread)      <= 3/20   1/20
+  FAIL  SP landscape H0 raw (D25a)                           >= 16/20  10/20
+  FAIL  CL landscape H0 shape-only                           >= 16/20  12/20
+  PASS  LP landscape H1 shape-only                           >= 16/20  20/20
+  PASS  N0 barcode summary H0_total_persistence shape-only   <= 3/20   0/20
+  PASS  N0 barcode summary H0_max_persistence shape-only     <= 3/20   2/20
+  PASS  N0 barcode summary H0_entropy shape-only             <= 3/20   2/20
+  PASS  N0 barcode summary H1_total_persistence shape-only   <= 3/20   1/20
+  PASS  N0 barcode summary H1_max_persistence shape-only     <= 3/20   2/20
+  PASS  N0 barcode summary H1_n_features shape-only          <= 3/20   0/20
+  PASS  N0 barcode summary H1_entropy shape-only             <= 3/20   0/20
+
+All detection counts (/20) by condition, mode and statistic:
+  N0  shape  L_H0: 1  L_H1: 2  H0_total: 0  H0_max: 2  H0_entropy: 2  H1_total: 1  H1_max: 2  H1_n_features: 0  H1_entropy: 0
+  N0  raw    L_H0: 0  L_H1: 3  H0_total: 1  H0_max: 0  H0_entropy: 3  H1_total: 2  H1_max: 3  H1_n_features: 0  H1_entropy: 1
+  SP  shape  L_H0: 2  L_H1: 1  H0_total: 1  H0_max: 2  H0_entropy: 2  H1_total: 2  H1_max: 2  H1_n_features: 2  H1_entropy: 1
+  SP  raw    L_H0:10  L_H1: 5  H0_total:17  H0_max: 6  H0_entropy: 0  H1_total: 3  H1_max: 4  H1_n_features: 1  H1_entropy: 1
+  CL  shape  L_H0:12  L_H1: 5  H0_total:20  H0_max: 2  H0_entropy: 1  H1_total: 8  H1_max: 9  H1_n_features: 5  H1_entropy: 7
+  CL  raw    L_H0:12  L_H1: 0  H0_total:12  H0_max:14  H0_entropy: 5  H1_total: 3  H1_max: 0  H1_n_features: 7  H1_entropy: 6
+  LP  shape  L_H0:17  L_H1:20  H0_total:20  H0_max:14  H0_entropy: 3  H1_total: 8  H1_max:20  H1_n_features: 1  H1_entropy:17
+  LP  raw    L_H0:12  L_H1:20  H0_total:20  H0_max: 3  H0_entropy: 3  H1_total:20  H1_max:20  H1_n_features: 2  H1_entropy:13
+
+OVERALL: FAILED - do not analyse real data
+Run time 3.7 min.
