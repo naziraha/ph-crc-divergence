@@ -133,3 +133,25 @@ Only the new procedure in B3/B4 (removing a score axis and calibrating f) needs 
 - **Part B files:** differentiation scores per sample, variability tests, dispersion decomposition, CMS relation.
 - **Summaries:** a `summary.txt` per part with the A5 / B5 calls.
 - **Scripts:** `scripts/addendum11_chr20.py`, `scripts/addendum11_differentiation.py` (simulation check first).
+
+---
+
+## Amendment 1 (2026-10-10): Part C, residual composition check; arm confirmation of eight genes
+
+**Status:** requested by the PI and committed **before** Part A or Part C is run. Part B is unchanged and on hold (D24).
+
+### Part C: residual composition among the 117 variable genes
+- **Question:** are some of the 117 "more variable in carcinoma" genes still tracking tissue composition after the composition adjustment, rather than tumour-intrinsic variability?
+- **Genes and scores:**
+  - stromal / smooth-muscle genes **DES, SYNPO2, FOXF2, CXCL14**, each correlated with the step 2 **stromal** score;
+  - **IGJ** (JCHAIN in newer annotations; the symbol present in each cohort is used) correlated with the step 2 **immune** score.
+- **Samples:** carcinomas of each GEO cohort (GSE41258 181; GSE20916 36; GSE37364 27; GSE117606 71).
+- **Expression:** stage-blind **adjusted** expression (primary; where the 117 were found); unadjusted reported for context.
+- **Statistic:** Spearman ρ.
+- **Rule (fixed in advance):** if |ρ| ≥ 0.5 in **at least 3 of 4** cohorts (adjusted expression), the gene is reported as **residual composition signal** rather than tumour-intrinsic variability. Otherwise it is reported as not explained by residual composition.
+- **Reported:** ρ and p per gene and cohort, adjusted and unadjusted.
+
+### Arm confirmation of eight genes
+- **Genes:** PLAGL2, DIDO1, AAR2, NELFCD, OSER1, DYNLRB1, ABHD12, ENTPD6.
+- **Source:** their chromosome arm and band are listed from the annotation used in A1. The platform files contain no location column, so the MSigDB C1 positional sets are used (D23).
+- **Reported:** which genes are on 20p and which on 20q.

@@ -1,0 +1,13 @@
+ADDENDUM 11 section 2 - simulation check of the Part B axis-removal procedure
+==================================================================
+No real data. 10 dims; adenomas 50, carcinomas 70; carcinoma excess spread along one axis (D_total ~ 1.25);
+W1 score correlates 0.8 with that axis; W2 score unrelated; W3 null. 200 replicates, 999 permutations.
+Seed 42 per replicate. numpy 2.4.6, scipy 1.17.1
+
+  PASS  W1 score-driven excess: f >= 0.25 and > f_rand95     >= 0.80  0.995
+  PASS  W2 excess unrelated to score: f <= f_rand95          >= 0.90  0.955
+  FAIL  W3 null: D_resid PERMDISP rejection                  <= 0.089 0.090
+
+Median D_total / D_resid / f / f_rand95: W1 1.22/1.09/0.58/0.04; W2 1.23/1.23/-0.02/0.04; W3 1.00/1.01/-0.09/0.23
+OVERALL: FAILED - do not analyse real data for Part B
+Run time 0.6 min.
