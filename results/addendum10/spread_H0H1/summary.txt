@@ -1,0 +1,34 @@
+ADDENDUM 10 section 4.1 - TCGA-COAD spread (PERMDISP) and H0-only / H1-only tests by stage
+========================================================================
+Embeddings: TCGA_COAD_main_<version>_g2000_pc10 (274 tumours; I/II/III/IV 45/110/80/39).
+PERMDISP: bias-adjusted distances sqrt(n/(n-1))*||x-c|| (addendum 9 Amendment 1), 999 permutations,
+  Holm across the 3 transitions per version; D = mean distance (later) / mean distance (earlier).
+H0/H1-only: step 5 test unchanged except dims (k = 20, m = 31, aligned, 999 permutations), Holm across the
+  3 transitions per version x mode x dimension (as addendum 5 part 4).
+Seed 42 per unit. gudhi 3.13.0, numpy 2.4.6, scipy 1.17.1
+
+PERMDISP (spread):
+  unadjusted  Stage I->Stage II      D = 1.038  (mean distance 29.8 -> 30.9)  p 0.410  Holm 0.820
+  unadjusted  Stage II->Stage III    D = 1.014  (mean distance 30.9 -> 31.4)  p 0.738  Holm 0.820
+  unadjusted  Stage III->Stage IV    D = 0.860  (mean distance 31.4 -> 27.0)  p 0.020  Holm 0.060
+  adjusted    Stage I->Stage II      D = 0.956  (mean distance 26.8 -> 25.6)  p 0.326  Holm 0.843
+  adjusted    Stage II->Stage III    D = 0.993  (mean distance 25.6 -> 25.4)  p 0.853  Holm 0.853
+  adjusted    Stage III->Stage IV    D = 0.941  (mean distance 25.4 -> 23.9)  p 0.281  Holm 0.843
+
+z (Holm p) by homology dimension:  H0+H1 (step 5) | H0 only | H1 only
+  unadjusted  shape-only Stage I->Stage II       -0.35 (1.000)  |  -0.65 (1.000)  |  -0.02 (1.000) 
+  unadjusted  shape-only Stage II->Stage III     -1.10 (1.000)  |  -0.60 (1.000)  |  -0.69 (1.000) 
+  unadjusted  shape-only Stage III->Stage IV      0.49 (0.729)  |   2.19 (0.117)  |  -0.54 (1.000) 
+  unadjusted  raw        Stage I->Stage II       -0.59 (1.000)  |   0.59 (0.370)  |   0.11 (1.000) 
+  unadjusted  raw        Stage II->Stage III     -0.61 (1.000)  |   0.60 (0.370)  |  -1.14 (1.000) 
+  unadjusted  raw        Stage III->Stage IV      1.36 (0.312)  |   1.25 (0.306)  |  -0.69 (1.000) 
+  adjusted    shape-only Stage I->Stage II        0.04 (0.897)  |  -0.49 (1.000)  |  -1.03 (0.897) 
+  adjusted    shape-only Stage II->Stage III     -0.71 (0.897)  |  -1.22 (1.000)  |   0.56 (0.444) 
+  adjusted    shape-only Stage III->Stage IV      0.34 (0.897)  |  -0.33 (1.000)  |   3.34 (0.039)*
+  adjusted    raw        Stage I->Stage II        0.03 (1.000)  |  -0.10 (1.000)  |  -0.86 (1.000) 
+  adjusted    raw        Stage II->Stage III     -0.78 (1.000)  |  -0.71 (1.000)  |  -0.95 (1.000) 
+  adjusted    raw        Stage III->Stage IV     -0.86 (1.000)  |  -1.04 (1.000)  |   0.91 (0.462) 
+
+Significant (Holm p < 0.05): PERMDISP 0/6; H0-only / H1-only 1/24.
+Run time 7.7 min.
+Outputs: results/addendum10/spread_H0H1/permdisp_by_stage.csv, dims_results_all.csv, checkpoints/
