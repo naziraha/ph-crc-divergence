@@ -1,0 +1,89 @@
+STEP 3 - Feature selection and PCA embedding (TCGA-COAD)
+=======================================================
+Pre-specification: docs/addendum10_TCGA_stage.md (296eaed); deviations D18, D19.
+Method: tda_crc_pilot.preprocess unchanged (drop lowest 25% by mean, top 2,000 variable genes, z-score, 10 PCs;
+  PCA random_state 0), fitted per set WITHOUT stage labels; versions unadjusted and adjusted (stage-blind).
+Seed 42. Versions: scikit-learn 1.9.1, numpy 2.4.6, pandas 2.3.3, scipy 1.17.1
+Sample counts per set (verified against step 1/2):
+  main             n 274: Stage I 45, Stage II 110, Stage III 80, Stage IV 39
+  main_noLowColon  n 256: Stage I 43, Stage II 101, Stage III 75, Stage IV 37
+  main_MSS         n 222: Stage I 34, Stage II 79, Stage III 72, Stage IV 37
+  withnormal       n 315: Normal 41, Stage I 45, Stage II 110, Stage III 80, Stage IV 39
+  low-colon-identity tumours removed in main_noLowColon: 18; MSI-H/MSI-H-like/unknown removed in main_MSS: 52
+
+=== main / unadjusted ===
+Variance explained: 10 PCs 50.1% | per PC: 20.0, 9.8, 5.3, 3.5, 2.5, 2.1, 2.0, 1.8, 1.6, 1.5
+Stage pseudo-R2 in 10-PC space: 0.023
+PC1 / PC2 stage medians: Stage I -4.4 / 0.6; Stage II -2.3 / 0.7; Stage III 5.0 / 3.1; Stage IV -0.1 / 7.8  (Kruskal-Wallis p: PC1 2.2e-01, PC2 4.1e-02)
+Spearman r of PCs with composition and MSI-H (tumours):
+         Epithelial    Stromal     Immune      MSI-H
+  PC1        -0.73       0.94       0.79       0.06
+  PC2         0.01       0.08      -0.41      -0.63
+  PC3         0.10      -0.04       0.20      -0.19
+  PC4        -0.08       0.06      -0.36      -0.01
+  PC5         0.26       0.14      -0.10      -0.08
+  PC6         0.01       0.09       0.00       0.01
+  PC7        -0.02      -0.05       0.06      -0.05
+  PC8         0.02       0.08      -0.01       0.13
+  PC9        -0.08      -0.11      -0.03       0.06
+  PC10        0.05       0.00       0.01       0.06
+
+=== main / adjusted ===
+Variance explained: 10 PCs 35.2% | per PC: 10.0, 6.2, 3.3, 3.0, 2.6, 2.4, 2.2, 1.9, 1.9, 1.7
+Stage pseudo-R2 in 10-PC space: 0.018
+PC1 / PC2 stage medians: Stage I 4.7 / -2.2; Stage II 3.3 / -2.3; Stage III 2.9 / -0.2; Stage IV 2.6 / -2.0  (Kruskal-Wallis p: PC1 9.1e-01, PC2 7.8e-01)
+Spearman r of PCs with composition and MSI-H (tumours):
+         Epithelial    Stromal     Immune      MSI-H
+  PC1        -0.01      -0.03      -0.01      -0.55
+  PC2        -0.02       0.01       0.02      -0.07
+  PC3         0.02       0.03       0.02      -0.03
+  PC4        -0.05       0.02      -0.00      -0.05
+  PC5         0.00      -0.03      -0.02      -0.09
+  PC6        -0.00      -0.02       0.00       0.07
+  PC7         0.02       0.00      -0.01       0.14
+  PC8         0.01      -0.01       0.00       0.03
+  PC9        -0.02       0.01      -0.00      -0.12
+  PC10       -0.02       0.01       0.01       0.22
+
+main_noLowColon unadjusted: 10 PCs 48.9% variance
+main_noLowColon adjusted: 10 PCs 34.9% variance
+main_MSS unadjusted: 10 PCs 50.2% variance
+main_MSS adjusted: 10 PCs 35.1% variance
+=== withnormal / unadjusted ===
+Variance explained: 10 PCs 56.7% | per PC: 24.7, 10.4, 7.8, 3.3, 2.8, 2.1, 1.6, 1.5, 1.3, 1.3
+Stage pseudo-R2 in 10-PC space: 0.298
+PC1 / PC2 stage medians: Normal 39.9 / -22.8; Stage I -8.3 / 0.2; Stage II -9.1 / 3.1; Stage III -1.6 / 3.9; Stage IV -5.8 / 4.6  (Kruskal-Wallis p: PC1 1.4e-22, PC2 1.3e-17)
+Spearman r of PCs with composition:
+         Epithelial    Stromal     Immune
+  PC1        -0.39       0.87       0.77
+  PC2        -0.67       0.50       0.29
+  PC3        -0.06       0.08      -0.43
+  PC4         0.00       0.01       0.42
+  PC5        -0.15       0.05      -0.07
+  PC6         0.23       0.12      -0.07
+  PC7        -0.01      -0.05       0.07
+  PC8         0.02       0.08      -0.00
+  PC9        -0.03      -0.08      -0.02
+  PC10       -0.04      -0.01       0.01
+
+=== withnormal / adjusted ===
+Variance explained: 10 PCs 42.0% | per PC: 15.9, 8.0, 4.0, 2.8, 2.5, 2.1, 1.9, 1.7, 1.6, 1.6
+Stage pseudo-R2 in 10-PC space: 0.236
+PC1 / PC2 stage medians: Normal 33.2 / -4.0; Stage I -1.8 / 2.8; Stage II -5.2 / 3.0; Stage III -6.9 / 2.0; Stage IV -3.8 / 2.5  (Kruskal-Wallis p: PC1 4.9e-22, PC2 9.1e-03)
+Spearman r of PCs with composition:
+         Epithelial    Stromal     Immune
+  PC1         0.06      -0.11      -0.10
+  PC2        -0.03      -0.03      -0.05
+  PC3        -0.06      -0.01       0.00
+  PC4        -0.04       0.04       0.01
+  PC5         0.02      -0.00       0.01
+  PC6         0.00      -0.03      -0.02
+  PC7        -0.03      -0.01       0.02
+  PC8         0.01      -0.02      -0.01
+  PC9        -0.02      -0.01      -0.01
+  PC10       -0.04      -0.00      -0.02
+
+Sensitivity embeddings saved for later steps (not interpreted): main 5/20 PCs, 1,000/5,000 genes;
+  main_noLowColon, main_MSS (adjusted versions reuse the adjustment fitted on all 274 tumours); withnormal.
+Outputs: results/step03/embeddings/TCGA_COAD_<set>_<version>_g<genes>_pc<PCs>.csv (+ _genes.csv);
+  results/step03/TCGA/embedding_index.csv, pc_vs_composition_msi.csv, pca_overview.png
