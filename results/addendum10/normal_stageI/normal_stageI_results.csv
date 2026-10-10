@@ -1,0 +1,9 @@
+n_from,n_to,shared_patients,resolved,unit,analysis,version,mode,subsample_size,T_obs,p,z,n_pairs,tumour_stages
+41.0,42.0,3.0,3.0,TCGA43__main__unadj__shape,main,unadjusted,shape-only,31,2.533560281006083,0.001,4.4534981620846565,,
+40.0,43.0,3.0,3.0,TCGA43__main__unadj__raw,main,unadjusted,raw,31,295.8727962481142,0.001,13.870455849411185,,
+39.0,44.0,3.0,3.0,TCGA43__main__adjus__shape,main,adjusted,shape-only,31,2.5727619308937903,0.005,2.9287216418043602,,
+40.0,43.0,3.0,3.0,TCGA43__main__adjus__raw,main,adjusted,raw,31,310.0363095089904,0.001,14.089300468085252,,
+,,,,TCGA43__paired__unadj__shape,paired,unadjusted,shape-only,20,1.219013340885091,0.079,1.4537884739271276,25.0,"{'Stage II': 13, 'Stage IV': 5, 'Stage III': 4, 'Stage I': 3}"
+,,,,TCGA43__paired__unadj__raw,paired,unadjusted,raw,20,167.01140066443227,0.001,5.725519152267177,25.0,"{'Stage II': 13, 'Stage IV': 5, 'Stage III': 4, 'Stage I': 3}"
+,,,,TCGA43__paired__adjus__shape,paired,adjusted,shape-only,20,1.6777185562560883,0.009,2.6731388348766516,25.0,"{'Stage II': 13, 'Stage IV': 5, 'Stage III': 4, 'Stage I': 3}"
+,,,,TCGA43__paired__adjus__raw,paired,adjusted,raw,20,180.50994455444692,0.001,6.814534178896887,25.0,"{'Stage II': 13, 'Stage IV': 5, 'Stage III': 4, 'Stage I': 3}"

@@ -1,0 +1,24 @@
+ADDENDUM 10 section 4.3 - TCGA-COAD solid-tissue normal -> Stage I (secondary, descriptive; D22)
+========================================================================
+Embeddings: TCGA_COAD_withnormal_<version>_g2000_pc10 (41 normals + 274 tumours; adjusted = adjustment fitted
+on all 315). Step 5 test unchanged (k = 20, aligned, 999 permutations); single comparison, no Holm.
+Caveat: TCGA normals are tumour-adjacent tissue (possible field effect).
+Seed 42 per unit. gudhi 3.13.0, numpy 2.4.6
+
+(a) MAIN: Normal vs Stage I, one sample per patient (3 shared patients assigned at random to one
+    group): n = 41 normals / 42 Stage I, subsample m = 31
+    unadjusted  shape-only T =    2.5336  z =   4.45  p = 0.0010  *
+    unadjusted  raw        T =  295.8728  z =  13.87  p = 0.0010  *
+    adjusted    shape-only T =    2.5728  z =   2.93  p = 0.0050  *
+    adjusted    raw        T =  310.0363  z =  14.09  p = 0.0010  *
+
+(b) PAIRED SENSITIVITY: normal vs the same patient's own tumour (any stage; 25 pairs; tumour stages Stage I 3, Stage II 13, Stage III 4, Stage IV 5), subsample m = 20 patients,
+    labels swapped within patient pairs (GSE117606 paired test). Related but different question (normal -> carcinoma
+    within patient); does not replace (a).
+    unadjusted  shape-only T =    1.2190  z =   1.45  p = 0.0790
+    unadjusted  raw        T =  167.0114  z =   5.73  p = 0.0010  *
+    adjusted    shape-only T =    1.6777  z =   2.67  p = 0.0090  *
+    adjusted    raw        T =  180.5099  z =   6.81  p = 0.0010  *
+
+Run time 2.7 min.
+Outputs: results/addendum10/normal_stageI/normal_stageI_results.csv, checkpoints/
