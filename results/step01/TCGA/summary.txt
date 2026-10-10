@@ -1,0 +1,38 @@
+STEP 1 - TCGA-COAD data preparation (addendum 10, 296eaed; D18 438d686)
+==================================================================
+Inputs (data/raw/TCGA/, SHA-256):
+  TCGA.COAD.sampleMap_HiSeqV2.gz  c6721b7f2db5f10c3836ad2a619ffb87e91713ace8f1306e4b4229ac384a2137
+  TCGA.COAD.sampleMap_COAD_clinicalMatrix.txt  a7d6a5aafdb8c2c150c0c1f59c8d4e983a11028f98674403ac6d4eb18eff0fa6
+  COAD_mc3_gene_level.txt  d4e28ce32a5054ca6128fb2ea8c9ec9ba9ae0250fa6c0a8982843df91993fa9b
+Expression: 20530 genes x 329 samples; log2(RSEM+1) check: 99th pct 13.41 (no log2 applied)
+Genes after removing duplicates / missing values: 20530 (lowest-25% filter applied in step 3, D18b)
+Samples by code: -01 286, -11 41, -06 1, -02 1
+
+Exclusions:
+  stage missing / not I-IV: 12
+  other sample type (code 06): 1
+  other sample type (code 02): 1
+
+PRIMARY SET 'main' (primary tumours, one per patient, stage I-IV): 274
+  Stage I: 45
+  Stage II: 110
+  Stage III: 80
+  Stage IV: 39
+  smallest stage 39 -> step 5 subsample m = 31
+
+MSI class by stage (main):
+  stage                      Stage I  Stage II  Stage III  Stage IV
+  msi_class                                                        
+  MSI-H                           11        29          7         2
+  MSI-H-like (hypermutated)        0         1          1         0
+  MSS-like                         3         3          0         0
+  MSS/MSI-L                       31        76         72        37
+  unknown                          0         1          0         0
+  MSI source: clinical 265, mc3 hypermutation 8, unavailable 1
+
+SECONDARY SET 'withnormal': solid-tissue normals (one per patient) 41 + main
+  normals from patients also in main: 25
+
+Per-sample median log2 expression: IQR 7.31-7.60, range 6.90-8.19
+Packages: pandas 2.3.3, numpy 2.4.6
+Outputs: data/processed/TCGA_COAD_{main,withnormal}_expr_genes.csv / _samples.csv; results/step01/TCGA/
