@@ -110,3 +110,25 @@ The landscape and barcode-summary permutation tests are new, so they are checked
   - `summary.txt`;
   - `figures/<cohort>_<version>_{diagrams,barcodes,landscapes,betti}.png`.
 - **Expected run time:** several hours in the background (permutation tests over about 5 cohorts × 2 versions × 2 modes × 2 dimensions × 2–3 transitions, plus validation). Checkpointed per unit.
+
+---
+
+## Amendment 1 (2026-10-10): landscape tests for H1 only (reference: deviation D26)
+
+**Status:** decided by the PI and committed **before any real data are analysed**.
+
+**Reason:** the section 6 validation (commit 5751d5f) showed the **H0 landscape test is underpowered**:
+- raw spread was detected in 10/20 replicates and the cluster split in 12/20 (both required >= 16/20);
+- its false-positive rate was correct, and the H1 landscape test detected the loop insertion in 20/20.
+
+H0 differences are already tested by validated tests: the step 5 Wasserstein test, the H0-only Wasserstein test (addendum 5 part 4, TCGA section 4.1, GSE117606 in section 3.3) and the H0 barcode summaries (section 3.2; null checks passed).
+
+**Changes:**
+1. **Landscape test for H1 only:** the section 3.1 landscape permutation test is run and reported for **H1 only**.
+2. **H0 landscapes as figures only:** shown in section 4 and labelled descriptive; no p-values reported.
+3. **Concordance rule (section 5.2):** now uses the **H1 landscape test only**. *Expectation stated in advance:* the significant step 5 results are predominantly H0, so agreement between the H1 landscape test and step 5 is expected to be lower for that reason alone. The >= 80% rule is kept as written, and discordances are described with this context.
+4. **Validation table in the paper:** the full section 6 table, **including both failures**, is reported in the supplementary results.
+
+**Unchanged:** sections 3.2 (barcode summaries), 3.3 (dimension split), 4 (figures) and the remaining section 5 rules.
+
+**Pre-stated consequence:** if anything fails again, it is reported and the analysis stops for the PI's decision, with no further amendments.
