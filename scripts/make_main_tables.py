@@ -160,6 +160,19 @@ def main():
                "Table 1. GEO cohorts and samples analysed (primary sample sets).",
                ["Samples per stage are those in the primary analysis, after the pre-specified tissue-identity exclusions and, "
                 "for GSE41258, one array per patient per stage. – = stage not present in the cohort.",
+                "Sample sets. GSE41258 'main': of 390 arrays, normal colon, adenoma (including 2 microadenomas), primary "
+                "carcinoma and liver metastasis (338); excluded were lung metastases (20; a with-lung sensitivity set adds "
+                "them back), normal liver (13), normal lung (7) and cell lines (12); then 2 arrays excluded for tissue "
+                "identity (expression of normal liver; Müllerian profile) and 15 additional arrays of the same patient and "
+                "stage removed (re-hybridisations or further pieces of the same tissue), leaving 321. GSE20916 'bulk': the "
+                "105 whole-tissue sections (normal colon, adenoma, adenocarcinoma); the 40 laser-microdissected samples "
+                "(crypt epithelium and mucosa) form a separate 'micro' set analysed descriptively only. GSE37364 'bulk': all "
+                "94 biopsies (normal mucosa; low- and high-grade adenoma; Dukes A/B and C/D carcinoma). GSE117606 'main': of "
+                "208 arrays, adjacent mucosa (normal), adenoma and tumour (carcinoma), one array per patient per stage (195); "
+                "10 sessile serrated adenomas (described separately) and 3 additional 'A-coded' carcinomas of patients whose "
+                "designated tumour is another array were set aside. Apart from the two GSE41258 identity exclusions, arrays "
+                "flagged by the identity screen or (GSE117606) by array quality were kept in the primary sets, as "
+                "pre-specified; sensitivity analyses remove or add them.",
                 "Patients: number of distinct patient identifiers in the GEO sample annotation; GSE20916 and GSE37364 "
                 "do not provide patient identifiers. GSE117606: the 195 analysed arrays (and all 208 arrays of the series) "
                 "carry 75 distinct patient identifiers (sample characteristic 'patient id', matching the sample titles), "
@@ -169,7 +182,7 @@ def main():
                 "and neither does the related adenoma-only series GSE117607 (to verify)."], landscape=True, fs=8)
     t2 = table2()
     t2.to_csv(os.path.join(OUT, "Table2_validation.csv"), index=False)
-    word_table(t2, os.path.join(OUT, "Table2_validation.docx"),
+    word_table(t2.drop(columns=["Dimension detail"]), os.path.join(OUT, "Table2_validation.docx"),   # detail kept in CSV
                "Table 2. Pre-registered step 5 permutation test and secondary persistent-homology tests in the GEO cohorts "
                "(primary analysis; Holm-adjusted p-values).",
                ["Values are Holm-adjusted p-values; p < 0.05 in bold. Step 5 test: 1-Wasserstein distance between stage "
@@ -190,8 +203,8 @@ def main():
                 "epithelial, stromal, immune and, where relevant, liver scores, with stage not in the model). Raw = Euclidean "
                 "distances; shape-only = distances divided by each subsample's median pairwise distance.",
                 "Main dimension: among the version × mode combinations in which the combined (H0 + H1) test is significant, "
-                "the homology dimension whose separate test (H0 only or H1 only; addendum 12) reproduces more of them; "
-                "detail gives the counts. – = no significant combined result.",
+                "the homology dimension whose separate test (H0 only or H1 only; addendum 12) reproduces more of them "
+                "(counts per row in the accompanying CSV file). – = no significant combined result.",
                 "H1 landscape (shape-only): label-permutation test (999 permutations) of the L2 distance between mean H1 "
                 "persistence landscapes, Holm across transitions (addendum 12); raw-distance results are in Supplementary "
                 "Table S_H1_landscape. H0 landscapes were not tested (D26).",
