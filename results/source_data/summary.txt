@@ -1,0 +1,42 @@
+SOURCE DATA (GEO cohorts; no new statistical tests; no figures; no existing file changed)
+========================================================================
+Script: scripts/source_data.py. Packages: gudhi 3.13.0, numpy 2.4.6, pandas 2.3.3, scipy 1.17.1, decoupler 2.2.0. Seeds: as the source analyses (42-based named streams).
+Sample sets: GSE41258 main (53/48/181/39), GSE20916 bulk (24/45/36), GSE37364 bulk (38/29/27), GSE117606 main (65/59/71); stage counts verified on load.
+
+FILES
+  ph_diagrams_GEO.csv            birth/death/persistence of every H0 and H1 feature; cohort x version x mode x stage x
+                                 subsample (k = 20, m = 80% of the smallest stage); same seeded draws as the PH figures
+  ph_subsample_members_GEO.csv   which samples were in each subsample
+  validation_summary_primary.csv step 5 primary: shape and raw z / Holm p (unadjusted, adjusted), rule_met, H0-only and
+                                 H1-only shape Holm p (addendum 12), H1 landscape Holm p (addendum 12); copied values
+  stage_centroid_distances_GEO.csv each sample's distance to its stage centroid (10 PCs), plain and bias-adjusted
+  arm_scores_GEO.csv             per-sample 20q/20p/13q/8q scores, adenomas + carcinomas only (score defined as
+                                 z over adenomas + carcinomas); adjusted/excl117 = primary; fullarm and unadjusted = sensitivity
+  per_sample_<cohort>.csv        one row per sample: stage, patient id, CMS (carcinomas), differentiation, arm scores
+                                 (adjusted, excl117), centroid distances, the 117 genes (expr_ = unadjusted log2, adj_ = adjusted)
+  checks.csv                     reproduction checks against the saved results
+
+RULE MET (primary): GSE41258 Normal->Adenoma no, GSE41258 Adenoma->Carcinoma no, GSE41258 Carcinoma->Metastasis no, GSE20916 Normal->Adenoma no, GSE20916 Adenoma->Carcinoma no, GSE37364 Normal->Adenoma no, GSE37364 Adenoma->Carcinoma no, GSE117606 Normal->Adenoma no, GSE117606 Adenoma->Carcinoma no
+
+CHECKS
+  [OK] 1 diagrams identical to the seeded figure draws: 2080/2080 diagrams identical
+  [OK] 1 H0 has m-1 finite features per subsample: 1040/1040 subsamples
+  [OK] 2 primary rule met (expected: none): rule met in 0 of 9 cohort x transition rows
+  [OK] 2 H0/H1 and landscape values found for every row: no missing values
+  [OK] 3 PERMDISP D reproduces step 13 (all rows): 18 rows; max |difference| 2.22e-16
+  [OK] 3 bias-adjusted D_total reproduces addendum 9 (adjusted, A->C): 4 cohorts; max |difference| 0.00e+00
+  [OK] 4 arm V_arm / BF p / median diff / n genes reproduce addendum 11: 48 cohort x version x arm rows compared (expected 48); max |difference| 4.44e-16
+  [OK] 5 GSE41258 CMS labels joined for all carcinomas: 181 labelled / 181 carcinomas
+  [OK] 5 GSE41258 differentiation and arm scores joined for all adenomas + carcinomas: differentiation 229, arm_20q 229, A+C 229
+  [OK] 5 GSE41258 variability ratio V of the 117 genes reproduces addendum 9: 102 genes compared; max |difference| 4.44e-16; 12 of 117 genes absent from this cohort's expression
+  [OK] 5 GSE20916 CMS labels joined for all carcinomas: 36 labelled / 36 carcinomas
+  [OK] 5 GSE20916 differentiation and arm scores joined for all adenomas + carcinomas: differentiation 81, arm_20q 81, A+C 81
+  [OK] 5 GSE20916 variability ratio V of the 117 genes reproduces addendum 9: 116 genes compared; max |difference| 4.44e-16; 0 of 117 genes absent from this cohort's expression
+  [OK] 5 GSE37364 CMS labels joined for all carcinomas: 27 labelled / 27 carcinomas
+  [OK] 5 GSE37364 differentiation and arm scores joined for all adenomas + carcinomas: differentiation 56, arm_20q 56, A+C 56
+  [OK] 5 GSE37364 variability ratio V of the 117 genes reproduces addendum 9: 117 genes compared; max |difference| 4.44e-16; 0 of 117 genes absent from this cohort's expression
+  [OK] 5 GSE117606 CMS labels joined for all carcinomas: 71 labelled / 71 carcinomas
+  [OK] 5 GSE117606 differentiation and arm scores joined for all adenomas + carcinomas: differentiation 130, arm_20q 130, A+C 130
+  [OK] 5 GSE117606 variability ratio V of the 117 genes reproduces addendum 9: 114 genes compared; max |difference| 4.44e-16; 2 of 117 genes absent from this cohort's expression
+
+All checks passed: True

@@ -1,0 +1,20 @@
+check,ok,detail
+1 diagrams identical to the seeded figure draws,True,2080/2080 diagrams identical
+1 H0 has m-1 finite features per subsample,True,1040/1040 subsamples
+2 primary rule met (expected: none),True,rule met in 0 of 9 cohort x transition rows
+2 H0/H1 and landscape values found for every row,True,no missing values
+3 PERMDISP D reproduces step 13 (all rows),True,18 rows; max |difference| 2.22e-16
+"3 bias-adjusted D_total reproduces addendum 9 (adjusted, A->C)",True,4 cohorts; max |difference| 0.00e+00
+4 arm V_arm / BF p / median diff / n genes reproduce addendum 11,True,48 cohort x version x arm rows compared (expected 48); max |difference| 4.44e-16
+5 GSE41258 CMS labels joined for all carcinomas,True,181 labelled / 181 carcinomas
+5 GSE41258 differentiation and arm scores joined for all adenomas + carcinomas,True,"differentiation 229, arm_20q 229, A+C 229"
+5 GSE41258 variability ratio V of the 117 genes reproduces addendum 9,True,102 genes compared; max |difference| 4.44e-16; 12 of 117 genes absent from this cohort's expression
+5 GSE20916 CMS labels joined for all carcinomas,True,36 labelled / 36 carcinomas
+5 GSE20916 differentiation and arm scores joined for all adenomas + carcinomas,True,"differentiation 81, arm_20q 81, A+C 81"
+5 GSE20916 variability ratio V of the 117 genes reproduces addendum 9,True,116 genes compared; max |difference| 4.44e-16; 0 of 117 genes absent from this cohort's expression
+5 GSE37364 CMS labels joined for all carcinomas,True,27 labelled / 27 carcinomas
+5 GSE37364 differentiation and arm scores joined for all adenomas + carcinomas,True,"differentiation 56, arm_20q 56, A+C 56"
+5 GSE37364 variability ratio V of the 117 genes reproduces addendum 9,True,117 genes compared; max |difference| 4.44e-16; 0 of 117 genes absent from this cohort's expression
+5 GSE117606 CMS labels joined for all carcinomas,True,71 labelled / 71 carcinomas
+5 GSE117606 differentiation and arm scores joined for all adenomas + carcinomas,True,"differentiation 130, arm_20q 130, A+C 130"
+5 GSE117606 variability ratio V of the 117 genes reproduces addendum 9,True,114 genes compared; max |difference| 4.44e-16; 2 of 117 genes absent from this cohort's expression
