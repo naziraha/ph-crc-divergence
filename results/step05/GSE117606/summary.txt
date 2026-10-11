@@ -20,9 +20,8 @@ Units finished: 8/56
     Adenoma->Carcinoma   unadjusted 0.0020, adjusted 0.5820 -> significant in unadjusted only   [stage-aware: separate run]
   SECONDARY REPLICATION (Normal->Adenoma raw Holm p < 0.05 in both): unadjusted 0.5980, adjusted 0.7290 -> not replicated
 
-S5_pc5: not run yet
-S6_pc20: not run yet
-S7_genes1000: not run yet
-S8_genes5000: not run yet
+S5_pc5, S6_pc20, S7_genes1000, S8_genes5000: RUN LATER in the secondary run (80/80 units).
+  Results: results/step05/GSE117606/summary_secondary.txt and secondary_results_all.csv.
+  (This note replaces the earlier 'not run yet' lines; updated 2026-10-11, no recomputation.)
 Outputs: results/step05/<GSE>/permutation_results_all.csv, checkpoints/<unit>.json, step05_primary.png
 Resume after interruption: re-run the same command.
