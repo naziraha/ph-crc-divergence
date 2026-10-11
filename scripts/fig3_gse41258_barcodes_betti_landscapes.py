@@ -112,7 +112,7 @@ def main():
         ax.set_title(f"H1 persistence landscape λ1, {mode}")
         col = "H1landscape_raw_p_holm_adjus" if mode == "raw" else "H1landscape_shape_p_holm_adjus"
         ptxt = "   ".join(f"{lab} Holm p = {val.loc[t, col]:.3f}" for t, lab in TR)
-        ax.text(0.5, -0.3, f"H1 landscape patient-level permutation test (adjusted, {mode}):\n{ptxt}",
+        ax.text(0.5, -0.3, f"H1 landscape label-permutation test (adjusted, {mode};\none sample per patient per stage):\n{ptxt}",
                 transform=ax.transAxes, ha="center", va="top", fontsize=7.5, style="italic")
         if k == 0:
             ax.legend(fontsize=6.5, loc="upper left")
@@ -121,7 +121,7 @@ def main():
     fig.suptitle("GSE41258: barcodes, Betti curves and H1 landscapes by stage (adjusted data; descriptive)",
                  fontsize=11, fontweight="bold", y=0.995)
     fig.text(0.5, -0.01, "Curves and bars are descriptive. Bands show variability across subsamples, not confidence intervals. "
-             "p-values come from the patient-level permutation test. H0 landscapes are not tested (D26).",
+             "p-values come from the label-permutation test (one sample per patient per stage). H0 landscapes are not tested (D26).",
              ha="center", fontsize=7.5, color="0.3")
     for ext in ("png", "pdf"):
         fig.savefig(os.path.join(OUT, f"{NAME}.{ext}"), dpi=300, bbox_inches="tight")

@@ -1,7 +1,7 @@
 """
 Figure 2, version 1 (candidate supplementary figure; saved as paper/final/supplementary/Fig2_v1_*). GSE41258, adjusted data: H1 persistence diagrams per stage (raw, shape-only) and H0 death values per stage.
 Reads only results/source_data/ph_diagrams_GEO.csv and validation_summary_primary.csv (both from scripts/source_data.py).
-No statistical tests are run; p-values are copied from the step 5 patient-level permutation test.
+No statistical tests are run; p-values are copied from the step 5 label-permutation test (one sample per patient per stage).
 
 Usage: python scripts/fig2_gse41258_diagrams.py
 """
@@ -32,7 +32,7 @@ def main():
     val = val[val.cohort == COHORT].set_index("transition")
 
     fig = plt.figure(figsize=(11, 9.6))
-    gs = fig.add_gridspec(3, 4, height_ratios=[1, 1, 0.9], hspace=0.62, wspace=0.28)
+    gs = fig.add_gridspec(3, 4, height_ratios=[1, 1, 0.9], hspace=0.75, wspace=0.28)
     for row, (mode, mlab) in enumerate(MODES):
         h1 = d[(d["mode"] == mode) & (d.dim == "H1")]
         hi = h1.death.max() * 1.05
@@ -52,8 +52,8 @@ def main():
         ptxt = "   ".join(f"{lab} Holm p = {val.loc[t, col_p]:.3f}" for t, lab in TR)
         pos = fig.add_subplot(gs[row, 0]).get_position()
         fig.axes[-1].remove()
-        fig.text(0.5, pos.y0 - 0.058, f"Step 5 patient-level permutation test (H0 + H1, adjusted, {mode}):   {ptxt}",
-                 ha="center", fontsize=8, style="italic")
+        fig.text(0.5, pos.y0 - 0.042, f"Step 5 label-permutation test (one sample per patient per stage; H0 + H1, adjusted, {mode}):\n{ptxt}",
+                 ha="center", va="top", fontsize=8, style="italic", linespacing=1.4)
 
     for k, (mode, mlab) in enumerate(MODES):
         ax = fig.add_subplot(gs[2, 2 * k:2 * k + 2])
@@ -71,7 +71,7 @@ def main():
 
     fig.suptitle("GSE41258: persistence diagrams by stage (adjusted data; descriptive)", fontsize=11, fontweight="bold", y=0.995)
     fig.text(0.5, 0.005, "Points and boxes pool all features from 20 subsamples per stage (m = 31) and are descriptive. "
-             "p-values come from the step 5 patient-level permutation test, not from these points.",
+             "p-values come from the step 5 label-permutation test (one sample per patient per stage), not from these points.",
              ha="center", fontsize=7.5, color="0.3")
     for ext in ("png", "pdf"):
         fig.savefig(os.path.join(OUT, f"Fig2_v1_GSE41258_diagrams.{ext}"), dpi=300, bbox_inches="tight")

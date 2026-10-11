@@ -114,8 +114,8 @@ def main():
                         f"(n = {len(ids)}; same samples in a and b)", transform=ax.transAxes, fontsize=9)
         ptxt = "   ".join(f"{lab} Holm p = {val.loc[t, col_p]:.3f}" for t, lab in TR)
         pos = ax.get_position()
-        fig.text(0.5, pos.y0 - 0.058, f"Step 5 patient-level permutation test (H0 + H1, 20 subsamples, adjusted, {mode}):   {ptxt}",
-                 ha="center", fontsize=8, style="italic")
+        fig.text(0.5, pos.y0 - 0.042, f"Step 5 label-permutation test (one sample per patient per stage; H0 + H1, 20 subsamples, adjusted, {mode}):\n{ptxt}",
+                 ha="center", va="top", fontsize=8, style="italic", linespacing=1.4)
 
     for k, (mode, mlab) in enumerate(MODES):                 # panel c, as v1
         ax = fig.add_subplot(gs[2, 2 * k:2 * k + 2])
@@ -133,7 +133,7 @@ def main():
 
     fig.suptitle("GSE41258: persistence diagrams by stage (adjusted data; descriptive)", fontsize=11, fontweight="bold", y=0.995)
     fig.text(0.5, 0.005, "Rows a-b: the same representative subsample per stage (descriptive). Panel c pools 20 subsamples per stage. "
-             "p-values come from the step 5 patient-level permutation test, not from these points.",
+             "p-values come from the step 5 label-permutation test (one sample per patient per stage), not from these points.",
              ha="center", fontsize=7.5, color="0.3")
     for ext in ("png", "pdf"):
         fig.savefig(os.path.join(OUT, f"Fig2_v2_GSE41258_diagrams.{ext}"), dpi=300, bbox_inches="tight")
