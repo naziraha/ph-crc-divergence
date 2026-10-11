@@ -81,7 +81,7 @@ def main(version):
     ax.text(0.0, -0.26, "D > 1: later stage more spread out; dot colour = later stage; black outline = Holm p < 0.05.",
             transform=ax.transAxes, fontsize=7, color="0.3")
 
-    fig.suptitle(f"Between-tumour heterogeneity in the GEO cohorts ({version} data)", fontsize=11, fontweight="bold", y=0.995)
+    fig.suptitle(f"Between-sample heterogeneity across stages in the GEO cohorts ({version} data)", fontsize=11, fontweight="bold", y=0.995)
     fig.text(0.5, 0.005, "Panel a is descriptive (points = samples). p-values in b come from the step 13 PERMDISP label-permutation "
              "test (999 permutations; Holm across transitions within cohort), not from the points in a.",
              ha="center", fontsize=7.5, color="0.3")
