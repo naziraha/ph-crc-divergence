@@ -14,7 +14,7 @@ import pandas as pd  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "results", "source_data")
-OUT = os.path.join(ROOT, "paper", "figures_main")
+OUT = os.path.join(ROOT, "paper", "final", "main_figures")
 COHORT, VERSION = "GSE41258", "adjusted"
 STAGES = ["Normal", "Adenoma", "Carcinoma", "Metastasis"]
 COL = dict(zip(STAGES, ["#2a78d6", "#e0a100", "#c0392b", "#7b4fb3"]))   # as addendum 12 figures
