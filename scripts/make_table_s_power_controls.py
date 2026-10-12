@@ -61,6 +61,26 @@ def part_c():
     return pd.DataFrame(rows)
 
 
+def part_d():
+    """D7 (raw mode only; shape-only part withdrawn in D7) and D8 empirical power, copied from results/power_D7, power_D8."""
+    d7 = pd.read_csv(os.path.join(R, "power_D7", "power_table.csv"))
+    d7 = d7[d7["mode"] == "raw"].sort_values(["cohort", "version", "alpha"], ascending=[True, False, False])
+    K = {"GSE41258": 3, "GSE20916": 2, "GSE37364": 2}
+    D7 = pd.DataFrame([{"section": "D1. D7 power (raw mode)", "cohort": r.cohort, "version": r.version,
+                        "effect level (share of real N→A difference)": f"{int(round(r.alpha * 100))}%",
+                        "samples swapped": int(r.swaps), "detected (p ≤ 0.05/K)": f"{int(round(r.power_bonf * r.n))}/{int(r.n)}",
+                        "detected (p ≤ 0.05)": f"{int(round(r.power_05 * r.n))}/{int(r.n)}", "K": K[r.cohort],
+                        "median z": round(float(r.median_z), 2)} for _, r in d7.iterrows()])
+    d8 = pd.read_csv(os.path.join(R, "power_D8", "power_table.csv")).sort_values(["cohort", "frac"], ascending=[False, False])
+    K8 = {"GSE41258": 3, "GSE20916": 2}
+    D8 = pd.DataFrame([{"section": "D2. D8 sample-size sensitivity (shape-only, unadjusted N→A)", "cohort": r.cohort,
+                        "share of samples kept": f"{int(round(r.frac * 100))}%", "n normal / adenoma": f"{int(r.n_N)} / {int(r.n_A)}",
+                        "subsample size m": int(r.m), "detected (p ≤ 0.05/K)": f"{int(round(r.power_bonf * r.replicates))}/{int(r.replicates)}",
+                        "detected (p ≤ 0.05)": f"{int(round(r.power_05 * r.replicates))}/{int(r.replicates)}", "K": K8[r.cohort],
+                        "median z": round(float(r.median_z), 2)} for _, r in d8.iterrows()])
+    return D7, D8
+
+
 def add_table(doc, df, cols, title, fs=7.5):
     doc.add_paragraph().add_run(title).bold = True
     t = doc.add_table(rows=1, cols=len(cols))
@@ -83,7 +103,8 @@ def main():
                        "genes changed": "– (PC scores)", "mode": r["mode"],
                        "detected (p ≤ 0.05)": f"{int(r.detected)}/{int(r.n)}", "detected (p ≤ 0.0167)": "",
                        "median z": round(float(r.median_z), 2)} for _, r in Braw.iterrows()])
-    allrows = pd.concat([A, B, C], ignore_index=True)
+    D7, D8 = part_d()
+    allrows = pd.concat([A, B, C, D7, D8], ignore_index=True)
     allrows.to_csv(os.path.join(OUT, "TableS_power_controls.csv"), index=False)
 
     doc = Document()
@@ -103,6 +124,14 @@ def main():
               "99 permutations; k = 20, m = 31)")
     add_table(doc, C, ["cohort", "transition", "n (from / to)", "subsample size m per group", "subsamples k per group",
                        "permutations"], "C. Step 5 subsample sizes (primary analysis; same m in all modes and versions)")
+    add_table(doc, D7, ["cohort", "version", "effect level (share of real N→A difference)", "samples swapped",
+                        "detected (p ≤ 0.05/K)", "detected (p ≤ 0.05)", "median z"],
+              "D1. Empirical power, deviation D7 (raw mode; real normal → adenoma difference diluted by swapping samples "
+              "between groups; 50 replicates; 99 permutations). The shape-only part of D7 was withdrawn (see note).")
+    add_table(doc, D8, ["cohort", "share of samples kept", "n normal / adenoma", "subsample size m",
+                        "detected (p ≤ 0.05/K)", "detected (p ≤ 0.05)", "median z"],
+              "D2. Sample-size sensitivity, deviation D8 (shape-only; real unadjusted normal → adenoma difference with "
+              "fewer samples; 50 replicates; 99 permutations)")
     for n in ("Detection = permutation p ≤ 0.05 in a replicate (A also at p ≤ 0.0167, Bonferroni for 3 transitions). "
               "Insertions are made into group B only; group A is unchanged. MPD = median pairwise distance of group B; "
               "s = spread factor about B's centroid; δ = half-separation of the two clusters along a random direction; "
@@ -119,7 +148,18 @@ def main():
               "C: m = 80% of the smallest stage of the cohort (GSE41258: 39 metastases → 31; TCGA: 39 Stage IV → 31), drawn "
               "without replacement k = 20 times per group; how patients contributing to both groups are handled is described "
               "in Table 2.",
-              "Both control sets used the unadjusted 10-PC embeddings (A: GSE41258 `main`; B: TCGA-COAD `main`)."):
+              "Both control sets used the unadjusted 10-PC embeddings (A: GSE41258 `main`; B: TCGA-COAD `main`).",
+              "D1 (D7): for effect level α, k = round((1 − α) ÷ (1/n_N + 1/n_A)) normals and adenomas swap groups, so the "
+              "group contrast is α of the real one; group sizes unchanged, each sample used once; same m as step 5 "
+              "(31 / 19 / 21); detection at p ≤ 0.05/K, K = number of transitions (Bonferroni stand-in for Holm). D7 also "
+              "withdrew the addendum 4 bootstrap effect-size intervals (invalid: duplicate samples). Shape-only rows are not "
+              "shown: swapping creates mixed two-cluster groups, an artificial shape difference, so they are not "
+              "interpretable as power (results/power_D7/README_NOTE.txt). All non-significant raw step 5 results were "
+              "classified 'too few samples to tell' (detection < 80% at α = 50%). GSE117606 was not part of D7.",
+              "D2 (D8): each group randomly reduced to the stated share without replacement; m = min(cohort m, ⌊0.8 × "
+              "smaller reduced group⌋); only cohorts with a significant unadjusted shape-only normal → adenoma difference "
+              "(GSE41258, GSE20916). It shows how reliably a shape difference of the observed size is detected with fewer "
+              "samples, not power for smaller effects."):
         q = doc.add_paragraph()
         q.paragraph_format.space_after = Pt(2)
         q.add_run(n).font.size = Pt(8)
