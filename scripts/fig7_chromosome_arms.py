@@ -6,8 +6,8 @@ Figure 7 (chromosome arms; addendum 11), from existing files only; no statistica
     carcinomas by primary CMS; Brown-Forsythe p and median difference from arm_scores_tests.csv.
 (c) TCGA: 20q expression score (tcga_20q_score.csv) vs mean GISTIC2 copy number of 20q genes per tumour (raw GISTIC2
     file, same computation as addendum 11 A4); Spearman rho checked against tcga_expression_vs_copynumber.csv.
-(d) share f of excess carcinoma dispersion explained by 20q, by the four arms (20q+20p+13q+8q) and by CMS, with f_rand95
-    (B3_dispersion_decomposition.csv; CMS f also in addendum 9), informative cohorts only.
+(d) share f of excess carcinoma dispersion explained by 20q and by CMS, with f_rand95 (B3_dispersion_decomposition.csv;
+    CMS f also in addendum 9), informative cohorts only. Four-arm results: paper/final/supplementary/TableS_four_arms.
 
 Usage: python scripts/fig7_chromosome_arms.py
 """
@@ -139,14 +139,13 @@ def main():
     # ---- d: shares of excess dispersion
     ax = fig.add_subplot(gs[2, 2:4])
     inf = [c for c in GEO if bool(b3.loc[c, "informative"])]
-    items = [("20q", "chr20q_f", "chr20q_f_rand95", "#c0392b"), ("20q+20p+13q+8q", "chr4_f", "chr4_f_rand95", "#e08a7a"),
-             ("CMS", "f_CMS", None, "#5b5b5b")]
-    w = 0.26
+    items = [("20q", "chr20q_f", "chr20q_f_rand95", "#c0392b"), ("CMS", "f_CMS", None, "#5b5b5b")]
+    w = 0.34
     for i, c in enumerate(inf):
         if abs(b3.loc[c, "f_CMS"] - a9.loc[c, "f"]) > 1e-9:
             raise SystemExit(f"{c}: f_CMS differs between addendum 11 and addendum 9")
         for k, (lab, fc, rc, col) in enumerate(items):
-            x = i + (k - 1) * w
+            x = i + (k - 0.5) * w
             f = b3.loc[c, fc]
             r95 = b3.loc[c, rc] if rc else a9.loc[c, "f_rand95"]
             ax.bar(x, f, width=w * 0.9, color=col, label=lab if i == 0 else None)
@@ -156,9 +155,9 @@ def main():
     ax.plot([], [], color="black", lw=1.6, label="f_rand95 (random-score 95th pct.)")
     ax.axhline(0, color="0.4", lw=0.8)
     ax.set_xticks(range(len(inf)), inf, fontsize=7.5)
-    ax.set(ylim=(-0.95, 1.0), ylabel="share of excess carcinoma dispersion\nexplained (f; adjusted data)")
+    ax.set(ylim=(-0.2, 1.0), ylabel="share of excess carcinoma dispersion\nexplained (f; adjusted data)")
     ax.legend(fontsize=6.8, frameon=False, loc="upper left", ncol=2)
-    ax.set_title("Excess carcinoma dispersion explained by arm scores and CMS")
+    ax.set_title("Excess carcinoma dispersion explained by 20q and CMS")
     ax.text(0.99, 0.02, "GSE41258 not informative (no excess dispersion)", transform=ax.transAxes, ha="right",
             fontsize=6.5, color="0.4")
     ax.text(-0.2, 1.06, "d", transform=ax.transAxes, fontsize=13, fontweight="bold")
