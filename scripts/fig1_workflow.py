@@ -64,7 +64,7 @@ def main():
         ax.add_patch(FancyBboxPatch((x, y0), w, h, boxstyle="round,pad=0.006,rounding_size=0.012", fc="white", ec=EDGE, lw=0.9))
         ax.text(x + w / 2, y0 + h - 0.022, c, ha="center", fontsize=9, fontweight="bold")
         plat = r.Platform.split(" (")[0]
-        ax.text(x + w / 2, y0 + h - 0.045, f"{plat} · set '{r['Sample set']}' · n = {r['Total samples']}", ha="center",
+        ax.text(x + w / 2, y0 + h - 0.045, f"{plat} microarray · set '{r['Sample set']}' · n = {r['Total samples']}", ha="center",
                 fontsize=6.6, color=MUTED)
         st = [s for s in STAGES if str(r[s]) not in ("–", "-", "nan")]
         nmax = 181
@@ -87,8 +87,8 @@ def main():
              "Gene selection\n\n2,000 most\nvariable genes\n(lowest-expressed\n25% removed)",
              "Embedding\n\nz-score, PCA:\n10 principal\ncomponents",
              "Subsampling\n\n20 subsamples\nper stage of\n80% of the\nsmallest stage",
-             "Persistent homology\n\nVietoris–Rips:\nH0 clusters, H1 loops\ndiagrams, barcodes,\nBetti curves, landscapes\nraw and shape-only",
-             "Statistical test\n\n1-Wasserstein distance\nlabel-permutation test\n(999 permutations)\nHolm correction"]
+             "Persistent homology\n\nVietoris–Rips:\nH0 clusters, H1 loops\ndiagrams, barcodes,\nBetti curves, landscapes\nraw and shape-only\n(Figs 2–3)",
+             "Statistical test\n\n1-Wasserstein distance\nlabel-permutation test\n(999 permutations)\nHolm correction\n(Table 2)"]
     n = len(steps)
     bw, bg, by, bh = 0.116, 0.022, 0.455, 0.175
     for i, s in enumerate(steps):
