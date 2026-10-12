@@ -89,7 +89,11 @@ def main():
             ax.text(cj * 3 + 1, -1.5, c, ha="center", va="bottom", fontsize=7, fontweight="bold")
             if cj:
                 ax.axvline(cj * 3 - 0.5, color="white", lw=1.5)
-        ax.set_yticks(range(len(order)), order, fontsize=3.6)
+        # fixed label set: all 'higher' genes + top 5 by median V in 'lower' and in 'no mean shift'
+        labset = set(a.index[a.group == "higher in carcinoma"]) | set(a.index[a.group == "lower in carcinoma"][:5]) | \
+            set(a.index[a.group == "no mean shift"][:5])
+        idx = [i for i, g in enumerate(order) if g in labset]
+        ax.set_yticks(idx, [order[i] for i in idx], fontsize=4.8)
         bounds = np.cumsum([(a.group == g).sum() for g in GROUPS])
         for b in bounds[:-1]:
             ax.axhline(b - 0.5, color="black", lw=0.8)
@@ -122,7 +126,7 @@ def main():
                 data = [d.loc[d.stage == s, col].dropna().values for s in ST3]
                 bp = ax.boxplot(data, patch_artist=True, widths=0.55, showfliers=False, medianprops=dict(color="black", lw=1))
                 for p, s in zip(bp["boxes"], ST3):
-                    p.set(facecolor=SCOL[s], alpha=0.25, edgecolor=SCOL[s])
+                    p.set(facecolor=SCOL[s], alpha=0.15, edgecolor=SCOL[s])
                 for k, s in enumerate(ST3):
                     sub = d[d.stage == s]
                     y = sub[col].values
@@ -130,12 +134,14 @@ def main():
                     if s == "Carcinoma":
                         colr = [CCOL.get(v, "0.5") for v in sub.CMS_nearest]
                     else:
-                        colr = SCOL[s]
+                        colr = "0.55"                                  # normal / adenoma points grey
                     ax.scatter(xj, y, s=4, c=colr, alpha=0.8, edgecolor="none", zorder=3)
                 ax.set_xticks([1, 2, 3], ["N", "A", "C"], fontsize=7)
                 V = a.loc[g, f"V_{c}"]
-                ax.set_title(f"V = {V:.2f}" if pd.notna(V) else "V not tested", fontsize=6.5, color="0.3", loc="right",
-                             pad=1)
+                p = pd.read_csv(os.path.join(A9, f"variability_{c}.csv"), index_col=0).p.get(g, np.nan)
+                met = pd.notna(V) and pd.notna(p) and p < 0.05 and V > 1
+                ax.set_title(("V not tested" if pd.isna(V) else f"V = {V:.2f}" + (" ✓" if met else " (p ≥ 0.05)")),
+                             fontsize=6.5, color="0.3", loc="right", pad=1)
             if i == 0:
                 ax.set_title(c, fontweight="bold", loc="left", pad=8)
             if j == 0:
@@ -145,8 +151,9 @@ def main():
                 ax.text(-0.3, 1.35, "Example genes (fixed rule: top-2 by median variability ratio in 'lower', top-1 in "
                         "'higher', top-1 in 'no mean shift'); carcinoma points coloured by CMS", transform=ax.transAxes,
                         fontsize=9)
-    handles = [Line2D([], [], marker="o", ls="", color=CCOL[k], label=k) for k in CCOL]
-    fig.legend(handles=handles, loc="lower center", bbox_to_anchor=(0.5, 0.0), ncol=4, frameon=False, fontsize=7.5)
+    handles = [Line2D([], [], marker="o", ls="", color="0.55", label="normal / adenoma sample")] + \
+              [Line2D([], [], marker="o", ls="", color=CCOL[k], label=f"carcinoma, {k}") for k in CCOL]
+    fig.legend(handles=handles, loc="lower center", bbox_to_anchor=(0.5, 0.0), ncol=5, frameon=False, fontsize=7.5)
     fig.suptitle("The 117 genes more variable in carcinoma than in adenoma (selected in addendum 9; adjusted data; descriptive)",
                  fontsize=11, fontweight="bold", y=0.995)
     for ext in ("png", "pdf"):
