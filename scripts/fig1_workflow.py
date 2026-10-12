@@ -55,8 +55,8 @@ def main():
 
     # ---------------- panel a: study design
     ax.text(0.015, 0.975, "a", fontsize=14, fontweight="bold")
-    ax.text(0.045, 0.975, f"Study design: four GEO cohorts (n = {total}) analysed separately; TCGA-COAD for copy-number "
-            "validation", fontsize=10, va="baseline")
+    ax.text(0.045, 0.975, f"Study design: four GEO cohorts (n = {total}) analysed separately; TCGA-COAD for "
+            "stage comparisons and copy-number validation", fontsize=10, va="baseline")
     x0, w, gap, y0, h = 0.03, 0.163, 0.022, 0.735, 0.205
     for i, c in enumerate(t1.index):
         x = x0 + i * (w + gap)
@@ -75,8 +75,7 @@ def main():
             ax.add_patch(plt.Rectangle((x + 0.068, yy - 0.009), 0.072 * n / nmax, 0.018, fc=SCOL[s], ec="none", alpha=0.85))
             ax.text(x + 0.068 + 0.072 * n / nmax + 0.004, yy, str(n), fontsize=7, va="center")
     x = x0 + 4 * (w + gap)
-    box(ax, x, y0, 0.205, h, f"TCGA-COAD\nprimary tumours (RNA-seq)\nn = {n_tcga} ({n_tcga_cn} with GISTIC2 copy number)\n\n"
-        "validation of 20q copy number only\n(Figure 7c)", fc="#fbfbfb", ec=EDGE, fs=7.6, ls="--")
+    box(ax, x, y0, 0.205, h, f"TCGA-COAD (n = {n_tcga})\nprimary tumours (RNA-seq)\n\nstage I–IV comparisons\n(Supplementary Table S_TCGA_stages)\n\nand 20q copy-number validation\n(Fig 7c; {n_tcga_cn} with GISTIC2)", fc="#fbfbfb", ec=EDGE, fs=7.4, ls="--")
     ax.text(0.03, 0.712, "Cohorts are never merged and no batch correction is applied; results are compared across cohorts.",
             fontsize=7, color=MUTED, style="italic")
 
