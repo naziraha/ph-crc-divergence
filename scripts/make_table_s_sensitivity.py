@@ -51,7 +51,7 @@ def row(part, cohort, df, tr, trlab, label, a1, v1, a2, v2, pair, col="p_holm"):
     return {"part": part, "cohort": cohort, "transition": trlab, "setting / sample set": label,
             "versions compared": pair, "n (from / to)": f"{int(r2.n_from)} / {int(r2.n_to)}", "m": int(r2.subsample_size),
             "shape-only Holm p, unadjusted": su, "shape-only Holm p, adjusted": sa,
-            "rule met": ("yes" if pair.startswith(UA) else "yes (analogue)") if (su < 0.05 and sa < 0.05) else "no",
+            "rule met": ("yes" if pair.startswith(UA) else "analogue only") if (su < 0.05 and sa < 0.05) else "no",
             "raw Holm p, unadjusted": get(df, a1, v1, tr, "raw", col), "raw Holm p, adjusted": get(df, a2, v2, tr, "raw", col)}
 
 
@@ -124,7 +124,7 @@ def add(doc, df, cols, title):
             v = rw[c]
             run = cells[j].paragraphs[0].add_run(f"{v:.3f}" if isinstance(v, float) else str(v))
             run.font.size = Pt(7)
-            run.bold = rw["rule met"] != "no"
+            run.bold = rw["rule met"] == "yes"
 
 
 def main():
@@ -170,8 +170,8 @@ def main():
         summ,
         "Part B, 'versions compared': for the stage-aware and quality-adjusted rows, the 'adjusted' column holds the "
         "stage-aware or quality-adjusted p-value and the 'unadjusted' column the unadjusted p-value of the same setting, "
-        "so a 'yes (analogue)' there meets an analogue of the rule, not the pre-specified rule (3 rows: GSE20916 N → A "
-        "with 5 PCs and with 5,000 genes; GSE117606 A → C with 5,000 genes). The stage-aware adjustment uses the "
+        "so 'analogue only' there means an analogue of the rule is met, not the pre-specified rule; these rows are not "
+        "bold (3 rows: GSE20916 N → A with 5 PCs and with 5,000 genes; GSE117606 A → C with 5,000 genes). The stage-aware adjustment uses the "
         "stage labels and can under-correct when composition and stage are confounded; a result significant only with it "
         "is not reported as a tipping point (addendum 2). GSE41258 stage-aware (D3) is exploratory, not pre-specified.",
         "GSE41258 S2 (all arrays, no de-duplication) counts some patients more than once within a stage, so samples within "
