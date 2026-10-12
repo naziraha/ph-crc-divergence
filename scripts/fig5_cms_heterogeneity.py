@@ -1,7 +1,9 @@
 """
 Figure 5 (CMS subtypes and carcinoma heterogeneity, GEO cohorts). From existing files only; no statistical tests.
-(a) carcinomas on PC1 vs PC2 of the frozen adjusted embedding, coloured by the primary CMS call (nearest template,
-    addendum 9); hollow = not confidently classified (unclassified under the confident rule).
+(a) per carcinoma (adjusted embedding, all 10 PCs, primary CMS calls): bias-adjusted distance to the centre of all
+    carcinomas and to the centre of its own CMS subtype (as addendum 9 loo_dist); checked against addendum 9 D_within.
+    Medians/means written to results/source_data/fig5_carcinoma_centre_distances.csv (new file).
+    (The former PC1/PC2 panel is now scripts/figS_cms_pc12.py.)
 (b) CMS proportions per cohort: primary calls (CMS1-4) and confident calls (CMS1-4 + unclassified).
 (c) share f of the excess carcinoma dispersion explained by CMS (primary labels), with f_rand95; GSE41258 not applicable.
 Inputs: results/addendum9/cms_labels.csv, cms_proportions.csv, dispersion_decomposition.csv;
@@ -31,6 +33,18 @@ CCOL = {"CMS1": "#e79e00", "CMS2": "#0071b1", "CMS3": "#ca78a6", "CMS4": "#009f7
 plt.rcParams.update({"font.size": 8, "axes.titlesize": 9, "axes.spines.top": False, "axes.spines.right": False})
 
 
+def bias_adj_dist(P, groups):
+    """As addendum 9 loo_dist: sqrt(n/(n-1)) * ||x - c|| to own-group centroid; NaN for groups with n < 3."""
+    d = np.full(len(P), np.nan)
+    for gname in np.unique(groups):
+        m = groups == gname
+        n = m.sum()
+        if n < 3:
+            continue
+        d[m] = np.sqrt(n / (n - 1)) * np.linalg.norm(P[m] - P[m].mean(0), axis=1)
+    return d
+
+
 def main():
     os.makedirs(OUT, exist_ok=True)
     lab = pd.read_csv(os.path.join(A9, "cms_labels.csv"), index_col=0)
@@ -40,7 +54,8 @@ def main():
 
     fig = plt.figure(figsize=(11, 8.2))
     gs = fig.add_gridspec(2, 4, height_ratios=[1, 0.95], hspace=0.55, wspace=0.42)
-    counts = {}
+    counts, rows = {}, []
+    rng = np.random.default_rng(42)                                         # jitter only
     for j, c in enumerate(GEO):
         ax = fig.add_subplot(gs[0, j])
         e = pd.read_csv(os.path.join(EMB, f"{c}_{SETS[c]}_adjusted_g2000_pc10.csv"), index_col=0)
@@ -50,22 +65,44 @@ def main():
             raise SystemExit(f"{c}: carcinoma without CMS label")
         conf = L.confident.astype(str).str.lower() == "true"
         counts[c] = (len(car), int((~conf).sum()))
+        P = e.loc[car, [f"PC{i}" for i in range(1, 11)]].values
+        g = L.nearest.values
+        d_all = bias_adj_dist(P, np.zeros(len(P)))                          # centre of all carcinomas
+        d_own = bias_adj_dist(P, g)                                         # centre of own CMS subtype
+        # check against addendum 9: D_within = D_total * mean(d_own) / mean(d_all) (same adenoma reference)
+        Dw = dec.loc[c, "D_total"] * np.nanmean(d_own) / np.nanmean(d_all)
+        if abs(Dw - dec.loc[c, "D_within"]) > 1e-9:
+            raise SystemExit(f"{c}: D_within check failed ({Dw} vs {dec.loc[c, 'D_within']})")
+        bp = ax.boxplot([d_all, d_own[~np.isnan(d_own)]], patch_artist=True, widths=0.55, showfliers=False,
+                        medianprops=dict(color="black", lw=1))
+        bp["boxes"][0].set(facecolor="#c0392b", alpha=0.25, edgecolor="#c0392b")
+        bp["boxes"][1].set(facecolor="0.8", alpha=0.5, edgecolor="0.4")
+        ax.scatter(1 + rng.uniform(-0.17, 0.17, len(d_all)), d_all, s=6, color="#c0392b", alpha=0.7, edgecolor="none",
+                   zorder=3)
+        jit = rng.uniform(-0.17, 0.17, len(d_own))
         for k in CMS:
-            m = (L.nearest == k).values
-            ax.scatter(e.loc[car[m & conf.values], "PC1"], e.loc[car[m & conf.values], "PC2"], s=14, color=CCOL[k],
-                       edgecolor="white", linewidth=0.3, label=k)
-            ax.scatter(e.loc[car[m & ~conf.values], "PC1"], e.loc[car[m & ~conf.values], "PC2"], s=14,
-                       facecolor="none", edgecolor=CCOL[k], linewidth=0.9)
-        ax.set(xlabel="PC1", ylabel="PC2" if j == 0 else "")
+            m = g == k
+            ax.scatter(2 + jit[m], d_own[m], s=6, color=CCOL[k], alpha=0.85, edgecolor="none", zorder=3)
+        ax.set_xticks([1, 2], ["all carcinomas", "own CMS\nsubtype"], fontsize=7.5)
+        ax.set_ylim(0, max(np.nanmax(d_all), np.nanmax(d_own)) * 1.06)
         ax.set_title(f"{c}  (n = {len(car)})", fontweight="bold")
+        ratio = np.nanmedian(d_own) / np.median(d_all)
+        ax.text(0.98, 0.97, f"median ratio {ratio:.2f}", transform=ax.transAxes, ha="right", va="top", fontsize=7,
+                color="0.3")
+        rows.append(dict(cohort=c, n=len(car), median_all=float(np.median(d_all)), median_own=float(np.nanmedian(d_own)),
+                         mean_all=float(np.mean(d_all)), mean_own=float(np.nanmean(d_own)), median_ratio=float(ratio)))
         if j == 0:
-            ax.text(-0.3, 1.13, "a", transform=ax.transAxes, fontsize=13, fontweight="bold")
-            ax.text(-0.1, 1.13, "Carcinomas on PC1 vs PC2 (frozen adjusted embedding), coloured by primary CMS call",
-                    transform=ax.transAxes, fontsize=9)
-    handles = [Line2D([], [], marker="o", ls="", color=CCOL[k], label=k) for k in CMS] + \
-              [Line2D([], [], marker="o", ls="", markerfacecolor="none", markeredgecolor="0.4",
-                      label="hollow = not confidently classified")]
+            ax.set_ylabel("carcinoma distance to centre\n(10 PCs, bias-adjusted)")
+            ax.text(-0.42, 1.13, "a", transform=ax.transAxes, fontsize=13, fontweight="bold")
+            ax.text(-0.2, 1.13, "Carcinoma spread around the centre of all carcinomas vs around the centre of their "
+                    "own CMS subtype (adjusted, 10 PCs)", transform=ax.transAxes, fontsize=9)
+    handles = [Line2D([], [], marker="o", ls="", color="#c0392b", label="carcinomas (all)")] + \
+              [Line2D([], [], marker="o", ls="", color=CCOL[k], label=k) for k in CMS]
     fig.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.5, 0.535), ncol=5, frameon=False, fontsize=7.5)
+    pd.DataFrame(rows).to_csv(os.path.join(ROOT, "results", "source_data", "fig5_carcinoma_centre_distances.csv"),
+                              index=False)
+    print(pd.DataFrame(rows).round(3).to_string(index=False))
+    print("check: D_within recomputed from panel a distances = addendum 9 (all cohorts)")
 
     # panel b: stacked proportions (primary and confident) per cohort
     ax = fig.add_subplot(gs[1, 0:2])
