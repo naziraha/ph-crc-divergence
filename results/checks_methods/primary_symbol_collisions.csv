@@ -1,0 +1,9 @@
+cohort,version,collision_pairs,colliding_genes_in_top2000,genes
+GSE41258,unadjusted,5,0,
+GSE41258,adjusted,5,0,
+GSE20916,unadjusted,7,2,C10orf12;CCDC80
+GSE20916,adjusted,7,1,CCDC80
+GSE37364,unadjusted,29,7,C11orf92;CCDC80;DGCR9;LINC01279;MIA2;NEBL;S1PR3
+GSE37364,adjusted,29,3,C11orf92;DGCR9;MIA2
+GSE117606,unadjusted,0,0,
+GSE117606,adjusted,0,0,

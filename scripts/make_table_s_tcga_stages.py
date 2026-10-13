@@ -121,7 +121,9 @@ def main():
                  "unclassified (confident calls), n (%)"], "C. Consensus molecular subtypes by stage (descriptive)")
     add(doc, D, ["comparison", "n", "m", "version", "mode", "z", "p (single comparison, no Holm)"],
         "D. Secondary, descriptive: solid-tissue normal vs Stage I", ["p (single comparison, no Holm)"])
-    for n in ("A: 1-Wasserstein distance between stage persistence diagrams (H0 + H1), k = 20 subsamples of m = 31 per group "
+    for n in ("A: difference in persistence-diagram shape between stages, measured as the mean 1-Wasserstein distance between "
+              "diagrams of different stages minus the mean distance within stages (H0 and H1 combined); k = 20 subsamples of "
+              "m = 31 per group "
               "(80% of the smallest stage, 39 Stage IV), label-permutation test (one sample per patient per stage; 999 "
               "permutations), Holm across the three transitions per version and mode. Tipping-point rule: shape-only Holm "
               "p < 0.05 in both unadjusted and adjusted data. Bold = p < 0.05.",

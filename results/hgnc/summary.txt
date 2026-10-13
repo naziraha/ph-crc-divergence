@@ -1,0 +1,33 @@
+CROSS-COHORT ANALYSES WITH HARMONISED GENE SYMBOLS (scripts/hgnc_crosscohort.py)
+========================================================================
+3a. REPRODUCTION on original inputs: genes identical True (117); max numeric difference 8.9e-16; med_mean_diff 4.4e-16; CMS_template identical True -> OK
+1. HARMONISED INPUTS
+                                  file  genes  renamed  dropped_collision  genes_after
+          GSE41258_main_expr_genes.csv  12548      645                  5        12543
+ GSE41258_main_expr_genes_adjusted.csv  12548      645                  5        12543
+          GSE20916_bulk_expr_genes.csv  12921      842                  7        12914
+ GSE20916_bulk_expr_genes_adjusted.csv  12921      842                  7        12914
+          GSE37364_bulk_expr_genes.csv  21655     1435                 34        21621
+ GSE37364_bulk_expr_genes_adjusted.csv  21655     1435                 34        21621
+         GSE117606_main_expr_genes.csv  19194        0                  0        19194
+GSE117606_main_expr_genes_adjusted.csv  19194        0                  0        19194
+TCGA_COAD_main_expr_genes_adjusted.csv  20530     2607                 48        20482
+               TCGA GISTIC2 gene-level  24776     1708                 95        24681
+3b. HARMONISED: genes tested GSE41258 9407, GSE20916 9685, GSE37364 16215, GSE117606 14395; more variable in carcinoma 122 (original 117); less variable 0
+    added: ['ELAPOR1', 'GPR15LG', 'PGAP4', 'PLPBP', 'TMEM238L']; lost: []; renamed originals: IGJ->JCHAIN, SEPP1->SELENOP
+5. SOURCE DATA CHECKS
+  [OK] 4 arm V_arm / BF p / median diff / n genes reproduce addendum 11: 48 cohort x version x arm rows compared (expected 48); max |difference| 4.44e-16
+  [OK] 5 GSE41258 CMS labels joined for all carcinomas: 181 labelled / 181 carcinomas
+  [OK] 5 GSE41258 differentiation and arm scores joined for all adenomas + carcinomas: differentiation 229, arm_20q 229, A+C 229
+  [OK] 5 GSE41258 variability ratio V of the 117 genes reproduces addendum 9: 105 genes compared; max |difference| 4.44e-16; 13 of 117 genes absent from this cohort's expression
+  [OK] 5 GSE20916 CMS labels joined for all carcinomas: 36 labelled / 36 carcinomas
+  [OK] 5 GSE20916 differentiation and arm scores joined for all adenomas + carcinomas: differentiation 81, arm_20q 81, A+C 81
+  [OK] 5 GSE20916 variability ratio V of the 117 genes reproduces addendum 9: 121 genes compared; max |difference| 4.44e-16; 0 of 117 genes absent from this cohort's expression
+  [OK] 5 GSE37364 CMS labels joined for all carcinomas: 27 labelled / 27 carcinomas
+  [OK] 5 GSE37364 differentiation and arm scores joined for all adenomas + carcinomas: differentiation 56, arm_20q 56, A+C 56
+  [OK] 5 GSE37364 variability ratio V of the 117 genes reproduces addendum 9: 122 genes compared; max |difference| 4.44e-16; 0 of 117 genes absent from this cohort's expression
+  [OK] 5 GSE117606 CMS labels joined for all carcinomas: 71 labelled / 71 carcinomas
+  [OK] 5 GSE117606 differentiation and arm scores joined for all adenomas + carcinomas: differentiation 130, arm_20q 130, A+C 130
+  [OK] 5 GSE117606 variability ratio V of the 117 genes reproduces addendum 9: 121 genes compared; max |difference| 4.44e-16; 0 of 117 genes absent from this cohort's expression
+   gene-set label 'excl117' replaced by 'excl122' in arm_scores_tests.csv and arm_scores_GEO.csv
+Run time 3.7 min

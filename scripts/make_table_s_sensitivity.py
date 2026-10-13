@@ -161,8 +161,9 @@ def main():
         "B. Alternative sample sets and adjustments (GEO cohorts)")
     add(doc, C, cols, "C. TCGA-COAD (stage I–IV; unadjusted and stage-blind adjusted data)")
     notes = [
-        "Primary rule (pre-specified): a transition is a topological tipping point only if the shape-only 1-Wasserstein "
-        "label-permutation test (one sample per patient per stage where patient identifiers exist; k = 20 subsamples of m "
+        "Primary rule (prespecified before analysis): a transition is a topological tipping point only if the shape-only "
+        "label-permutation test of the difference in persistence-diagram shape between stages (mean 1-Wasserstein "
+        "distance between diagrams of different stages minus the mean within stages; H0 and H1 combined) (one sample per patient per stage where patient identifiers exist; k = 20 subsamples of m "
         "per group, 80% of the smallest stage; 999 permutations) gives Holm p < 0.05 in both unadjusted and stage-blind "
         "composition-adjusted data. Holm correction is across the transitions of each cohort (3 for GSE41258 and TCGA-COAD, "
         "2 for the other cohorts), within each version and setting. The rule was not met in any primary analysis.",

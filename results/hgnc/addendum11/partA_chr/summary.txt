@@ -1,0 +1,67 @@
+ADDENDUM 11 PART A - chromosome arms and 20q (baf4bc4; Amendment 1 384c81e; D23)
+========================================================================
+Arm annotation: MSigDB C1 positional sets (decoupler/OmniPath), genes on one autosomal arm only (D23).
+Primary: adjusted expression, the 117 addendum 9 genes excluded; arms with >= 20 genes.
+Packages: decoupler 2.2.0, numpy 2.4.6, scipy 1.17.1, pandas 2.3.3
+Genes with a single-arm annotation: 23840; 117 genes excluded from arm statistics (122 in list).
+
+A2 - 20q rank among arms by median log variability ratio (carcinoma vs adenoma); top 8 arms per cohort:
+  GSE41258  20q rank 5 of 39 (median logV +0.180)  | top 8: 20p(+0.27), 8q(+0.24), 13q(+0.19), 5p(+0.18), 20q(+0.18), 8p(+0.17), 9p(+0.17), 4p(+0.15)
+  GSE20916  20q rank 1 of 39 (median logV +0.360)  | top 8: 20q(+0.36), 20p(+0.34), 8p(+0.32), 8q(+0.28), 17p(+0.28), 14q(+0.27), 18q(+0.26), 22q(+0.25)
+  GSE37364  20q rank 3 of 39 (median logV +0.247)  | top 8: 18p(+0.33), 13q(+0.27), 20q(+0.25), 20p(+0.24), 10p(+0.24), 17p(+0.23), 18q(+0.21), 3q(+0.21)
+  GSE117606 20q rank 1 of 39 (median logV +0.140)  | top 8: 20q(+0.14), 20p(+0.11), 8q(+0.07), 13q(+0.07), 18q(+0.06), 7q(+0.05), 5p(+0.04), 8p(+0.04)
+  CRC arms, rank per cohort (GSE41258/GSE20916/GSE37364/GSE117606): 7p 21/23/37/9; 7q 13/18/36/6; 8q 2/4/23/3; 13q 3/9/2/4; 20p 1/2/4/2; 20q 5/1/3/1; 8p 6/3/11/8; 17p 15/5/6/29; 18p 10/39/1/38; 18q 38/7/7/5
+
+A3 - arm score variability, carcinoma vs adenoma (adjusted, 117 excluded): V_arm (Brown-Forsythe p) | median diff (MW p):
+  20q  GSE41258 1.94 (0.0431) | +0.55 (9.8e-11); GSE20916 2.12 (0.00113) | +0.43 (0.0027); GSE37364 3.10 (0.00516) | +0.20 (0.18); GSE117606 1.99 (0.000675) | +0.18 (0.00016)
+  20p  GSE41258 2.31 (0.000373) | +0.13 (0.0041); GSE20916 2.19 (0.00184) | +0.23 (0.024); GSE37364 2.45 (0.164) | +0.00 (0.79); GSE117606 1.76 (0.000311) | +0.14 (0.0012)
+  13q  GSE41258 1.90 (0.00227) | +0.27 (6.1e-05); GSE20916 2.45 (0.00806) | +0.34 (0.0084); GSE37364 3.64 (0.000316) | +0.24 (0.074); GSE117606 1.60 (0.0347) | +0.27 (5.2e-07)
+  8q   GSE41258 2.91 (1.7e-06) | +0.23 (4.8e-05); GSE20916 1.46 (0.0177) | -0.07 (0.79); GSE37364 1.23 (0.228) | -0.02 (0.9); GSE117606 3.66 (0.000149) | +0.19 (3.4e-05)
+  7p   GSE41258 1.40 (0.335) | +0.35 (5.8e-08); GSE20916 1.51 (0.0482) | +0.25 (0.037); GSE37364 1.14 (0.174) | +0.03 (0.95); GSE117606 1.99 (0.00104) | +0.18 (5.8e-08)
+  7q   GSE41258 1.68 (0.297) | +0.16 (0.051); GSE20916 1.54 (0.0596) | +0.07 (0.38); GSE37364 1.67 (0.117) | -0.02 (0.45); GSE117606 2.60 (0.000592) | +0.12 (0.00016)
+  20q gain-like carcinomas (score > adenoma 97.5th pct): GSE41258 7%, GSE20916 28%, GSE37364 15%, GSE117606 25%
+  sensitivity, unadjusted expression: 20q V_arm (BF p) GSE41258 3.06 (0.000765); GSE20916 2.82 (5.99e-05); GSE37364 3.20 (0.00484); GSE117606 2.13 (0.000377)
+  sensitivity, full arm incl. 117 genes: 20q V_arm (BF p) GSE41258 1.94 (0.0337); GSE20916 2.15 (0.000971); GSE37364 2.95 (0.00345); GSE117606 2.21 (0.000269)
+
+A4 - TCGA (272 tumours with copy number): arm expression score vs mean GISTIC2 copy number of the arm's genes:
+  20q  rho 0.85 (p 6.9e-78); expr genes 259, CN genes 343; tumours with mean CN > 0.1: 72%, > 0.3: 67%, < -0.1: 0%
+  20p  rho 0.92 (p 1.3e-109); expr genes 123, CN genes 176; tumours with mean CN > 0.1: 46%, > 0.3: 35%, < -0.1: 16%
+  13q  rho 0.87 (p 7.4e-85); expr genes 244, CN genes 316; tumours with mean CN > 0.1: 60%, > 0.3: 53%, < -0.1: 2%
+  8q   rho 0.88 (p 6.7e-88); expr genes 322, CN genes 394; tumours with mean CN > 0.1: 59%, > 0.3: 46%, < -0.1: 2%
+  7p   rho 0.86 (p 1.7e-81); expr genes 227, CN genes 294; tumours with mean CN > 0.1: 58%, > 0.3: 50%, < -0.1: 0%
+  7q   rho 0.84 (p 1.1e-73); expr genes 458, CN genes 592; tumours with mean CN > 0.1: 52%, > 0.3: 41%, < -0.1: 1%
+  8p   rho 0.90 (p 6.3e-98); expr genes 170, CN genes 242; tumours with mean CN > 0.1: 22%, > 0.3: 15%, < -0.1: 43%
+  17p  rho 0.81 (p 3.4e-63); expr genes 253, CN genes 323; tumours with mean CN > 0.1: 3%, > 0.3: 2%, < -0.1: 55%
+  18p  rho 0.81 (p 5.2e-64); expr genes 53, CN genes 67; tumours with mean CN > 0.1: 7%, > 0.3: 5%, < -0.1: 55%
+  18q  rho 0.76 (p 3e-52); expr genes 139, CN genes 193; tumours with mean CN > 0.1: 3%, > 0.3: 2%, < -0.1: 62%
+  (gain shares from the continuous GISTIC2 values; the thresholded file was not downloaded - descriptive only)
+  TCGA 20q expression score by stage (median): Stage I -0.08, Stage II -0.05, Stage III +0.03, Stage IV -0.01  (Kruskal p 0.46)
+  TCGA 20q expression score by CMS (median): CMS1 -0.38, CMS2 +0.24, CMS3 -0.43, CMS4 +0.17  (Kruskal p 4.5e-19)
+  Chromosome 20 genes among the 117, expression vs own copy number (TCGA): AAR2 [20q] 0.83, ABHD12 [20p] 0.77, APMAP [20p] 0.82, BMP7 [20q] 0.07, DDX27 [20q] 0.78, DIDO1 [20q] 0.67, DYNLRB1 [20q] 0.72, ENTPD6 [20p] 0.76, ID1 [20q] 0.32, NELFCD [20q] 0.78, OSER1 [20q] 0.79, PLAGL2 [20q] 0.73, TMEM230 [20p] 0.77
+
+Arm confirmation of the eight genes (Amendment 1; MSigDB C1 bands):
+  PLAGL2   20q  [chr20q11]
+  DIDO1    20q  [chr20q13]
+  AAR2     20q  [chr20q11]
+  NELFCD   20q  [chr20q13]
+  OSER1    20q  [chr20q13]
+  DYNLRB1  20q  [chr20q11]
+  ABHD12   20p  [chr20p11]
+  ENTPD6   20p  [chr20p11]
+  20p: ABHD12, ENTPD6 | 20q: PLAGL2, DIDO1, AAR2, NELFCD, OSER1, DYNLRB1
+
+A5 - CALLS (i: rank <= 5 in >= 3/4 cohorts; ii: BF p < 0.05 and V_arm > 1 in >= 3/4; iii: TCGA rho >= 0.5, p < 0.05):
+  20q  (i) 4/4  (ii) 4/4  (iii) yes  -> CONFIRMED
+  20p  (i) 4/4  (ii) 3/4  (iii) yes  -> CONFIRMED   [comparator]
+  13q  (i) 3/4  (ii) 4/4  (iii) yes  -> CONFIRMED   [comparator]
+  8q   (i) 3/4  (ii) 3/4  (iii) yes  -> CONFIRMED   [comparator]
+  7p   (i) 0/4  (ii) 2/4  (iii) yes  -> NOT CONFIRMED   [comparator]
+  7q   (i) 0/4  (ii) 1/4  (iii) yes  -> NOT CONFIRMED   [comparator]
+
+INTERPRETATION: chromosome-arm gains are a confirmed source of carcinoma heterogeneity; their share of the
+excess dispersion is quantified in Amendment 2.
+NOTE: the GEO 'gain-like' percentage (expression score above the adenoma 97.5th percentile) is not comparable
+to the TCGA GISTIC2 gain percentage (copy-number values).
+
+Outputs: results/addendum11/partA_chr/arm_variability_ranking.csv, arm_scores_tests.csv,
+  tcga_expression_vs_copynumber.csv, tcga_20q_score.csv, tcga_chr20_variable_genes_vs_cn.csv

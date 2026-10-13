@@ -13,7 +13,7 @@ from docx import Document
 from docx.shared import Cm, Pt
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-B3 = os.path.join(ROOT, "results", "addendum11", "partB_differentiation", "B3_dispersion_decomposition.csv")
+B3 = os.path.join(ROOT, "results", "hgnc", "addendum11", "partB_differentiation", "B3_dispersion_decomposition.csv")
 OUT = os.path.join(ROOT, "paper", "final", "supplementary")
 GEO = ["GSE41258", "GSE20916", "GSE37364", "GSE117606"]
 
@@ -35,7 +35,7 @@ def build():
 
 
 NOTES = [
-    "Four arms = the arm scores of 20q, 20p, 13q and 8q (adjusted expression, 117 addendum 9 genes excluded), removed "
+    "Four arms = the arm scores of 20q, 20p, 13q and 8q (adjusted expression, the 122 variable genes excluded; current HGNC symbols), removed "
     "together: within each stage, every principal component is regressed on the four scores (with intercept) and the "
     "residuals are kept. D_total = bias-adjusted carcinoma/adenoma dispersion ratio; D_resid = the same after removal; "
     "f = (D_total − D_resid) ÷ (D_total − 1); f_rand95 = 95th percentile of f when the scores are permuted within stage "

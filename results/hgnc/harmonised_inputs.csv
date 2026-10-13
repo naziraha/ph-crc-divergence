@@ -1,0 +1,11 @@
+file,genes,renamed,dropped_collision,genes_after
+GSE41258_main_expr_genes.csv,12548,645,5,12543
+GSE41258_main_expr_genes_adjusted.csv,12548,645,5,12543
+GSE20916_bulk_expr_genes.csv,12921,842,7,12914
+GSE20916_bulk_expr_genes_adjusted.csv,12921,842,7,12914
+GSE37364_bulk_expr_genes.csv,21655,1435,34,21621
+GSE37364_bulk_expr_genes_adjusted.csv,21655,1435,34,21621
+GSE117606_main_expr_genes.csv,19194,0,0,19194
+GSE117606_main_expr_genes_adjusted.csv,19194,0,0,19194
+TCGA_COAD_main_expr_genes_adjusted.csv,20530,2607,48,20482
+TCGA GISTIC2 gene-level,24776,1708,95,24681

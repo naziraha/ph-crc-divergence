@@ -1,0 +1,25 @@
+== 2a. PRIMARY PH ANALYSIS vs SYMBOL HARMONISATION ==
+   cohort    version  collision_pairs  colliding_genes_in_top2000                                           genes
+ GSE41258 unadjusted                5                           0                                                
+ GSE41258   adjusted                5                           0                                                
+ GSE20916 unadjusted                7                           2                                 C10orf12;CCDC80
+ GSE20916   adjusted                7                           1                                          CCDC80
+ GSE37364 unadjusted               29                           7 C11orf92;CCDC80;DGCR9;LINC01279;MIA2;NEBL;S1PR3
+ GSE37364   adjusted               29                           3                             C11orf92;DGCR9;MIA2
+GSE117606 unadjusted                0                           0                                                
+GSE117606   adjusted                0                           0                                                
+  marker sets, original -> harmonised (GSE41258): Epithelial 18 -> 18, Stromal 292 -> 297, Immune 447 -> 458
+   cohort      score  markers_found_original  markers_found_harmonised  pearson_r
+ GSE41258 Epithelial                      18                        18   1.000000
+ GSE41258    Stromal                     292                       297   0.999901
+ GSE41258     Immune                     447                       458   0.999536
+ GSE20916 Epithelial                      17                        17   1.000000
+ GSE20916    Stromal                     256                       260   0.999817
+ GSE20916     Immune                     360                       369   0.999738
+ GSE37364 Epithelial                      18                        18   0.999999
+ GSE37364    Stromal                     292                       297   0.999631
+ GSE37364     Immune                     447                       458   0.999764
+GSE117606 Epithelial                      16                        16   1.000000
+GSE117606    Stromal                     289                       295   0.999754
+GSE117606     Immune                     436                       448   0.999296
+

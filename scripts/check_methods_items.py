@@ -225,6 +225,79 @@ def check_symbols():
     say(ar.to_string(index=False))
 
 
+# ---------------------------------------------------------------- 2a. primary PH analysis vs symbol harmonisation
+def check_primary():
+    """Symbols enter the primary PH pipeline in two places only: (i) probe -> gene collapse within a cohort (two
+    rows whose symbols are an old and a current name of one gene); (ii) the frozen composition marker sets, matched
+    to each cohort by symbol. (i): are any colliding genes among the selected genes of the primary embeddings?
+    (ii): composition scores recomputed with harmonised markers and expression, correlated with the originals."""
+    import decoupler as dc
+    say("== 2a. PRIMARY PH ANALYSIS vs SYMBOL HARMONISATION ==")
+    current, alias = hgnc_map()
+    sets = {"GSE41258": "main", "GSE20916": "bulk", "GSE37364": "bulk", "GSE117606": "main"}
+    rows = []
+    for c, st in sets.items():
+        g = pd.read_csv(os.path.join(PROC, f"{c}_{st}_expr_genes.csv"), usecols=[0]).iloc[:, 0].astype(str)
+        cls = classify(g, current, alias)
+        present = set(g)
+        coll = [(s, cls[s][1]) for s in g if cls[s][0] == "renamed" and cls[s][1] in present]
+        cg = {x for pair in coll for x in pair}
+        for v in ("unadjusted", "adjusted"):
+            sel = set(pd.read_csv(os.path.join(EMB, f"{c}_{st}_{v}_g2000_pc10_genes.csv")).gene)
+            rows.append(dict(cohort=c, version=v, collision_pairs=len(coll), colliding_genes_in_top2000=len(cg & sel),
+                             genes=";".join(sorted(cg & sel))))
+    t = pd.DataFrame(rows)
+    t.to_csv(os.path.join(OUT, "primary_symbol_collisions.csv"), index=False)
+    say(t.to_string(index=False))
+
+    # (ii) composition markers: rebuild the GSE41258 marker sets on harmonised symbols (step02_composition.py 277-287)
+    net0 = pd.read_csv(os.path.join(ROOT, "results", "step02", "marker_sets_used.csv"))
+    epi = list(net0[net0.source == "Epithelial"].target)
+    pg = dc.op.resource("PanglaoDB", organism="human")
+    pg = pg[(pg["human"].astype(bool)) & (pg["canonical_marker"].astype(bool))]
+    comps = {"Stromal": ["Fibroblasts", "Myofibroblasts", "Smooth muscle cells", "Endothelial cells", "Pericytes"],
+             "Immune": ["T cells", "B cells", "Plasma cells", "NK cells", "Macrophages", "Monocytes", "Dendritic cells",
+                        "Mast cells", "Neutrophils"]}
+
+    def hz(symbols):
+        cl = classify(symbols, current, alias)
+        return [cl[s][1] if cl[s][0] == "renamed" else s for s in symbols]
+
+    g41 = pd.read_csv(os.path.join(PROC, "GSE41258_main_expr_genes.csv"), index_col=0)
+    g41h, _ = harmonise_index(g41, classify(g41.index.astype(str), current, alias))
+    rows = [("Epithelial", x) for x in hz(epi)]
+    for comp, cts in comps.items():
+        rows += [(comp, x) for x in set(hz(list(pg.loc[pg["cell_type"].isin(cts), "genesymbol"].astype(str)))) if x not in epi]
+    net = pd.DataFrame(rows, columns=["source", "target"]).drop_duplicates()
+    sh = net["target"].value_counts()
+    net = net[net["target"].isin(sh.index[sh == 1]) & net["target"].isin(g41h.index)].assign(weight=1.0)
+    n0 = net0.source.value_counts()
+    n1 = net.source.value_counts()
+    say("  marker sets, original -> harmonised (GSE41258): " + ", ".join(f"{k} {n0.get(k, 0)} -> {n1.get(k, 0)}" for k in ("Epithelial", "Stromal", "Immune")))
+    sc_files = {"GSE41258": os.path.join(ROOT, "results", "step02", "composition_scores_main.csv"),
+                "GSE20916": os.path.join(ROOT, "results", "step02", "GSE20916", "composition_scores_bulk.csv"),
+                "GSE37364": os.path.join(ROOT, "results", "step02", "GSE37364", "composition_scores_bulk.csv"),
+                "GSE117606": os.path.join(ROOT, "results", "step02", "GSE117606", "composition_scores_all.csv")}
+    rows = []
+    for c, st in sets.items():
+        g = pd.read_csv(os.path.join(PROC, f"{c}_{st}_expr_genes.csv"), index_col=0)
+        lab = pd.read_csv(os.path.join(PROC, f"{c}_{st}_samples_qc.csv"), index_col=0)
+        g = g[lab.index]
+        gh, _ = harmonise_index(g, classify(g.index.astype(str), current, alias))
+        old = pd.read_csv(sc_files[c], index_col=0).loc[lab.index]
+        found0 = net0[net0.target.isin(g.index)].source.value_counts()
+        found1 = net[net.target.isin(gh.index)].source.value_counts()
+        cen = gh.sub(gh.mean(axis=1), axis=0)
+        res = dc.mt.ulm(cen.T, net[net.target.isin(gh.index)][["source", "target", "weight"]], tmin=5)
+        es = res[0] if isinstance(res, tuple) else res
+        for k in ("Epithelial", "Stromal", "Immune"):
+            rows.append(dict(cohort=c, score=k, markers_found_original=int(found0.get(k, 0)), markers_found_harmonised=int(found1.get(k, 0)),
+                             pearson_r=float(np.corrcoef(old[k], es.loc[lab.index, k])[0, 1])))
+    t2 = pd.DataFrame(rows)
+    t2.to_csv(os.path.join(OUT, "primary_composition_markers.csv"), index=False)
+    say(t2.to_string(index=False))
+
+
 # ---------------------------------------------------------------- 9. GSE20916 repeat-array check
 def check_repeat():
     import step02_composition_validation as S2
@@ -243,7 +316,8 @@ def check_repeat():
 
 if __name__ == "__main__":
     which = sys.argv[1] if len(sys.argv) > 1 else "all"
-    for name, f in (("w1", check_w1), ("permdisp", check_permdisp), ("symbols", check_symbols), ("repeat", check_repeat)):
+    for name, f in (("w1", check_w1), ("permdisp", check_permdisp), ("symbols", check_symbols), ("repeat", check_repeat),
+                    ("primary", check_primary)):
         if which in (name, "all"):
             f()
             say("")

@@ -26,6 +26,7 @@ EMB = os.path.join(ROOT, "results", "step03", "embeddings")
 A9 = os.path.join(ROOT, "results", "addendum9")
 OUTA = os.path.join(ROOT, "results", "addendum11", "partA_chr")
 OUTC = os.path.join(ROOT, "results", "addendum11", "partC_composition")
+CN_FILE = os.path.join(ROOT, "data", "raw", "TCGA", "TCGA.COAD.sampleMap_Gistic2_all_data_by_genes.gz")
 GEO = {"GSE41258": "main", "GSE20916": "bulk", "GSE37364": "bulk", "GSE117606": "main"}
 COMP_FILE = {"GSE41258": os.path.join(ROOT, "results", "step02", "composition_scores_main.csv"),
              "GSE20916": os.path.join(ROOT, "results", "step02", "GSE20916", "composition_scores_bulk.csv"),
@@ -124,8 +125,7 @@ def part_a(arms, bands, excl):
     genes_ok = list(ex.index[mm > mm.quantile(0.25)])
     S, n = arm_scores(ex, arms, genes_ok, excl)
     cms = pd.read_csv(os.path.join(ROOT, "results", "addendum10", "cms", "cms_labels_TCGA.csv"), index_col=0)["nearest"]
-    cn = pd.read_csv(os.path.join(ROOT, "data", "raw", "TCGA", "TCGA.COAD.sampleMap_Gistic2_all_data_by_genes.gz"),
-                     sep="\t", index_col=0)
+    cn = pd.read_csv(CN_FILE, sep="\t", index_col=0)
     common = [s for s in lab.index if s in cn.columns]
     tc_rows = []
     for arm in [a for a in ["20q"] + COMPARATORS + ["8p", "17p", "18p", "18q"] if a in S.columns]:

@@ -1,0 +1,14 @@
+ADDENDUM 11 PART C - residual composition among the 117 variable genes (Amendment 1, 384c81e)
+========================================================================
+Carcinomas per GEO cohort; Spearman rho of gene expression with the step 2 composition score.
+Rule: |rho| >= 0.5 in >= 3 of 4 cohorts (adjusted expression) -> residual composition signal.
+
+  gene    score     adjusted rho per cohort (GSE41258/GSE20916/GSE37364/GSE117606)   | unadjusted rho   -> call
+  DES     Stromal   -0.17 / +0.20 / +0.06 / -0.28   | +0.54 / +0.69 / +0.27 / +0.36   -> not explained by residual composition (0/4)
+  SYNPO2  Stromal    n/a / +0.27 / +0.22 / -0.32   |  n/a / +0.82 / +0.63 / +0.52   -> not explained by residual composition (0/4)
+  FOXF2   Stromal   -0.42 / +0.18 / +0.24 / -0.39   | +0.31 / +0.32 / +0.45 / -0.11   -> not explained by residual composition (0/4)
+  CXCL14  Stromal   -0.01 / +0.06 / +0.38 / +0.01   | +0.07 / -0.21 / +0.28 / -0.16   -> not explained by residual composition (0/4)
+  IGJ     Immune    -0.17 / +0.55 / +0.28 / -0.00   | +0.51 / +0.60 / +0.50 / +0.13   -> not explained by residual composition (1/4)
+
+Symbol used for IGJ: GSE117606 JCHAIN, GSE20916 JCHAIN, GSE37364 JCHAIN, GSE41258 JCHAIN
+Outputs: results/addendum11/partC_composition/residual_composition.csv

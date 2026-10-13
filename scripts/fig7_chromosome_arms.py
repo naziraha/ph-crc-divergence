@@ -1,8 +1,8 @@
 """
 Figure 7 (chromosome arms; addendum 11), from existing files only; no statistical tests.
 (a) per arm (genome order) and GEO cohort: median ln V of the arm's genes (V = MAD carcinoma / MAD adenoma, adjusted
-    expression; 117 genes excluded; arms >= 20 genes) from arm_variability_ranking.csv (median_logV).
-(b) 20q arm score per sample (adjusted, 117 genes excluded), adenoma vs carcinoma, per GEO cohort; adenomas grey,
+    expression; 122 variable genes excluded; arms >= 20 genes) from arm_variability_ranking.csv (median_logV).
+(b) 20q arm score per sample (adjusted, 122 genes excluded), adenoma vs carcinoma, per GEO cohort; adenomas grey,
     carcinomas by primary CMS; Brown-Forsythe p and median difference from arm_scores_tests.csv.
 (c) TCGA: 20q expression score (tcga_20q_score.csv) vs mean GISTIC2 copy number of 20q genes per tumour (raw GISTIC2
     file, same computation as addendum 11 A4); Spearman rho checked against tcga_expression_vs_copynumber.csv.
@@ -26,7 +26,7 @@ from scipy.stats import spearmanr  # noqa: E402
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
 R = os.path.join(ROOT, "results")
-A11 = os.path.join(R, "addendum11")
+A11 = os.path.join(R, "hgnc", "addendum11")      # harmonised symbols (scripts/hgnc_crosscohort.py; S7)
 OUT = os.path.join(ROOT, "paper", "final", "main_figures")
 NAME = "Fig7_chromosome_arms"
 GEO = ["GSE41258", "GSE20916", "GSE37364", "GSE117606"]
@@ -46,7 +46,7 @@ def tcga_cn():
     import addendum11_chr20 as A11m
     arms, _ = A11m.arm_map()
     s = pd.read_csv(os.path.join(A11, "partA_chr", "tcga_20q_score.csv"), index_col=0)
-    cn = pd.read_csv(os.path.join(ROOT, "data", "raw", "TCGA", "TCGA.COAD.sampleMap_Gistic2_all_data_by_genes.gz"),
+    cn = pd.read_csv(os.path.join(ROOT, "data", "processed_hgnc", "TCGA_COAD_Gistic2_all_data_by_genes_hgnc.tsv.gz"),
                      sep="\t", index_col=0)
     common = [x for x in s.index if x in cn.columns]
     g20 = [x for x in cn.index if arms.get(x) == "20q"]
@@ -57,13 +57,13 @@ def main():
     os.makedirs(OUT, exist_ok=True)
     rk = pd.read_csv(os.path.join(A11, "partA_chr", "arm_variability_ranking.csv"))
     tests = pd.read_csv(os.path.join(A11, "partA_chr", "arm_scores_tests.csv"))
-    tests = tests[(tests.version == "adjusted") & (tests.genes == "excl117") & (tests.arm == "20q")].set_index("cohort")
+    tests = tests[(tests.version == "adjusted") & (tests.genes == "excl122") & (tests.arm == "20q")].set_index("cohort")
     tcv = pd.read_csv(os.path.join(A11, "partA_chr", "tcga_expression_vs_copynumber.csv")).set_index("arm")
     b3 = pd.read_csv(os.path.join(A11, "partB_differentiation", "B3_dispersion_decomposition.csv")).set_index("cohort")
     a9 = pd.read_csv(os.path.join(R, "addendum9", "dispersion_decomposition.csv"))
     a9 = a9[a9["labels"] == "primary"].set_index("cohort")
-    armsc = pd.read_csv(os.path.join(R, "source_data", "arm_scores_GEO.csv"))
-    armsc = armsc[(armsc.version == "adjusted") & (armsc.genes == "excl117")]
+    armsc = pd.read_csv(os.path.join(R, "hgnc", "source_data", "arm_scores_GEO.csv"))
+    armsc = armsc[(armsc.version == "adjusted") & (armsc.genes == "excl122")]
     cms = pd.read_csv(os.path.join(R, "addendum9", "cms_labels.csv"), index_col=0)["nearest"]
 
     fig = plt.figure(figsize=(11, 12.5))
@@ -92,7 +92,7 @@ def main():
     ax.set_xlim(-0.7, len(arms) - 0.3)
     ax.set_ylabel("median ln V of the arm's genes\n(V = MAD carcinoma ÷ MAD adenoma)")
     ax.legend(fontsize=7, frameon=False, ncol=4, loc="lower right", bbox_to_anchor=(1.0, 1.0))
-    ax.set_title("Increase in gene variability from adenoma to carcinoma, per chromosome arm\n(adjusted data; 117 selected "
+    ax.set_title("Increase in gene variability from adenoma to carcinoma, per chromosome arm\n(adjusted data; 122 selected "
                  "genes excluded)", loc="left", fontsize=8.5)
     ax.text(0.005, 0.95, "red band: 20q, 20p, 13q, 8q; grey band: 7p, 7q (comparators)", transform=ax.transAxes,
             fontsize=7, color="0.3", va="top")

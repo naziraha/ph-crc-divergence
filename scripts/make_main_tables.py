@@ -185,8 +185,10 @@ def main():
     word_table(t2.drop(columns=["Dimension detail"]), os.path.join(OUT, "Table2_validation.docx"),   # detail kept in CSV
                "Table 2. Step 5 permutation test (prespecified before analysis) and secondary persistent-homology tests in the GEO cohorts "
                "(primary analysis; Holm-adjusted p-values).",
-               ["Values are Holm-adjusted p-values; p < 0.05 in bold. Step 5 test: 1-Wasserstein distance between stage "
-                "persistence diagrams (H0 + H1), 20 subsamples of 80% of the smallest stage per group, label-permutation "
+               ["Values are Holm-adjusted p-values; p < 0.05 in bold. Step 5 test: the difference in persistence-diagram shape "
+                "between stages, measured as the mean 1-Wasserstein distance between diagrams of different stages minus the "
+                "mean distance within stages (H0 and H1 combined; 20 subsamples per stage, each of 80% of the smallest "
+                "stage), label-permutation "
                 "test with 999 permutations (groups aligned before permuting), Holm correction across the transitions of "
                 "each cohort (three in GSE41258, two elsewhere).",
                 "Patients in both groups: patients contributing a sample to both stages of the comparison (GSE41258: as "

@@ -1,5 +1,6 @@
 """
-Figure 6 (the 117 replicated 'more variable in carcinoma' genes, addendum 9), GEO cohorts. Descriptive; no tests.
+Figure 6 (the 122 replicated 'more variable in carcinoma' genes, addendum 9 rule with current HGNC symbols), GEO cohorts.
+Descriptive; no tests. Inputs from results/hgnc/ (scripts/hgnc_crosscohort.py; Supplementary Methods S7).
 Expression version: composition-ADJUSTED (as used by addendum 9 to find the genes; per_sample 'adj_' columns).
 Groups (addendum 9): 'no mean shift' = median |mean difference carcinoma - adenoma| < 0.5 log2 across cohorts
 (no_mean_shift); otherwise 'lower' / 'higher' in carcinoma by the sign of the median signed mean difference
@@ -24,8 +25,8 @@ import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-A9 = os.path.join(ROOT, "results", "addendum9")
-SD = os.path.join(ROOT, "results", "source_data")
+A9 = os.path.join(ROOT, "results", "hgnc", "addendum9")
+SD = os.path.join(ROOT, "results", "hgnc", "source_data")
 OUT = os.path.join(ROOT, "paper", "final", "main_figures")
 NAME = "Fig6_variable_genes"
 GEO = ["GSE41258", "GSE20916", "GSE37364", "GSE117606"]
@@ -154,7 +155,7 @@ def main():
     handles = [Line2D([], [], marker="o", ls="", color="0.55", label="normal / adenoma sample")] + \
               [Line2D([], [], marker="o", ls="", color=CCOL[k], label=f"carcinoma, {k}") for k in CCOL]
     fig.legend(handles=handles, loc="lower center", bbox_to_anchor=(0.5, 0.0), ncol=5, frameon=False, fontsize=7.5)
-    fig.suptitle("The 117 genes more variable in carcinoma than in adenoma (selected in addendum 9; adjusted data; descriptive)",
+    fig.suptitle("The 122 genes more variable in carcinoma than in adenoma (addendum 9 rule; current HGNC symbols; adjusted data; descriptive)",
                  fontsize=11, fontweight="bold", y=0.995)
     for ext in ("png", "pdf"):
         fig.savefig(os.path.join(OUT, f"{NAME}.{ext}"), dpi=300, bbox_inches="tight")

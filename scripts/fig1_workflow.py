@@ -88,7 +88,7 @@ def main():
              "Embedding\n\nz-score, PCA:\n10 principal\ncomponents",
              "Subsampling\n\n20 subsamples\nper stage of\n80% of the\nsmallest stage",
              "Persistent homology\n\nVietoris–Rips:\nH0 clusters, H1 loops\ndiagrams, barcodes,\nBetti curves, landscapes\nraw and shape-only\n(Figs 2–3)",
-             "Statistical test\n\n1-Wasserstein distance\nlabel-permutation test\n(999 permutations)\nHolm correction\n(Table 2)"]
+             "Statistical test\n\nmean 1-Wasserstein\ndistance, between\nminus within stages\n(H0 + H1)\nlabel permutation (999)\nHolm correction\n(Table 2)"]
     n = len(steps)
     bw, bg, by, bh = 0.116, 0.022, 0.455, 0.175
     for i, s in enumerate(steps):
@@ -116,7 +116,7 @@ def main():
             fontsize=8, fontweight="bold")
     subs = [("Between-sample heterogeneity", "dispersion by stage (PERMDISP)", "Figure 4"),
             ("CMS subtypes", "share of carcinoma dispersion", "Figure 5"),
-            ("Variable genes", "117 genes more variable\nin carcinoma", "Figure 6"),
+            ("Variable genes", "122 genes more variable\nin carcinoma", "Figure 6"),
             ("Chromosome arms", "20q, 20p, 13q, 8q;\nTCGA copy number", "Figure 7")]
     for k, (t, d, f) in enumerate(subs):
         cx = 0.43 + (k % 2) * 0.174

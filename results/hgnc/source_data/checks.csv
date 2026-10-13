@@ -1,0 +1,14 @@
+check,ok,detail
+4 arm V_arm / BF p / median diff / n genes reproduce addendum 11,True,48 cohort x version x arm rows compared (expected 48); max |difference| 4.44e-16
+5 GSE41258 CMS labels joined for all carcinomas,True,181 labelled / 181 carcinomas
+5 GSE41258 differentiation and arm scores joined for all adenomas + carcinomas,True,"differentiation 229, arm_20q 229, A+C 229"
+5 GSE41258 variability ratio V of the 117 genes reproduces addendum 9,True,105 genes compared; max |difference| 4.44e-16; 13 of 117 genes absent from this cohort's expression
+5 GSE20916 CMS labels joined for all carcinomas,True,36 labelled / 36 carcinomas
+5 GSE20916 differentiation and arm scores joined for all adenomas + carcinomas,True,"differentiation 81, arm_20q 81, A+C 81"
+5 GSE20916 variability ratio V of the 117 genes reproduces addendum 9,True,121 genes compared; max |difference| 4.44e-16; 0 of 117 genes absent from this cohort's expression
+5 GSE37364 CMS labels joined for all carcinomas,True,27 labelled / 27 carcinomas
+5 GSE37364 differentiation and arm scores joined for all adenomas + carcinomas,True,"differentiation 56, arm_20q 56, A+C 56"
+5 GSE37364 variability ratio V of the 117 genes reproduces addendum 9,True,122 genes compared; max |difference| 4.44e-16; 0 of 117 genes absent from this cohort's expression
+5 GSE117606 CMS labels joined for all carcinomas,True,71 labelled / 71 carcinomas
+5 GSE117606 differentiation and arm scores joined for all adenomas + carcinomas,True,"differentiation 130, arm_20q 130, A+C 130"
+5 GSE117606 variability ratio V of the 117 genes reproduces addendum 9,True,121 genes compared; max |difference| 4.44e-16; 0 of 117 genes absent from this cohort's expression
