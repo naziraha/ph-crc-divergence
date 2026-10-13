@@ -1,0 +1,46 @@
+== 6. GENE SYMBOLS vs CURRENT HGNC (check only) ==
+reference: NCBI Homo_sapiens.gene_info.gz (data/raw), 193833 current symbols, 69838 aliases/previous
+   cohort  genes  current  renamed  ambiguous_alias  not_found
+ GSE41258  12548    11675      645               29        199
+ GSE20916  12921    11672      842               30        377
+ GSE37364  21655    17671     1435               41       2508
+GSE117606  19194    19194        0                0          0
+TCGA-COAD  20530    17212     2607               88        623
+  GSE41258: variability table renamed 474, dropped as duplicates after renaming 2
+  GSE20916: variability table renamed 623, dropped as duplicates after renaming 2
+  GSE37364: variability table renamed 1067, dropped as duplicates after renaming 13
+  GSE117606: variability table renamed 0, dropped as duplicates after renaming 0
+  117 list: 117 originally; 122 with harmonised symbols; gained ['ELAPOR1', 'GPR15LG', 'PGAP4', 'PLPBP', 'TMEM238L']; lost []
+  non-current symbols inside the 117: ['IGJ', 'SEPP1'] -> IGJ: ('renamed', 'JCHAIN'), SEPP1: ('renamed', 'SELENOP')
+  Fig 6 labelled genes (15): EREG, G0S2, BCL2A1, BST2, KLK10, FCGBP, AGR3, MUC2, MUC4, SPINK1, MOSPD1, FXYD3, RPIA, ERLIN2, AAR2
+  Fig 6 label set unchanged: False (117 list changes; label set would need re-derivation)
+  GSE41258: top-5 arms original ['20p', '8q', '13q', '20q', '5p'] | harmonised ['20p', '8q', '13q', '5p', '20q']
+  GSE20916: top-5 arms original ['20q', '20p', '8p', '17p', '8q'] | harmonised ['20q', '20p', '8p', '8q', '17p']
+  GSE37364: top-5 arms original ['18p', '13q', '20q', '10p', '17p'] | harmonised ['18p', '13q', '20q', '20p', '10p']
+  GSE117606: top-5 arms original ['20q', '20p', '8q', '13q', '18q'] | harmonised ['20q', '20p', '8q', '13q', '18q']
+   cohort arm  rank_original  rank_harmonised  n_genes_original  n_genes_harmonised
+ GSE41258 20q              4                5               167                 171
+ GSE41258 20p              1                1                79                  81
+ GSE41258 13q              3                3               148                 157
+ GSE41258  8q              2                2               184                 194
+ GSE41258  7p             27               20               121                 130
+ GSE41258  7q             13               13               272                 279
+ GSE20916 20q              1                1               158                 159
+ GSE20916 20p              2                2                79                  83
+ GSE20916 13q              9                9               174                 181
+ GSE20916  8q              5                4               201                 212
+ GSE20916  7p             23               23               138                 152
+ GSE20916  7q             16               18               281                 293
+ GSE37364 20q              3                3               255                 259
+ GSE37364 20p              6                4               124                 130
+ GSE37364 13q              2                2               221                 233
+ GSE37364  8q             24               23               293                 308
+ GSE37364  7p             37               37               205                 220
+ GSE37364  7q             36               36               413                 435
+GSE117606 20q              1                1               261                 261
+GSE117606 20p              2                2               129                 129
+GSE117606 13q              4                4               200                 200
+GSE117606  8q              3                3               278                 278
+GSE117606  7p              9                9               201                 201
+GSE117606  7q              6                6               405                 405
+

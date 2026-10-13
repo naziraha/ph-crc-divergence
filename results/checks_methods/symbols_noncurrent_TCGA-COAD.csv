@@ -1,0 +1,3319 @@
+symbol,status,current_symbol
+C16orf13,renamed,METTL26
+C16orf11,renamed,PRR35
+LOC100272146,not found,
+LOC339240,not found,
+NACAP1,renamed,NACA4P
+LOC441204,not found,
+KLRA1,renamed,KLRA1P
+FAM183A,renamed,CFAP144
+FAM183B,renamed,CFAP144P1
+KIAA0831,renamed,ATG14
+LOC100132288,not found,
+LOC100289341,not found,
+FAM116B,renamed,DENND6B
+FAM116A,renamed,DENND6A
+FAM169B,renamed,FAM169BP
+KIAA0895L,renamed,MATCAP1
+NOV,ambiguous alias,
+FAM134C,renamed,RETREG3
+FAM134B,renamed,RETREG1
+FAM134A,renamed,RETREG2
+LOC653501,not found,
+LQK1,renamed,FLVCR1-DT
+C14orf115,renamed,VRTN
+C14orf118,renamed,GPATCH2L
+MGC57346,not found,
+TCEB3B,renamed,ELOA2
+CCDC114,renamed,ODAD1
+CCDC115,renamed,VMA22
+CCDC113,renamed,CFAP263
+CCDC111,renamed,PRIMPOL
+KGFLP2,renamed,FGF7P3
+LOC100129637,not found,
+LOC441208,not found,
+C1orf14,renamed,SHCBP1L
+MLLT4,renamed,AFDN
+LOC283070,not found,
+MGC4473,not found,
+C4orf19,renamed,PGCKA1
+C3orf79,renamed,LINC02877
+C3orf77,renamed,TOPAZ1
+C3orf75,renamed,ELP6
+C3orf74,renamed,LINC00696
+C4orf10,renamed,NOP14-AS1
+C3orf72,renamed,FOXL2NB
+C3orf71,renamed,ARIH2OS
+EFHA1,renamed,MICU2
+EFHA2,renamed,MICU3
+GPR77,renamed,C5AR2
+RUNDC2C,renamed,SNX29P2
+LOC283404,not found,
+TMEM211,renamed,LHFPL7
+C11orf2,ambiguous alias,
+C11orf1,renamed,CFAP68
+C11orf9,renamed,MYRF
+ZNF193,renamed,ZSCAN9
+C15orf26,renamed,CFAP161
+C15orf27,renamed,TMEM266
+C15orf24,renamed,EMC7
+C15orf23,renamed,KNSTRN
+C15orf21,renamed,HMGN2P46
+C15orf28,renamed,ANP32A-IT1
+C15orf29,renamed,KATNBL1
+REG1P,renamed,REG1CP
+LOC401387,not found,
+ZNF642,renamed,ZFP69
+CSNK2A1P,renamed,CSNK2A3
+C20orf56,renamed,LINC00261
+C20orf54,renamed,SLC52A3
+LOC389791,not found,
+LOC440944,not found,
+C9orf128,renamed,FAM221B
+C9orf129,renamed,FAM120A2P
+C9orf125,renamed,PGAP4
+C9orf122,renamed,FAM201A
+KIAA1267,renamed,KANSL1
+RTCD1,renamed,RTCA
+CXorf1,renamed,SLITRK2
+KIAA0020,renamed,PUM3
+TMEM149,renamed,IGFLR1
+LOC100128811,not found,
+KIAA1199,renamed,CEMIP
+C19orf22,renamed,R3HDM4
+C19orf23,renamed,CIRBP-AS1
+C19orf20,renamed,TPGS1
+C19orf21,renamed,MISP
+C19orf26,renamed,CBARP
+C19orf24,renamed,FAM174C
+C19orf28,renamed,MFSD12
+C19orf29,renamed,CACTIN
+ITGB1BP3,renamed,NMRK2
+C11orf17,renamed,AKIP1
+C11orf10,renamed,TMEM258
+ORC3L,renamed,ORC3
+LOC389333,not found,
+KDM4DL,renamed,KDM4E
+FAM71F1,renamed,GARIN1B
+FAM71F2,renamed,GARIN1A
+SGK269,renamed,PEAK1
+FAM108B1,renamed,ABHD17B
+ZNF720,renamed,KRABD5
+LOC643387,not found,
+LOC84931,not found,
+LOC100192379,not found,
+LOC100192378,not found,
+C8orf30A,renamed,HGH1
+C16orf74,renamed,CLMB
+C16orf75,renamed,RMI2
+C16orf71,renamed,DNAAF8
+C16orf72,renamed,HAPSTR1
+C16orf73,renamed,MEIOB
+C16orf79,renamed,BRICD5
+C2orf83,renamed,SLC19A4P
+C2orf82,renamed,SNORC
+C2orf85,renamed,RTP5
+C2orf84,renamed,FAM228A
+C2orf86,renamed,WDPCP
+C2orf89,renamed,TRABD2A
+C2orf88,renamed,AKAP19
+FLJ46361,not found,
+UPF0639,renamed,PLEKHD1
+FLJ44635,not found,
+SGK494,renamed,RSKR
+ZFP161,renamed,ZBTB14
+?|26823,not found,
+LOC84856,not found,
+LOC441046,not found,
+LOC100128640,not found,
+KIAA0391,renamed,PRORP
+FAM188A,renamed,MINDY3
+FAM160B1,renamed,FHIP2A
+FAM160B2,renamed,FHIP2B
+GALNTL4,renamed,GALNT18
+GALNTL1,renamed,GALNT16
+ZNF323,renamed,ZSCAN31
+GALNTL2,renamed,GALNT15
+HN1,ambiguous alias,
+LOC729467,not found,
+FAM136B,renamed,TIMCCP1
+?|441362,not found,
+LOR,ambiguous alias,
+KIAA1524,renamed,CIP2A
+KIAA1522,renamed,NHSL3
+KIAA1033,renamed,WASHC4
+LOC284661,not found,
+LRRC29,renamed,FBXL9P
+KIAA1529,not found,
+SH3D20,renamed,ARHGAP27
+C14orf138,renamed,VCPKMT
+C14orf139,renamed,SYNE3
+C14orf135,renamed,PCNX4
+LOC440957,not found,
+MGC70857,not found,
+C20orf185,renamed,BPIFB3
+C20orf186,renamed,BPIFB4
+SEPX1,renamed,MSRB1
+NAPRT1,renamed,NAPRT
+ORC2L,renamed,ORC2
+PECI,renamed,ECI2
+LOC96610,not found,
+NARFL,renamed,CIAO3
+NFKBIL2,renamed,TONSL
+LOC150197,not found,
+TMEM84,renamed,EWSAT1
+LOC162632,not found,
+PPPDE1,renamed,DESI2
+PPPDE2,renamed,DESI1
+C1orf38,renamed,THEMIS2
+C1orf31,renamed,COA6
+OR5R1,renamed,OR8U3
+SSFA2,renamed,ITPRID2
+LOC344595,not found,
+GOLGA8E,renamed,GOLGA8EP
+GOLGA8C,renamed,GOLGA8CP
+MARCH11,renamed,MARCHF11
+MARCH10,renamed,MARCHF10
+LOC100125556,not found,
+CT45A4,renamed,CT45A3
+LPPR5,renamed,PLPPR5
+LPPR4,renamed,PLPPR4
+LPPR3,renamed,PLPPR3
+LPPR2,renamed,PLPPR2
+HBII-52-27,renamed,SNORD115-27
+PMS2L4,renamed,PMS2P4
+ATP5C1,renamed,ATP5F1C
+LOC121838,not found,
+LOC283050,not found,
+SKIV2L,renamed,SKIC2
+C3orf59,renamed,MB21D2
+C3orf58,renamed,DIPK2A
+C3orf51,renamed,ERC2-IT1
+C3orf50,renamed,EGFEM1P
+C3orf55,renamed,SLC66A1LP
+C3orf54,renamed,INKA1
+C3orf57,renamed,SPTSSB
+SF3B14,renamed,SF3B6
+C4orf37,renamed,STPG2
+C4orf34,renamed,SMIM14
+C4orf35,renamed,CABS1
+C4orf32,renamed,FAM241A
+C4orf31,renamed,NDNF
+C4orf38,renamed,WWC2-AS2
+C4orf39,renamed,FAM218A
+FAM49A,renamed,CYRIA
+FAM49B,renamed,CYRIB
+C10orf99,renamed,GPR15LG
+C15orf48,renamed,COXFA4L3
+C10orf91,renamed,LINC02870
+C10orf93,renamed,CFAP46
+C15orf41,renamed,CDIN1
+C10orf96,renamed,CCDC172
+C15orf43,renamed,TERB2
+C4orf6,renamed,LINC01587
+C4orf7,renamed,FDCSP
+C4orf3,renamed,ARLN
+LOC100128842,not found,
+C20orf79,renamed,SCP2D1
+C20orf71,renamed,BPIFA3
+C20orf70,renamed,BPIFA2
+C20orf72,renamed,MGME1
+PPAPDC1A,renamed,PLPP4
+TDGF1,ambiguous alias,
+TDGF3,renamed,CRIPTO3
+LOH3CR2A,renamed,LINC00312
+LOC339788,not found,
+KLHDC5,renamed,KLHL42
+SFRS9,renamed,SRSF9
+LOC285456,not found,
+BDNFOS,renamed,BDNF-AS
+FAM155B,renamed,NALF2
+FAM155A,renamed,NALF1
+C9orf144,renamed,SPATA31F2P
+C9orf140,renamed,SAPCD2
+C9orf142,renamed,PAXX
+LOC100128788,not found,
+ELTD1,renamed,ADGRL4
+FAM27A,renamed,FAM27C
+C11orf35,renamed,LMNTD2
+C11orf34,renamed,PLET1
+C11orf36,renamed,MRGPRG-AS1
+C11orf31,renamed,SELENOH
+C11orf30,renamed,EMSY
+LOC284276,not found,
+LOC100134713,not found,
+ANKRD20B,renamed,ANKRD20A8P
+LOC283267,not found,
+AKAP2,renamed,PALM2AKAP2
+ORC1L,renamed,ORC1
+C1orf135,renamed,AUNIP
+LOC255167,not found,
+FAM64A,renamed,PIMREG
+LOC100130015,not found,
+FAM92A1,renamed,CIBAR1
+C8orf47,renamed,ERICH5
+C8orf46,renamed,VXN
+C8orf45,renamed,MCMDC2
+C8orf42,renamed,TDRP
+C8orf41,renamed,TTI2
+C8orf40,renamed,SMIM19
+FAM70A,renamed,TMEM255A
+FAM70B,renamed,TMEM255B
+ZNF833,renamed,ZNF833P
+NCRNA00219,renamed,EPB41L4A-AS1
+LOC643677,not found,
+MTCP1NB,renamed,CMC4
+LOC643719,not found,
+CP110,renamed,CCP110
+C16orf58,renamed,RUSF1
+C16orf59,renamed,TEDC2
+RARRES3,renamed,PLAAT4
+C16orf52,renamed,MOSMO
+C16orf57,renamed,USB1
+C16orf55,renamed,SPATA33
+CCDC144B,renamed,CCDC144BP
+CCDC144C,renamed,CCDC144CP
+IARS,renamed,IARS1
+PRKCDBP,renamed,CAVIN3
+GPR126,renamed,ADGRG6
+LOC283856,not found,
+GPR124,renamed,ADGRA2
+GPR125,renamed,ADGRA3
+GPR123,renamed,ADGRA1
+GPR120,renamed,FFAR4
+GPR128,renamed,ADGRG7
+LOC723972,not found,
+VIPAR,renamed,VIPAS39
+STL,renamed,RNF217-AS1
+MTERFD1,renamed,MTERF3
+NCL,renamed,NUCLEOLIN
+KIAA1012,renamed,TRAPPC8
+?|100133144,not found,
+KIAA1543,renamed,CAMSAP3
+LRRC48,renamed,DRC3
+B3GNT1,ambiguous alias,
+CCDC153,renamed,DRC12
+CCDC151,renamed,ODAD3
+CCDC155,renamed,KASH5
+H1FNT,renamed,H1-7
+ATP5J,renamed,ATP5PF
+OBFC2B,renamed,NABP2
+KAZ,renamed,KAZN
+OBFC2A,renamed,NABP1
+ATP5L,renamed,ATP5MG
+LOC100133331,not found,
+SLC9A3R2,renamed,NHERF2
+FAM189A2,renamed,ENTREP1
+FAM189A1,renamed,ENTREP2
+LOC100130274,not found,
+PALM2,renamed,PALM2AKAP2
+DUPD1,renamed,DUSP29
+SEPT10,renamed,SEPTIN10
+C1orf51,renamed,CIART
+C1orf57,renamed,NTPCR
+C1orf55,renamed,SDE2
+C1orf59,renamed,HENMT1
+C1orf58,renamed,BROX
+LOC647979,not found,
+LOC151300,not found,
+GPR98,renamed,ADGRV1
+GPR97,renamed,ADGRG3
+?|90288,not found,
+C17orf108,renamed,LYRM9
+C17orf106,renamed,TEN1
+C17orf104,renamed,MEIOC
+C17orf105,renamed,CFAP97D1
+C17orf102,renamed,TMEM132E-DT
+C17orf103,renamed,NATD1
+C17orf101,renamed,OGFOD3
+ATP5A1,renamed,ATP5F1A
+HFE2,renamed,HJV
+TTC25,renamed,ODAD4
+TTC26,renamed,IFT56
+FLJ46111,not found,
+LOC402644,not found,
+CARS,renamed,CARS1
+MGC16025,not found,
+PER4,renamed,PER3P1
+SLC22A18,renamed,SLC67A1
+LOC728613,not found,
+C4orf52,renamed,SMIM20
+C3orf30,renamed,TEX55
+C3orf35,renamed,APRG1
+C3orf34,renamed,CEP19
+C3orf39,renamed,POMGNT2
+C12orf12,renamed,CCER1
+C15orf63,renamed,HYPK
+KBTBD10,renamed,KLHL41
+CES8,renamed,CES4A
+FBXO18,renamed,FBH1
+C12orf10,renamed,MYG1
+C20orf12,renamed,DZANK1
+C20orf11,renamed,GID8
+HBII-52-46,ambiguous alias,
+HBII-52-45,renamed,SNORD115-45
+C9orf169,renamed,CYSRT1
+FAM153C,renamed,FAM153CP
+C9orf167,renamed,TOR4A
+CLK2P,renamed,CLK2P1
+CCDC76,renamed,TRMT13
+CCDC75,renamed,GPATCH11
+CCDC72,renamed,TMA7
+HIST3H2BB,renamed,H2BC26
+PRAC,renamed,PRAC1
+LOC285780,not found,
+LOC100127888,not found,
+LOC650293,not found,
+SARS,ambiguous alias,
+FAM10A4,ambiguous alias,
+KIAA1486,renamed,NYAP2
+LOC340017,not found,
+CYorf15B,renamed,TXLNGY
+CYorf15A,renamed,TXLNGY
+DSCR6,renamed,RIPPLY3
+DSCR3,renamed,VPS26C
+ASNA1,renamed,GET3
+MGC23284,not found,
+PP14571,not found,
+LOC147804,not found,
+FLJ43860,not found,
+FAM72D,renamed,RUMY4
+FAM72B,renamed,RUMY2
+FAM72A,renamed,RUMY1
+DFNA5,renamed,GSDME
+PMS2L11,ambiguous alias,
+TREML3,renamed,TREML3P
+DHDPSL,renamed,HOGA1
+SNORA42,renamed,SNORA80E
+NCRNA00235,renamed,LINC00235
+HIST2H2BA,renamed,H2BP1
+HIST2H2BF,renamed,H2BC18
+FLJ46321,not found,
+C4orf14,renamed,NOA1
+LOC144776,not found,
+C4orf11,renamed,LINC00575
+C4orf12,renamed,WDFY3-AS2
+PCNX,renamed,PCNX1
+LOC92659,not found,
+FAM69B,renamed,DIPK1B
+TENC1,renamed,TNS2
+CXorf40A,renamed,EOLA1
+CXorf40B,renamed,EOLA2
+SLC9A3R1,renamed,NHERF1
+FAM198A,renamed,GASK1A
+FAM198B,renamed,GASK1B
+LOC100271722,not found,
+FAM132A,renamed,C1QTNF12
+ZNF828,renamed,CHAMP1
+THOC4,renamed,ALYREF
+SLC35E2,ambiguous alias,
+H2AFV,renamed,H2AZ2
+LOC400804,not found,
+H2AFX,renamed,H2AX
+H2AFY,renamed,MACROH2A1
+H2AFZ,renamed,H2AZ1
+TMEM189-UBE2V1,renamed,PEDS1-UBE2V1
+H2AFJ,renamed,H2AJ
+CSN1S2A,renamed,CSN1S2AP
+TMEM159,renamed,LDAF1
+LRRC67,renamed,PPP1R42
+ADRBK1,renamed,GRK2
+ADRBK2,renamed,GRK3
+C7orf36,renamed,YAE1
+C7orf34,renamed,SOFU1
+C7orf31,renamed,SPMIP4
+C7orf30,renamed,MALSU1
+LHFP,renamed,LHFPL6
+FAM118A,renamed,SIRAL2
+FAM118B,renamed,SIRAL1
+TMEM178,renamed,TMEM178A
+H3F3A,renamed,H3-3A
+INTS4L1,renamed,INTS4P1
+PRKRIR,renamed,THAP12
+WBSCR26,renamed,BICDL3P
+TUSC5,renamed,TRARG1
+WBSCR28,renamed,TMEM270
+KIAA0748,renamed,TESPA1
+CBARA1,renamed,MICU1
+GTDC1,renamed,QTMAN
+TIAF1,renamed,MYO18A
+H2BFWT,renamed,H2BW1
+C1orf77,renamed,CHTOP
+C1orf70,renamed,TMEM240
+TSTA3,renamed,GFUS
+SPERT,renamed,CBY2
+LOC285359,not found,
+ZNF816A,renamed,ZNF816
+SFRS14,renamed,SUGP2
+GDEP,renamed,PCAT4
+SFRS12,renamed,SREK1
+SFRS11,renamed,SRSF11
+FLJ45445,not found,
+UPK3BL,renamed,UPK3BL1
+LASS3,renamed,CERS3
+DUSP27,ambiguous alias,
+QARS,ambiguous alias,
+C3orf19,renamed,CCDC174
+C3orf15,renamed,CFAP91
+C3orf14,renamed,CEP15
+C3orf17,renamed,RMP64
+C3orf16,renamed,ANKUB1
+C3orf10,renamed,BRK1
+MGC26647,not found,
+TRYX3,renamed,PRSS58
+LOC153328,not found,
+C20orf30,renamed,TMEM230
+MLL3,renamed,KMT2C
+LOC285419,not found,
+HBII-52-28,renamed,SNORD115-28
+MLL4,ambiguous alias,
+FLJ36031,not found,
+UTP11L,renamed,UTP11
+FAM104A,renamed,VCF1
+FAM104B,renamed,VCF2
+CCDC52,renamed,SPICE1
+CCDC53,renamed,WASHC3
+CCDC55,renamed,NSRP1
+CCDC56,renamed,COA3
+CCDC58,renamed,MIX23
+LOC282997,not found,
+LOC415056,not found,
+SDPR,renamed,CAVIN2
+N6AMT1,renamed,HEMK2
+LOC284233,not found,
+KIAA1609,renamed,MEAK7
+LOC146481,not found,
+C20orf200,renamed,CRMA
+FTSJD2,renamed,CMTR1
+WRB,renamed,GET1
+CCDC42B,renamed,CFAP73
+VPS24,renamed,CHMP3
+FLJ26850,not found,
+C1orf113,renamed,MNMIP1
+CBWD6,renamed,ZNG1F
+CBWD5,renamed,ZNG1E
+C1orf110,renamed,CCDC190
+CBWD3,ambiguous alias,
+CBWD2,renamed,ZNG1B
+CBWD1,renamed,ZNG1A
+C1orf114,renamed,CCDC181
+CFLP1,renamed,CFL1P1
+C2orf29,renamed,CNOT11
+C2orf28,renamed,ATRAID
+C2orf24,renamed,CNPPD1
+LOC100128239,not found,
+LOC121952,not found,
+ACCN2,renamed,ASIC1
+ACCN3,renamed,ASIC3
+ACCN4,renamed,ASIC4
+ACCN5,renamed,ASIC5
+KAL1,renamed,ANOS1
+C16orf92,renamed,FIMP1
+C16orf93,renamed,CFAP119
+C16orf91,renamed,UQCC4
+LOC100130581,not found,
+SFRS2,renamed,SRSF2
+C16orf5,renamed,CDIP1
+C16orf7,renamed,VPS9D1
+C16orf3,renamed,GAS8-AS1
+C21orf7,renamed,MAP3K7CL
+C21orf2,renamed,CFAP410
+LOC389634,not found,
+TMEM14E,renamed,TMEM14EP
+TMEM8A,renamed,PGAP6
+LOC729156,not found,
+TMEM189,renamed,PEDS1
+ADSS,renamed,ADSS2
+LOC168474,not found,
+C7orf11,renamed,MPLKIP
+C7orf10,renamed,SUGCT
+C7orf13,renamed,RNF32-DT
+C7orf16,renamed,PPP1R17
+AZI1,ambiguous alias,
+LOC646498,not found,
+TARS,renamed,TARS1
+C9orf123,renamed,DMAC1
+LOC285627,not found,
+NCRNA00164,renamed,ANKRD30BL
+LOC285629,not found,
+MTMR15,renamed,FAN1
+L3MBTL,renamed,L3MBTL1
+LOC388242,not found,
+NCRNA00162,renamed,PICSAR
+?|645851,not found,
+LOC348926,not found,
+HRASLS5,renamed,PLAAT5
+HRASLS2,renamed,PLAAT2
+TCP10,renamed,TCP10L3
+TMEM146,renamed,CATSPERD
+LOC284578,not found,
+ELP2P,renamed,DBIL5P
+IL29,renamed,IFNL1
+FLJ35390,not found,
+H2BFM,renamed,H2BW2
+INTS4L2,renamed,INTS4P2
+PTPLAD2,renamed,HACD4
+PTPLAD1,renamed,HACD3
+C12orf4,renamed,FERRY3
+C12orf5,renamed,TIGAR
+PROL1,renamed,OPRPN
+LOC389493,not found,
+LOC100287718,not found,
+PAPD7,renamed,TENT4A
+PAPD4,renamed,TENT2
+NCRNA00112,renamed,LINC00112
+NCRNA00116,renamed,MTLN
+NCRNA00114,renamed,LINC00114
+NCRNA00115,renamed,LINC00115
+LOC100144604,not found,
+CTSL1,renamed,CTSL
+LOC100144603,not found,
+CTSL3,renamed,CTSL3P
+CTSL2,renamed,CTSV
+NHEDC2,renamed,SLC9B2
+FRMPD2L1,renamed,FRMPD2B
+H2AFY2,renamed,MACROH2A2
+JMJD5,renamed,KDM8
+LOC26102,not found,
+LOC348840,not found,
+CCDC36,renamed,IHO1
+CCDC37,renamed,CFAP100
+SLC26A10,renamed,SLC26A10P
+FAM128B,renamed,MZT2B
+FAM128A,renamed,MZT2A
+RACGAP1P,renamed,RACGAP1P1
+DEM1,renamed,EXO5
+C20orf196,renamed,SHLD1
+LOC151658,not found,
+KGFLP1,renamed,FGF7P6
+C11orf95,renamed,ZFTA
+C11orf94,renamed,FREY1
+C11orf93,renamed,POU2AF3
+C11orf92,renamed,COLCA1
+C11orf90,renamed,VSTM5
+LOC284749,not found,
+LOC100216001,not found,
+RUNDC2A,renamed,SNX29
+GTPBP5,renamed,MTG2
+GLT25D2,renamed,COLGALT2
+BCL8,renamed,NBEAP1
+LOC360030,not found,
+SGK196,renamed,POMK
+LOC613037,not found,
+C6orf64,renamed,SAYSD1
+C18orf10,renamed,TPGS2
+C22orf41,renamed,SYCE3
+C22orf46,renamed,C22orf46P
+C22orf45,renamed,ADORA2A-AS1
+DPCR1,renamed,MUCL3
+PAR5,renamed,PWAR5
+TRIM53,renamed,TRIM53AP
+C1orf131,renamed,FSAF1
+C1orf130,renamed,NCMAP
+C1orf133,renamed,SERTAD4-AS1
+C8orf22,renamed,PPDPFL
+DKFZP686I15217,not found,
+KIAA0895,renamed,MATCAP2
+KIAA0892,renamed,MAU2
+GBAS,renamed,NIPSNAP2
+FXC1,renamed,TIMM10B
+MRPS36,renamed,KGD4
+EXOC3L,renamed,EXOC3L1
+NRD1,renamed,NRDC
+ATP5S,renamed,DMAC2L
+SEPT7L,renamed,SEPTIN7P9
+ATP5I,renamed,ATP5ME
+ATP5H,renamed,ATP5PD
+ATP5O,renamed,ATP5PO
+ATP5B,renamed,ATP5F1B
+ATP5E,renamed,ATP5F1E
+ATP5D,renamed,ATP5F1D
+GPR144,renamed,ADGRD2
+NCRNA00204B,renamed,FAM223B
+LOC90834,not found,
+TMEM35,renamed,TMEM35A
+LOC339290,not found,
+LOC729176,not found,
+CSNK1A1P,renamed,CSNK1A1P1
+LOC100128164,not found,
+ODZ3,ambiguous alias,
+ODZ2,renamed,TENM2
+ODZ1,renamed,TENM1
+AACSL,renamed,AACSP1
+C2orf27A,renamed,LINC03124
+C2orf27B,ambiguous alias,
+C7orf72,renamed,SPMIP7
+C7orf71,renamed,LINC02860
+C7orf70,ambiguous alias,
+LOC643486,not found,
+LOC643955,not found,
+LOC401463,not found,
+LOC202181,not found,
+HILS1,renamed,H1-9P
+TSSC1,renamed,EIPR1
+PRAMEF3,not found,
+SSSCA1,renamed,ZNRD2
+FAM75A5,renamed,SPATA31A5
+NGFRAP1,renamed,BEX3
+GEFT,renamed,ARHGEF25
+LOC100128977,not found,
+LASS1,renamed,CERS1
+LASS2,renamed,CERS2
+LASS6,renamed,CERS6
+LOC25845,not found,
+LOC84740,not found,
+?|404770,not found,
+PPY2,renamed,PPY2P
+AQPEP,renamed,LVRN
+N6AMT2,renamed,EEF1AKMT1
+LOC127841,not found,
+MUTED,renamed,BLOC1S5
+FAM172A,renamed,ARB2A
+LOC729082,not found,
+PIN1L,renamed,PIN1P1
+LOC284551,not found,
+LOC285548,not found,
+LOC728410,not found,
+LOC541473,not found,
+DULLARD,renamed,CTDNEP1
+KIAA0368,renamed,ECPAS
+EFTUD1,ambiguous alias,
+TWISTNB,renamed,POLR1F
+SFRS4,renamed,SRSF4
+ADAM5P,renamed,ADAM5
+SPG20,renamed,SPART
+APITD1,renamed,CENPS
+KIAA1107,renamed,BTBD8
+WISP3,renamed,CCN6
+NBPF7,renamed,NBPF7P
+LOC100270804,not found,
+HIST1H2BI,ambiguous alias,
+PCDHB17,renamed,PCDHB17P
+PCDHB18,renamed,PCDHB18P
+C10orf10,renamed,DEPP1
+C10orf11,renamed,LRMDA
+C10orf12,renamed,LCOR
+C10orf18,renamed,TASOR2
+NAT6,ambiguous alias,
+FAIM3,renamed,FCMR
+ZNRD1,renamed,POLR1H
+CCBL1,renamed,KYAT1
+CCBL2,renamed,KYAT3
+TH1L,renamed,NELFCD
+KIAA2022,renamed,NEXMIF
+KIAA2026,renamed,BRD10
+LOC401588,not found,
+LOC257358,not found,
+OR3A4,renamed,OR3A4P
+FAM100B,renamed,UBALD2
+WHSC1,renamed,NSD2
+PSIMCT-1,renamed,MCTS2
+?|653553,not found,
+LOC286094,not found,
+DEC1,ambiguous alias,
+LOC653566,not found,
+KIAA1429,renamed,VIRMA
+LOC100133161,not found,
+LOC340074,not found,
+ZNF321,renamed,ZNF321P
+CCDC11,renamed,CFAP53
+CCDC19,renamed,CFAP45
+FLJ45983,not found,
+?|10357,not found,
+KIAA1644,renamed,SHISAL1
+FAM100A,renamed,UBALD1
+GK3P,renamed,GK3
+TMEM88B,renamed,TMEM278
+FUK,renamed,FCSK
+KIAA1683,renamed,IQCN
+KIAA1324L,renamed,ELAPOR2
+FIGF,renamed,VEGFD
+C6orf168,renamed,FAXC
+KIAA0114,renamed,DANCR
+C6orf48,renamed,SNHG32
+LOC374491,not found,
+C6orf41,renamed,LINC00240
+GPER,renamed,GPER1
+LAMB2L,renamed,LAMB2P1
+METT11D1,renamed,METTL17
+C16orf70,renamed,PHAF1
+LOC388588,not found,
+LOC90784,not found,
+C3orf64,renamed,EOGT
+C1orf158,renamed,CFAP107
+C1orf157,renamed,LINC00303
+C1orf156,renamed,METTL18
+C3orf66,renamed,LINC00488
+C1orf151,renamed,MICOS10
+C1orf150,renamed,GCSAML
+C4orf22,renamed,CFAP299
+C7orf69,renamed,PKD1L1-AS1
+WDR16,renamed,CFAP52
+C4orf27,renamed,HPF1
+C4orf26,renamed,ODAPH
+C2orf63,renamed,CLHC1
+C2orf62,renamed,CATIP
+C2orf61,renamed,STPG4
+C2orf60,renamed,TYW5
+C2orf67,renamed,KANSL1L
+C2orf65,renamed,M1AP
+C2orf64,renamed,COA5
+FLJ45340,not found,
+LOC647121,not found,
+LOC100133985,not found,
+SC4MOL,renamed,MSMO1
+FAM192A,renamed,PSME3IP1
+C13orf33,renamed,MEDAG
+C13orf31,renamed,LACC1
+C13orf30,renamed,FAM216B
+C13orf37,renamed,MZT1
+C13orf36,renamed,SERTM1
+C13orf35,renamed,ATP11AUN
+C13orf34,renamed,BORA
+C13orf39,renamed,METTL21C
+C13orf38,renamed,CCDC169
+LOC728190,not found,
+HMHA1,renamed,ARHGAP45
+FAM126B,renamed,HYCC2
+TCTEX1D2,renamed,DYNLT2B
+TCTEX1D1,renamed,DYNLT5
+TCTEX1D4,renamed,DYNLT4
+PRPF4B,renamed,PRP4K
+C7orf55,renamed,FMC1
+C7orf54,renamed,SND1-IT1
+C7orf51,renamed,NYAP1
+C7orf50,renamed,CHLSN
+C7orf53,renamed,LSMEM1
+C7orf52,renamed,NAT16
+C7orf59,renamed,LAMTOR4
+C7orf58,renamed,CPED1
+PRHOXNB,renamed,URAD
+PARK2,renamed,PRKN
+MST1P9,renamed,MST1L
+MDM1,renamed,SAXO6
+SEP15,renamed,SELENOF
+LOC285375,not found,
+LOC285370,not found,
+LOC646982,not found,
+ZNF397OS,renamed,ZSCAN30
+TTC30A,renamed,IFT70A
+PAR4,ambiguous alias,
+TTC30B,ambiguous alias,
+SGOL1,renamed,SGO1
+SGOL2,renamed,SGO2
+LOC285954,not found,
+GPR89B,renamed,GPHRB
+GPR89C,renamed,GPHRB
+GPR89A,renamed,GPHRA
+LOC284023,not found,
+C6orf217,renamed,AHI1-DT
+C6orf211,renamed,DCPH1
+C6orf218,renamed,LINC00518
+GCFC1,renamed,PAXBP1
+ARNTL2,renamed,BMAL2
+RG9MTD1,renamed,TRMT10C
+CA5BP,renamed,CA5BP1
+JHDM1D,renamed,KDM7A
+C1orf212,renamed,SMIM12
+C1orf213,renamed,ZNF436-AS1
+NCRNA00230B,renamed,FAM224B
+C10orf35,renamed,FAM241B
+C10orf32,renamed,BORCS7
+SNORA45,renamed,SNORA3B
+NCRNA00157,renamed,LINC03147
+NCRNA00152,renamed,CYTOR
+NCRNA00158,renamed,LINC00158
+KIAA0913,renamed,ZSWIM8
+FKBP9L,renamed,FKBP9P1
+ERBB2IP,renamed,ERBIN
+C5orf27,renamed,LINC01554
+SELO,renamed,SELENOO
+NCRNA00120,not found,
+A2BP1,renamed,RBFOX1
+PMS2L5,renamed,PMS2P5
+PMS2L2,ambiguous alias,
+DEFB130,renamed,DEFB130A
+DEFB131,renamed,DEFB131A
+ALS2CR8,renamed,CARF
+ALS2CR4,renamed,TMEM237
+C15orf55,renamed,NUTM1
+AFARP1,renamed,AKR7A2P1
+LOC100240726,not found,
+KIAA1409,renamed,UNC79
+LOC100132724,not found,
+C15orf33,renamed,FAM227B
+LOC100190940,not found,
+FAM23A,renamed,TMEM236
+TMEM180,renamed,SLC68A1
+TMEM188,renamed,CNEP1R1
+PDZD3,renamed,NHERF4
+FAM102B,renamed,EEIG2
+FAM102A,renamed,EEIG1
+SMCR7L,renamed,MIEF1
+G6PC,renamed,G6PC1
+OSTCL,renamed,OSTCP1
+LOC653544,not found,
+LOC653545,not found,
+USP17,ambiguous alias,
+DKFZp779M0652,renamed,LINC02716
+PPAPDC1B,renamed,PLPP5
+CNO,renamed,BLOC1S4
+LOC100130386,not found,
+LOC644172,not found,
+PPIAL4B,renamed,PPIAL4A
+LOC285033,not found,
+LOC100128023,not found,
+C6orf27,renamed,VWA7
+C6orf26,renamed,SAPCD1
+C6orf25,renamed,MPIG6B
+HIST2H2AA3,renamed,H2AC18
+FLJ39653,not found,
+KARS,renamed,KARS1
+TMEM20,renamed,SLC35G1
+LOC100128292,not found,
+LOC389332,not found,
+ASAM,renamed,CLMP
+PRO0628,not found,
+C1orf97,renamed,LINC00467
+LOC283392,not found,
+C1orf96,renamed,CCSAP
+DAK,renamed,TKFC
+C1orf175,renamed,MROH7
+C1orf177,renamed,CIMAP2
+C1orf170,renamed,PERM1
+C1orf173,renamed,ERICH3
+C1orf172,renamed,KDF1
+C1orf92,renamed,LRRC71
+C21orf15,renamed,CYP4F29P
+KIAA1984,renamed,CCDC183
+C2orf49,renamed,TSLIG2
+C2orf48,renamed,RRM2
+C2orf44,renamed,WDCP
+C2orf47,ambiguous alias,
+C2orf40,renamed,ECRG4
+C2orf43,renamed,LDAH
+C13orf18,renamed,RUBCNL
+FAM190A,renamed,CCSER1
+C13orf15,renamed,RGCC
+C13orf16,renamed,TEX29
+FLJ12825,not found,
+GPR182,renamed,ACKR5
+IGF2AS,renamed,IGF2-AS
+TMEM57,renamed,MACO1
+FAM59A,renamed,GAREM1
+PAR-SN,renamed,PWARSN
+FAM84B,renamed,LRATD2
+FAM84A,renamed,LRATD1
+SC65,renamed,P3H4
+LOC541471,not found,
+ZNF673,renamed,KRABD4
+ORC6L,renamed,ORC6
+AG2,ambiguous alias,
+HAS2AS,renamed,HAS2-AS1
+C9orf130,renamed,ERCC6L2-AS1
+CYTSA,renamed,SPECC1L
+CYTSB,renamed,SPECC1
+LOC388946,not found,
+LOC220594,not found,
+LOC729799,not found,
+C10orf113,renamed,NEBL
+FAM136A,renamed,TIMCC
+MKI67IP,renamed,NIFK
+LOC148824,not found,
+LOC645166,not found,
+C6orf186,renamed,METTL24
+C6orf182,renamed,CEP57L1
+LOC255025,not found,
+PQLC3,renamed,SLC66A3
+PQLC1,renamed,SLC66A2
+LOC100129550,not found,
+FAM176A,renamed,EVA1A
+KLRAQ1,renamed,PPP1R21
+FAM176B,renamed,EVA1B
+LOC100133469,not found,
+LOC550112,not found,
+HYALP1,renamed,HYAL6P
+WDR45L,renamed,WDR45B
+MGC34034,not found,
+HEXDC,renamed,HEXD
+FGFR1OP,renamed,CEP43
+WDR78,renamed,DNAI4
+C1orf230,renamed,RIIAD1
+LOC572558,not found,
+FLJ35220,not found,
+GSTTP1,renamed,GSTT4
+C5orf48,renamed,SPMIP10
+C5orf49,renamed,CFAP90
+C5orf44,renamed,TRAPPC13
+C5orf45,renamed,MRNIP
+C5orf40,renamed,FNDC9
+C5orf41,renamed,CREBRF
+C5orf42,renamed,CPLANE1
+C5orf43,renamed,SMIM15
+NCRNA00171,renamed,POLR1HASP
+NCRNA00173,renamed,LINC00173
+NCRNA00175,renamed,COL18A1-AS1
+NCRNA00176,renamed,C20orf204
+FAM45A,renamed,DENND10
+FAM45B,renamed,DENND10P1
+LOC388796,not found,
+KTELC1,renamed,POGLUT1
+PAK7,renamed,PAK5
+FAM122A,renamed,PABIR1
+FAM122B,renamed,PABIR2
+FAM122C,renamed,PABIR3
+LOC115110,not found,
+C10orf58,renamed,PRXL2A
+C10orf54,renamed,VSIR
+C10orf57,renamed,TMEM254
+C10orf50,ambiguous alias,
+LOC401093,not found,
+TMEM194A,renamed,NEMP1
+LOC158572,not found,
+KIAA1467,renamed,FAM234B
+KIAA1462,renamed,JCAD
+tAKR,not found,
+LOC339568,not found,
+MGC45800,not found,
+LOC678655,not found,
+FAM21C,renamed,WASHC2C
+FAM21B,renamed,WASHC2A
+FAM21A,ambiguous alias,
+C22orf33,renamed,CIMIP4
+C22orf32,renamed,SMDT1
+C22orf30,renamed,PRR14L
+C22orf36,renamed,LRRC75B
+C22orf34,renamed,MIR3667HG
+FAM159A,renamed,SHISAL2A
+TMEM173,renamed,STING1
+C1orf152,renamed,PFN1P2
+LOC100132707,not found,
+RABL5,renamed,IFT22
+LOC388152,not found,
+FYB,renamed,FYB1
+GOLGA6L5,renamed,GOLGA6L5P
+XAGE1D,renamed,XAGE1B
+ROD1,renamed,PTBP3
+MUM1L1,renamed,PWWP3B
+WIBG,renamed,PYM1
+WBP5,renamed,TCEAL9
+psiTPTE22,renamed,TPTEP1
+PLK1S1,renamed,KIZ
+DCI,renamed,ECI1
+C20orf177,renamed,FAM217B
+SSPO,renamed,SSPOP
+C21orf34,renamed,MIR99AHG
+C21orf33,renamed,GATD3
+LOC283663,not found,
+LOC338588,not found,
+AES,renamed,TLE5
+ACN9,renamed,SDHAF3
+FAM196B,renamed,INSYN2B
+FAM196A,renamed,INSYN2A
+FAM86A,renamed,EEF2KMT
+FAM86D,renamed,FAM86DP
+MGC12982,not found,
+CCT6P1,renamed,CCT6A2P
+WBSCR16,renamed,RCC1L
+LRRC37A4,renamed,LRRC37A4P
+LOC100131726,not found,
+CPSF3L,renamed,INTS11
+COL4A3BP,renamed,CERT1
+PAR1,ambiguous alias,
+LOC92973,not found,
+MICALCL,renamed,MICAL2
+SMCR7,renamed,MIEF2
+HIST4H4,renamed,H4C16
+LOC100133669,not found,
+ZNF643,renamed,ZFP69B
+LOC151009,not found,
+KIAA1377,renamed,CEP126
+SEPT6,renamed,SEPTIN6
+LOC100133545,not found,
+CYBASC3,renamed,CYB561A3
+FAM178A,renamed,SLF2
+KIAA0664P3,renamed,CLUHP3
+SFRS12IP1,renamed,SREK1IP1
+TARSL2,renamed,TARS3
+KIAA0427,renamed,CTIF
+C9orf27,renamed,LINC00474
+C9orf24,renamed,SPMIP6
+C9orf25,renamed,FAM219A
+C9orf23,renamed,RPP25L
+C9orf21,renamed,PRXL2C
+FAM200A,renamed,ZBED8L
+FAM200B,renamed,ZBED11
+C5orf62,renamed,SMIM3
+C5orf60,renamed,SPATA31J1
+MFSD5,renamed,SLC61A1
+SELT,renamed,SELENOT
+MFSD4,renamed,SLC60A1
+GATSL1,renamed,CASTOR2
+GATSL3,renamed,CASTOR1
+GATSL2,renamed,CASTOR2
+MFSD7,renamed,SLC49A3
+LOC642597,not found,
+LOC338799,not found,
+PPP1R2P3,renamed,PPP1R2B
+CCDC109A,renamed,MCU
+CCDC109B,renamed,MCUB
+TCEB3C,ambiguous alias,
+FABP5L3,renamed,FABP5P3
+C10orf72,renamed,VSTM4
+C10orf76,renamed,ARMH3
+C10orf75,renamed,OLMALINC
+C10orf78,renamed,SFR1
+C10orf79,renamed,CFAP43
+HIST1H1T,renamed,H1-6
+WDR8,renamed,WRAP73
+HIST1H1D,renamed,H1-3
+HIST1H1E,renamed,H1-4
+HIST1H1A,renamed,H1-1
+HIST1H1B,renamed,H1-5
+HIST1H1C,renamed,H1-2
+ITFG3,renamed,FAM234A
+LPPR1,renamed,PLPPR1
+D4S234E,renamed,NSG1
+LOC729678,not found,
+C22orf13,renamed,GUCD1
+FAM27L,renamed,FAM27E5
+BAT2L2,renamed,PRRC2C
+BAT2L1,renamed,PRRC2B
+MRP63,renamed,MRPL57
+SRCRB4D,renamed,SSC4D
+LOC642852,not found,
+PPAP2C,renamed,PLPP2
+LOC100133050,not found,
+PPAP2A,renamed,PLPP1
+SFRS13A,renamed,SRSF10
+KIAA0317,renamed,AREL1
+SFRS13B,renamed,SRSF12
+LOC285074,not found,
+LOC113230,not found,
+B3GALTL,renamed,B3GLCT
+KIAA0174,not found,
+LOC150527,not found,
+LOC390595,not found,
+LOC641367,not found,
+C6orf1,renamed,SMIM29
+TBC1D29,renamed,TBC1D29P
+C20orf152,renamed,CNBD2
+C20orf151,renamed,RBBP8NL
+GUCY2E,renamed,GUCY2EP
+C21orf54,renamed,LINC01548
+C21orf56,renamed,SPATC1L
+C21orf57,renamed,YBEY
+C21orf59,renamed,CFAP298
+NCRNA00203,renamed,ITPK1-AS1
+TMSL3,renamed,TMSB4XP8
+KIAA1949,renamed,PPP1R18
+CEP170L,renamed,CEP170P1
+NCRNA00052,renamed,LINC00052
+NCRNA00200,renamed,LINC00200
+NCRNA00201,not found,
+SDCCAG3,renamed,ENTR1
+SDCCAG1,renamed,NEMF
+ANKRD32,renamed,SLF1
+FLJ10038,not found,
+FAM194A,renamed,ERICH6
+FAM194B,renamed,ERICH6B
+LOC442459,not found,
+LOC442454,not found,
+SNORA80,renamed,SNORA80A
+EMID2,renamed,COL26A1
+ACPT,renamed,ACP4
+SEPT2,ambiguous alias,
+ERO1L,renamed,ERO1A
+ACPP,renamed,ACP3
+WDR85,renamed,DPH7
+LOC723809,not found,
+FLJ44054,not found,
+RGAG1,renamed,RTL9
+TMEM55A,renamed,PIP4P2
+TMEM55B,renamed,PIP4P1
+NDNL2,renamed,NSMCE3
+ITIH5L,renamed,ITIH6
+PCDP1,renamed,CFAP221
+SLC24A6,renamed,SLC8B1
+KIAA0141,renamed,DELE1
+EMR4P,renamed,ADGRE4P
+MGC2752,not found,
+CABC1,renamed,COQ8A
+MTMR9L,renamed,MTMR9LP
+LOC349114,not found,
+KIAA1161,renamed,MYORG
+REXO1L1,renamed,REXO1L1P
+NPY6R,renamed,NPY6RP
+MESDC2,renamed,MESD
+LOC100132354,not found,
+GRASP,renamed,TAMALIN
+C6orf142,renamed,MLIP
+C6orf146,renamed,FAM217A
+C6orf145,renamed,PXDC1
+C9orf41,renamed,CARNMT1
+C9orf44,renamed,LINC00475
+C9orf45,renamed,MIR600HG
+C9orf46,renamed,PLGRKT
+C9orf47,renamed,S1PR3
+LOC256880,not found,
+TMEM194B,renamed,NEMP2
+DEPDC6,renamed,DEPTOR
+KIAA1908,not found,
+ZFATAS,renamed,ZFAT-AS1
+CXorf50B,renamed,FAM226B
+LOC388428,not found,
+TMEM133,renamed,ARHGAP42
+C14orf166B,renamed,LRRC74A
+PDIA3P,renamed,PDIA3P1
+ARSE,renamed,ARSL
+C12orf61,renamed,LINC01465
+LOC100131193,not found,
+KIAA1109,renamed,BLTP1
+DUS2L,renamed,DUS2
+MYST1,renamed,KAT8
+IGLL3,renamed,IGLL3P
+C12orf69,renamed,SMCO3
+NEURL,renamed,NEURL1
+FAM188B,renamed,MINDY4
+FLJ32063,not found,
+LOC728723,not found,
+C9orf98,renamed,AK8
+HIST1H3B,renamed,H3C2
+HIST1H3C,renamed,H3C3
+HIST1H3A,renamed,H3C1
+HIST1H3F,renamed,H3C7
+HIST1H3G,renamed,H3C8
+HIST1H3D,renamed,H3C4
+HIST1H3E,renamed,H3C6
+HIST1H3J,renamed,H3C12
+HIST1H3H,renamed,H3C10
+HIST1H3I,renamed,H3C11
+MGC16703,not found,
+C15orf44,renamed,INTS14
+PPIL5,renamed,LRR1
+SLC35C2,renamed,SLC35H1
+LOC339524,not found,
+CCDC99,renamed,SPDL1
+CCDC94,renamed,YJU2
+CCDC96,renamed,CFAP184
+C15orf42,renamed,TICRR
+FAM25B,renamed,FAM25BP
+ZNF645,renamed,CBLL2
+LOC646627,not found,
+LOC100132215,not found,
+KIAA1310,renamed,KANSL3
+METT10D,renamed,METTL16
+CSRP2BP,ambiguous alias,
+LOC644669,not found,
+LOC100287227,not found,
+FLJ25363,not found,
+NCRNA00093,renamed,DNMBP-AS1
+KIAA0195,renamed,TMEM94
+KIAA0196,renamed,WASHC5
+HMP19,renamed,NSG2
+LOC283174,not found,
+LOC283332,not found,
+LOC440563,not found,
+FLJ34503,not found,
+FAM48B1,ambiguous alias,
+C20orf135,renamed,ABHD16B
+C20orf134,renamed,ACTL10
+C20orf132,renamed,MROH8
+LOC100124692,not found,
+NDUFA4,ambiguous alias,
+C21orf70,renamed,SLX9
+C21orf71,renamed,LINC00515
+GPR64,renamed,ADGRG2
+LOC728264,not found,
+KIAA1967,renamed,CCAR2
+IL8,renamed,CXCL8
+ATP5L2,renamed,ATP5MGL
+LASS4,renamed,CERS4
+ANKRD19,renamed,ANKRD19P
+?|388795,not found,
+NT5C3,renamed,NT5C3A
+FAM82B,renamed,RMDN1
+C10orf107,renamed,CABCOCO1
+C10orf108,renamed,DIP2C-AS1
+SFRS8,renamed,SFSWAP
+ACRC,renamed,GCNA
+SFRS6,renamed,SRSF6
+TNFAIP8L1,renamed,TIPE1
+CXorf59,renamed,CFAP47
+CXorf56,renamed,STEEP1
+CXorf57,renamed,RADX
+CXorf51,renamed,CXorf51A
+LOC441177,not found,
+INADL,renamed,PATJ
+LOC286467,not found,
+HSN2,renamed,WNK1
+FAM75A2,renamed,SPATA31A1
+FAM75A3,renamed,SPATA31A3
+FAM75A6,renamed,SPATA31A6
+ZNF389,renamed,ZKSCAN8P1
+C13orf1,renamed,SPRYD7
+ERVFRDE1,renamed,ERVFRD-1
+HIST1H2BD,renamed,H2BC5
+HIST1H2BE,ambiguous alias,
+HIST1H2BF,ambiguous alias,
+HIST1H2BG,ambiguous alias,
+HIST1H2BA,renamed,H2BC1
+HIST1H2BB,renamed,H2BC3
+HIST1H2BC,ambiguous alias,
+HIST1H2BL,renamed,H2BC13
+HIST1H2BM,renamed,H2BC14
+HIST1H2BN,renamed,H2BC15
+HIST1H2BO,renamed,H2BC17
+HIST1H2BH,renamed,H2BC9
+HIST1H2BJ,renamed,H2BC11
+HIST1H2BK,renamed,H2BC12
+SLC22A18AS,renamed,SLC67A1-AS
+SILV,renamed,PMEL
+PAPL,renamed,ACP7
+LOC401397,not found,
+C6orf162,renamed,SMIM8
+C6orf165,renamed,CFAP206
+C6orf164,renamed,LINC01590
+C6orf167,renamed,MMS22L
+?|100134869,not found,
+WDR92,renamed,DNAAF10
+PET112L,renamed,GATB
+RAGE,ambiguous alias,
+C5orf28,renamed,TMEM267
+ZADH2,renamed,PTGR3
+C5orf23,renamed,NPR3
+C5orf20,renamed,DCANP1
+?|729884,not found,
+C5orf25,renamed,SIMC1
+C9orf66,renamed,DOCK8-AS1
+C9orf64,renamed,QNG1
+C9orf68,renamed,SPATA6L
+C9orf69,renamed,TMEM250
+DVWA,renamed,COL6A4P1
+GSG2,renamed,HASPIN
+RLTPR,renamed,CARMIL2
+C11orf75,renamed,SMCO4
+FAM190B,renamed,CCSER2
+MOBKL1B,renamed,MOB1A
+MOBKL1A,renamed,MOB1B
+LOC400927,not found,
+CDRT1,renamed,FBXW10B
+C14orf43,renamed,MIDEAS
+C14orf45,renamed,BBOF1
+C14orf49,renamed,SYNE3
+C14orf48,renamed,CCDC197
+MST4,renamed,STK26
+CHCHD8,renamed,COA4
+VNN3,renamed,VNN3P
+TRAPPC2P1,ambiguous alias,
+TSPYL3,renamed,TSPY26P
+HIST2H3D,renamed,H3C13
+HIST2H3C,renamed,H3C14
+NBLA00301,renamed,HAND2-AS1
+FLJ40504,not found,
+PMS2L3,renamed,PMS2P3
+C20orf3,renamed,APMAP
+C20orf7,renamed,NDUFAF5
+C20orf4,renamed,AAR2
+KIAA0355,renamed,GARRE1
+LOC493754,not found,
+LOC647288,not found,
+SFRS17A,renamed,AKAP17A
+HARS,renamed,HARS1
+KIAA1598,renamed,SHTN1
+FLJ40434,not found,
+ZMYND17,renamed,MSS51
+LOC100169752,not found,
+LOC283314,not found,
+RBM9,renamed,RBFOX2
+C20orf118,renamed,TLDC2
+LOC150786,not found,
+C20orf112,renamed,NOL4L
+C20orf111,renamed,OSER1
+C20orf117,renamed,MTCL2
+C20orf114,renamed,BPIFB1
+C21orf90,ambiguous alias,
+C21orf94,renamed,LINC00314
+C21orf96,renamed,RUNX1-IT1
+C21orf99,renamed,ANKRD30BP2
+LOC644538,not found,
+COX4NB,renamed,EMC8
+GPR44,renamed,PTGDR2
+C12orf63,renamed,CFAP54
+C12orf62,renamed,COX14
+C12orf66,renamed,KICS2
+C12orf65,renamed,MTRFR
+C12orf68,renamed,CCDC184
+ATP5J2,renamed,ATP5MF
+SF4,renamed,SUGP1
+NCRNA00099,renamed,KCNIP4-IT1
+NCRNA00094,renamed,BRD3OS
+NCRNA00092,renamed,LINC00092
+LOC100132831,not found,
+LOC100132832,not found,
+ZNF238,renamed,ZBTB18
+C1orf84,renamed,SZT2
+C1orf85,renamed,GLMP
+C1orf86,renamed,FAAP20
+C1orf83,renamed,TCEANC2
+C1orf88,renamed,CIMAP3
+C1orf89,renamed,CPLANE2
+TMEM93,renamed,EMC6
+C10orf125,renamed,FUOM
+C10orf122,renamed,TEX36
+C10orf129,renamed,ACSM6
+C10orf128,renamed,TMEM273
+AMAC1L2,renamed,SLC35G5
+AMAC1L3,renamed,SLC35G6
+ADAL,renamed,MAPDA
+IQCA1,renamed,DRC11
+ZNF187,renamed,ZSCAN26
+GLTPD1,renamed,CPTP
+PION,renamed,GSAP
+XKRY2,renamed,XKRYP7
+LOC440461,not found,
+DKFZp566F0947,not found,
+FLJ40330,not found,
+ZNF826,renamed,ZNF826P
+FAM75C1,renamed,SPATA31C1
+FAM35B,renamed,SHLD2P1
+FAM35A,renamed,SHLD2
+NCRNA00159,renamed,LINC00159
+LYRM5,renamed,ETFRF1
+ZNF131,renamed,ZBTB35
+AGAP7,renamed,AGAP7P
+AGAP8,renamed,AGAP4
+TMEM2,renamed,CEMIP2
+TMEM5,renamed,RXYLT1
+CN5H6.4,renamed,GTSE1-DT
+C17orf99,renamed,IL40
+C17orf98,renamed,SPMAP1
+C17orf95,renamed,METTL23
+C17orf97,renamed,LIAT1
+C17orf96,renamed,EPOP
+C17orf91,renamed,MIR22HG
+C17orf90,renamed,OXLD1
+C17orf93,renamed,PRAC2
+GBAP1,renamed,GBA1LP
+LPHN2,renamed,ADGRL2
+HDGFRP2,renamed,HDGFL2
+HDGFRP3,renamed,HDGFL3
+C6orf106,renamed,ILRUN
+C6orf105,renamed,ADTRP
+C6orf103,renamed,ADGB
+LOC100302650,not found,
+LOC100134259,not found,
+HSPC072,renamed,LINC00652
+BEAN,renamed,BEAN1
+KIAA0652,renamed,ATG13
+MOSC2,renamed,MTARC2
+MOSC1,renamed,MTARC1
+AMICA1,renamed,JAML
+ISPD,renamed,CRPPA
+PLDN,renamed,BLOC1S6
+BEYLA,renamed,LINC00293
+C9orf89,renamed,CARD19
+C9orf84,renamed,SHOC1
+C9orf86,renamed,RABL6
+C9orf80,renamed,INIP
+C9orf82,renamed,CAAP1
+H3F3B,renamed,H3-3B
+FAM92A3,renamed,CIBAR1P2
+LRRC6,renamed,DNAAF11
+TXNRD3IT1,renamed,TXNRD3
+LOC134466,not found,
+FTHL3,renamed,FTH1P3
+UBE2CBP,renamed,UBE3D
+UHRF1BP1,renamed,BLTP3A
+JUB,renamed,AJUBA
+LOC342346,not found,
+NCRNA00095,renamed,FBXL19-AS1
+FLJ41941,not found,
+FAM98C,renamed,TSLIG3C
+FAM98A,renamed,TSLIG3A
+LOC93622,not found,
+SKINTL,renamed,SKINT1L
+WARS,renamed,WARS1
+LOC221122,not found,
+RPSAP58,renamed,RPSA2
+C14orf68,renamed,SLC25A47
+C14orf64,renamed,LINC01550
+BCORL2,renamed,BCORP1
+C18orf21,ambiguous alias,
+C18orf20,renamed,LINC00305
+C18orf22,renamed,RBFA
+C18orf25,renamed,ARK2N
+C18orf26,renamed,DYNAP
+LOC643837,not found,
+LOC401010,not found,
+PMS2L1,renamed,PMS2P1
+C1orf9,renamed,SUCO
+LOH12CR1,renamed,BORCS5
+SMEK3P,renamed,PPP4R3C
+LOC285501,not found,
+C14orf2,renamed,ATP5MJ
+C14orf1,renamed,ERG28
+C14orf4,renamed,IRF2BPL
+LOC729991,not found,
+KIAA0406,renamed,TTI1
+RNMTL1,renamed,MRM3
+YARS,renamed,YARS1
+C21orf119,renamed,URB1-DT
+FLJ25328,not found,
+LOC338651,not found,
+FRG1B,renamed,FRG1BP
+LOC100233209,not found,
+LOC648691,not found,
+LOC441454,not found,
+C7orf42,renamed,TMEM248
+LOC284100,not found,
+CCL14-CCL15,not found,
+FAM166B,renamed,CIMIP2B
+C6orf108,renamed,DNPH1
+LOC150185,not found,
+C14orf149,renamed,L3HYPDH
+C14orf148,renamed,NOXRED1
+C14orf143,renamed,EFCAB11
+C14orf142,renamed,GON7
+C14orf145,renamed,CEP128
+C14orf147,renamed,SPTSSA
+C7orf4,renamed,LINC00244
+C12orf49,renamed,SPRING1
+C12orf48,renamed,PARPBP
+C12orf41,renamed,KANSL2
+C12orf40,renamed,REDIC1
+C12orf45,renamed,NOPCHAP1
+C12orf44,renamed,ATG101
+C12orf47,renamed,MAPKAPK5-AS1
+ANKRD56,renamed,SOWAHB
+ANKRD57,renamed,SOWAHC
+ANKRD58,renamed,SOWAHD
+EPT1,renamed,SELENOI
+KBTBD5,renamed,KLHL40
+RAD51L1,renamed,RAD51B
+GUCY1A3,renamed,GUCY1A1
+MYST2,renamed,KAT7
+MYST3,renamed,KAT6A
+NPIPL3,renamed,NPIPB3
+C10orf140,renamed,SKIDA1
+FAM57B,renamed,TLCD3B
+LOC100128542,not found,
+FAM57A,renamed,TLCD3A
+RNF216L,renamed,RNF216P1
+HIST3H2A,renamed,H2AC25
+RFWD2,renamed,COP1
+FLJ11235,not found,
+COL29A1,renamed,COL6A5
+TMEM30B,renamed,CDC50B
+FLJ39739,not found,
+KIAA1407,renamed,CCDC191
+SFRS5,renamed,SRSF5
+MTERF,renamed,MTERF1
+LOC399959,not found,
+MYEOV2,renamed,COPS9
+FAM35B2,renamed,SHLD2P3
+C20orf85,renamed,CIMIP1
+FAM175A,renamed,ABRAXAS1
+C17orf73,renamed,ANKRD40CL
+C17orf72,renamed,PRR29
+C17orf71,renamed,SMG8
+C17orf70,renamed,FAAP100
+C17orf77,renamed,CD300LD-AS1
+C17orf76,renamed,LRRC75A
+C17orf74,renamed,SPEM2
+PPAPDC3,renamed,PLPP7
+C17orf79,renamed,COPRS
+TMEM90B,renamed,SYNDIG1
+KIAA0090,renamed,EMC1
+C6orf125,renamed,UQCC2
+C6orf124,renamed,AFDN-DT
+C6orf127,renamed,CLPSL1
+C6orf126,ambiguous alias,
+C6orf123,renamed,LINC01558
+C6orf122,renamed,LINC00242
+C3orf1,renamed,TIMMDC1
+PVRL3,renamed,NECTIN3
+PVRL2,renamed,NECTIN2
+LOC646851,not found,
+FLJ35024,not found,
+ZFYVE20,renamed,RBSN
+WBSCR27,renamed,METTL27
+FDPSL2A,renamed,FDPSP2
+C19orf52,renamed,TIMM29
+C19orf51,renamed,DNAAF3
+C19orf50,renamed,KXD1
+C19orf57,renamed,BRME1
+C19orf56,renamed,WDR83OS
+C19orf55,renamed,PROSER3
+C19orf54,renamed,ACTMAP
+LECT1,renamed,CNMD
+C19orf59,renamed,MCEMP1
+C22orf9,renamed,KIAA0930
+C11orf49,renamed,CSTPP1
+C11orf41,renamed,KIAA1549L
+C11orf45,renamed,KCNJ5-AS1
+C11orf46,renamed,ARL14EP
+RASA4P,renamed,RASA4CP
+LOC100129387,not found,
+C4orf42,renamed,CTBP1-DT
+TIMM16,renamed,PAM16
+C3orf45,renamed,LSMEM2
+C4orf47,renamed,CFAP96
+C16orf53,renamed,PAGR1
+BMS1P5,renamed,BMS1P1
+LOC645676,not found,
+USMG5,renamed,ATP5MK
+FLJ45244,not found,
+MARCH2,renamed,MARCHF2
+KRBA2,renamed,KRABD2
+FAM96A,renamed,CIAO2A
+ARPM1,renamed,ACTRT3
+H3F3C,renamed,H3-5
+LOC55908,not found,
+C15orf56,renamed,PAK6-AS1
+C10orf81,renamed,PLEKHS1
+C18orf45,renamed,SLC35D4
+C15orf50,renamed,LINC00593
+SCXB,renamed,SCX
+PLAC2,renamed,TINCR
+ZNF498,renamed,ZSCAN25
+C21orf130,renamed,LINC00323
+C21orf131,renamed,LINC00320
+ORAOV1,renamed,LTO1
+C6orf191,renamed,TMEM244
+C6orf192,renamed,SLC18B1
+ST5,renamed,DENND2B
+ZFP112,renamed,ZNF112
+MRVI1,renamed,IRAG1
+IMP5,renamed,SPPL2C
+ZAK,renamed,MAP3K20
+LOC91316,not found,
+NCRNA00113,renamed,LINC00113
+LOC645332,not found,
+FAM164C,renamed,ZC2HC1C
+FAM164A,renamed,ZC2HC1A
+FAM113A,renamed,PCED1A
+C14orf169,renamed,RIOX1
+C14orf167,renamed,DHRS4-AS1
+C14orf165,renamed,LINC00596
+C14orf162,renamed,CCDC177
+CCDC123,renamed,CEP89
+CCDC129,renamed,ITPRID1
+RNF219,renamed,OBI1
+MGEA5,renamed,OGA
+LOC221442,not found,
+RAG1AP1,renamed,SLC50A1
+UHRF1BP1L,renamed,BLTP3B
+C12orf29,renamed,RLIG1
+C12orf27,renamed,HNF1A-AS1
+C12orf26,renamed,METTL25
+C12orf24,renamed,FAM216A
+C12orf23,renamed,TMEM263
+TUBB2C,renamed,TUBB4B
+HIST3H3,renamed,H3-4
+KIAA0284,renamed,CEP170B
+MUT,renamed,MMUT
+NCRNA00051,renamed,LINC00051
+MTERFD3,renamed,MTERF2
+CENPC1,renamed,CENPC
+WHAMML2,renamed,WHAMMP2
+MTERFD2,renamed,MTERF4
+?|57714,not found,
+SEPW1,renamed,SELENOW
+NAT15,renamed,NAA60
+LOC388692,not found,
+ANUBL1,renamed,ZFAND4
+FAM55D,renamed,NXPE4
+FAM55A,renamed,NXPE1
+FAM55C,renamed,NXPE3
+C18orf2,ambiguous alias,
+C18orf1,renamed,LDLRAD4
+SEPT9,renamed,SEPTIN9
+C18orf8,renamed,RMC1
+ATP5F1,renamed,ATP5PB
+LOC92249,not found,
+SEPT4,renamed,SEPTIN4
+CXorf30,renamed,CFAP47
+CXorf36,renamed,DIPK2B
+PRUNE,renamed,PRUNE1
+BAI1,renamed,ADGRB1
+BAI2,renamed,ADGRB2
+BAI3,renamed,ADGRB3
+KIAA1704,renamed,GPALPP1
+KIAA1257,renamed,CFAP92
+LOC645431,not found,
+LOC647859,not found,
+SFRS3,renamed,SRSF3
+BZRAP1,renamed,TSPOAP1
+NUPL1,renamed,NUP58
+NUPL2,renamed,NUP42
+SUGT1L1,renamed,SUGT1P3
+DKFZP434L187,renamed,LINC02249
+FAM98B,renamed,TSLIG3B
+MARCH8,renamed,MARCHF8
+IL28RA,renamed,IFNLR1
+LOC100128822,not found,
+TUBB4,ambiguous alias,
+C19orf71,renamed,TEKTIP1
+C19orf70,renamed,MICOS13
+C19orf75,renamed,SIGLECL1
+C19orf77,renamed,SMIM24
+C19orf76,renamed,ADM5
+FLJ22536,not found,
+DKFZp761E198,not found,
+C17orf59,renamed,BORCS6
+C17orf51,renamed,LINC02693
+C11orf67,renamed,AAMDC
+C11orf64,renamed,LINC00301
+C17orf55,renamed,LINC00482
+C17orf54,renamed,LINC00469
+C17orf57,renamed,EFCAB13
+C17orf56,renamed,TEPSIN
+C9orf16,renamed,BBLN
+LOC151174,not found,
+LOC402377,not found,
+LOC284441,not found,
+LOC284440,not found,
+LOC149134,not found,
+SEC1,renamed,FUT2BP
+LOC554202,not found,
+C1orf189,renamed,CFAP141
+CRIPAK,not found,
+C1orf180,renamed,LINC01555
+C1orf182,renamed,TSACC
+C1orf183,renamed,INKA2
+C1orf186,renamed,RHEX
+C1orf187,renamed,DRAXIN
+?|728045,not found,
+IL28B,renamed,IFNL3
+IL28A,renamed,IFNL2
+BASE,renamed,BPIFA4P
+C14orf21,renamed,NOP9
+C14orf23,renamed,LINC01551
+C14orf28,renamed,DORIP1
+FAM5B,renamed,BRINP2
+TROVE2,renamed,RO60
+C18orf62,renamed,SMIM21
+LOC401052,not found,
+GNB2L1,renamed,RACK1
+FAM19A4,renamed,TAFA4
+FAM19A5,renamed,TAFA5
+FAM19A2,renamed,TAFA2
+FAM19A3,renamed,TAFA3
+FAM19A1,renamed,TAFA1
+C6orf225,renamed,FAM229B
+LOC100130264,not found,
+LOC148413,not found,
+LOC653786,not found,
+LOC400891,not found,
+FAM83H,renamed,SACK1H
+LOC286367,not found,
+C15orf5,renamed,LINC00597
+C15orf2,renamed,NPAP1
+LOC643763,not found,
+LOC284632,not found,
+C14orf105,renamed,CCDC198
+C14orf104,renamed,DNAAF2
+BAT5,renamed,ABHD16A
+C14orf106,renamed,MIS18BP1
+C14orf101,renamed,TMEM260
+BAT2,renamed,PRRC2A
+BAT1,ambiguous alias,
+C14orf102,renamed,NRDE2
+C14orf109,renamed,LYSET
+SMEK2,renamed,PPP4R3B
+LOC730811,not found,
+CDRT15P,renamed,CDRT15P1
+TNFAIP8L3,renamed,TIPE3
+TNFAIP8L2,renamed,TIPE2
+CCDC101,renamed,SGF29
+CCDC103,renamed,DNAAF19
+CCDC105,renamed,TEKTL1
+CCDC104,renamed,CFAP36
+CCDC108,renamed,CFAP65
+HIATL2,renamed,SLC71A3P
+CGB,ambiguous alias,
+LOC641298,not found,
+CECR1,renamed,ADA2
+CECR4,renamed,HDHD5-AS1
+CECR5,renamed,HDHD5
+CECR6,renamed,TMEM121B
+PLAC1L,renamed,OOSP2
+LOC100302401,not found,
+?|652919,not found,
+FAM18B2,renamed,TVP23C
+NCRNA00032,renamed,REXO6P
+LEPREL2,renamed,P3H3
+LEPREL1,renamed,P3H2
+LOC100268168,not found,
+ANKRD5,renamed,ANKEF1
+BCMO1,renamed,BCO1
+TSGA14,renamed,CEP41
+LPHN1,renamed,ADGRL1
+ATPBD4,renamed,DPH6
+RDBP,renamed,NELFE
+FOLR4,renamed,IZUMO1R
+SFRS2IP,renamed,SCAF11
+WHSC1L1,renamed,NSD3
+PTPLA,renamed,HACD1
+HRSP12,renamed,RIDA
+TMEM19,renamed,FAABTP
+UTS2D,renamed,UTS2B
+KIAA1274,renamed,PALD1
+KIAA1279,renamed,KIFBP
+ATPIF1,renamed,ATP5IF1
+C15orf17,renamed,FAM219B
+C20orf43,renamed,RTF2
+C20orf46,renamed,TMEM74B
+DIMT1L,renamed,DIMT1
+LOC388789,not found,
+C9orf119,renamed,SWI5
+C9orf110,renamed,FAM225B
+C9orf117,renamed,CFAP157
+C9orf116,renamed,PIERCE1
+C9orf114,renamed,SPOUT1
+LOC731779,not found,
+WBSCR22,renamed,BUD23
+LOC285735,not found,
+LOC285733,not found,
+LOC100130557,not found,
+LOC340357,not found,
+FAM71E1,renamed,GARIN5A
+FAM71E2,renamed,GARIN5B
+OSTalpha,renamed,SLC51A
+C19orf10,renamed,MYDGF
+C17orf39,renamed,GID4
+RAB7L1,renamed,RAB29
+C17orf37,renamed,MIEN1
+LOC145783,not found,
+PDDC1,renamed,GATD1
+FAM108C1,renamed,ABHD17C
+METTL11B,renamed,NTMT2
+FLJ10213,not found,
+RG9MTD3,renamed,TRMT10B
+RRP7B,renamed,RRP7BP
+LOC100272216,not found,
+PPP1R2P9,renamed,PPP1R2C
+FAM69C,renamed,DIPK1C
+FAM69A,renamed,DIPK1A
+FAM92B,renamed,CIBAR2
+LOC144486,not found,
+FLJ42709,not found,
+WHSC2,renamed,NELFA
+CLUAP1,renamed,IFT38
+KIAA0802,renamed,MTCL1
+?|100130426,not found,
+SEPN1,renamed,SELENON
+LARS,renamed,LARS1
+FLJ42875,not found,
+FBXL21,renamed,FBXL21P
+LOC100286844,not found,
+ZNF330,renamed,NOAZFP
+SFRS1,renamed,SRSF1
+NOTCH2NL,renamed,NOTCH2NLA
+LOC100133893,not found,
+LOC157627,not found,
+MAPKSP1,renamed,LAMTOR3
+HBXIP,renamed,LAMTOR5
+CG030,renamed,N4BP2L2-IT2
+LOC285830,not found,
+KIAA1045,not found,
+PTCHD2,renamed,DISP3
+LOC200030,not found,
+C14orf129,renamed,GSKIP
+C14orf128,renamed,ARHGAP5-AS1
+MFSD10,renamed,SLC75A1
+LRRC33,renamed,NRROS
+C14orf126,renamed,DTD2
+FAM166A,renamed,CIMIP2A
+TCEB3,renamed,ELOA
+TCEB2,renamed,ELOB
+TCEB1,renamed,ELOC
+C20orf191,renamed,NCOR1P1
+C20orf197,ambiguous alias,
+C20orf195,renamed,FNDC11
+C20orf194,renamed,DNAAF9
+C20orf199,renamed,ZFAS1
+C7orf28A,renamed,CCZ1
+C7orf28B,renamed,CCZ1B
+LOC100132111,not found,
+FLJ43390,not found,
+LOC647946,not found,
+SPINLW1,renamed,EPPIN
+TTC15,renamed,TRAPPC12
+C4orf29,renamed,ABHD18
+FAM48A,renamed,SUPT20H
+C4orf21,renamed,ZGRF1
+C3orf65,renamed,IGF2BP2-AS1
+C4orf23,renamed,TRMT44
+C3orf67,renamed,CFAP20DC
+LOC144742,not found,
+C3orf63,renamed,TASOR
+FLJ33630,not found,
+LOC728643,not found,
+LOC728640,not found,
+C15orf39,renamed,PRMT2IP
+C15orf38,renamed,ARPIN
+C15orf34,renamed,HEXA-AS1
+C15orf37,renamed,ST20-AS1
+CNTD2,renamed,CCNP
+EIF2C4,renamed,AGO4
+EIF2C1,renamed,AGO1
+EIF2C3,renamed,AGO3
+EIF2C2,renamed,AGO2
+LOC729991-MEF2B,renamed,BORCS8-MEF2B
+C9orf131,renamed,SPATA31G1
+AGPAT6,renamed,GPAT4
+C9orf135,renamed,CFAP95
+C9orf139,renamed,LINC02908
+KIAA1211,renamed,CRACD
+AGPAT9,ambiguous alias,
+ZNF788,renamed,ZNF788P
+FLJ23867,not found,
+TMEM195,renamed,AGMO
+ANXA8L2,renamed,ANXA8L1
+C19orf35,renamed,PEAK3
+C19orf34,renamed,CSNK1G2-AS1
+LOC201651,not found,
+C19orf36,renamed,IZUMO4
+C19orf30,renamed,MIR7-3HG
+C19orf39,renamed,SWSAP1
+FAM154A,renamed,SAXO1
+FAM154B,renamed,SAXO2
+C11orf20,renamed,CATSPERZ
+C22orf25,renamed,TANGO2
+WAPAL,renamed,WAPL
+FAM71D,renamed,GARIN2
+FAM71B,renamed,GARIN3
+FAM71C,renamed,GARIN6
+FAM71A,renamed,GARIN4
+C3orf33,renamed,MISO1
+C3orf32,renamed,SSUH2
+C3orf31,renamed,TAMM41
+RWDD4A,renamed,RWDD4
+LOC100130148,not found,
+C3orf37,renamed,HMCES
+ORC5L,renamed,ORC5
+KIAA1841,renamed,SANBR
+SRPR,renamed,SRPRA
+LOC728819,not found,
+TBRG4,renamed,FASTKD4
+FLJ10357,not found,
+FAM108A1,renamed,ABHD17A
+C16orf63,renamed,CEP20
+C16orf62,renamed,VPS35L
+C16orf61,renamed,CMC2
+C16orf68,renamed,METTL22
+NCRNA00202,renamed,FAM238C
+ANKRD20A3,renamed,ANKRD20A3P
+C15orf60,renamed,REC114
+ANKRD20A4,renamed,ANKRD20A4P
+CES4,renamed,CES1P1
+FLJ44606,not found,
+NELF,renamed,NSMF
+CES7,renamed,CES5A
+LOC100130933,not found,
+LOC100130932,not found,
+?|553137,not found,
+HIST2H2AB,renamed,H2AC21
+TMEM30A,renamed,CDC50A
+LDOC1L,renamed,RTL6
+CTGF,renamed,CCN2
+FLJ43950,not found,
+LOC283867,not found,
+FAM115C,renamed,TCAF2
+FAM115A,renamed,TCAF1
+LOC650368,not found,
+LBXCOR1,renamed,SKOR1
+LOC148145,not found,
+FLJ37543,not found,
+LOC388955,not found,
+MRE11A,renamed,MRE11
+FLJ90757,not found,
+DKFZP434H168,renamed,GNAO1-AS1
+?|390284,not found,
+KIAA1539,renamed,ATOSB
+KIAA1530,renamed,UVSSA
+LRRC50,renamed,DNAAF1
+KIAA1024,renamed,MINAR1
+LOC100101266,not found,
+ZCCHC11,renamed,TUT4
+PSG10,ambiguous alias,
+CCDC147,renamed,CFAP58
+GRAMD3,renamed,GRAMD2B
+GOLGA9P,renamed,GOLGA8IP
+PQLC2,renamed,SLC66A1
+HSPC157,renamed,LINC00339
+CEP110,renamed,CNTRL
+HSPC159,renamed,LGALSL
+KIAA0776,renamed,UFL1
+CD3EAP,renamed,POLR1G
+MYST4,renamed,KAT6B
+TMEM99,renamed,KRT10-AS1
+TUBB4Q,renamed,TUBB7P
+LOC644165,not found,
+DEFB109P1B,renamed,DEFB109B
+C1orf26,renamed,SWT1
+C1orf27,renamed,ODR4
+C1orf25,renamed,TRMT1L
+IMPAD1,renamed,BPNT2
+AHSA2,renamed,AHSA2P
+LOC285194,not found,
+CENPBD1,renamed,CENPBD1P
+TTC37,renamed,SKIC3
+TTC35,renamed,EMC2
+ZNF137,renamed,ZNF137P
+LRMP,renamed,IRAG2
+UCKL1AS,renamed,UCKL1-AS1
+SLC22A20,renamed,SLC22A20P
+GNASAS,renamed,GNAS-AS1
+FAM7A2,renamed,ULK4P2
+FAM7A3,renamed,ULK4P3
+LOC100130238,not found,
+FLJ43663,not found,
+C6orf81,renamed,ARMC12
+LOC286135,not found,
+LASS5,renamed,CERS5
+C4orf43,renamed,TMA16
+C3orf47,renamed,H1-10-AS1
+C4orf41,renamed,TRAPPC11
+C4orf40,renamed,PRR27
+C3orf42,renamed,LINC00852
+C3orf43,renamed,SMCO1
+C4orf45,renamed,SPMIP2
+C4orf44,renamed,MSANTD1
+C4orf49,renamed,MGARP
+C4orf48,renamed,NICOL1
+C3orf48,renamed,PP2D1
+KRBA1,renamed,KRABD3
+C15orf59,renamed,INSYN1
+C15orf58,renamed,GDPGP1
+C15orf57,renamed,CCDC32
+C10orf82,renamed,SPMIP5
+C15orf54,renamed,LINC02915
+C15orf53,renamed,LINC02694
+C15orf52,renamed,CCDC9B
+C15orf51,renamed,DNM1P46
+C10orf84,renamed,FAM204A
+LOC653113,not found,
+DDX12,renamed,DDX12P
+CCDC79,renamed,TERB1
+LOC646762,not found,
+C9orf156,renamed,TRMO
+C9orf150,renamed,LURAP1L
+KIAA1239,renamed,NWD2
+HNRPLL,renamed,HNRNPLL
+MARCH5,renamed,MARCHF5
+MARCH4,renamed,MARCHF4
+MARCH7,renamed,MARCHF7
+MARCH6,renamed,MARCHF6
+MARCH1,renamed,MARCHF1
+MARCH3,renamed,MARCHF3
+MARCH9,renamed,MARCHF9
+PGCP,renamed,CPQ
+ALMS1P,renamed,ALMS1P1
+TMEM104,renamed,SLC38A12
+CLRN1OS,renamed,CLRN1-AS1
+BRP44L,renamed,MPC1
+LOC254312,not found,
+ZNF542,renamed,ZNF542P
+CSDAP1,renamed,YBX3P1
+FAM73A,renamed,MIGA1
+FAM73B,renamed,MIGA2
+TCTE3,renamed,DYNLT2
+TCTE1,renamed,DRC5
+ZNF37B,renamed,ZNF37BP
+LOC728875,not found,
+KIAA1826,renamed,MSANTD4
+PRIC285,renamed,HELZ2
+ASFMR1,renamed,FMR1-AS1
+C8orf59,renamed,RBIS
+C8orf55,renamed,THEM6
+C8orf56,renamed,BAALC-AS2
+C8orf51,renamed,RHPN1-AS1
+DNAJB3,renamed,DNAJB3P
+EPB49,renamed,DMTN
+GCET2,renamed,GCSAM
+TRIM78P,not found,
+SCGBL,renamed,SCGB2B2
+SNORA50,renamed,SNORA50A
+PROSC,renamed,PLPBP
+FAM65C,renamed,RIPOR3
+FAM65B,renamed,RIPOR2
+FAM65A,renamed,RIPOR1
+LOC388387,not found,
+?|728603,not found,
+TMEM56,renamed,TLCD4
+C16orf48,renamed,ENKD1
+C16orf45,renamed,BMERB1
+C16orf42,renamed,TSR3
+COPG,renamed,COPG1
+LOC100128675,not found,
+HIST2H2AC,renamed,H2AC20
+ALPPL2,renamed,ALPG
+IL1F6,renamed,IL36A
+GPR133,renamed,ADGRD1
+C19orf2,renamed,URI1
+C19orf6,renamed,TMEM259
+LOC399744,not found,
+ZNF434,renamed,ZSCAN32
+FAM13AOS,renamed,FAM13A-AS1
+GRINL1A,ambiguous alias,
+LOC729234,not found,
+FLJ44082,not found,
+MAP1D,renamed,METAP1D
+SLC9A10,renamed,SLC9C1
+SLC9A11,renamed,SLC9C2
+LOC400657,not found,
+KIAA0754,renamed,MACF1
+PLEKHM1P,renamed,PLEKHM1P1
+PL-5283,renamed,STMP1
+ZNF259,renamed,ZPR1
+SGK223,renamed,PRAG1
+LOC100286793,not found,
+C1orf43,renamed,LTAP1
+C1orf49,renamed,TEX35
+MKL1,renamed,MRTFA
+LOC148709,not found,
+GPR81,renamed,HCAR1
+ZNF295,renamed,ZBTB21
+MGC42105,not found,
+GRRP1,renamed,FAM110D
+C2orf7,renamed,PRADC1
+C2orf3,renamed,GCFC2
+LEPRE1,renamed,P3H1
+ZNF322A,renamed,ZNF322
+DKFZp686O24166,renamed,NCR3LG1
+ZNF322B,renamed,ZNF322P1
+LOC728606,not found,
+TRAF3IP1,renamed,IFT54
+DUSP13,ambiguous alias,
+C3orf20,renamed,FAM149C
+C3orf21,renamed,XXYLT1
+C3orf23,renamed,TCAIM
+C3orf24,renamed,FANCD2OS
+C3orf26,renamed,CMSS1
+C3orf27,renamed,LINC01565
+SSX6,renamed,SSX6P
+LOC341056,not found,
+LOC153684,not found,
+?|155060,not found,
+C20orf20,renamed,MRGBP
+LOC283922,not found,
+C20orf26,renamed,CFAP61
+C20orf27,renamed,ADISSP
+C20orf24,renamed,RAB5IF
+C20orf29,renamed,AP5S1
+C9orf171,renamed,CFAP77
+C9orf170,renamed,LINC02872
+C9orf173,renamed,STPG3
+C9orf172,renamed,AJM1
+CCDC65,renamed,DRC2
+CCDC64,renamed,BICDL1
+CCDC67,renamed,DEUP1
+LOC285796,not found,
+LRDD,renamed,PIDD1
+TMEM48,renamed,NDC1
+NAP1L6,renamed,NAP1L6P
+CYHR1,renamed,ZFTRAF1
+FAM150A,renamed,ALKAL1
+FAM105B,renamed,OTULIN
+FAM105A,renamed,OTULINL
+FAM150B,renamed,ALKAL2
+KIAA0562,renamed,CEP104
+KIAA0564,renamed,VWA8
+SPDYE8P,renamed,SPDYE8
+GCN1L1,renamed,GCN1
+KIAA1804,not found,
+LOC126536,not found,
+LOC619207,not found,
+FDX1L,renamed,FDX2
+C1orf100,renamed,SPMIP3
+C1orf101,renamed,CATSPERE
+C1orf103,renamed,LRIF1
+C1orf104,renamed,RUSC1-AS1
+C1orf106,renamed,INAVA
+C1orf107,renamed,UTP25
+C1orf109,renamed,AIRIM
+FLJ43859,not found,
+DEFB109P1,renamed,DEFB109A
+LOC147727,not found,
+SNORA34,renamed,SNORA2C
+SNORA39,renamed,SNORA71E
+?|136542,not found,
+FOXD4L2,renamed,FOXD4L4
+LOC651250,not found,
+FAM63A,renamed,MINDY1
+RNF165,renamed,ARK2C
+LOC100129055,not found,
+C8orf77,renamed,ZNF252P-AS1
+C8orf75,renamed,LINC00589
+C8orf71,renamed,LINC00588
+C8orf79,renamed,TRMT9B
+ZNF252,renamed,ZNF252P
+ANP32C,renamed,ANP32CP
+UQCC,renamed,UQCC1
+AGPHD1,renamed,HYKK
+IQCG,renamed,DRC9
+IQCD,renamed,DRC10
+LOC100133957,not found,
+GMCL1L,renamed,GMCL2
+LOC441294,not found,
+GPR115,renamed,ADGRF4
+GPR113,renamed,ADGRF3
+GPR112,renamed,ADGRG4
+GPR110,renamed,ADGRF1
+FAM119B,renamed,EEF1AKMT3
+FAM119A,renamed,METTL21A
+SFRS2B,renamed,SRSF8
+TMEM27,renamed,CLTRN
+LOC100129716,not found,
+C14orf184,not found,
+C14orf181,not found,
+C14orf183,renamed,LINC01599
+C14orf182,renamed,LINC01588
+C7orf26,renamed,INTS15
+C7orf27,renamed,BRAT1
+C7orf23,renamed,TMEM243
+C7orf29,renamed,ZBED10P
+C6orf129,renamed,CCDC167
+ALG1L,renamed,ALG1L1P
+LOC100130691,not found,
+LOC100133308,not found,
+HIST2H2BE,renamed,H2BC21
+C1orf68,renamed,KPLCE
+C1orf69,renamed,IBA57
+C1orf63,renamed,RSRP1
+C1orf61,renamed,MIR9-1HG
+C1orf66,renamed,METTL25B
+C1orf64,renamed,SRARP
+C1orf65,renamed,CCDC185
+ST7OT1,renamed,ST7-AS1
+GAS8,renamed,DRC4
+ZNF815,renamed,ZNF815P
+SFRS7,renamed,SRSF7
+RICH2,renamed,ARHGAP44
+TMEM30C,renamed,CDC50CP
+KIAA1468,renamed,RELCH
+AMAC1,ambiguous alias,
+BREA2,renamed,LINC02878
+LOC100129066,not found,
+LOC116437,not found,
+PRO1768,renamed,FOXN3-AS2
+HNRPDL,renamed,HNRNPDL
+LOC647309,not found,
+MGC29506,not found,
+EMR1,renamed,ADGRE1
+EMR2,renamed,ADGRE2
+EMR3,renamed,ADGRE3
+C11orf48,ambiguous alias,
+DDX58,renamed,RIGI
+FAM129A,renamed,NIBAN1
+FAM129B,renamed,NIBAN2
+RNASEN,renamed,DROSHA
+ADSSL1,renamed,ADSS1
+LOC285401,not found,
+TMEM136,renamed,TLCD5
+CCDC48,renamed,EFCC1
+CCDC46,renamed,CEP112
+CCDC45,renamed,CEP95
+CCDC41,renamed,CEP83
+HDHD1A,renamed,PUDP
+DYSFIP1,renamed,PPP1R27
+ACPL2,renamed,PXYLP1
+TMEM155,renamed,SMIM43
+AIM1,ambiguous alias,
+DBC1,ambiguous alias,
+C11orf88,renamed,HOATZ
+C11orf84,renamed,SPINDOC
+C11orf85,renamed,MAJIN
+C11orf80,renamed,TOP6BL
+C11orf82,renamed,DDIAS
+C11orf83,renamed,UQCC3
+ProSAPiP1,not found,
+HSPB11,renamed,IFT25
+C1orf126,renamed,TMEM51-AS1
+C1orf127,renamed,CIROZ
+C1orf124,renamed,SPRTN
+C1orf125,renamed,AXDND1
+C1orf123,renamed,CZIB
+LRRC16A,renamed,CARMIL1
+C1orf128,renamed,PITHD1
+C1orf129,renamed,MROH9
+C6orf97,renamed,CCDC170
+C6orf94,renamed,ZC2HC1B
+SLMO2,renamed,PRELID3B
+FLJ39609,not found,
+SLMO1,renamed,PRELID3A
+C2orf39,renamed,DRC1
+C2orf34,renamed,CAMKMT
+SSX8,renamed,SSX8P
+C8orf12,renamed,FAM167A-AS1
+FLJ25758,not found,
+CCDC163P,renamed,CCDC163
+FLJ14107,not found,
+C16orf88,renamed,KNOP1
+C16orf81,renamed,LINC00304
+C16orf80,renamed,CFAP20
+C16orf87,renamed,HDIP1
+MS4A8B,renamed,MS4A8
+GUSBL1,renamed,GUSBP2
+LOC100190938,not found,
+GUSBL2,renamed,GUSBP4
+RNU5E,renamed,RNU5E-1
+DDX39,renamed,DDX39A
+LOC148189,not found,
+RNF160,renamed,LTN1
+SAPS1,renamed,PPP6R1
+C10orf4,renamed,FRA10AC1
+C10orf2,ambiguous alias,
+LOC145820,not found,
+LOC440896,not found,
+MTSS1L,renamed,MTSS2
+LOC339674,not found,
+MGC16142,not found,
+MSL3L2,renamed,MSL3B
+LOC90110,not found,
+GYLTL1B,renamed,LARGE2
+LOC400696,not found,
+KIAA0247,renamed,SUSD6
+KIAA0240,renamed,BICRAL
+FAM18B,renamed,TVP23B
+FAM18A,renamed,TVP23A
+NCRNA00174,renamed,LINC00174
+WDR52,renamed,CFAP44
+LOC90586,not found,
+LOC149837,not found,
+LACE1,renamed,AFG1L
+LOC100216545,not found,
+LOC389033,not found,
+CSDA,renamed,YBX3
+FAM40B,renamed,STRIP2
+FAM40A,renamed,STRIP1
+DUSP5P,renamed,DUSP5P1
+LOC728392,not found,
+ODF3,renamed,CIMAP1A
+YSK4,renamed,MAP3K19
+LOC93432,not found,
+BPIL2,renamed,BPIFC
+BPIL3,renamed,BPIFB6
+BPIL1,renamed,BPIFB2
+UFD1L,renamed,UFD1
+NCRNA00105,renamed,ASMTL-AS1
+GATS,renamed,CASTOR3P
+NCRNA00107,renamed,LINC00685
+LOC100131434,not found,
+LOC84989,not found,
+FAM127C,renamed,RTL8B
+FAM127B,renamed,RTL8A
+FAM127A,renamed,RTL8C
+MCM3APAS,renamed,MCM3AP-AS1
+ZNF271,renamed,ZNF271P
+KIAA2018,renamed,USF3
+AKR1CL1,renamed,AKR1C8
+CCDC21,renamed,CEP85
+CCDC23,renamed,SVBP
+TMEM111,renamed,EMC3
+APOB48R,renamed,APOBR
+LOC595101,not found,
+KIAA1430,renamed,CFAP97
+KIAA1432,renamed,RIC1
+ORC4L,renamed,ORC4
+FAM96B,renamed,CIAO2B
+KIAA1383,renamed,MAP10
+TMEM110,renamed,STIMATE
+LOC149620,not found,
+TAZ,ambiguous alias,
+MGC14436,not found,
+LOC729603,not found,
+?|340602,not found,
+FAM101B,renamed,RFLNB
+FAM101A,renamed,RFLNA
+KIAA0528,renamed,C2CD5
+SFRS15,renamed,SCAF4
+CSPG4PY2,renamed,CSPG4P2Y
+LOC150776,not found,
+MTL5,renamed,TESMIN
+LOC401431,not found,
+SEPT7P2,renamed,SEPTIN7P2
+C5orf4,renamed,FAXDC2
+C6orf70,renamed,ERMARD
+C6orf72,renamed,GINM1
+NARS,renamed,NARS1
+MARS,ambiguous alias,
+C8orf38,renamed,NDUFAF6
+C8orf39,renamed,RBM12B-AS1
+C1orf144,renamed,SZRD1
+C8orf31,renamed,LY6S-AS1
+C8orf37,renamed,CFAP418
+TRMT12,renamed,TYW2
+C2orf16,renamed,SPATA31H1
+C2orf14,renamed,CYP4F30P
+ATP5EP2,renamed,ATP5F1EP2
+C2orf18,renamed,SLC35F6
+LOC375190,not found,
+LOC399815,not found,
+SNHG3-RCC1,not found,
+LOC100133991,not found,
+C13orf23,renamed,PROSER1
+C13orf26,renamed,TEX26
+C13orf27,renamed,TEX30
+C13orf28,renamed,SPACA7
+C13orf29,renamed,PRECSIT
+TMEM8C,renamed,MYMK
+COBRA1,renamed,NELFB
+RTDR1,renamed,RSPH14
+CYR61,renamed,CCN1
+LOC220729,not found,
+GIYD2,renamed,SLX1B
+C7orf68,renamed,HILPDA
+C7orf60,renamed,SAMTOR
+C7orf61,renamed,SPACDR
+C7orf63,renamed,CFAP69
+C7orf64,renamed,RBM48
+C7orf65,renamed,LINC02902
+C7orf66,renamed,LINC02903
+LOC100188947,not found,
+IL1RL1,renamed,IL33R
+IL1RL2,renamed,IL36R
+LOC100188949,not found,
+LOC387647,not found,
+LOC387646,not found,
+TEPP,renamed,SPMIP8
+FAM173B,renamed,ATPSCKMT
+FAM173A,renamed,ANTKMT
+METTL7A,renamed,TMT1A
+METTL7B,renamed,TMT1B
+MCART3P,renamed,SLC25A51P1
+ILVBL,renamed,HACL2
+GOLGA2P3,renamed,GOLGA2P3Y
+ASAP1IT1,renamed,ASAP1-IT1
+SPATA5L1,renamed,AFG2B
+LOC645752,not found,
+SPHAR,not found,
+C6orf204,renamed,CEP85L
+RP1-177G6.2,not found,
+C6orf201,renamed,TEX56P
+C6orf203,renamed,MTRES1
+C6orf208,renamed,LINC00574
+SUV420H1,renamed,KMT5B
+FAM103A1,renamed,RAMAC
+TRIM49L,renamed,TRIM49D2
+SFRS16,renamed,CLASRP
+CCDC64B,renamed,BICDL2
+RQCD1,renamed,CNOT9
+LOC221710,not found,
+NCRNA00161,renamed,LINC00161
+ATHL1,renamed,PGGHG
+AATK,renamed,LMTK1
+AIM1L,renamed,CRYBG2
+KIAA0922,renamed,TMEM131L
+GPR1,renamed,CMKLR2
+FAM125A,renamed,MVB12A
+PRDXDD1P,renamed,PRORSD1P
+FAM125B,renamed,MVB12B
+DIRC2,renamed,SLC49A4
+DDX26B,renamed,INTS6L
+LOC441869,not found,
+LSMD1,renamed,NAA38
+LOC728855,not found,
+LOC100130093,not found,
+LOC91948,not found,
+PRMT10,renamed,PRMT9
+SELM,renamed,SELENOM
+OR8G2,renamed,OR8G2P
+KDELC1,renamed,POGLUT2
+KDELC2,renamed,POGLUT3
+?|10431,not found,
+SFRS18,renamed,PNISR
+FAM86C,renamed,FAM86C1P
+DKFZp434J0226,not found,
+MGC23270,not found,
+DLX6AS,renamed,DLX6-AS1
+FAM22F,renamed,NUTM2F
+FAM22G,renamed,NUTM2G
+FAM22D,renamed,NUTM2D
+FAM22A,renamed,NUTM2A
+LOC253724,not found,
+C6orf57,renamed,SDHAF4
+KIAA0101,renamed,PCLAF
+KIAA0100,renamed,BLTP2
+C6orf59,renamed,AGPAT4-IT1
+?|442388,not found,
+APOA1BP,renamed,NAXE
+LOC152217,not found,
+OCLM,not found,
+C1orf163,renamed,COA7
+C1orf161,renamed,MAB21L3
+C1orf168,renamed,FYB2
+DFNB59,renamed,PJVK
+LOC100170939,not found,
+FAM36A,renamed,COX20
+C2orf70,renamed,CIMIP2C
+C2orf71,renamed,PCARE
+C2orf73,renamed,CIMIP6
+C2orf74,renamed,DEMA1
+C2orf77,renamed,CFAP210
+C2orf79,renamed,PTRHD1
+LOC100128191,not found,
+LOC283731,not found,
+HRASLS,renamed,PLAAT1
+LOC100101938,not found,
+SCAND2,renamed,SCAND2P
+LOC441455,not found,
+C7orf43,renamed,TRAPPC14
+C7orf40,renamed,SNHG15
+C7orf41,renamed,MTURN
+C7orf46,renamed,FAM221A
+C7orf47,renamed,PPP1R35
+C7orf44,renamed,COA1
+C7orf45,renamed,SSMEM1
+C7orf49,renamed,CYREN
+WIT1,renamed,WT1-AS
+LOC401127,not found,
+C8ORFK29,renamed,CATSPERQ
+PRSS45,renamed,PRSS45P
+PRSS42,renamed,PRSS42P
+C9orf7,renamed,CACFD1
+C9orf6,renamed,ABITRAM
+C9orf5,renamed,TMEM245
+C9orf4,renamed,FRRS1L
+C9orf3,renamed,AOPEP
+C9orf9,renamed,SPACA9
+CDKN2BAS,renamed,CDKN2B-AS1
+FAM175B,renamed,ABRAXAS2
+PVRL1,renamed,NECTIN1
+LOC347376,not found,
+PVRL4,renamed,NECTIN4
+FAM113B,renamed,PCED1B
+C14orf166,renamed,RTRAF
+KIAA0467,renamed,SZT2
+SIGLECP3,renamed,SIGLEC17P
+LOC284900,not found,
+C6orf195,renamed,LINC01600
+OBFC1,renamed,STN1
+LOC100271831,not found,
+LOC100271836,not found,
+LOC340508,not found,
+LOC91149,not found,
+SELV,renamed,SELENOV
+FAM63B,renamed,MINDY2
+C9orf11,renamed,EQTN
+KIAA1324,renamed,ELAPOR1
+LOC150381,not found,
+RAB39,ambiguous alias,
+C6orf222,renamed,BNIP5
+C6orf223,renamed,LINC03040
+C6orf221,renamed,KHDC3L
+C6orf226,renamed,PEX39
+C6orf227,renamed,LINC00336
+C8orf73,renamed,MROH6
+CAMSAP1L1,renamed,CAMSAP2
+C22orf43,renamed,DRICH1
+C1orf203,renamed,ATP1A1-AS1
+C1orf201,renamed,STPG1
+C1orf200,renamed,PIK3CD-AS1
+C1orf204,renamed,SNHG28
+ARMC4,renamed,ODAD2
+AARS,renamed,AARS1
+LOC200726,not found,
+ZDHHC8P1,renamed,ZDHHC8BP
+C5orf56,renamed,CARINH
+C5orf55,renamed,EXOC3-AS1
+C5orf54,renamed,ZBED8
+C5orf53,renamed,IGIP
+C5orf51,renamed,RIMOC1
+HIST1H4C,renamed,H4C3
+HIST1H4B,renamed,H4C2
+HIST1H4A,renamed,H4C1
+HIST1H4G,renamed,H4C7
+HIST1H4F,renamed,H4C6
+HIST1H4E,renamed,H4C5
+HIST1H4D,renamed,H4C4
+HIST1H4K,renamed,H4C12
+HIST1H4J,renamed,H4C11
+HIST1H4I,renamed,H4C9
+HIST1H4H,renamed,H4C8
+LOC728024,not found,
+HIST1H4L,renamed,H4C13
+KIAA0907,renamed,KHDC4
+C11orf59,renamed,LAMTOR1
+C10orf28,renamed,R3HCC1L
+C10orf25,renamed,ZNF22-AS1
+C10orf27,renamed,TBATA
+C10orf26,renamed,WBP1L
+LOC338758,not found,
+FAM158A,renamed,EMC9
+FAM123C,renamed,AMER3
+FAM123B,renamed,AMER1
+FAM123A,renamed,AMER2
+SOLH,renamed,CAPN15
+RAD51L3,renamed,RAD51D
+LOC80154,not found,
+GARS,ambiguous alias,
+LOC157381,not found,
+C22orf28,renamed,RTCB
+C22orf29,renamed,RTL10
+TMEM199,renamed,VMA12
+C22orf24,renamed,YWHAH-AS1
+C22orf26,renamed,PRR34
+C22orf27,renamed,MORC2-AS1
+VARS,renamed,VARS1
+PRSSL1,ambiguous alias,
+SMEK1,renamed,PPP4R3A
+KIAA0430,renamed,MARF1
+CARKD,renamed,NAXD
+FLJ35776,not found,
+KIAA0125,renamed,FAM30A
+C6orf35,renamed,TMEM242
+MAGEA5,renamed,MAGEA5P
+IL1F9,renamed,IL36G
+IL1F8,renamed,IL36B
+MLF1IP,renamed,CENPU
+IL1F7,renamed,IL37
+IL1F5,renamed,IL36RN
+PLUNC,renamed,BPIFA1
+QTRTD1,renamed,QTRT2
+LOC442421,not found,
+CCRL1,ambiguous alias,
+FAM58B,renamed,CCNQP1
+FAM58A,renamed,CCNQ
+FAM160A1,renamed,FHIP1A
+DFNB31,renamed,WHRN
+ODZ4,renamed,TENM4
+ATP5SL,renamed,DMAC2
+C2orf58,renamed,CYP1B1-AS1
+C2orf52,renamed,LINC00471
+C2orf53,renamed,PRR30
+C2orf50,renamed,CIMIP5
+C2orf51,renamed,SPMIP9
+C2orf56,renamed,NDUFAF7
+C2orf57,renamed,TEX44
+C2orf54,renamed,MAB21L4
+C2orf55,renamed,CRACDL
+CHP,ambiguous alias,
+FLJ33360,not found,
+TMEM49,renamed,VMP1
+LOC284837,not found,
+LOC729121,not found,
+LOC158376,not found,
+CCDC90A,renamed,MCUR1
+LOC144571,not found,
+BVES,renamed,POPDC1
+LRRC37B2,renamed,LRRC37BP1
+GPR116,renamed,ADGRF5
+ZCCHC16,renamed,RTL4
+LOC643923,not found,
+GPR114,renamed,ADGRG5
+GPR111,renamed,ADGRF2P
+KIAA0494,renamed,EFCAB14
+ZUFSP,renamed,ZUP1
+MCART6,renamed,SLC25A53
+MCART2,renamed,SLC25A52
+MCART1,renamed,SLC25A51
+KIAA1147,renamed,DENND11
+LOC653653,not found,
+MOBKL3,renamed,MOB4
+MLL2,ambiguous alias,
+KIAA1370,renamed,ATOSA
+SYT14L,ambiguous alias,
+MLL5,renamed,KMT2E
+SAPS2,renamed,PPP6R2
+SAPS3,renamed,PPP6R3
+?|317712,not found,
+IL1F10,renamed,IL38
+HBII-52-24,renamed,SNORD115-24
+LOC146336,not found,
+LOC100126784,not found,
+LOC146880,not found,
+ERO1LB,renamed,ERO1B
+LOC648740,not found,
+HMGB3L1,renamed,HMGB3P1
+NBPF16,renamed,NBPF15
+SR140,renamed,U2SURP
+HCG4P6,renamed,HCG4B
+C12orf11,renamed,INTS13
+C9orf30,renamed,MSANTD3
+PEG3AS,renamed,PEG3-AS1
+C9orf37,renamed,ARRDC1-AS1
+TXNDC3,renamed,NME8
+LOC442308,not found,
+FAM46D,renamed,TENT5D
+FAM46A,renamed,TENT5A
+FAM46B,renamed,TENT5B
+FAM46C,renamed,TENT5C
+WDR69,renamed,DAW1
+WDR61,renamed,SKIC8
+WDR66,renamed,CFAP251
+WDR67,renamed,TBC1D31
+WDR65,renamed,CFAP57
+C1orf223,renamed,TEX38
+C1orf227,renamed,SPATA45
+C1orf229,renamed,LINC02897
+C1orf228,renamed,ARMH1
+LOC728758,not found,
+WDR60,renamed,DYNC2I1
+NCRNA00169,renamed,ABCA15P
+NCRNA00167,renamed,PRDM10-DT
+NCRNA00160,renamed,LINC00160
+LARGE,renamed,LARGE1
+FAM55B,renamed,NXPE2
+GVIN1,renamed,GVINP1
+PYCRL,renamed,PYCR3
+FLJ42289,not found,
+TREML2P1,renamed,TREML5P
+LOC154822,not found,
+C10orf47,renamed,PROSER2
+C10orf46,renamed,CACUL1
+C10orf41,renamed,ZNF503-AS2
+C10orf40,renamed,LINC01553
+TMEM206,renamed,PACC1
+VPRBP,renamed,DCAF1
+LOC389458,not found,
+NCRNA00119,renamed,NPHP3-AS1
+LOC729668,not found,
+KIAA0556,renamed,KATNIP
+LOC100270746,not found,
+LOC654433,not found,
+NCRNA00081,renamed,BBIP1
+LOC220930,not found,
+GLT25D1,renamed,COLGALT1
+LOC285593,not found,
+LOC100132247,not found,
+LOC400759,not found,
+LOC727924,not found,
+LOC152024,not found,
+LOC400027,not found,
+KIAA0495,renamed,GFOD3P
+LOC644145,not found,
+LOC285045,not found,
+FAM26F,renamed,CALHM6
+FAM26D,renamed,CALHM4
+FAM26E,renamed,CALHM5
+KIAA0146,renamed,SPIDR
+C6orf10,renamed,TSBP1
+MGC3771,not found,
+PALM2-AKAP2,renamed,PALM2AKAP2
+NCRNA00110,renamed,GRIK1-AS1
+MGC87042,not found,
+LPHN3,renamed,ADGRL3
+C20orf160,renamed,CCM2L
+C20orf166,renamed,MIR1-1HG
+C20orf165,renamed,SPATA25
+C21orf29,renamed,TSPEAR
+WISP2,renamed,CCN5
+WISP1,renamed,CCN4
+MGC72080,not found,
+TXNDC6,renamed,NME9
+OR52A4,renamed,OR52A4P
+TMEM66,renamed,SARAF
+?|8225,not found,
+CIR1,ambiguous alias,
+LOC284232,not found,
+TRY6,renamed,PRSS3P2
+LOC283999,not found,
+ADC,ambiguous alias,
+BRE,renamed,BABAM2
+HIST1H2AM,renamed,H2AC17
+HIST1H2AL,renamed,H2AC16
+WDR63,renamed,DNAI3
+HIST1H2AH,renamed,H2AC12
+HIST1H2AK,renamed,H2AC15
+HIST1H2AJ,renamed,H2AC14
+HIST1H2AE,renamed,H2AC8
+HIST1H2AD,renamed,H2AC7
+HIST1H2AG,renamed,H2AC11
+HIST1H2AA,renamed,H2AC1
+HIST1H2AC,renamed,H2AC6
+HIST1H2AB,renamed,H2AC4
+WBSCR17,renamed,GALNT17
+SNORA76,renamed,SNORA50C
+FAM179A,renamed,TOGARAM2
+FAM179B,renamed,TOGARAM1
+SUZ12P,renamed,SUZ12P1
+KCNE1L,renamed,KCNE5
+OSTBETA,renamed,SLC51B
+KIAA0226,renamed,RUBCN
+KILLIN,renamed,KLLN
+LOC348021,not found,
+HEATR7B2,renamed,MROH2B
+FLJ37307,not found,
+ABP1,ambiguous alias,
+TM7SF4,renamed,DCSTAMP
+METTL12,renamed,CSKMT
+METTL10,renamed,EEF1AKMT2
+CYP2B7P1,renamed,CYP2B7P
+LOC100288778,not found,
+SMAD5OS,renamed,SMAD5-AS1
+SHFM1,ambiguous alias,
+C20orf201,renamed,LKAAEAR1
+C6orf150,renamed,CGAS
+C6orf153,renamed,RRP36
+C6orf154,renamed,LRRC73
+C6orf155,renamed,LINC00472
+LOC100134229,not found,
+LOC729020,not found,
+C5orf13,renamed,NREP
+ST7OT3,renamed,ST7-OT3
+ST7OT2,renamed,ST7-AS2
+EFCAB4A,renamed,CRACR2B
+NCRNA00181,renamed,A1BG-AS1
+NCRNA00183,renamed,JPX
+NCRNA00182,renamed,FTX
+NCRNA00185,renamed,TTTY14
+NCRNA00189,renamed,LINC00189
+NCRNA00188,renamed,SNHG29
+BHLHB9,renamed,GPRASP3
+LOC144438,not found,
+DKFZp686A1627,not found,
+NARG2,renamed,ICE2
+FAM109B,renamed,PHETA2
+FAM109A,renamed,PHETA1
+LOC286002,not found,
+PTPN20A,renamed,PTPN20
+HEATR2,renamed,DNAAF5
+FAM189B,renamed,ENTREP3
+LOC440173,not found,
+LOC349196,not found,
+FAM60A,renamed,SINHCAF
+FCGR1B,renamed,FCGR1BP
+RG9MTD2,renamed,TRMT10A
+RARS,renamed,RARS1
+LOC727677,not found,
+CCRN4L,renamed,NOCT
+SEPT14,renamed,SEPTIN14
+HKR1,renamed,ZNF875
+C1orf112,renamed,FIRRM
+LOC100270710,not found,
+C1orf111,renamed,SPATA46
+SOX2OT,renamed,SOX2-OT
+SEPT11,renamed,SEPTIN11
+KIAA0415,renamed,AP5Z1
+SNORA3,renamed,SNORA3A
+LOC219347,not found,
+SERPINA13,renamed,SERPINA13P
+C21orf45,renamed,MIS18A
+SEPT12,renamed,SEPTIN12
+C21orf49,renamed,EPCIP-AS1
+LOC728276,not found,
+H1FX,renamed,H1-10
+H1F0,renamed,H1-0
+LOC81691,not found,
+SKIV2L2,renamed,MTREX
+LOC407835,not found,
+ADCK4,renamed,COQ8B
+EPRS,renamed,EPRS1
+TMEM85,renamed,EMC4
+NUDT16P1,renamed,NUDT16L2P
+MLL,renamed,KMT2A
+MGC16384,not found,
+EPR1,not found,
+NAT8L,renamed,ASPNAT
+CXorf48,renamed,CT55
+FAM195B,renamed,MCRIP1
+FAM195A,renamed,MCRIP2
+CXorf42,renamed,NKAPP1
+CXorf41,renamed,DNAAF6
+CCBP2,ambiguous alias,
+H2BFXP,renamed,H2BW4P
+SETD8,renamed,KMT5A
+KIAA1797,renamed,FOCAD
+PRAMEF16,not found,
+LOC100133612,not found,
+PCNXL3,renamed,PCNX3
+PCNXL2,renamed,PCNX2
+FAM38A,renamed,PIEZO1
+FAM38B,renamed,PIEZO2
+?|391714,not found,
+C6orf176,renamed,LINC00473
+C6orf174,renamed,MTCL3
+C6orf170,renamed,TBC1D32
+PKM2,renamed,PKM
+FLJ39582,not found,
+ALS2CR11,renamed,CATSPERT
+ALS2CR12,renamed,FLACC1
+HESRG,renamed,ESRG
+BTBD11,renamed,ABTB3
+BTBD12,renamed,SLX4
+SC5DL,renamed,SC5D
+C5orf39,renamed,ANXA2R
+C5orf38,renamed,IRX2-DT
+LOC285692,not found,
+C5orf35,renamed,SETD9
+C5orf36,renamed,KIAA0825
+C5orf30,renamed,MACIR
+C5orf33,renamed,NADK2
+C5orf32,renamed,CYSTM1
+C9orf71,renamed,TMEM252
+C9orf70,renamed,GLIS3-AS1
+C9orf79,renamed,SPATA31E1
+LOC285696,not found,
+LOC642587,not found,
+GBA,renamed,GBA1
+C14orf86,renamed,FAM181A-AS1
+GLTSCR1,renamed,BICRA
+GLTSCR2,renamed,NOP53
+C11orf66,renamed,SAXO4
+C17orf50,renamed,PGBDF
+C17orf53,renamed,HROB
+C14orf80,renamed,TEDC1
+C11orf63,renamed,JHY
+HIAT1,renamed,SLC71A1
+C11orf61,renamed,MSANTD2
+FLJ45079,not found,
+FLJ36777,not found,
+LOC400931,not found,
+IFLTD1,renamed,LMNTD1
+DGCR9,renamed,DGCR5
+MUM1,ambiguous alias,
+H2AFB1,renamed,H2AB1
+RGNEF,renamed,ARHGEF28
+ODF3B,renamed,CIMAP1B
+ACCN1,renamed,ASIC2
+C14orf50,renamed,PPP1R36
+C14orf53,renamed,CCDC196
+C18orf18,renamed,LINC00526
+C18orf19,renamed,MIMS1
+LOC339535,not found,
+C22orf40,renamed,CDPF1
+C18orf16,renamed,AQP4-AS1
+CCDC84,renamed,CENATAC
+SPRYD5,renamed,TRIM51
+DKFZP434K028,renamed,MYRF-AS1
+IPW,renamed,SNHG14
+LOC400794,not found,
+C10orf68,renamed,CCDC7
+HTA,renamed,HCCAT5
+FAM54A,renamed,MTFR2
+KIAA0182,renamed,GSE1
+LOC441601,not found,
+LOC650623,not found,
+NCRNA00207,renamed,LINC00207
+LOC284688,not found,
+MFSD9,renamed,SLC67A2
+XRCC6BP1,renamed,ATP23
+LOC80054,not found,
+C20orf123,renamed,OCSTAMP
+C21orf67,renamed,LINC01547
+C21orf63,renamed,EVA1C
+C21orf62,renamed,EPCIP
+IKBKAP,renamed,ELP1
+GPR56,renamed,ADGRG1
+FAM83C,renamed,SACK1C
+FAM83B,renamed,SACK1B
+FAM83A,renamed,SACK1A
+FAM83G,renamed,SACK1G
+FAM83F,renamed,SACK1F
+FAM83E,renamed,SACK1E
+FAM83D,renamed,SACK1D
+C12orf70,renamed,SMCO2
+C12orf72,renamed,ETFBKMT
+C12orf73,renamed,UQCC6
+C12orf74,renamed,PLEKHG7
+C12orf77,renamed,LINC02909
+C8orf4,renamed,TCIM
+ICK,renamed,CILK1
+LOC283761,not found,
+METT5D1,renamed,METTL15
+NCRNA00085,renamed,SPACA6
+NCRNA00086,renamed,SMIM10L2A
+NCRNA00087,renamed,SMIM10L2B
+FLJ40292,not found,
+DGCR10,renamed,DGCR5
+C1orf95,renamed,STUM
+C1orf93,renamed,PRXL2B
+DGCR14,renamed,ESS2
+C1orf91,renamed,TMEM234
+FKSG73,renamed,ACTR3BP2
+ZNF167,renamed,ZKSCAN7
+LOC202781,not found,
+PPAP2B,renamed,PLPP3
+C10orf110,renamed,IDI2-AS1
+C10orf111,renamed,RPP38-DT
+C10orf116,renamed,ADIRF
+C10orf114,renamed,MIR1915HG
+SQRDL,renamed,SQOR
+C10orf118,renamed,CCDC186
+C10orf119,renamed,MCMBP
+CTAGE5,renamed,MIA2
+SIP1,ambiguous alias,
+TMCO3,renamed,SLC9D1
+FAM129C,renamed,NIBAN3
+GIF,ambiguous alias,
+TMCO7,renamed,TANGO6
+CXorf61,renamed,CT83
+CXorf64,renamed,PRR32
+ZNF192,renamed,ZKSCAN8
+MFSD3,renamed,SLC33A2
+SEPP1,renamed,SELENOP
+KIRREL,renamed,KIRREL1
+MGC16121,not found,
+C17orf88,renamed,FAM215A
+C17orf89,renamed,NDUFAF8
+C17orf82,renamed,LINC02875
+C17orf80,renamed,MTNAP1
+C17orf81,renamed,ELP5
+C17orf86,renamed,SNHG20
+C17orf87,renamed,SCIMP
+C17orf85,renamed,NCBP3
+TNKS1BP1,renamed,CNOT12
+LOC222699,not found,
+C6orf114,renamed,GFOD1
+C6orf115,renamed,ABRACL
+LOC100129726,not found,
+LOC731789,not found,
+LOC285740,not found,
+LOC100302640,not found,
+DHFRL1,renamed,DHFR2
+KIAA0649,renamed,PPP1R26
+TMEM90A,renamed,SYNDIG1L
+CXCR7,renamed,ACKR3
+C9orf96,renamed,STKLD1
+C9orf95,renamed,NMRK1
+C9orf93,renamed,CCDC171
+C9orf91,renamed,TMEM268
+CRAMP1L,renamed,CRAMP1
+FAM48B2,renamed,SUPT20HL2
+CENPJ,renamed,CPAP
+PDXDC2,renamed,PDXDC2P
+LOC389705,not found,
+ATP5G1,renamed,ATP5MC1
+ATP5G3,renamed,ATP5MC3
+WDR34,renamed,DYNC2I2
+PLEKHA9,renamed,PLEKHA8P1
+CTPS,renamed,CTPS1
+B3GNTL1,renamed,QTGAL
+LOC100009676,not found,
+ZNF767,renamed,ZNF767P
+SPATA5,renamed,AFG2A
+C14orf72,renamed,LINC00239
+C14orf70,renamed,LINC00523
+LOC339047,not found,
+C14orf79,renamed,CLBA1
+C18orf34,renamed,CCDC178
+DOPEY2,renamed,DOP1B
+DOPEY1,renamed,DOP1A
+WDYHV1,renamed,NTAQ1
+C9orf53,renamed,CDKN2A-AS1
+DPH3B,renamed,DPH3P1
+LOC29034,not found,
+LST-3TM12,ambiguous alias,
+HHLA3,renamed,ANKRD13C-DT
+ZBTB8OS,renamed,TSLIG1
+PHF15,renamed,JADE2
+PHF16,renamed,JADE3
+PHF17,renamed,JADE1
+LOC400043,not found,
+LOC649330,not found,
+CARD17,renamed,CARD17P
+BOD1L,renamed,BOD1L1
+LOC151534,not found,
+CASC1,renamed,DNAI7
+CASC5,renamed,KNL1
+CASC4,renamed,GOLM2
+C20orf108,renamed,MIMS2
+HN1L,ambiguous alias,
+MGC21881,not found,
+C20orf106,renamed,FAM209A
+C20orf107,renamed,FAM209B
+C20orf103,renamed,LAMP5
+PPBPL2,renamed,PPBPP2
+C21orf82,renamed,LINC00310
+C21orf81,renamed,ANKRD20A11P
+C21orf84,renamed,LINC00313
+CROCCL2,renamed,CROCCP3
+CROCCL1,renamed,CROCCP2
+C21orf88,renamed,B3GALT5-AS1
+FAM160A2,renamed,FHIP1B
+KIAA1919,renamed,SLC60A2
+C12orf54,renamed,LYLDT1
+C12orf52,renamed,RITA1
+C12orf53,renamed,PIANP
+C12orf50,renamed,ZC3H11D
+C12orf51,renamed,HECTD4
+C12orf59,renamed,TMEM52B
+ANKRD43,renamed,SOWAHA
+AFG3L1,renamed,AFG3L1P
+PHB,renamed,PHB1
+GUCY1B3,renamed,GUCY1B1
+FAM126A,renamed,HYCC1
+C14orf73,renamed,EXOC3L4
+SEPT8,renamed,SEPTIN8
+SEPT5,renamed,SEPTIN5
+C10orf131,renamed,CC2D2B
+SEPT7,renamed,SEPTIN7
+SEPT1,renamed,SEPTIN1
+SEPT3,renamed,SEPTIN3
+C10orf137,renamed,EDRF1
+LOC100128554,not found,
+LOC100131551,not found,
+?|280660,not found,
+LOC729375,not found,
+AK3L1,ambiguous alias,
+SUV420H2,renamed,KMT5C
+KIAA1751,renamed,CFAP74
+FLJ40852,not found,
+LOC732275,not found,
+LOC100189589,not found,
+?|391343,not found,
+C9orf144B,renamed,SPATA31F1
+LOC286238,not found,
+ST7OT4,renamed,ST7-OT4
+FLJ10661,not found,
+MYLPF,renamed,MYL11
+KIAA1632,renamed,EPG5
+KIAA1712,renamed,CEP44
+LOC143188,not found,
+ZCCHC6,renamed,TUT7
+ZCCHC5,renamed,RTL3
+C17orf60,renamed,MILR1
+C17orf61,renamed,TMEM256
+C17orf62,renamed,CYBC1
+C17orf63,renamed,FAM222B
+C17orf64,renamed,CHCT1
+C17orf65,renamed,ASB16-AS1
+C17orf66,renamed,HEATR9
+C17orf68,renamed,CTC1
+C17orf69,renamed,LINC02210
+LOC654342,not found,
+EFCAB4B,renamed,CRACR2A
+FKSG83,renamed,VN1R10P
+NDUFA4L2,renamed,COXFA4L2
+C6orf130,renamed,OARD1
+C6orf134,renamed,ATAT1
+C6orf138,renamed,PTCHD4
+P704P,renamed,POTEM
+LOC285768,not found,
+MUDENG,renamed,AP5M1
+ADPRHL2,renamed,ADPRS
+DARS,renamed,DARS1
+DARC,renamed,ACKR1
+KIAA0664,not found,
+C19orf40,renamed,FAAP24
+C19orf41,renamed,IZUMO2
+C19orf42,renamed,SMIM7
+C19orf43,renamed,TRIR
+C19orf45,renamed,SAXO5
+C19orf46,renamed,SYNE4
+C19orf48,renamed,C19orf48P
+PPYR1,ambiguous alias,
+FUT11,renamed,POFUT4
+FUT10,renamed,POFUT3
+FAM82A2,renamed,RMDN3
+FLJ37453,not found,
+FAM82A1,renamed,RMDN2
+KIAA0947,renamed,ICE1
+MOBKL2B,renamed,MOB3B
+MOBKL2C,renamed,MOB3C
+MOBKL2A,renamed,MOB3A
+CMAH,renamed,CMAHP
+GRAMD2,renamed,GRAMD2A
+NT5C3L,renamed,NT5C3B
+WHAMML1,renamed,WHAMMP3
+LOC550643,not found,
+GOLGA2B,renamed,GOLGA2P5
+ODF3L2,renamed,CIMAP1D
+ODF3L1,renamed,CIMAP1C
+MTP18,renamed,MTFP1
+LOC220429,not found,
+C14orf19,renamed,IGBP1P1
+C18orf55,renamed,TIMM21
+C18orf56,renamed,TYMSOS
+PRO0611,not found,
+LOC253039,not found,
+FAM165B,renamed,SMIM11
+C21orf129,renamed,LINC00479
+C21orf128,renamed,UMODL1-AS1
+C21orf125,renamed,LINC00319
+C21orf122,renamed,SSR4P1
+C21orf121,renamed,ZNF295-AS1
+TOMM70A,renamed,TOMM70
+LOC440040,not found,
+HRNBP3,renamed,RBFOX3
+STK19,renamed,WHR1
+LOC100303728,not found,
+C14orf159,renamed,DGLUCY
+LOC645323,not found,
+GPR109B,renamed,HCAR3
+C14orf153,renamed,COA8
+GPR109A,renamed,HCAR2
+C14orf156,renamed,SLIRP
+LRRC16B,renamed,CARMIL3
+BRP44,renamed,MPC2
+GPR172A,renamed,SLC52A2
+GPR172B,renamed,SLC52A1
+A2LD1,renamed,GGACT
+NHP2L1,renamed,SNU13
+C12orf39,renamed,SPX
+C12orf34,renamed,FAM222A
+C12orf35,renamed,RESF1
+C12orf36,renamed,LINC01559
+C12orf32,renamed,RHNO1
+ARNTL,renamed,BMAL1
+NPIP,ambiguous alias,
+LOC158696,not found,
+FTSJD1,renamed,CMTR2
+TMEM22,renamed,SLC35G2
+LOC643008,not found,
+IGJ,renamed,JCHAIN
+EFCAB1,ambiguous alias,
+EFCAB2,renamed,DRC8
+LOC494141,not found,
+LOC100128573,not found,
+RBM16,renamed,SCAF8
+CXorf27,renamed,H2AP
+CXorf26,renamed,PBDC1
+CXorf21,renamed,TASL
+CXorf23,renamed,BCLAF3
+CXorf22,renamed,CFAP47
+CLLU1OS,renamed,CLLU1-AS1
+LOC283914,not found,
+BAT4,renamed,GPANK1
+BAT3,renamed,BAG6
+HIST2H4A,renamed,H4C14
+KIAA1737,renamed,CIPC
+RGAG4,renamed,RTL5
+KIAA1731,renamed,CEP295
+PLK5P,renamed,PLK5
+CIDECP,renamed,CIDECP1
+PTPN20B,renamed,PTPN20
+CYP2D7P1,renamed,CYP2D7
+DOM3Z,renamed,DXO
+C20orf94,renamed,SLX4IP
+BET3L,renamed,TRAPPC3L
+LOC440905,not found,
+C17orf46,renamed,SPATA32
+C17orf47,renamed,SEPTIN4
+C17orf44,renamed,LINC00324
+C17orf42,renamed,TEFM
+MURC,renamed,CAVIN4
+LOC340094,not found,
+C17orf48,renamed,ADPRM
+C17orf49,ambiguous alias,
+ROBLD3,renamed,LAMTOR2
+AKD1,renamed,AK9
+LOC100130776,not found,
+BTF3L1,renamed,BTF3P11
+C19orf66,renamed,SHFL
+C19orf62,renamed,BABAM1
+C19orf63,renamed,EMC10
+C19orf60,renamed,REX1BD
+C19orf61,renamed,SMG9
+PPP2R4,renamed,PTPA
+FTSJ2,renamed,MRM2
+MKL2,renamed,MRTFB
+C19orf69,renamed,ERICH4
+C11orf53,renamed,POU2AF2
+C11orf51,renamed,ANAPC15
+PRR24,renamed,INAFM1
+C11orf57,renamed,NKAPD1
+C11orf54,renamed,BKGD
+LOC151162,not found,
+CD97,ambiguous alias,
+HIATL1,renamed,SLC71A2
+LOC145837,not found,
+FLJ13197,not found,
+LOC100130522,not found,
+AURKAPS1,renamed,AURKAP1
+CSTT,renamed,CST13P
+?|728788,not found,
+LOC100272228,not found,
+LOC441089,not found,
+HOXA11AS,renamed,HOXA11-AS
+LOC100131691,not found,
+C14orf33,renamed,KTN1-AS1
+C14orf37,renamed,ARMH4
+C14orf34,renamed,LINC00520
+CDKN2AIPNL,renamed,XTBD1
+LOC150568,not found,
+MPP6,ambiguous alias,
+MPP5,renamed,PALS1
+MFI2,renamed,MELTF
+LOC440356,not found,
+ZFP106,renamed,ZNF106
+LOC440354,not found,
+LOC390858,not found,
+LOC152225,not found,
+FCGR1C,renamed,FCGR1CP
+LOC100190939,not found,
+PNMAL2,renamed,PNMA8B
+PNMAL1,renamed,PNMA8A
+C14orf174,renamed,SAMD15
+C14orf176,renamed,TMEM253
+C14orf177,renamed,LINC02914
+C14orf178,renamed,SLIRP-OT1
+C14orf179,renamed,IFT43
+PTPLB,renamed,HACD2
+SGEF,renamed,ARHGEF26
+LOC400752,not found,
+GRLF1,renamed,ARHGAP35
+SPANXE,ambiguous alias,
+CCDC135,renamed,DRC7
+CCDC130,renamed,YJU2B
+CCDC132,renamed,VPS50
+THEG,renamed,SPMAP2
+PAPD5,renamed,TENT4B
+LOC285205,not found,
+PLA2G16,renamed,PLAAT3
+HSFYL1,renamed,HSFY1P1
+LOC727896,not found,
+NCRNA00111,renamed,LINC00111
+FAM54B,renamed,MTFR1L
+NCRNA00028,renamed,LINC00028
+NCRNA00029,renamed,LINC00029
+LOC150622,not found,
+HEATR7A,renamed,MROH1
+KIAA1009,renamed,CEP162
+LOC728323,not found,
+LOC642826,not found,
+FBXO22OS,not found,
+LOC254559,not found,
+ATP5G2,renamed,ATP5MC2
+SPANXB2,renamed,SPANXB1
+KIAA1875,renamed,WDR97
+NHEDC1,renamed,SLC9B1
+HPVC1,not found,
+DYX1C1,renamed,DNAAF4
+EP400NL,renamed,EP400P1
+KIAA1715,renamed,LNPK
+KIAA1244,renamed,ARFGEF3
+T,renamed,TBXT
+CIRH1A,renamed,UTP4
+DAD1L,renamed,DAD1P1
+SNORD85,renamed,SNORD103C
+ICT1,renamed,MRPL58
+HCG2P7,not found,
+C9orf109,renamed,FAM225A
+LOC440925,not found,
+C9orf100,renamed,ARHGEF39
+C9orf102,renamed,ERCC6L2
+C9orf103,renamed,IDNK
+C9orf106,renamed,LINC02913
+AGXT2L1,renamed,ETNPPL
+AGXT2L2,renamed,PHYKPL
+PPAPDC2,renamed,PLPP6
+CNIH,renamed,CNIH1
+FAM5C,renamed,BRINP3
+MESDC1,renamed,TLNRD1
+C1orf190,renamed,LURAP1
+TTC18,renamed,CFAP70
+C11orf70,renamed,CFAP300
+C11orf73,renamed,HIKESHI
+C17orf28,renamed,HID1
+C11orf74,renamed,IFTAP
+C1orf194,renamed,CFAP276
+SELK,renamed,SELENOK
+MYCL1,renamed,MYCL
+MINA,renamed,RIOX2
+STRA13,ambiguous alias,
+BTN2A3,renamed,BTN2A3P
+C8orf83,renamed,TRIQK
+C1orf192,renamed,CFAP126
+C8orf80,renamed,NUGGC
+C8orf86,renamed,LINC03042
+C8orf85,renamed,AARD
+C8orf84,renamed,SBSPON
+H1FOO,renamed,H1-8
+METTL11A,renamed,NTMT1
+PTRF,renamed,CAVIN1
+SELS,renamed,SELENOS

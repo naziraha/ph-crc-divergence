@@ -183,7 +183,7 @@ def main():
     t2 = table2()
     t2.to_csv(os.path.join(OUT, "Table2_validation.csv"), index=False)
     word_table(t2.drop(columns=["Dimension detail"]), os.path.join(OUT, "Table2_validation.docx"),   # detail kept in CSV
-               "Table 2. Pre-registered step 5 permutation test and secondary persistent-homology tests in the GEO cohorts "
+               "Table 2. Step 5 permutation test (prespecified before analysis) and secondary persistent-homology tests in the GEO cohorts "
                "(primary analysis; Holm-adjusted p-values).",
                ["Values are Holm-adjusted p-values; p < 0.05 in bold. Step 5 test: 1-Wasserstein distance between stage "
                 "persistence diagrams (H0 + H1), 20 subsamples of 80% of the smallest stage per group, label-permutation "
@@ -194,11 +194,11 @@ def main():
                 "identifiers). Within each stage every sample comes from a different patient (GSE41258 after one-array-per-"
                 "patient de-duplication). In the primary step 5 test, stage labels were permuted between individual samples, "
                 "and the samples of shared patients were kept in both groups; the permutation did not keep a patient's "
-                "samples together. Shared patients make the two groups more alike, which the pre-registration expected to "
+                "samples together. Shared patients make the two groups more alike, which the analysis plan, prespecified before analysis, expected to "
                 "make the test conservative. Two pre-specified analyses addressed this: GSE41258 'one per patient' "
                 "(each shared patient assigned at random to one group only) and GSE117606 'paired' (labels swapped within "
                 "patients); neither met the tipping-point rule (supplementary sensitivity table).",
-                "Tipping-point rule (pre-registered): shape-only Holm p < 0.05 in both unadjusted and adjusted data.",
+                "Tipping-point rule (prespecified before analysis): shape-only Holm p < 0.05 in both unadjusted and adjusted data.",
                 "Unadjusted = expression as measured; adjusted = stage-blind composition adjustment (per-gene regression on "
                 "epithelial, stromal, immune and, where relevant, liver scores, with stage not in the model). Raw = Euclidean "
                 "distances; shape-only = distances divided by each subsample's median pairwise distance.",

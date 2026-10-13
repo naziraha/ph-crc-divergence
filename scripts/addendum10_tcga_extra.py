@@ -246,7 +246,7 @@ def normal():
     print("\n".join(L))
 
 
-# ---------------------------------------------------------------- 4.4 pilot method vs patient-level test
+# ---------------------------------------------------------------- 4.4 pilot method vs label-permutation test
 def h1_total(points, normalize):
     d = T.persistence(points, normalize)[1]
     return float((d[:, 1] - d[:, 0]).sum()) if len(d) else 0.0
@@ -285,7 +285,7 @@ def pilot():
         u, p = mannwhitneyu(big1[:nb], big4[:nb], alternative="two-sided")
         rows.append(dict(method="(a) pilot: Mann-Whitney across bootstrap subsamples", n_subsamples=nb,
                          mean_I=big1[:nb].mean(), mean_IV=big4[:nb].mean(), p=float(p)))
-    # (b), (c) patient-level permutation of stage labels; statistic |mean_I - mean_IV| over 20 subsamples per stage
+    # (b), (c) label permutation of stage labels; statistic |mean_I - mean_IV| over 20 subsamples per stage
     with Pool(WORKERS) as pool:
         res = {}
         for normalize in (False, True):
@@ -295,23 +295,23 @@ def pilot():
             null = np.concatenate(pool.map(perm_unit, [(normalize, c) for c in range(9)]))
             p = (1 + np.sum(null >= obs)) / (1 + len(null))
             res[normalize] = (a.mean(), b.mean(), obs, p, (obs - null.mean()) / null.std(ddof=1))
-            rows.append(dict(method=f"({'c' if normalize else 'b'}) patient-level permutation, {'shape-only' if normalize else 'raw'}",
+            rows.append(dict(method=f"({'c' if normalize else 'b'}) label permutation, {'shape-only' if normalize else 'raw'}",
                              n_subsamples=20, mean_I=a.mean(), mean_IV=b.mean(), p=float(p)))
     d = pd.DataFrame(rows)
     d.to_csv(os.path.join(out, "pilot_vs_patient_results.csv"), index=False)
-    L = ["ADDENDUM 10 section 4.4 - pilot method vs patient-level test (TCGA-COAD Stage I 45 vs Stage IV 39)", "=" * 72,
+    L = ["ADDENDUM 10 section 4.4 - pilot method vs label-permutation test (TCGA-COAD Stage I 45 vs Stage IV 39)", "=" * 72,
          "Embedding: TCGA_COAD_main_unadjusted_g2000_pc10 (GUDHI Vietoris-Rips). Statistic: total H1 persistence per subsample",
          "of k = 25 patients per stage (the pilot's statistic). The pilot's original numbers are not re-used.",
          f"Seed {SEED} per unit. " + ", ".join(f"{p} {metadata.version(p)}" for p in ("gudhi", "numpy", "scipy")), "",
          "(a) Pilot method - subsamples drawn from the same 45 / 39 patients, Mann-Whitney test across subsamples (raw):"]
     for _, r in d[d.method.str.startswith("(a)")].iterrows():
         L.append(f"    {int(r.n_subsamples):>5} subsamples per stage: mean H1 total I {r.mean_I:.2f} vs IV {r.mean_IV:.2f}  ->  p = {r.p:.2g}")
-    L += ["", "(b)/(c) Patient-level test - stage labels permuted across the 84 patients, 999 permutations, 20 subsamples per stage:"]
+    L += ["", "(b)/(c) Label-permutation test - stage labels permuted across the 84 patients, 999 permutations, 20 subsamples per stage:"]
     for normalize in (False, True):
         mI, mIV, obs, p, z = res[normalize]
         L.append(f"    {'shape-only' if normalize else 'raw       '}: mean H1 total I {mI:.3f} vs IV {mIV:.3f}; |difference| {obs:.3f}; z {z:.2f}; p = {p:.3f}")
     L += ["", "Reading: in (a) the p-value depends on how many subsamples are drawn from the same patients (pseudo-replication);",
-          "the patient-level test (b)/(c) treats patients as the unit and gives the valid p-value.",
+          "the label-permutation test (b)/(c) treats patients as the unit and gives the valid p-value.",
           f"Run time {(time.time() - t0) / 60:.1f} min.", "Outputs: results/addendum10/pilot_vs_patient/pilot_vs_patient_results.csv"]
     open(os.path.join(out, "summary.txt"), "w", encoding="utf-8").write("\n".join(L) + "\n")
     print("\n".join(L))

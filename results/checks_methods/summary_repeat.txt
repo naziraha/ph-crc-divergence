@@ -1,0 +1,10 @@
+== 9. GSE20916 NEAR-DUPLICATE ARRAY CHECK (function unchanged) ==
+  bulk (105 arrays): nearest-neighbour r median 0.9454, max 0.9726; threshold r > 0.99 and > 1.0393; flagged 0
+    GSM523290 [Normal] <-> GSM523373 [Normal] r = 0.9726
+    GSM523373 [Normal] <-> GSM523290 [Normal] r = 0.9726
+    GSM523291 [Normal] <-> GSM523364 [Normal] r = 0.9718
+  micro (40 arrays): nearest-neighbour r median 0.9878, max 0.9932; threshold r > 0.99 and > 1.0076; flagged 0
+    GSM523242 [Normal] <-> GSM523273 [Normal] r = 0.9932
+    GSM523273 [Normal] <-> GSM523242 [Normal] r = 0.9932
+    GSM523270 [Normal] <-> GSM523271 [Normal] r = 0.9925
+

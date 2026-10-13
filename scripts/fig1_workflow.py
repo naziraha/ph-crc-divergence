@@ -81,7 +81,7 @@ def main():
 
     # ---------------- panel b: pipeline
     ax.text(0.015, 0.665, "b", fontsize=14, fontweight="bold")
-    ax.text(0.045, 0.665, "Frozen, pre-registered pipeline (each cohort separately)", fontsize=10, va="baseline")
+    ax.text(0.045, 0.665, "Frozen pipeline, prespecified before analysis (each cohort separately)", fontsize=10, va="baseline")
     steps = ["Quality control\n\none sample per\npatient per stage;\ntissue-identity\nexclusions",
              "Two data versions\n\nunadjusted and\ncomposition-adjusted\n(stage-blind; epithelial,\nstromal, immune)",
              "Gene selection\n\n2,000 most\nvariable genes\n(lowest-expressed\n25% removed)",
@@ -103,8 +103,8 @@ def main():
 
     # ---------------- panel c: decision
     ax.text(0.015, 0.365, "c", fontsize=14, fontweight="bold")
-    ax.text(0.045, 0.365, "Pre-registered decision and follow-up", fontsize=10, va="baseline")
-    box(ax, 0.03, 0.17, 0.2, 0.15, "Pre-registered tipping-point rule\n\nshape-only Holm p < 0.05\nin BOTH unadjusted and\n"
+    ax.text(0.045, 0.365, "Decision prespecified before analysis, and follow-up", fontsize=10, va="baseline")
+    box(ax, 0.03, 0.17, 0.2, 0.15, "Tipping-point rule, prespecified\nbefore analysis\n\nshape-only Holm p < 0.05\nin BOTH unadjusted and\n"
         "composition-adjusted data", fc="#eef3fa", fs=7.8)
     arrow(ax, 0.232, 0.245, 0.262, 0.245)
     box(ax, 0.264, 0.19, 0.12, 0.11, "Not met in\nany cohort\n(Table 2)", fc="#fdecea", ec="#c0392b", fs=8.5, bold=True,
@@ -112,7 +112,7 @@ def main():
     arrow(ax, 0.386, 0.245, 0.416, 0.245)
     ax.add_patch(FancyBboxPatch((0.418, 0.06), 0.355, 0.28, boxstyle="round,pad=0.006,rounding_size=0.012", fc="white",
                                 ec=EDGE, lw=0.9, ls="--"))
-    ax.text(0.5955, 0.318, "Follow-up analyses: pre-registered addenda, after the primary result", ha="center",
+    ax.text(0.5955, 0.318, "Follow-up analyses (addenda prespecified before analysis)", ha="center",
             fontsize=8, fontweight="bold")
     subs = [("Between-sample heterogeneity", "dispersion by stage (PERMDISP)", "Figure 4"),
             ("CMS subtypes", "share of carcinoma dispersion", "Figure 5"),

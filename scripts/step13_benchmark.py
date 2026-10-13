@@ -1,7 +1,7 @@
 """
 Step 13 - benchmark of the TDA test against conventional multivariate methods.
 
-Pre-registered: docs/addendum7_benchmark.md (commit c165512).
+Prespecified before analysis: docs/addendum7_benchmark.md (commit c165512).
 Methods (numpy/scipy):
   PERMDISP   - ANOVA F of distances to own-group centroid, 999 label permutations; D = mean dist later/earlier
   PERMANOVA  - Euclidean pseudo-F, 999 label permutations; R2

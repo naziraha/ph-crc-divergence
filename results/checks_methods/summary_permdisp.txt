@@ -1,0 +1,21 @@
+== 4. PERMDISP, BIAS-ADJUSTED (check only) ==
+  GSE41258  unadjusted Normal->Adenoma       D plain 0.946 -> bias 0.947; Holm p plain 1.000 -> bias 0.828
+  GSE41258  unadjusted Adenoma->Carcinoma    D plain 1.188 -> bias 1.179; Holm p plain 0.018 -> bias 0.021
+  GSE41258  unadjusted Carcinoma->Metastasis D plain 1.038 -> bias 1.049; Holm p plain 1.000 -> bias 0.828
+  GSE41258  adjusted   Normal->Adenoma       D plain 1.314 -> bias 1.315; Holm p plain 0.003 -> bias 0.003
+  GSE41258  adjusted   Adenoma->Carcinoma    D plain 1.067 -> bias 1.058; Holm p plain 0.410 -> bias 0.333
+  GSE41258  adjusted   Carcinoma->Metastasis D plain 1.079 -> bias 1.090; Holm p plain 0.410 -> bias 0.282
+  GSE20916  unadjusted Normal->Adenoma       D plain 0.930 -> bias 0.920; Holm p plain 0.464 -> bias 0.419
+  GSE20916  unadjusted Adenoma->Carcinoma    D plain 1.404 -> bias 1.408; Holm p plain 0.002 -> bias 0.002
+  GSE20916  adjusted   Normal->Adenoma       D plain 1.059 -> bias 1.048; Holm p plain 0.542 -> bias 0.622
+  GSE20916  adjusted   Adenoma->Carcinoma    D plain 1.251 -> bias 1.254; Holm p plain 0.002 -> bias 0.002
+  GSE37364  unadjusted Normal->Adenoma       D plain 1.585 -> bias 1.592; Holm p plain 0.002 -> bias 0.002
+  GSE37364  unadjusted Adenoma->Carcinoma    D plain 1.403 -> bias 1.405; Holm p plain 0.003 -> bias 0.002
+  GSE37364  adjusted   Normal->Adenoma       D plain 1.321 -> bias 1.327; Holm p plain 0.018 -> bias 0.017
+  GSE37364  adjusted   Adenoma->Carcinoma    D plain 1.367 -> bias 1.369; Holm p plain 0.010 -> bias 0.010
+  GSE117606 unadjusted Normal->Adenoma       D plain 0.994 -> bias 0.995; Holm p plain 0.934 -> bias 0.945
+  GSE117606 unadjusted Adenoma->Carcinoma    D plain 1.189 -> bias 1.188; Holm p plain 0.012 -> bias 0.012
+  GSE117606 adjusted   Normal->Adenoma       D plain 1.028 -> bias 1.029; Holm p plain 0.670 -> bias 0.664
+  GSE117606 adjusted   Adenoma->Carcinoma    D plain 1.194 -> bias 1.192; Holm p plain 0.010 -> bias 0.010
+significance calls changed: 0 of 18
+

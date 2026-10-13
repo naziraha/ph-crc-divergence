@@ -7,7 +7,7 @@ the same draws (D25b):
   landscape distance (H0, H1): L2 distance between mean landscapes (gudhi.representations.Landscape, 5 landscapes,
                                 100 points, grid 0..max finite death of the pooled observed diagrams; D25c)
   barcode summaries: H0 total / max / entropy; H1 total / max / n features / entropy -> |mean_s - mean_t|
-Patient-level permutation of the aligned labels (group sizes kept), k subsamples redrawn per permuted group;
+Label permutation (one sample per patient per stage) of the aligned labels (group sizes kept), k subsamples redrawn per permuted group;
 one-sided p = (1 + #null >= obs) / (1 + n_perm).
 
 Usage: python scripts/addendum12_ph_outputs.py validate
@@ -67,7 +67,7 @@ def group_stats(dA, dB, rmax, land_dims=(0, 1)):
 
 
 def multi_test(emb, idx_s, idx_t, m, normalize, n_perm, rng, land_dims=(0, 1)):
-    """All addendum 12 statistics with one shared patient-level permutation scheme."""
+    """All addendum 12 statistics with one shared label-permutation scheme."""
     stats = [f"landscape_H{d}" for d in land_dims] + SUMMARIES
     emb = T.align_groups(emb, idx_s, idx_t, normalize)
     dA, dB = draw(emb, idx_s, m, normalize, rng), draw(emb, idx_t, m, normalize, rng)
@@ -383,7 +383,7 @@ def summarise():
     loops = len(set(h1_both)) >= 3 or len(set(lands_both)) >= 3
     # summary text
     S = ["ADDENDUM 12 - quantitative persistence outputs (73b4e71; Amendment 1 d5fe9e6; D25, D26)", "=" * 72,
-         "Secondary analyses; the step 5 tipping-point decision is unchanged. Patient-level permutation (999), aligned groups,",
+         "Secondary analyses; the step 5 tipping-point decision is unchanged. Label permutation (999), aligned groups,",
          "k = 20 subsamples of m per stage (as step 5); shared draws for all statistics (D25b).",
          "Landscape test: H1 only (Amendment 1); H0 landscapes are figures only (validation: H0 landscape underpowered).",
          f"Seed {SEED} per unit. " + ", ".join(f"{p} {metadata.version(p)}" for p in ("gudhi", "numpy", "scipy")), "",

@@ -1,0 +1,6 @@
+== 1. WASSERSTEIN ==
+example input, H1 diagram (first 3 rows of [birth, death]): [[0.4455, 0.5201], [0.484, 0.5227], [0.5277, 0.5372]]
+example input, H0 diagram (first 3 rows of [birth, death]): [[0.0, 0.3956], [0.0, 0.3989], [0.0, 0.4068]]
+H0 births all zero: True; H0 points per diagram = m - 1 = 30
+comparisons: 40; max relative difference reference vs GUDHI Hera: 2.57e-15
+
