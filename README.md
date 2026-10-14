@@ -49,7 +49,7 @@ Two sources are updated in place, so a newer file is expected: NCBI gene_info (d
 ## Reproducing the results
 | Command | What it does | Time (8-core laptop) |
 |---|---|---|
-| `bash run_all.sh table2` | Downloads the data, prepares all cohorts, runs the primary tests and writes Table 1 and Table 2 to `outputs/main_tables/` | about 1 h |
+| `bash run_all.sh table2` | Downloads the data, prepares all cohorts, runs the primary tests and writes Table 1 and Table 2 to `outputs/main_tables/` | about 1 h 45 min (tested from a fresh clone and environment on 14 October 2026: Tables 1 and 2 identical to the published values) |
 | `bash run_all.sh figures` | Redraws every figure and table from the result files in `results/` | a few minutes |
 | `bash run_all.sh all` | The complete pipeline (all steps, sensitivity analyses, controls, power simulations, addenda), then all figures and tables | several hours |
 
