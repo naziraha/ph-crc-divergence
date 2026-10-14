@@ -1,0 +1,10 @@
+# R environment for the consensus molecular subtype (CMS) classification (addenda 9-11 only).
+# conda env create -f environment-r.yml && conda activate r-cms && Rscript scripts/install_r_packages.R
+# Then either put this environment's Rscript on the PATH, or set R_CMS_HOME to the environment folder.
+name: r-cms
+channels:
+  - conda-forge
+dependencies:
+  - r-base=4.5.3
+  - r-remotes=2.5.0
+  - r-biocmanager

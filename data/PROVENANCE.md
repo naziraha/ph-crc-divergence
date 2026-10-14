@@ -1,10 +1,10 @@
 # Data provenance
 
 Generated 2026-10-13 by `scripts/make_data_provenance.py`. Raw files are never edited.
-**Modified** = file modification time on the analysis laptop (local time, UTC+8); this is the download date
-unless the file was copied later. Checksums allow anyone to confirm they have the same file.
+**Downloaded** = download date (file modification time on the analysis laptop, local time UTC+8; the files were
+not copied or edited after download). SHA-256 values are those of the files used for the paper. Checksums allow anyone to confirm they have the same file.
 
-| File | Bytes | Modified | SHA-256 | Content |
+| File | Bytes | Downloaded | SHA-256 | Content |
 |---|---|---|---|---|
 | `data/raw/GPL25373.txt` | 1,020,031 | 2026-10-06 21:24 | `ecc2de205ed70e493effb7f7f18ddd782ef39b0c3098a16f765f0e3e8974efee` | GEO platform table (Brainarray ENTREZG CDF; no symbol column, not used for mapping) |
 | `data/raw/GPL570.txt` | 85,642,560 | 2026-10-04 13:54 | `3f7a69ffc59fb635e4b69169e3e66954fe47fd0e80084a64ae29e7de80a8702b` | GEO platform annotation (GEOparse) |

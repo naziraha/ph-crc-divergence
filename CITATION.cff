@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite it as below."
+title: "Topological analysis of colorectal carcinogenesis in multi-cohort transcriptomics: analysis code"
+authors:
+  - family-names: Amran
+    given-names: Nazirah
+version: 1.0.0
+date-released: 2026-10-14
+license: MIT
+repository-code: "[GitHub URL]"
+identifiers:
+  - type: doi
+    value: "[Zenodo DOI]"
+keywords:
+  - persistent homology
+  - topological data analysis
+  - colorectal cancer
+  - transcriptomics

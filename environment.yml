@@ -1,0 +1,26 @@
+# Python environment used for every analysis in this repository (versions as used for the paper).
+# conda env create -f environment.yml && conda activate tda-crc
+name: tda-crc
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - numpy==2.4.6
+      - scipy==1.17.1
+      - pandas==2.3.3          # pandas 3 is not compatible with anndata / decoupler 2.2
+      - scikit-learn==1.9.1
+      - gudhi==3.13.0
+      - decoupler==2.2.0
+      - anndata==0.12.19
+      - GEOparse==2.0.4
+      - matplotlib==3.11.2
+      - seaborn==0.13.2
+      - statsmodels==0.15.0
+      - patsy==1.0.3
+      - diptest==0.11.0
+      - requests==2.34.2
+      - python-docx==1.2.0
+      - pillow==12.3.0
+# Optional, only for scripts/archive/crosscheck_D6_ripser.py:  pip install ripser==0.6.15
