@@ -4,7 +4,7 @@ name: tda-crc
 channels:
   - conda-forge
 dependencies:
-  - python=3.11
+  - python=3.11.16
   - pip
   - pip:
       - numpy==2.4.6

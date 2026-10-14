@@ -16,7 +16,7 @@ import pandas as pd
 from scipy.stats import norm
 from statsmodels.stats.meta_analysis import combine_effects
 
-ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))   # scripts/archive/ -> repository root
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "results", "meta_analysis_4cohort")
 os.makedirs(OUT, exist_ok=True)
 S5 = os.path.join(ROOT, "results", "step05")

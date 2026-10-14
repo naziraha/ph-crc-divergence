@@ -39,12 +39,12 @@ Then put that environment's `Rscript` on the PATH, or set `R_CMS_HOME` to the en
 ```bash
 python data/download_data.py
 ```
-This downloads every input into `data/raw/` (about 250 MB) and compares each file with the checksum in `data/PROVENANCE.md`:
+This puts every input into `data/raw/` (about 250 MB) and compares each file with the checksum in `data/PROVENANCE.md`:
 - the GEO series matrices and platform tables;
 - NCBI `Homo_sapiens.gene_info`;
 - the UCSC Xena TCGA-COAD files.
 
-Two sources are updated in place, so a newer file is expected: NCBI gene_info (daily) and the Xena clinical matrix (occasionally). For these, a checksum difference is reported as a warning with an explanation, and the run continues; results can then differ slightly. Any other difference stops the script, because the input is not the one used for the paper (`--allow-mismatch` overrides). The exact files used for the paper are archived at [Zenodo DOI].
+Four files are taken by default from the archived copies used for the paper ([Zenodo DOI]): NCBI gene_info, the GPL570 platform table, and the TCGA clinical matrix and MC3 mutation table. Their public versions change over time (gene_info daily; the platform header lists newly submitted samples), and the two TCGA copies used for the paper had been re-saved in a spreadsheet program without changing the fields used (details in `data/PROVENANCE.md`). Until the deposit is published, unpack it locally and run `python data/download_data.py --archive-dir <folder>` (for `run_all.sh`: `DOWNLOAD_ARGS="--archive-dir <folder>"`). `--from-source` uses the current public versions instead; their known differences are then reported as warnings, and results can differ slightly. Any other checksum difference stops the script (`--allow-mismatch` overrides).
 
 ## Reproducing the results
 | Command | What it does | Time (8-core laptop) |
@@ -68,7 +68,7 @@ On Windows, run these from Git Bash or another bash shell with the `tda-crc` env
 | Figure 7 | `python scripts/fig7_chromosome_arms.py` |
 | Tables 1–2, Supplementary Table S_H1_landscape | `python scripts/make_main_tables.py` |
 | Supplementary figures | `python scripts/fig2_gse41258_diagrams.py`; `python scripts/fig4_heterogeneity.py unadjusted`; `python scripts/figS_cms_pc12.py` |
-| Supplementary tables | `python scripts/make_table_s_<name>.py` for `cohort_differences`, `122_genes`, `power_controls`, `four_arms`, `tcga_stages`, `sensitivity`, `symbol_harmonisation` |
+| Supplementary tables | `python scripts/make_table_s_<name>.py` for `cohort_differences`, `122_genes`, `power_controls`, `four_arms`, `tcga_stages`, `sensitivity`, `symbol_harmonisation`, `meta_analysis` |
 
 **Hardware and software used:**
 - Hardware: Windows 11 laptop, Intel Core Ultra 5 (8 cores), 32 GB RAM.
@@ -78,6 +78,7 @@ On Windows, run these from Git Bash or another bash shell with the `tda-crc` env
 ## Reproducibility notes
 - **Random seeds:** every analysis unit uses its own random generator, seeded from 42 and the unit name, so results do not depend on run order or interruptions.
 - **Cross-cohort gene matching:** gene symbols are mapped to current HGNC symbols before cross-cohort comparisons (variable genes, chromosome arms; `scripts/hgnc_crosscohort.py`). Within-cohort analyses use the symbols of each platform annotation.
+- **"Pre-registration" in commit messages:** some earlier commit messages and script comments use "pre-registration" loosely. The analysis plan and its addenda were prespecified before analysis in this version-controlled repository; they were not registered in any external registry.
 - **Analysis plan:** the plan with the prespecified tipping-point criterion is commit `66d1c4f` (dated 4 October 2026, 11:35 UTC+8). The first primary results are commit `a149d04` (dated the same day, 11:54). The analysis documents cite commits of the project repository in which the work was done; `docs/COMMIT_MAP.md` maps them to the commits of this repository.
 
 ## Citation and licence

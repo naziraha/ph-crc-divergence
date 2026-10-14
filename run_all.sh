@@ -14,7 +14,7 @@ cd "$(dirname "$0")"
 PY="${PYTHON:-python}"
 run() { echo; echo ">>> $PY $*"; "$PY" "$@"; }
 
-download() {           # DOWNLOAD_ARGS=--allow-mismatch continues if a downloaded file differs from data/PROVENANCE.md
+download() {           # DOWNLOAD_ARGS, e.g. "--archive-dir /path/to/deposit", "--from-source", "--allow-mismatch"
   run data/download_data.py ${DOWNLOAD_ARGS:-}
 }
 
@@ -62,7 +62,7 @@ figures() {
   run scripts/fig6_variable_genes.py
   run scripts/fig7_chromosome_arms.py
   run scripts/make_main_tables.py
-  for t in cohort_differences 122_genes power_controls four_arms tcga_stages sensitivity symbol_harmonisation; do
+  for t in cohort_differences 122_genes power_controls four_arms tcga_stages sensitivity symbol_harmonisation meta_analysis; do
     run "scripts/make_table_s_${t}.py"
   done
 }
@@ -111,6 +111,8 @@ all() {
   run scripts/addendum12_ph_outputs.py validate
   run scripts/addendum12_ph_outputs.py run
   run scripts/addendum12_ph_outputs.py summary
+  run scripts/meta_analysis_NA.py
+  run scripts/meta_analysis_4cohort.py
   run scripts/check_methods_items.py all
   figures
 }
