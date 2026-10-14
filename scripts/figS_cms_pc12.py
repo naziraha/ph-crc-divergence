@@ -18,7 +18,7 @@ import pandas as pd  # noqa: E402
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 A9 = os.path.join(ROOT, "results", "addendum9")
 EMB = os.path.join(ROOT, "results", "step03", "embeddings")
-OUT = os.path.join(ROOT, "paper", "final", "supplementary")
+OUT = os.path.join(ROOT, "outputs", "supplementary")
 NAME = "FigS_CMS_PC1_PC2"
 GEO = ["GSE41258", "GSE20916", "GSE37364", "GSE117606"]
 SETS = {"GSE41258": "main", "GSE20916": "bulk", "GSE37364": "bulk", "GSE117606": "main"}

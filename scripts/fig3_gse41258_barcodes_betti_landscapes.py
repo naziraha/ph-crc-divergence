@@ -20,7 +20,7 @@ from gudhi.representations import Landscape  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "results", "source_data")
-OUT = os.path.join(ROOT, "paper", "final", "main_figures")
+OUT = os.path.join(ROOT, "outputs", "main_figures")
 NAME = "Fig3_GSE41258_barcodes_betti_landscapes"
 COHORT, VERSION, REP, K = "GSE41258", "adjusted", 1, 20
 STAGES = ["Normal", "Adenoma", "Carcinoma", "Metastasis"]

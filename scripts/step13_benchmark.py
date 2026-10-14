@@ -32,7 +32,7 @@ from scipy.spatial.distance import pdist, squareform
 from scipy.stats import f_oneway, wasserstein_distance
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, os.path.join(ROOT, "reference"))
+sys.path.insert(0, os.path.join(ROOT, "src"))
 OUT = os.path.join(ROOT, "results", "step13")
 
 SEED, N_PERM, K_DRAWS, WORKERS = 42, 999, 20, 6

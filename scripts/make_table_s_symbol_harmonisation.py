@@ -7,7 +7,7 @@ results/hgnc (harmonised; scripts/hgnc_crosscohort.py). No statistical tests.
   C. per-sample arm scores: Brown-Forsythe p, V_arm and median difference (GEO); 20q gain-like share; TCGA rho
   D. share of excess carcinoma dispersion explained (f, f_rand95): 20q alone and four arms
   E. Figure 6 labelled genes
-Output: paper/final/supplementary/TableS_symbol_harmonisation.{csv,docx}
+Output: outputs/supplementary/TableS_symbol_harmonisation.{csv,docx}
 
 Usage: python scripts/make_table_s_symbol_harmonisation.py
 """
@@ -27,7 +27,7 @@ import check_methods_items as CK  # noqa: E402
 R = os.path.join(ROOT, "results")
 O9, N9 = os.path.join(R, "addendum9"), os.path.join(R, "hgnc", "addendum9")
 O11, N11 = os.path.join(R, "addendum11"), os.path.join(R, "hgnc", "addendum11")
-OUT = os.path.join(ROOT, "paper", "final", "supplementary")
+OUT = os.path.join(ROOT, "outputs", "supplementary")
 GEO = ["GSE41258", "GSE20916", "GSE37364", "GSE117606"]
 ARMS = ["20q", "20p", "13q", "8q", "7p", "7q"]
 CUR, AL = CK.hgnc_map()

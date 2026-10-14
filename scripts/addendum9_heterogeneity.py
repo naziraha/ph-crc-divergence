@@ -10,6 +10,7 @@ Usage:
   python scripts/addendum9_heterogeneity.py validate     - section 6 validation (simulated data + CMScaller example)
 """
 import os
+import shutil
 import subprocess
 import sys
 import time
@@ -24,7 +25,8 @@ from scipy.stats import levene
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "results", "addendum9")
 SEED, NPERM, WORKERS = 42, 999, 6
-RENV = r"C:\Users\naziraha\AppData\Local\anaconda3\envs\r-cms"
+RENV = os.environ.get("R_CMS_HOME", "")   # folder of the r-cms conda environment; empty: use Rscript on the PATH
+RSCRIPT = os.path.join(RENV, "lib", "R", "bin", "x64", "Rscript.exe") if RENV else (shutil.which("Rscript") or "Rscript")
 
 
 def rng_for(name):
@@ -162,6 +164,8 @@ def bf_null(task):
 
 
 def renv_path():
+    if not RENV:
+        return os.environ["PATH"]
     E = RENV
     return ";".join([E, rf"{E}\Library\mingw-w64\bin", rf"{E}\Library\usr\bin", rf"{E}\Library\bin", rf"{E}\Scripts",
                      rf"{E}\lib\R\bin\x64", os.environ["PATH"]])
@@ -169,7 +173,7 @@ def renv_path():
 
 def run_r(*args):
     env = dict(os.environ, PATH=renv_path())
-    r = subprocess.run([rf"{RENV}\lib\R\bin\x64\Rscript.exe", os.path.join(ROOT, "scripts", "addendum9_cms.R"), *args],
+    r = subprocess.run([RSCRIPT, os.path.join(ROOT, "scripts", "addendum9_cms.R"), *args],
                        capture_output=True, text=True, env=env)
     if r.returncode != 0:
         raise RuntimeError(r.stderr[-2000:])

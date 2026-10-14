@@ -2,7 +2,7 @@
 Supplementary Table S_power_controls: (A) addendum 5 part 3 positive/negative controls (GSE41258 carcinomas),
 (B) addendum 10 TCGA-COAD positive control (D20/D21), (C) step 5 subsample sizes per cohort and transition.
 All numbers copied from existing result files; no statistical tests.
-Outputs: paper/final/supplementary/TableS_power_controls.{csv,docx}
+Outputs: outputs/supplementary/TableS_power_controls.{csv,docx}
 
 Usage: python scripts/make_table_s_power_controls.py
 """
@@ -14,7 +14,7 @@ from docx.shared import Cm, Pt
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 R = os.path.join(ROOT, "results")
-OUT = os.path.join(ROOT, "paper", "final", "supplementary")
+OUT = os.path.join(ROOT, "outputs", "supplementary")
 COND = {"N0": "negative control (no change)", "SP": "spread", "CL": "cluster split", "LP": "loop"}
 L1_VALUE = {"SP": "s = {v} (spread factor)", "CL": "δ = {v} × MPD", "LP": "w = {v} (loop weight)"}
 L2_VALUE = "a = {v}"

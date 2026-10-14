@@ -16,7 +16,7 @@ import pandas as pd
 from scipy.stats import chi2_contingency, mannwhitneyu
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, os.path.join(ROOT, "reference"))
+sys.path.insert(0, os.path.join(ROOT, "src"))
 import tda_crc_pilot as T  # noqa: E402
 
 OUT = os.path.join(ROOT, "results", "addendum5", "part2_scandates")

@@ -1,6 +1,6 @@
 """
 Main Tables 1 (cohorts) and 2 (primary validation results) for the GEO cohorts. All numbers are copied from existing
-files; no statistical tests are run. Outputs (paper/final/main_tables/): Table1_cohorts.csv/.docx,
+files; no statistical tests are run. Outputs (outputs/main_tables/): Table1_cohorts.csv/.docx,
 Table2_validation.csv/.docx (editable Word tables; landscape page for Table 2).
 
 Usage: python scripts/make_main_tables.py
@@ -15,7 +15,7 @@ from docx.shared import Cm, Pt
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 R = os.path.join(ROOT, "results")
 PROC = os.path.join(ROOT, "data", "processed")
-OUT = os.path.join(ROOT, "paper", "final", "main_tables")
+OUT = os.path.join(ROOT, "outputs", "main_tables")
 GEO = ["GSE41258", "GSE20916", "GSE37364", "GSE117606"]
 SETS = {"GSE41258": "main", "GSE20916": "bulk", "GSE37364": "bulk", "GSE117606": "main"}
 PLATFORM = {"GSE41258": "GPL96 (Affymetrix Human Genome U133A Array)",      # !Platform_title in data/raw/GPL*.txt
@@ -29,7 +29,7 @@ PUB = {"GSE41258": "Sheffer M et al. Proc Natl Acad Sci U S A 2009;106:7131-6 (P
        "GSE20916": "Skrzypczak M et al. PLoS One 2010;5:e13091 (PMID 20957034; doi:10.1371/journal.pone.0013091)",
        "GSE37364": "Galamb O et al. PLoS One 2012;7:e48547 (PMID 23155391; doi:10.1371/journal.pone.0048547)",
        "GSE117606": "to verify (no PubMed ID in the GEO record; the related adenoma-only series GSE117607 lists none either)"}
-SUPP = os.path.join(ROOT, "paper", "final", "supplementary")
+SUPP = os.path.join(ROOT, "outputs", "supplementary")
 STAGES = ["Normal", "Adenoma", "Carcinoma", "Metastasis"]
 TRL = {"Normal->Adenoma": "N→A", "Adenoma->Carcinoma": "A→C", "Carcinoma->Metastasis": "C→M"}
 

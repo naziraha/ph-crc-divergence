@@ -24,7 +24,7 @@ import numpy as np
 import pandas as pd
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, os.path.join(ROOT, "reference"))
+sys.path.insert(0, os.path.join(ROOT, "src"))
 import tda_crc_pilot as T  # noqa: E402
 import decoupler as dc  # noqa: E402
 

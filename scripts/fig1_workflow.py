@@ -1,6 +1,6 @@
 """
 Figure 1: study design and workflow schematic (no data analysis, no tests). Sample counts are read from
-paper/final/main_tables/Table1_cohorts.csv; TCGA tumour counts from results/addendum11/partA_chr/tcga_20q_score.csv and
+outputs/main_tables/Table1_cohorts.csv; TCGA tumour counts from results/addendum11/partA_chr/tcga_20q_score.csv and
 tcga_expression_vs_copynumber.csv; pipeline settings from results/step05/summary.txt and Table 2 footnotes; the last
 deviation number from docs/analysis_deviations.md. Drawn in matplotlib for later refinement (e.g. BioRender).
 
@@ -16,7 +16,7 @@ from matplotlib.patches import FancyArrowPatch, FancyBboxPatch  # noqa: E402
 import pandas as pd  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-OUT = os.path.join(ROOT, "paper", "final", "main_figures")
+OUT = os.path.join(ROOT, "outputs", "main_figures")
 NAME = "Fig1_workflow"
 STAGES = ["Normal", "Adenoma", "Carcinoma", "Metastasis"]
 SCOL = {"Normal": "#2a78d6", "Adenoma": "#e0a100", "Carcinoma": "#c0392b", "Metastasis": "#7b4fb3"}
@@ -35,7 +35,7 @@ def arrow(ax, x0, y0, x1, y1, color=MUTED):
 
 
 def numbers():
-    t1 = pd.read_csv(os.path.join(ROOT, "paper", "final", "main_tables", "Table1_cohorts.csv")).set_index("Cohort")
+    t1 = pd.read_csv(os.path.join(ROOT, "outputs", "main_tables", "Table1_cohorts.csv")).set_index("Cohort")
     tc = pd.read_csv(os.path.join(ROOT, "results", "addendum11", "partA_chr", "tcga_20q_score.csv"))
     tcv = pd.read_csv(os.path.join(ROOT, "results", "addendum11", "partA_chr", "tcga_expression_vs_copynumber.csv"))
     dev = open(os.path.join(ROOT, "docs", "analysis_deviations.md"), encoding="utf-8").read()

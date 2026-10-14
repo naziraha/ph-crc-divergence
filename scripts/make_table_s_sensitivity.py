@@ -5,7 +5,7 @@ Supplementary Table S_sensitivity: step 5 sensitivity analyses, copied from exis
     noQAflag, paired, quality-adjusted; stage-aware adjustment in GSE20916, GSE37364, GSE117606 for every setting);
 (C) TCGA-COAD (PC/gene settings, no-low-colon-identity, MSS-only).
 Rule: shape-only Holm p < 0.05 in both unadjusted and adjusted data. Raw-mode Holm p in the .csv only.
-Output: paper/final/supplementary/TableS_sensitivity.{csv,docx}
+Output: outputs/supplementary/TableS_sensitivity.{csv,docx}
 
 Usage: python scripts/make_table_s_sensitivity.py
 """
@@ -17,7 +17,7 @@ from docx.shared import Cm, Pt
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 S5 = os.path.join(ROOT, "results", "step05")
-OUT = os.path.join(ROOT, "paper", "final", "supplementary")
+OUT = os.path.join(ROOT, "outputs", "supplementary")
 SET = {"primary": "primary (10 PCs, 2,000 genes)", "S5_pc5": "5 PCs", "S6_pc20": "20 PCs",
        "S7_genes1000": "1,000 genes", "S8_genes5000": "5,000 genes"}
 TR_GEO = {"Normal->Adenoma": "N → A", "Adenoma->Carcinoma": "A → C", "Carcinoma->Metastasis": "C → M"}

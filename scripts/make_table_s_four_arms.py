@@ -2,7 +2,7 @@
 Supplementary Table S_four_arms: share of excess carcinoma dispersion explained by removing the four confirmed arm scores
 together (20q, 20p, 13q, 8q), with 20q alone for reference (addendum 11 Amendment 2). Copied from
 results/addendum11/partB_differentiation/B3_dispersion_decomposition.csv; no statistical tests.
-Output: paper/final/supplementary/TableS_four_arms.{csv,docx}
+Output: outputs/supplementary/TableS_four_arms.{csv,docx}
 
 Usage: python scripts/make_table_s_four_arms.py
 """
@@ -14,7 +14,7 @@ from docx.shared import Cm, Pt
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 B3 = os.path.join(ROOT, "results", "hgnc", "addendum11", "partB_differentiation", "B3_dispersion_decomposition.csv")
-OUT = os.path.join(ROOT, "paper", "final", "supplementary")
+OUT = os.path.join(ROOT, "outputs", "supplementary")
 GEO = ["GSE41258", "GSE20916", "GSE37364", "GSE117606"]
 
 

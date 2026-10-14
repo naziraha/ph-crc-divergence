@@ -7,7 +7,7 @@ Figure 7 (chromosome arms; addendum 11), from existing files only; no statistica
 (c) TCGA: 20q expression score (tcga_20q_score.csv) vs mean GISTIC2 copy number of 20q genes per tumour (raw GISTIC2
     file, same computation as addendum 11 A4); Spearman rho checked against tcga_expression_vs_copynumber.csv.
 (d) share f of excess carcinoma dispersion explained by 20q and by CMS, with f_rand95 (B3_dispersion_decomposition.csv;
-    CMS f also in addendum 9), informative cohorts only. Four-arm results: paper/final/supplementary/TableS_four_arms.
+    CMS f also in addendum 9), informative cohorts only. Four-arm results: outputs/supplementary/TableS_four_arms.
 
 Usage: python scripts/fig7_chromosome_arms.py
 """
@@ -27,7 +27,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
 R = os.path.join(ROOT, "results")
 A11 = os.path.join(R, "hgnc", "addendum11")      # harmonised symbols (scripts/hgnc_crosscohort.py; S7)
-OUT = os.path.join(ROOT, "paper", "final", "main_figures")
+OUT = os.path.join(ROOT, "outputs", "main_figures")
 NAME = "Fig7_chromosome_arms"
 GEO = ["GSE41258", "GSE20916", "GSE37364", "GSE117606"]
 KCOL = {"GSE41258": "#332288", "GSE20916": "#44aa99", "GSE37364": "#c9a227", "GSE117606": "#cc6677"}   # cohort colours

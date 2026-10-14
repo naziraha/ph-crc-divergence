@@ -21,8 +21,8 @@ from multiprocessing import Pool
 import numpy as np
 import pandas as pd
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, os.path.join(ROOT, "reference"))
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))   # scripts/archive/ -> repository root
+sys.path.insert(0, os.path.join(ROOT, "src"))
 import tda_crc_pilot as T  # noqa: E402
 
 SEED, K, N_BOOT, DIMS, WORKERS, THR = 42, 20, 1000, (0, 1), 6, 0.5

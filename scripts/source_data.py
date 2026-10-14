@@ -17,7 +17,8 @@ no existing file changed. Everything is written to results/source_data/.
    centroid distances, and the 117 variable genes (unadjusted log2 'expr_' and composition-adjusted 'adj_').
 Checks (checks.csv): recomputed values are compared with the saved results.
 
-Usage: python scripts/source_data.py
+Usage: python scripts/source_data.py              (all source-data tables)
+       python scripts/source_data.py validation   (only validation_summary_primary.csv, needed for Table 2)
 """
 import os
 import sys
@@ -27,7 +28,7 @@ import numpy as np
 import pandas as pd
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, os.path.join(ROOT, "reference"))
+sys.path.insert(0, os.path.join(ROOT, "src"))
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
 import tda_crc_pilot as T  # noqa: E402
 import addendum12_ph_outputs as A12  # noqa: E402
@@ -296,4 +297,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    if len(sys.argv) > 1 and sys.argv[1] == "validation":   # only the validation summary (needed for Table 2)
+        os.makedirs(OUT, exist_ok=True)
+        validation()
+    else:
+        main()

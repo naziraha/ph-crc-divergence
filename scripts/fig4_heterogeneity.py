@@ -5,8 +5,8 @@ with Holm p (step 13). Reads results/source_data/stage_centroid_distances_GEO.cs
 only. No statistical tests are run.
 
 Usage: python scripts/fig4_heterogeneity.py [adjusted|unadjusted]
-  adjusted   -> paper/final/main_figures/Fig4_heterogeneity.{png,pdf}            (main)
-  unadjusted -> paper/final/supplementary/FigS_heterogeneity_unadjusted.{png,pdf} (candidate supplementary)
+  adjusted   -> outputs/main_figures/Fig4_heterogeneity.{png,pdf}            (main)
+  unadjusted -> outputs/supplementary/FigS_heterogeneity_unadjusted.{png,pdf} (candidate supplementary)
 """
 import os
 import sys
@@ -27,9 +27,9 @@ plt.rcParams.update({"font.size": 8, "axes.titlesize": 9, "axes.spines.top": Fal
 
 def main(version):
     if version == "adjusted":
-        out, name = os.path.join(ROOT, "paper", "final", "main_figures"), "Fig4_heterogeneity"
+        out, name = os.path.join(ROOT, "outputs", "main_figures"), "Fig4_heterogeneity"
     else:
-        out, name = os.path.join(ROOT, "paper", "final", "supplementary"), "FigS_heterogeneity_unadjusted"
+        out, name = os.path.join(ROOT, "outputs", "supplementary"), "FigS_heterogeneity_unadjusted"
     os.makedirs(out, exist_ok=True)
     dist = pd.read_csv(os.path.join(ROOT, "results", "source_data", "stage_centroid_distances_GEO.csv"))
     dist = dist[dist.version == version]

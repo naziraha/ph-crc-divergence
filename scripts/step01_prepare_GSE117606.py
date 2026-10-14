@@ -24,7 +24,7 @@ import pandas as pd
 import requests
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, os.path.join(ROOT, "reference"))
+sys.path.insert(0, os.path.join(ROOT, "src"))
 import tda_crc_pilot as T  # noqa: E402
 
 RAW, PROC = os.path.join(ROOT, "data", "raw"), os.path.join(ROOT, "data", "processed")

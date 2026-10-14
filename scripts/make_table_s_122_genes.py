@@ -6,7 +6,7 @@ addendum 9 criteria. All values copied from existing files; no statistical tests
 Addendum 9 rule (scripts/addendum9_heterogeneity.py, 'replication of variability'): discovery in a cohort if BH q < 0.05
 and V > 1; replication in another cohort (where the gene passed the expression filter) if p < 0.05 and V > 1; a gene is
 kept if at least one discovery cohort has >= 2 replicating cohorts.
-Output: paper/final/supplementary/TableS_122_genes.{csv,docx}
+Output: outputs/supplementary/TableS_122_genes.{csv,docx}
 
 Usage: python scripts/make_table_s_122_genes.py
 """
@@ -21,7 +21,7 @@ from docx.shared import Cm, Pt
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 A9 = os.path.join(ROOT, "results", "hgnc", "addendum9")      # harmonised symbols (S7)
 A9_ORIG = os.path.join(ROOT, "results", "addendum9")
-OUT = os.path.join(ROOT, "paper", "final", "supplementary")
+OUT = os.path.join(ROOT, "outputs", "supplementary")
 GEO = ["GSE41258", "GSE20916", "GSE37364", "GSE117606"]
 GROUPS = ["lower in carcinoma", "higher in carcinoma", "no mean shift"]
 

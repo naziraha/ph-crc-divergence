@@ -4,7 +4,7 @@ Supplementary Table S_TCGA_stages (addendum 10): TCGA-COAD stage results, copied
 (B) PERMDISP dispersion ratio D and Holm p per transition (bias-adjusted, addendum 10 section 4.1);
 (C) CMS proportions by stage (primary and confident calls; descriptive; CMS4 stromal caution);
 (D) secondary, descriptive: solid-tissue normal vs Stage I (single comparison, no Holm) and the paired sensitivity.
-Output: paper/final/supplementary/TableS_TCGA_stages.{csv,docx}
+Output: outputs/supplementary/TableS_TCGA_stages.{csv,docx}
 
 Usage: python scripts/make_table_s_tcga_stages.py
 """
@@ -17,7 +17,7 @@ from docx.shared import Cm, Pt
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 R = os.path.join(ROOT, "results")
 A10 = os.path.join(R, "addendum10")
-OUT = os.path.join(ROOT, "paper", "final", "supplementary")
+OUT = os.path.join(ROOT, "outputs", "supplementary")
 TR = ["Stage I->Stage II", "Stage II->Stage III", "Stage III->Stage IV"]
 STG = ["Stage I", "Stage II", "Stage III", "Stage IV"]
 

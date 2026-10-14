@@ -27,7 +27,7 @@ import pandas as pd  # noqa: E402
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 A9 = os.path.join(ROOT, "results", "hgnc", "addendum9")
 SD = os.path.join(ROOT, "results", "hgnc", "source_data")
-OUT = os.path.join(ROOT, "paper", "final", "main_figures")
+OUT = os.path.join(ROOT, "outputs", "main_figures")
 NAME = "Fig6_variable_genes"
 GEO = ["GSE41258", "GSE20916", "GSE37364", "GSE117606"]
 ST3 = ["Normal", "Adenoma", "Carcinoma"]

@@ -1,7 +1,8 @@
 """
 Addendum 6 section 7.1 - read CEL HEADER fields of GSE117606 (no intensities).
 
-The archive C:\\TDA_data\\GSE117606\\GSE117606_RAW.tar (outside OneDrive) is read member by member;
+The GEO archive GSE117606_RAW.tar (path in the environment variable GSE117606_RAW_TAR; default
+data/raw/GSE117606_RAW.tar) is read member by member;
 for each Command Console ("Calvin") CEL.gz only the first 256 KB of decompressed data are read and
 the generic data header (with its parent headers, e.g. the scan acquisition) is parsed. The data
 groups / intensity block are never read. Output: data/raw/GSE117606_cel_headers.csv.
@@ -15,7 +16,7 @@ import tarfile
 import pandas as pd
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TAR = r"C:\TDA_data\GSE117606\GSE117606_RAW.tar"
+TAR = os.environ.get("GSE117606_RAW_TAR", os.path.join(ROOT, "data", "raw", "GSE117606_RAW.tar"))
 OUT = os.path.join(ROOT, "data", "raw", "GSE117606_cel_headers.csv")
 KEEP = ("date", "barcode", "plate", "scanner", "well", "position", "array-type", "time")
 

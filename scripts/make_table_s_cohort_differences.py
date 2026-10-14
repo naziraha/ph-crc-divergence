@@ -1,7 +1,7 @@
 """
 Supplementary Table S_cohort_differences: four GEO cohorts side by side, to explain why GSE41258 behaves differently in
 Figure 4. All numbers are copied from existing files; no statistical tests are run.
-Output: paper/final/supplementary/TableS_cohort_differences.{csv,docx}
+Output: outputs/supplementary/TableS_cohort_differences.{csv,docx}
 
 Usage: python scripts/make_table_s_cohort_differences.py
 """
@@ -13,7 +13,7 @@ from docx.shared import Cm, Pt
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 R = os.path.join(ROOT, "results")
-FIN = os.path.join(ROOT, "paper", "final")
+FIN = os.path.join(ROOT, "outputs")
 OUT = os.path.join(FIN, "supplementary")
 GEO = ["GSE41258", "GSE20916", "GSE37364", "GSE117606"]
 PLATFORM_SHORT = {"GSE41258": "GPL96 (HG-U133A)", "GSE20916": "GPL570 (HG-U133 Plus 2.0)",

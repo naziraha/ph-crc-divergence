@@ -2,7 +2,7 @@
 Step 1 - Data preparation for GSE41258 (GPL96).
 
   1. Read the series matrix and assign stages with the validated pilot code
-     (reference/tda_crc_pilot.py: read_series_matrix, labels_from_meta).
+     (src/tda_crc_pilot.py: read_series_matrix, labels_from_meta).
      Main version: metastasis = liver metastases; lung metastases, normal liver /
      lung and cell lines excluded. Sensitivity version: lung metastases added.
   2. Map probes to gene symbols with the GPL96 annotation (GEOparse). Probes with
@@ -21,7 +21,7 @@ import numpy as np
 import pandas as pd
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, os.path.join(ROOT, "reference"))
+sys.path.insert(0, os.path.join(ROOT, "src"))
 import tda_crc_pilot as T  # noqa: E402
 import GEOparse  # noqa: E402
 
@@ -156,7 +156,7 @@ lines = [
     "STEP 1 - Data preparation (GSE41258, GPL96)",
     "=" * 50,
     f"Input: {os.path.relpath(MATRIX, ROOT)}; platform annotation GPL96 (GEOparse, data/raw/GPL96.txt)",
-    "Labels: reference/tda_crc_pilot.py labels_from_meta (keep_micro=True)",
+    "Labels: src/tda_crc_pilot.py labels_from_meta (keep_micro=True)",
     f"  metadata field used: {label_field}",
     f"Seed: {SEED}",
     "Versions: " + ", ".join(f"{k} {v}" for k, v in vers.items()) + f", python {sys.version.split()[0]}",

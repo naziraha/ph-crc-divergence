@@ -1,5 +1,5 @@
 """
-Figure 2, version 1 (candidate supplementary figure; saved as paper/final/supplementary/Fig2_v1_*). GSE41258, adjusted data: H1 persistence diagrams per stage (raw, shape-only) and H0 death values per stage.
+Figure 2, version 1 (candidate supplementary figure; saved as outputs/supplementary/Fig2_v1_*). GSE41258, adjusted data: H1 persistence diagrams per stage (raw, shape-only) and H0 death values per stage.
 Reads only results/source_data/ph_diagrams_GEO.csv and validation_summary_primary.csv (both from scripts/source_data.py).
 No statistical tests are run; p-values are copied from the step 5 label-permutation test (one sample per patient per stage).
 
@@ -14,7 +14,7 @@ import pandas as pd  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "results", "source_data")
-OUT = os.path.join(ROOT, "paper", "final", "supplementary")   # Fig2_v1 (pooled diagrams; candidate supplementary)
+OUT = os.path.join(ROOT, "outputs", "supplementary")   # Fig2_v1 (pooled diagrams; candidate supplementary)
 COHORT, VERSION = "GSE41258", "adjusted"
 STAGES = ["Normal", "Adenoma", "Carcinoma", "Metastasis"]
 COL = dict(zip(STAGES, ["#2a78d6", "#e0a100", "#c0392b", "#7b4fb3"]))   # as addendum 12 figures

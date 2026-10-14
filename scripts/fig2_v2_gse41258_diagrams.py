@@ -22,11 +22,11 @@ import pandas as pd  # noqa: E402
 from mpl_toolkits.axes_grid1.inset_locator import inset_axes  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, os.path.join(ROOT, "reference"))
+sys.path.insert(0, os.path.join(ROOT, "src"))
 import tda_crc_pilot as T  # noqa: E402
 SRC = os.path.join(ROOT, "results", "source_data")
 EMB = os.path.join(ROOT, "results", "step03", "embeddings", "GSE41258_main_adjusted_g2000_pc10.csv")
-OUT = os.path.join(ROOT, "paper", "final", "main_figures")
+OUT = os.path.join(ROOT, "outputs", "main_figures")
 COHORT, VERSION, REP = "GSE41258", "adjusted", 1
 STAGES = ["Normal", "Adenoma", "Carcinoma", "Metastasis"]
 COL = dict(zip(STAGES, ["#2a78d6", "#e0a100", "#c0392b", "#7b4fb3"]))   # stage colours (addendum 12)
