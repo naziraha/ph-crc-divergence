@@ -43,6 +43,15 @@ FILES = {  # local name -> (url, decompress gzip after download)
 }
 PLATFORMS = ("GPL96", "GPL570", "GPL25373")
 VOLATILE = {  # sources that are updated in place; a newer version is expected and only warned about
+    "GPL96.txt": "GEO appends every newly submitted sample and series that uses the platform to the header of the "
+                "platform record, so the file changes over time. The probe annotation table (ID, Gene Symbol) is "
+                "what the pipeline reads; for GPL570 it was checked to be identical to the version of 14 October 2026.",
+    "GPL570.txt": "GEO appends every newly submitted sample and series that uses the platform to the header of the "
+                "platform record, so the file changes over time. The probe annotation table (ID, Gene Symbol) is "
+                "what the pipeline reads; for GPL570 it was checked to be identical to the version of 14 October 2026.",
+    "GPL25373.txt": "GEO appends every newly submitted sample and series that uses the platform to the header of the "
+                "platform record, so the file changes over time. The probe annotation table (ID, Gene Symbol) is "
+                "what the pipeline reads; for GPL570 it was checked to be identical to the version of 14 October 2026.",
     "Homo_sapiens.gene_info.gz": "NCBI regenerates gene_info daily (new genes, renamed symbols, retired IDs). A newer "
                                  "file can change the Entrez-to-symbol mapping of GSE117606 and the HGNC harmonisation "
                                  "of the cross-cohort analyses for a small number of genes.",
