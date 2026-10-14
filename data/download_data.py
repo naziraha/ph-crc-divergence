@@ -46,10 +46,19 @@ VOLATILE = {  # sources that are updated in place; a newer version is expected a
     "Homo_sapiens.gene_info.gz": "NCBI regenerates gene_info daily (new genes, renamed symbols, retired IDs). A newer "
                                  "file can change the Entrez-to-symbol mapping of GSE117606 and the HGNC harmonisation "
                                  "of the cross-cohort analyses for a small number of genes.",
-    "TCGA/TCGA.COAD.sampleMap_COAD_clinicalMatrix.txt": "UCSC Xena updates the TCGA clinical matrix occasionally (e.g. "
-                                 "added or revised clinical fields). Stage, sample type and MSI status are read from it; "
-                                 "check results/step01/TCGA/summary.txt for the stage counts (45 / 110 / 80 / 39).",
+    "TCGA/TCGA.COAD.sampleMap_COAD_clinicalMatrix.txt": "UCSC Xena updates the TCGA clinical matrix occasionally. In "
+                                 "addition, the copy used for the paper had been opened and re-saved in a spreadsheet "
+                                 "program (dates and number formats rewritten, e.g. '26/02/2015' for '2015-2-26'). The "
+                                 "fields the pipeline reads (sample_type, pathologic_stage, MSI status CDE_ID_3226963) "
+                                 "were checked to be identical to the Xena file of 14 October 2026.",
 }
+KNOWN_DIFF = {  # recorded checksum not reproducible from the source; explained, but still an error unless allowed
+    "TCGA/COAD_mc3_gene_level.txt": "The copy used for the paper had been opened and re-saved in a spreadsheet program "
+                                    "(Windows line endings; gene symbols such as MARC1, SEP15 and FEB6 converted to dates). "
+                                    "The pipeline uses only the number of mutated genes per sample, which was checked to "
+                                    "be identical to the Xena file of 14 October 2026. Use --allow-mismatch to continue.",
+}
+GEO_ACC = "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?targ=self&acc={acc}&form=text&view=full"
 
 
 def sha256(p):
@@ -69,14 +78,21 @@ def expected():
     return out
 
 
-def fetch(url, dst, gunzip):
+def fetch(url, dst, gunzip, tries=4):
     os.makedirs(os.path.dirname(dst), exist_ok=True)
     tmp = dst + ".part"
-    with requests.get(url, stream=True, timeout=900) as r:
-        r.raise_for_status()
-        with open(tmp, "wb") as fh:
-            for b in r.iter_content(1 << 20):
-                fh.write(b)
+    for attempt in range(1, tries + 1):
+        try:
+            with requests.get(url, stream=True, timeout=(30, 120)) as r:   # connect / read timeouts (s)
+                r.raise_for_status()
+                with open(tmp, "wb") as fh:
+                    for b in r.iter_content(1 << 20):
+                        fh.write(b)
+            break
+        except requests.RequestException as e:
+            print(f"          attempt {attempt} failed: {type(e).__name__}", flush=True)
+            if attempt == tries:
+                raise
     if gunzip:
         with gzip.open(tmp, "rb") as src, open(dst, "wb") as out:
             shutil.copyfileobj(src, out)
@@ -99,11 +115,13 @@ def main():
                 continue
             print(f"download  {name}", flush=True)
             fetch(url, dst, gz)
-        import GEOparse
-        for gpl in PLATFORMS:
-            if not os.path.exists(os.path.join(RAW, f"{gpl}.txt")):
-                print(f"download  {gpl}.txt (GEOparse)", flush=True)
-                GEOparse.get_GEO(geo=gpl, destdir=RAW, silent=True)
+        for gpl in PLATFORMS:   # the same GEO endpoint GEOparse uses (view=full), with timeouts and retries
+            dst = os.path.join(RAW, f"{gpl}.txt")
+            if os.path.exists(dst):
+                print(f"present   {gpl}.txt")
+                continue
+            print(f"download  {gpl}.txt", flush=True)
+            fetch(GEO_ACC.format(acc=gpl), dst, False)
     exp = expected()
     errors, warnings = [], []
     print("\nChecksums against data/PROVENANCE.md (files used for the paper):")
@@ -122,7 +140,7 @@ def main():
             print(f"  WARNING   {name} differs {detail}\n            {VOLATILE[name]}")
             warnings.append(name)
         else:
-            print(f"  ERROR     {name} differs {detail}")
+            print(f"  ERROR     {name} differs {detail}" + (f"\n            {KNOWN_DIFF[name]}" if name in KNOWN_DIFF else ""))
             errors.append(name)
     if warnings:
         print(f"\n{len(warnings)} file(s) from sources that are updated over time differ from the versions used for "

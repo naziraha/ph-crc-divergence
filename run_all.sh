@@ -14,8 +14,8 @@ cd "$(dirname "$0")"
 PY="${PYTHON:-python}"
 run() { echo; echo ">>> $PY $*"; "$PY" "$@"; }
 
-download() {
-  run data/download_data.py
+download() {           # DOWNLOAD_ARGS=--allow-mismatch continues if a downloaded file differs from data/PROVENANCE.md
+  run data/download_data.py ${DOWNLOAD_ARGS:-}
 }
 
 prepare() {            # steps 1-3: expression tables, tissue composition, embeddings (all cohorts)
