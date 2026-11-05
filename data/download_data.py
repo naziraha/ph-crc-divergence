@@ -126,7 +126,10 @@ def main():
                 if a.archive_dir:
                     print(f"archive   {name}  (from {a.archive_dir})", flush=True)
                     os.makedirs(os.path.dirname(dst), exist_ok=True)
-                    shutil.copy2(os.path.join(a.archive_dir, name), dst)
+                    src = os.path.join(a.archive_dir, name)
+                    if not os.path.exists(src):          # the Zenodo deposit holds the files without sub-folders
+                        src = os.path.join(a.archive_dir, os.path.basename(name))
+                    shutil.copy2(src, dst)
                     continue
                 if not ZENODO_FILES:
                     sys.exit(f"{name}: the archived copy is not yet published on Zenodo. Pass --archive-dir <folder with "

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Reproduce the analysis from the public data.
 #
-#   bash run_all.sh table2    # data download + the steps behind Table 2 (tested from scratch; ~1 h on 6 cores)
+#   bash run_all.sh table2    # data download + the primary test (Supplementary Table 1; tested from scratch; ~1 h 45 min)
 #   bash run_all.sh all       # the complete pipeline, all figures and tables (several hours; needs the R environment)
 #   bash run_all.sh figures   # figures and tables only, from the result files shipped in results/
 #
@@ -33,7 +33,7 @@ prepare() {            # steps 1-3: expression tables, tissue composition, embed
   run scripts/step03_embedding_TCGA.py
 }
 
-table2() {             # primary step 5 tests, H0/H1-only and landscape tests, then Table 1 and Table 2
+table2() {             # primary step 5 tests, H0/H1-only and landscape tests, then Supplementary Tables 1 and 2
   download
   prepare
   run scripts/step05_permutation_test.py primary
@@ -46,25 +46,27 @@ table2() {             # primary step 5 tests, H0/H1-only and landscape tests, t
   run scripts/make_main_tables.py
 }
 
-figures() {
+figures() {            # every figure and table of the paper (NCS numbering), from the result files in results/
   run scripts/source_data.py
   run scripts/hgnc_crosscohort.py
-  run scripts/fig1_workflow.py
-  run scripts/fig2_v2_gse41258_diagrams.py
-  run scripts/fig2_gse41258_diagrams.py
-  run scripts/fig3_gse41258_barcodes_betti_landscapes.py
-  run scripts/fig4_heterogeneity.py adjusted
-  run scripts/fig4_heterogeneity.py unadjusted
-  run scripts/fig4_neighbour_check.py
-  run scripts/fig4_composition_check.py
-  run scripts/fig5_cms_heterogeneity.py
-  run scripts/figS_cms_pc12.py
-  run scripts/fig6_variable_genes.py
-  run scripts/fig7_chromosome_arms.py
-  run scripts/make_main_tables.py
-  for t in cohort_differences 122_genes power_controls four_arms tcga_stages sensitivity symbol_harmonisation meta_analysis; do
-    run "scripts/make_table_s_${t}.py"
+  run scripts/hgnc_enrichment.py
+  # tables first: Fig. 2 and Supplementary Fig. 1 read two of them
+  run scripts/make_main_tables.py                      # Supplementary Tables 1 (cohorts, primary test) and 2 (H1 landscape)
+  run scripts/make_table1_gradual_vs_switch.py         # Table 1
+  for t in meta_analysis sensitivity tcga_stages power_controls cohort_differences 122_genes symbol_harmonisation secondary_analyses four_arms; do
+    run "scripts/make_table_s_${t}.py"                 # Supplementary Tables 3-11
   done
+  # main figures
+  run scripts/fig1_ph_scale_shape.py
+  run scripts/fig2_dispersion.py adjusted
+  run scripts/fig3_cms.py
+  run scripts/fig4_variable_genes.py
+  run scripts/fig5_chromosome_arms.py
+  # supplementary figures
+  run scripts/supplfig1_workflow.py
+  run scripts/supplfig2_barcodes_betti_landscapes.py
+  run scripts/fig2_dispersion.py unadjusted          # Supplementary Fig. 3
+  run scripts/supplfig4_cms_pc12.py
 }
 
 all() {
@@ -113,6 +115,7 @@ all() {
   run scripts/addendum12_ph_outputs.py summary
   run scripts/meta_analysis_NA.py
   run scripts/meta_analysis_4cohort.py
+  run scripts/meta_analysis_4cohort_revised.py     # D32: DerSimonian-Laird with tau^2 truncated at zero
   run scripts/check_methods_items.py all
   figures
 }

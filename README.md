@@ -1,13 +1,13 @@
 # Topological analysis of colorectal carcinogenesis in multi-cohort transcriptomics
 
-Analysis code for: *[paper title, authors, journal; to be added]*.
+Analysis code for: Amran, N. & Peng, W. K. *Topological Analysis Reveals Distinct Transcriptomic Dynamics Across Colorectal Carcinogenesis* (submitted to *Nature Computational Science*).
 
 ## The study in brief
-- **Question.** Does the shape of the gene-expression data change abruptly at one step of colorectal carcinogenesis (normal mucosa → adenoma → carcinoma → metastasis)? Such a "topological tipping point" was looked for with persistent homology.
+- **Question.** Does colorectal carcinogenesis (normal mucosa → adenoma → carcinoma → metastasis) pass through a shared tipping point, or do tumours diverge gradually? Persistent homology was used to separate the **scale** of the gene-expression data (how far apart samples lie) from its **shape** (how samples are arranged once spread is removed). A shared tipping point should change shape; gradual divergence should change scale alone.
 - **Data.** Four public GEO microarray cohorts (GSE41258, GSE20916, GSE37364, GSE117606; 715 samples) and TCGA-COAD (274 primary tumours, stage I–IV), each analysed separately.
-- **Primary test.** A 1-Wasserstein label-permutation test on Vietoris–Rips persistence diagrams, with a tipping-point criterion prespecified in the version-controlled analysis plan (`docs/analysis_prespecification.md`).
-- **Result.** The criterion was not met in any cohort.
-- **Follow-up analyses** (addenda, written before each was run) examined between-sample heterogeneity, consensus molecular subtypes, genes more variable in carcinoma and chromosome-arm gains. Every departure from the plan is listed in `docs/analysis_deviations.md`.
+- **Primary test.** A 1-Wasserstein label-permutation test on Vietoris–Rips persistence diagrams, on raw (scale) and median-rescaled (shape-only) distances, with a tipping-point criterion prespecified in the version-controlled analysis plan (`docs/analysis_prespecification.md`).
+- **Result.** Progression changed the scale of the transcriptome but not its shape; the criterion was not met in any cohort. Carcinomas diverged at the adenoma–carcinoma step, and this divergence then reached a plateau.
+- **Follow-up analyses** (addenda, written before each was run) examined between-sample dispersion, consensus molecular subtypes, genes more variable in carcinoma, chromosome-arm gains and gradual versus switch-like change. Every departure from the plan is listed in `docs/analysis_deviations.md`.
 
 ## Repository layout
 | Folder / file | Content |
@@ -18,6 +18,7 @@ Analysis code for: *[paper title, authors, journal; to be added]*.
 | `data/` | `download_data.py` (all public inputs), `PROVENANCE.md` (file dates and SHA-256 checksums), `raw/GSE117606_cel_headers.csv` (array plate and scan dates, derived from the GEO CEL archive) |
 | `results/` | Result tables (`.csv`) and run summaries (`summary.txt`) of every step, including the source data behind each figure (`results/source_data/`, `results/hgnc/source_data/`) |
 | `outputs/` | Figures and tables written by the figure and table scripts (created when they are run) |
+| `verification/` | `Verify_Methods_Formulas.ipynb`: independent, read-only recomputation of the Methods formulas from the saved results (deviation D32) |
 | `environment.yml`, `environment-r.yml` | Python and R environments with the exact package versions used |
 | `run_all.sh` | Reproduces the analysis |
 
@@ -33,7 +34,7 @@ conda env create -f environment-r.yml
 conda activate r-cms
 Rscript scripts/install_r_packages.R
 ```
-Then put that environment's `Rscript` on the PATH, or set `R_CMS_HOME` to the environment folder. Table 2 does not need R.
+Then put that environment's `Rscript` on the PATH, or set `R_CMS_HOME` to the environment folder. The primary test (`bash run_all.sh table2`) does not need R.
 
 ## Data
 ```bash
@@ -49,26 +50,40 @@ Four files are taken by default from the archived copies used for the paper ([Ze
 ## Reproducing the results
 | Command | What it does | Time (8-core laptop) |
 |---|---|---|
-| `bash run_all.sh table2` | Downloads the data, prepares all cohorts, runs the primary tests and writes Table 1 and Table 2 to `outputs/main_tables/` | about 1 h 45 min (tested from a fresh clone and environment on 14 October 2026: Tables 1 and 2 identical to the published values) |
-| `bash run_all.sh figures` | Redraws every figure and table from the result files in `results/` | a few minutes |
+| `bash run_all.sh table2` | Downloads the data, prepares all cohorts, runs the primary tests and writes Supplementary Tables 1 and 2 to `outputs/` | about 1 h 45 min (tested from a fresh clone and environment on 14 October 2026) |
+| `bash run_all.sh figures` | Redraws every figure and table of the paper from the result files in `results/` | a few minutes (Fig. 5 and the enrichment step need internet access for OmniPath) |
 | `bash run_all.sh all` | The complete pipeline (all steps, sensitivity analyses, controls, power simulations, addenda), then all figures and tables | several hours |
 
 On Windows, run these from Git Bash or another bash shell with the `tda-crc` environment active. Each analysis step saves checkpoints, so an interrupted run resumes where it stopped.
 
-**One command per figure or table** (from the shipped results; outputs in `outputs/`):
+**Paper item → script** (from the shipped results; outputs in `outputs/main_figures`, `outputs/main_tables` and `outputs/supplementary`). Run the table scripts before Fig. 2 and Supplementary Fig. 1, which read two of the tables.
 
-| Item | Command |
-|---|---|
-| Figure 1 | `python scripts/fig1_workflow.py` |
-| Figure 2 | `python scripts/fig2_v2_gse41258_diagrams.py` |
-| Figure 3 | `python scripts/fig3_gse41258_barcodes_betti_landscapes.py` |
-| Figure 4 | `python scripts/fig4_heterogeneity.py adjusted` |
-| Figure 5 | `python scripts/fig5_cms_heterogeneity.py` |
-| Figure 6 | `python scripts/fig6_variable_genes.py` |
-| Figure 7 | `python scripts/fig7_chromosome_arms.py` |
-| Tables 1–2, Supplementary Table S_H1_landscape | `python scripts/make_main_tables.py` |
-| Supplementary figures | `python scripts/fig2_gse41258_diagrams.py`; `python scripts/fig4_heterogeneity.py unadjusted`; `python scripts/figS_cms_pc12.py` |
-| Supplementary tables | `python scripts/make_table_s_<name>.py` for `cohort_differences`, `122_genes`, `power_controls`, `four_arms`, `tcga_stages`, `sensitivity`, `symbol_harmonisation`, `meta_analysis` |
+| Paper item | Command | Output file |
+|---|---|---|
+| Fig. 1 | `python scripts/fig1_ph_scale_shape.py` | `Fig1_PH_scale_shape` |
+| Fig. 2 | `python scripts/fig2_dispersion.py adjusted` | `Fig2_dispersion` |
+| Fig. 3 | `python scripts/fig3_cms.py` | `Fig3_CMS` |
+| Fig. 4 | `python scripts/fig4_variable_genes.py` | `Fig4_variable_genes` |
+| Fig. 5 | `python scripts/fig5_chromosome_arms.py` | `Fig5_chromosome_arms` |
+| Table 1 | `python scripts/make_table1_gradual_vs_switch.py` | `Table1_gradual_vs_switch` |
+| Supplementary Fig. 1 | `python scripts/supplfig1_workflow.py` | `SupplementaryFig1_workflow` |
+| Supplementary Fig. 2 | `python scripts/supplfig2_barcodes_betti_landscapes.py` | `SupplementaryFig2_barcodes_Betti_landscapes` |
+| Supplementary Fig. 3 | `python scripts/fig2_dispersion.py unadjusted` | `SupplementaryFig3_dispersion_unadjusted` |
+| Supplementary Fig. 4 | `python scripts/supplfig4_cms_pc12.py` | `SupplementaryFig4_CMS_PC1_PC2` |
+| Supplementary Tables 1 and 2 | `python scripts/make_main_tables.py` | `Table1_cohorts`, `Table2_validation`, `TableS_H1_landscape` (combined and renumbered in the paper) |
+| Supplementary Table 3 | `python scripts/make_table_s_meta_analysis.py` | `TableS_meta_analysis` |
+| Supplementary Table 4 | `python scripts/make_table_s_sensitivity.py` | `TableS_sensitivity` |
+| Supplementary Table 5 | `python scripts/make_table_s_tcga_stages.py` | `TableS_TCGA_stages` |
+| Supplementary Table 6 | `python scripts/make_table_s_power_controls.py` | `TableS_power_controls` |
+| Supplementary Table 7 | `python scripts/make_table_s_cohort_differences.py` | `TableS_cohort_differences` |
+| Supplementary Table 8 | `python scripts/make_table_s_122_genes.py` | `TableS_122_genes` |
+| Supplementary Table 9 | `python scripts/make_table_s_symbol_harmonisation.py` | `TableS_symbol_harmonisation` |
+| Supplementary Table 10 | `python scripts/make_table_s_secondary_analyses.py` | `TableS_secondary_analyses` |
+| Supplementary Table 11 | `python scripts/make_table_s_four_arms.py` | `TableS_four_arms` |
+
+The table scripts write the values and a draft layout; the published tables were renumbered and typeset for the journal without changing any value. The earlier figure scripts (`fig1_workflow.py`, `fig2_v2_gse41258_diagrams.py`, `fig2_gse41258_diagrams.py`, `fig3_gse41258_barcodes_betti_landscapes.py`, `fig4_heterogeneity.py`, `fig5_cms_heterogeneity.py`, `fig6_variable_genes.py`, `fig7_chromosome_arms.py`, `figS_cms_pc12.py`) draw the same results in the pre-submission layout and are kept for the record.
+
+**Four-cohort meta-analysis (deviation D32).** `scripts/meta_analysis_4cohort_revised.py` computes the DerSimonian–Laird estimate explicitly with the between-cohort variance truncated at zero; its results (`results/meta_analysis_4cohort_revised/`) are those reported in the paper. The original script and outputs are kept.
 
 **Hardware and software used:**
 - Hardware: Windows 11 laptop, Intel Core Ultra 5 (8 cores), 32 GB RAM.

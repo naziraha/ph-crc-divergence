@@ -1,11 +1,13 @@
 cff-version: 1.2.0
 message: "If you use this code, please cite it as below."
-title: "Topological analysis of colorectal carcinogenesis in multi-cohort transcriptomics: analysis code"
+title: "Topological Analysis Reveals Distinct Transcriptomic Dynamics Across Colorectal Carcinogenesis: analysis code"
 authors:
   - family-names: Amran
     given-names: Nazirah
+  - family-names: Peng
+    given-names: Weng Kung
 version: 1.0.0
-date-released: 2026-10-14
+date-released: "[release date]"
 license: MIT
 repository-code: "[GitHub URL]"
 identifiers:

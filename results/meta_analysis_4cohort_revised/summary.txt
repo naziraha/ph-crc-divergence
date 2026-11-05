@@ -1,0 +1,51 @@
+SECONDARY 4-COHORT META-ANALYSIS (addendum 6 section 8; informed summary)
+==================================================================
+Shape-only permutation z; DerSimonian-Laird random effects; within-cohort variance 1.
+GSE41258 stage-aware = exploratory D3. Three of the four cohorts were analysed before this was
+specified, so it is an informed summary, not independent confirmation; it defines no tipping point.
+DerSimonian-Laird computed explicitly, tau2 truncated at zero (D32); numpy 2.4.4
+
+--- Normal->Adenoma, unadjusted ---
+  GSE41258   z =   6.90  (Holm p 0.0030)
+  GSE20916   z =   4.27  (Holm p 0.0060)
+  GSE37364   z =   1.75  (Holm p 0.1020)
+  GSE117606  z =  -0.14  (Holm p 0.4830)
+  pooled z = 3.20 [95% CI 0.20, 6.19], p = 0.037; tau2 = 8.35; I2 = 89% (Q p 0.000)
+
+--- Normal->Adenoma, adjusted ---
+  GSE41258   z =   0.92  (Holm p 0.2820)
+  GSE20916   z =   2.42  (Holm p 0.0540)
+  GSE37364   z =   3.43  (Holm p 0.0100)
+  GSE117606  z =   0.33  (Holm p 0.5820)
+  pooled z = 1.78 [95% CI 0.39, 3.16], p = 0.012; tau2 = 0.99; I2 = 50% (Q p 0.113)
+
+--- Normal->Adenoma, stageaware ---
+  GSE41258   z =  -0.11  (Holm p 0.5010)
+  GSE20916   z =   1.45  (Holm p 0.1980)
+  GSE37364   z =   2.83  (Holm p 0.0180)
+  GSE117606  z =  -0.30  (Holm p 0.5500)
+  pooled z = 0.97 [95% CI -0.47, 2.41], p = 0.19; tau2 = 1.16; I2 = 54% (Q p 0.090)
+
+--- Adenoma->Carcinoma, unadjusted ---
+  GSE41258   z =   0.11  (Holm p 0.7160)
+  GSE20916   z =   4.32  (Holm p 0.0060)
+  GSE37364   z =   1.94  (Holm p 0.1020)
+  GSE117606  z =   4.67  (Holm p 0.0020)
+  pooled z = 2.76 [95% CI 0.66, 4.86], p = 0.01; tau2 = 3.60; I2 = 78% (Q p 0.003)
+
+--- Adenoma->Carcinoma, adjusted ---
+  GSE41258   z =   1.40  (Holm p 0.2820)
+  GSE20916   z =  -0.11  (Holm p 0.4360)
+  GSE37364   z =  -0.57  (Holm p 0.6850)
+  GSE117606  z =   0.27  (Holm p 0.5820)
+  pooled z = 0.25 [95% CI -0.73, 1.23], p = 0.62; tau2 = 0.00; I2 = 0% (Q p 0.547)
+
+--- Adenoma->Carcinoma, stageaware ---
+  GSE41258   z =   0.88  (Holm p 0.4830)
+  GSE20916   z =  -0.70  (Holm p 0.7310)
+  GSE37364   z =  -0.88  (Holm p 0.8200)
+  GSE117606  z =   1.50  (Holm p 0.1720)
+  pooled z = 0.20 [95% CI -0.95, 1.35], p = 0.73; tau2 = 0.38; I2 = 27% (Q p 0.247)
+
+tau2 truncated at zero before pooling (textbook DL). Caution: 4 cohorts; heterogeneity estimates are imprecise.
+Outputs: results/meta_analysis_4cohort_revised/meta_inputs.csv, meta_results.csv, forest_4cohort.png

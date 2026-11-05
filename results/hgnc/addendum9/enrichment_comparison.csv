@@ -1,0 +1,3 @@
+analysis,genes_in_list,list_in_background,background,gene_sets_loaded,gene_sets_tested,smallest_p,smallest_q,sets_q_below_0_05,sets_p_below_0_05,top_set,cms_overlap_k,cms_template_genes_in_background,cms_overlap_p
+original symbols (addendum 9),117,117,10467,1837,1225,0.0004912847503682513,0.6018238192011078,0,24,HALLMARK:ESTROGEN_RESPONSE_LATE,30,380,8.093128591417115e-18
+harmonised symbols (S7),122,122,10769,1837,1246,0.0005618599896618122,0.700077547118618,0,21,HALLMARK:ESTROGEN_RESPONSE_LATE,31,393,3.571087787381946e-18
