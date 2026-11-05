@@ -7,12 +7,13 @@ authors:
   - family-names: Peng
     given-names: Weng Kung
 version: 1.0.0
-date-released: "[release date]"
+date-released: 2026-11-05
 license: MIT
-repository-code: "[GitHub URL]"
+repository-code: "https://github.com/naziraha/ph-crc-divergence"
 identifiers:
   - type: doi
-    value: "[Zenodo DOI]"
+    value: 10.5281/zenodo.23975163
+    description: "Archived input files (Zenodo)"
 keywords:
   - persistent homology
   - topological data analysis

@@ -5,7 +5,7 @@ the paper).
 Sources
   Archived copies (default for four files whose public versions change or differ; see data/PROVENANCE.md):
     Homo_sapiens.gene_info.gz, GPL570.txt, TCGA clinical matrix, TCGA MC3 gene-level mutations
-    -> from the Zenodo deposit ([Zenodo DOI]); before it is published, pass --archive-dir <unpacked deposit folder>.
+    -> from the Zenodo deposit (https://doi.org/10.5281/zenodo.23975163); --archive-dir <folder> uses local copies instead.
   Public sources (all other files):
     GEO series matrices GSE41258, GSE20916, GSE37364, GSE117606; GEO platform tables GPL96, GPL25373;
     UCSC Xena TCGA-COAD HiSeqV2 and GISTIC2 gene-level copy number.
@@ -34,7 +34,7 @@ import requests
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 RAW = os.path.join(HERE, "raw")
-ZENODO_FILES = ""   # base URL of the deposited files, e.g. "https://zenodo.org/records/<id>/files/"; set on publication
+ZENODO_FILES = "https://zenodo.org/records/23975163/files/"   # archived input files (doi:10.5281/zenodo.23975163)
 GEO_FTP = "https://ftp.ncbi.nlm.nih.gov/geo/series/{stub}nnn/{gse}/matrix/{gse}_series_matrix.txt.gz"
 GEO_ACC = "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?targ=self&acc={acc}&form=text&view=full"
 XENA = "https://tcga-xena-hub.s3.us-east-1.amazonaws.com/download/"
